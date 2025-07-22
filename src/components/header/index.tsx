@@ -1,6 +1,8 @@
-import { history } from '@umijs/max';
+import { history, useLocation } from '@umijs/max';
 
 export default function Header() {
+  const location = useLocation();
+
   const nav = [
     {
       name: 'Home',
@@ -18,14 +20,23 @@ export default function Header() {
   return (
     <div className="border-b border-b-[#FFFFFF24]">
       <div className="flex w-[1440px] m-auto h-[82px] items-center ">
-        <div className="font-bold text-white text-[28px]">USAD</div>
+        <div
+          onClick={() => history.push('/')}
+          className="font-bold cursor-pointer text-white text-[28px]"
+        >
+          US<span className="text-[#F2C94C]">AD</span>
+        </div>
         <div className="ml-[138px] flex items-center">
           {nav.map((item, index) => {
             return (
               <div
                 key={index}
                 onClick={() => history.push(item.path)}
-                className="mr-[66px] cursor-pointer text-white font-[500]"
+                className={`mr-[66px] cursor-pointer transition-all font-[500] ${
+                  location.pathname === item.path
+                    ? 'text-[#F2C94C]'
+                    : 'text-white'
+                }`}
               >
                 {item.name}
               </div>

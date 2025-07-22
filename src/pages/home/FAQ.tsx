@@ -1,5 +1,6 @@
 'use client';
 
+import AnimatedContent from '@/components/Animate';
 import { useState } from 'react';
 import { FiMinus, FiPlus } from 'react-icons/fi';
 
@@ -42,12 +43,17 @@ export function FAQ() {
     <section className="py-[140px] bg-black">
       <div className="container mx-auto px-4">
         <div className="text-center mb-[60px]">
-          <h2 className="text-4xl md:text-[52px] text-[#DAC89F] font-bold mb-4">
-            FAQ
-          </h2>
-          <p className="text-white text-lg ">
-            Answers to common questions about USAD
-          </p>
+          <AnimatedContent
+            content="FAQ"
+            animateClassName="animate__slideInDown"
+            className="text-4xl md:text-[52px] text-[#DAC89F] font-bold mb-4"
+          />
+
+          <AnimatedContent
+            content="Answers to common questions about USAD"
+            className="text-white text-lg "
+            animateClassName="animate__slideInUp"
+          ></AnimatedContent>
         </div>
 
         <div className="max-w-4xl mx-auto">

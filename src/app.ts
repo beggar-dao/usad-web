@@ -1,8 +1,8 @@
 import { history, type RequestConfig } from '@umijs/max';
+import 'animate.css';
 import { message } from 'antd';
 import React from 'react';
 import { envConfig } from './config/env';
-
 // Initialize token manager
 
 // Error handling scheme: Error types
