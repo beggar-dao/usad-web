@@ -102,9 +102,53 @@ export default function Banner() {
 
     option && myChart.setOption(option);
   }, []);
+  const createParticles = () => {
+    const container = document.getElementById('particles');
+    const container_width = container?.clientWidth;
+    const container_height = container?.clientHeight;
+    const particleCount = 100; // 粒子数量
+
+    for (let i = 0; i < particleCount; i++) {
+      const particle = document.createElement('div');
+      particle.className = 'particle';
+
+      // 随机粒子大小
+      const size = Math.random() * 4 + 1;
+      particle.style.width = `${size}px`;
+      particle.style.height = `${size}px`;
+
+      // 随机颜色
+      const colors = [
+        'rgba(59, 130, 246, 0.8)',
+        'rgba(16, 185, 129, 0.8)',
+        'rgba(139, 92, 246, 0.8)',
+      ];
+      particle.style.backgroundColor =
+        colors[Math.floor(Math.random() * colors.length)];
+
+      // 随机位置
+      const startX = Math.random() * container_width;
+      const startY = Math.random() * container_height; // 从屏幕底部开始
+      particle.style.position = `absolute`;
+      particle.style.left = `${startX}px`;
+      particle.style.top = `${startY}px`;
+
+      // 随机动画属性
+      const duration = Math.random() * 30 + 20; // 动画持续时间
+      const floatX = (Math.random() - 0.5) * 200; // 水平偏移
+      particle.style.animation = `float ${duration}s linear infinite`;
+      particle.style.setProperty('--float-x', `${floatX}vw`);
+
+      container.appendChild(particle);
+    }
+  };
+  useEffect(() => {
+    // 创建粒子
+    createParticles();
+  }, []);
   return (
-    <div className="home_banner pt-[180px] pb-[194px] relative">
-      {stars.map((star) => (
+    <div id="particles" className="home_banner pt-[180px] pb-[194px] relative">
+      {/* {stars.map((star) => (
         <div
           key={star.id}
           className="absolute w-[4px] h-[4px] rounded-full star"
@@ -113,7 +157,7 @@ export default function Banner() {
             left: `${star.left}%`,
           }}
         ></div>
-      ))}
+      ))} */}
       <div className="max-w-[1440px] m-auto flex items-center justify-between">
         <div className="w-[624px]">
           <AnimatedContent

@@ -12,6 +12,31 @@ body,
   background-size: cover;
 }
 
+.particle {
+  position: absolute;
+  border-radius: 50%;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+/* 粒子动画定义 */
+@keyframes float {
+  0% {
+    transform: translateY(0) translateX(0);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-100vh) translateX(var(--float-x));
+    opacity: 0;
+  }
+}
+
 .works {
   background: linear-gradient(
     180deg,
