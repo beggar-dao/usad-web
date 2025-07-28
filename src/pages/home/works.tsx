@@ -31,7 +31,7 @@ export default function Works() {
             ></AnimatedContent>
             <AnimatedContent
               animateClassName="animate__headShake"
-              className="text-[14px]  text-white leading-5"
+              className="text-[14px]  text-white leading-5 font-[200]"
             >
               Natively deployed on TOK Chain with smart contracts managing
               minting, burning, and collateral tracking.
@@ -49,7 +49,7 @@ export default function Works() {
             </AnimatedContent>
             <AnimatedContent
               animateClassName="animate__headShake"
-              className="text-[14px]  text-white leading-5"
+              className="text-[14px]  text-white leading-5 font-[200]"
             >
               Comprised of tokenized real-world assets including treasuries,
               GBPC, and other fiat-backed instruments.

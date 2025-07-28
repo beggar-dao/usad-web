@@ -1,3 +1,4 @@
+import logo from '@/assets/images/logo.png';
 import { history, useLocation } from '@umijs/max';
 
 export default function Header() {
@@ -24,7 +25,7 @@ export default function Header() {
           onClick={() => history.push('/')}
           className="font-bold cursor-pointer text-white text-[28px]"
         >
-          US<span className="text-[#F2C94C]">AD</span>
+          <img src={logo} className="h-[40px]" alt="" />
         </div>
         <div className="ml-[138px] flex items-center">
           {nav.map((item, index) => {
@@ -34,7 +35,7 @@ export default function Header() {
                 onClick={() => history.push(item.path)}
                 className={`mr-[66px] cursor-pointer transition-all font-[500] ${
                   location.pathname === item.path
-                    ? 'text-[#F2C94C]'
+                    ? 'text-[#DAC89F]'
                     : 'text-white'
                 }`}
               >

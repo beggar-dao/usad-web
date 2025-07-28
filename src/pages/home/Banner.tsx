@@ -67,7 +67,9 @@ export default function Banner() {
           color: '#FFFFFF73',
         },
         splitLine: {
-          show: false, // 隐藏 y 轴网格线
+          lineStyle: {
+            color: '#DAC89F14',
+          },
         },
         axisLabel: {
           formatter: (value: number) => {

@@ -221,7 +221,9 @@ export default function History() {
                     <div className="w-5 h-5 bg-[#54AD01] rounded-full mr-[10px]"></div>
                     {tx.to}
                   </div>
-                  <div className="text-base text-white">{tx.toAmount}</div>
+                  <div className="text-base text-white font-[200]">
+                    {tx.toAmount}
+                  </div>
                   <div>
                     <div
                       className={`text-xs inline-block h-8 leading-8 rounded-[4px] px-6 bg-[#5B7B5F1F] ${getStatusColor(

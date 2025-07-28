@@ -7,7 +7,7 @@ export default function Footer() {
           <div>
             <div className="text-2xl font-bold mb-6">
               <span className="text-white">US</span>
-              <span className="text-[#FFD700]">AD</span>
+              <span className="text-[#DAC89F]">AD</span>
             </div>
             <p className="text-white/70 mb-6">
               The next generation of decentralized, asset-backed stablecoins.
@@ -15,25 +15,25 @@ export default function Footer() {
             <div className="flex space-x-4">
               <a
                 href="#"
-                className="text-white hover:text-[#FFD700] transition-colors"
+                className="text-white hover:text-[#DAC89F] transition-colors"
               >
                 <FaTwitter className="w-5 h-5" />
               </a>
               <a
                 href="#"
-                className="text-white hover:text-[#FFD700] transition-colors"
+                className="text-white hover:text-[#DAC89F] transition-colors"
               >
                 <FaTelegram className="w-5 h-5" />
               </a>
               <a
                 href="#"
-                className="text-white hover:text-[#FFD700] transition-colors"
+                className="text-white hover:text-[#DAC89F] transition-colors"
               >
                 <FaDiscord className="w-5 h-5" />
               </a>
               <a
                 href="#"
-                className="text-white hover:text-[#FFD700] transition-colors"
+                className="text-white hover:text-[#DAC89F] transition-colors"
               >
                 <FaGithub className="w-5 h-5" />
               </a>
@@ -46,7 +46,7 @@ export default function Footer() {
               <li>
                 <a
                   href="#home"
-                  className="text-white/70 hover:text-[#FFD700] transition-colors"
+                  className="text-white/70 hover:text-[#DAC89F] transition-colors"
                 >
                   Home
                 </a>
@@ -54,7 +54,7 @@ export default function Footer() {
               <li>
                 <a
                   href="#about"
-                  className="text-white/70 hover:text-[#FFD700] transition-colors"
+                  className="text-white/70 hover:text-[#DAC89F] transition-colors"
                 >
                   About
                 </a>
@@ -62,7 +62,7 @@ export default function Footer() {
               <li>
                 <a
                   href="#features"
-                  className="text-white/70 hover:text-[#FFD700] transition-colors"
+                  className="text-white/70 hover:text-[#DAC89F] transition-colors"
                 >
                   Features
                 </a>
@@ -70,7 +70,7 @@ export default function Footer() {
               <li>
                 <a
                   href="#tech"
-                  className="text-white/70 hover:text-[#FFD700] transition-colors"
+                  className="text-white/70 hover:text-[#DAC89F] transition-colors"
                 >
                   Technology
                 </a>
@@ -78,7 +78,7 @@ export default function Footer() {
               <li>
                 <a
                   href="#faq"
-                  className="text-white/70 hover:text-[#FFD700] transition-colors"
+                  className="text-white/70 hover:text-[#DAC89F] transition-colors"
                 >
                   FAQ
                 </a>
@@ -86,7 +86,7 @@ export default function Footer() {
               <li>
                 <a
                   href="#news"
-                  className="text-white/70 hover:text-[#FFD700] transition-colors"
+                  className="text-white/70 hover:text-[#DAC89F] transition-colors"
                 >
                   News
                 </a>
@@ -100,7 +100,7 @@ export default function Footer() {
               <li>
                 <a
                   href="#"
-                  className="text-white/70 hover:text-[#FFD700] transition-colors"
+                  className="text-white/70 hover:text-[#DAC89F] transition-colors"
                 >
                   Whitepaper
                 </a>
@@ -108,7 +108,7 @@ export default function Footer() {
               <li>
                 <a
                   href="#"
-                  className="text-white/70 hover:text-[#FFD700] transition-colors"
+                  className="text-white/70 hover:text-[#DAC89F] transition-colors"
                 >
                   Documentation
                 </a>
@@ -116,7 +116,7 @@ export default function Footer() {
               <li>
                 <a
                   href="#"
-                  className="text-white/70 hover:text-[#FFD700] transition-colors"
+                  className="text-white/70 hover:text-[#DAC89F] transition-colors"
                 >
                   Developers
                 </a>
@@ -124,7 +124,7 @@ export default function Footer() {
               <li>
                 <a
                   href="#"
-                  className="text-white/70 hover:text-[#FFD700] transition-colors"
+                  className="text-white/70 hover:text-[#DAC89F] transition-colors"
                 >
                   Audits
                 </a>
@@ -132,7 +132,7 @@ export default function Footer() {
               <li>
                 <a
                   href="#"
-                  className="text-white/70 hover:text-[#FFD700] transition-colors"
+                  className="text-white/70 hover:text-[#DAC89F] transition-colors"
                 >
                   Reserve Reports
                 </a>
@@ -140,7 +140,7 @@ export default function Footer() {
               <li>
                 <a
                   href="#"
-                  className="text-white/70 hover:text-[#FFD700] transition-colors"
+                  className="text-white/70 hover:text-[#DAC89F] transition-colors"
                 >
                   Community
                 </a>
@@ -152,11 +152,11 @@ export default function Footer() {
             <h4 className="text-lg font-semibold mb-6">Contact</h4>
             <ul className="space-y-3">
               <li className="flex items-start">
-                <i className="fa fa-envelope text-[#FFD700] mt-1 mr-3"></i>
+                <i className="fa fa-envelope text-[#DAC89F] mt-1 mr-3"></i>
                 <span className="text-white/70">info@usad.com</span>
               </li>
               <li className="flex items-start">
-                <i className="fa fa-map-marker text-[#FFD700] mt-1 mr-3"></i>
+                <i className="fa fa-map-marker text-[#DAC89F] mt-1 mr-3"></i>
                 <span className="text-white/70">
                   123 Blockchain Avenue, Crypto City
                 </span>
@@ -173,19 +173,19 @@ export default function Footer() {
             <div className="flex space-x-6">
               <a
                 href="#"
-                className="text-white/50 hover:text-[#FFD700] text-sm transition-colors"
+                className="text-white/50 hover:text-[#DAC89F] text-sm transition-colors"
               >
                 Privacy Policy
               </a>
               <a
                 href="#"
-                className="text-white/50 hover:text-[#FFD700] text-sm transition-colors"
+                className="text-white/50 hover:text-[#DAC89F] text-sm transition-colors"
               >
                 Terms of Service
               </a>
               <a
                 href="#"
-                className="text-white/50 hover:text-[#FFD700] text-sm transition-colors"
+                className="text-white/50 hover:text-[#DAC89F] text-sm transition-colors"
               >
                 Cookie Policy
               </a>

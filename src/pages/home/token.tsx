@@ -38,13 +38,17 @@ export default function Token() {
                 <div className="text-[36px] text-[#DAC89F] font-bold leading-[56px]">
                   <AnimatedNumber value={32.5} decimals={1} duration={1000} />%
                 </div>
-                <div className="text-base text-white">Community Growth</div>
+                <div className="text-base text-white font-[200]">
+                  Community Growth
+                </div>
               </div>
               <div className="min-w-[316px]">
                 <div className="text-[36px] text-[#DAC89F] font-bold leading-[56px]">
                   <AnimatedNumber value={32.5} decimals={1} duration={1000} />%
                 </div>
-                <div className="text-base text-white">Community Growth</div>
+                <div className="text-base text-white font-[200]">
+                  Community Growth
+                </div>
               </div>
             </div>
 
@@ -53,13 +57,17 @@ export default function Token() {
                 <div className="text-[36px] text-[#DAC89F] font-bold leading-[56px]">
                   <AnimatedNumber value={32.5} decimals={1} duration={1000} />%
                 </div>
-                <div className="text-base text-white">Token SaLe</div>
+                <div className="text-base text-white font-[200]">
+                  Token SaLe
+                </div>
               </div>
               <div className="min-w-[316px]">
                 <div className="text-[36px] text-[#DAC89F] font-bold leading-[56px]">
                   <AnimatedNumber value={32.5} decimals={1} duration={1000} />%
                 </div>
-                <div className="text-base text-white">Initial Supporters</div>
+                <div className="text-base text-white font-[200]">
+                  Initial Supporters
+                </div>
               </div>
             </div>
           </div>

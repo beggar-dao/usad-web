@@ -24,7 +24,7 @@ export default function Why() {
           <div className="text-[#DAC89F] font-bold leading-[36px]">
             Stability
           </div>
-          <div className="mt-6 text-[16px] text-[#FFFFFFE5] leading-6">
+          <div className="mt-6 text-[16px] text-[#FFFFFFE5] leading-6 font-[200]">
             Maintains $1 peg through diversified asset backing and real-time
             reserve management.
           </div>
@@ -36,7 +36,7 @@ export default function Why() {
           <div className="text-[#DAC89F] font-bold leading-[36px]">
             Transparency
           </div>
-          <div className="mt-6 text-[16px] text-[#FFFFFFE5] leading-6">
+          <div className="mt-6 text-[16px] text-[#FFFFFFE5] leading-6 font-[200]">
             All reserves and transactions publicly verifiable on the blockchain.
           </div>
           <div className="flex items-center justify-center  w-[240px] h-[240px] m-auto mt-[54px]">
@@ -48,7 +48,7 @@ export default function Why() {
           <div className="text-[#DAC89F] font-bold leading-[36px]">
             Security
           </div>
-          <div className="mt-6 text-[16px] text-[#FFFFFFE5] leading-6">
+          <div className="mt-6 text-[16px] text-[#FFFFFFE5] leading-6 font-[200]">
             Built on TOK Chain with advanced cryptographic protections.
           </div>
           <div className="flex items-center justify-center  w-[240px] h-[240px] m-auto mt-[54px]">
@@ -59,7 +59,7 @@ export default function Why() {
           <div className="text-[#DAC89F] font-bold leading-[36px]">
             Global Access
           </div>
-          <div className="mt-6 text-[16px] text-[#FFFFFFE5] leading-6">
+          <div className="mt-6 text-[16px] text-[#FFFFFFE5] leading-6 font-[200]">
             Accessible to anyone with internet, regardless of location or
             financial status.
           </div>
@@ -71,7 +71,7 @@ export default function Why() {
           <div className="text-[#DAC89F] font-bold leading-[36px]">
             Fast Transactions
           </div>
-          <div className="mt-6 text-[16px] text-[#FFFFFFE5] leading-6">
+          <div className="mt-6 text-[16px] text-[#FFFFFFE5] leading-6 font-[200]">
             Lightning-fast settlement times optimized for global use.
           </div>
           <div className="flex items-center justify-center  w-[240px] h-[240px] m-auto mt-[54px]">
@@ -82,7 +82,7 @@ export default function Why() {
           <div className="text-[#DAC89F] font-bold leading-[36px]">
             DAO Governance
           </div>
-          <div className="mt-6 text-[16px] text-[#FFFFFFE5] leading-6">
+          <div className="mt-6 text-[16px] text-[#FFFFFFE5] leading-6 font-[200]">
             Community-driven decisions through decentralized voting.
           </div>
           <div className="flex items-center justify-center  w-[240px] h-[240px] m-auto mt-[54px]">

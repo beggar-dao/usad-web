@@ -19,7 +19,7 @@ export default function What() {
           <div className="text-[#DAC89F] text-[28px] font-bold leading-[36px]">
             Borderless Currency
           </div>
-          <div className="mt-6 text-[#FFFFFFA6] leading-[26px] text-base">
+          <div className="mt-6 text-[#FFFFFFA6] leading-[26px] font-[200] text-base">
             Designed for global use, enabling seamless transactions across
             borders and financial systems.
           </div>
@@ -28,7 +28,7 @@ export default function What() {
           <div className="text-[#DAC89F] text-[28px] font-bold leading-[36px]">
             Asset-Backed
           </div>
-          <div className="mt-6 text-[#FFFFFFA6] leading-[26px] text-base">
+          <div className="mt-6 text-[#FFFFFFA6] leading-[26px] font-[200] text-base">
             Each token is backed by a diversified basket of real-world assets,
             ensuring stability and trust.
           </div>
@@ -37,7 +37,7 @@ export default function What() {
           <div className="text-[#DAC89F] text-[28px] font-bold leading-[36px]">
             Web4 Technology
           </div>
-          <div className="mt-6 text-[#FFFFFFA6] leading-[26px] text-base">
+          <div className="mt-6 text-[#FFFFFFA6] leading-[26px] font-[200] text-base">
             Built on TOK Chain for enhanced security, transparency, and
             decentralized governance.
           </div>
@@ -63,7 +63,7 @@ export default function What() {
             <div className="text-[24px] leading-[48px] text-[#DAC89F] font-bold">
               Decentralized Governance
             </div>
-            <div className="text-[16px] leading-[22px] text-white">
+            <div className="text-[16px] leading-[22px] font-[200] text-white">
               Community-driven decision making
             </div>
           </div>
@@ -74,7 +74,7 @@ export default function What() {
             <div className="text-[24px] leading-[48px] text-[#DAC89F] font-bold">
               Fixed Supply
             </div>
-            <div className="text-[16px] leading-[22px] text-white">
+            <div className="text-[16px] leading-[22px] font-[200] text-white">
               94.49T total tokens
             </div>
           </div>
@@ -85,7 +85,7 @@ export default function What() {
             <div className="text-[24px] leading-[48px] text-[#DAC89F] font-bold">
               Over-Collateralized
             </div>
-            <div className="text-[16px] leading-[22px] text-white">
+            <div className="text-[16px] leading-[22px] font-[200] text-white">
               137% reserve ratio
             </div>
           </div>
@@ -96,7 +96,7 @@ export default function What() {
             <div className="text-[24px] leading-[48px] text-[#DAC89F] font-bold">
               On-Chain Transparency
             </div>
-            <div className="text-[16px] leading-[22px] text-white">
+            <div className="text-[16px] leading-[22px] font-[200] text-white">
               Real-time auditability
             </div>
           </div>
