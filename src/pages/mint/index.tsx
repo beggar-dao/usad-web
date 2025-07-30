@@ -158,7 +158,7 @@ export default function Mint() {
                 </div>
               </div>
               <div className="mt-3 text-[#FFFFFF66] leading-[26px] text-sm">
-                1USDT ≈ 1.08 USD
+                1USDT ≈ 1.08 USAD
               </div>
               <div className="mt-8 text-white text-sm">Pay</div>
               <Select
