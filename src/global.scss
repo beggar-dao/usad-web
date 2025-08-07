@@ -1,0 +1,202 @@
+html,
+body,
+#root {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background-color: #000;
+  color: #fff;
+}
+.token-bg {
+  background: url('./assets/images/token_bg.png') no-repeat;
+  background-size: cover;
+}
+
+.particle {
+  position: absolute;
+  border-radius: 50%;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+/* 粒子动画定义 */
+@keyframes float {
+  0% {
+    transform: translateY(0) translateX(0);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-100vh) translateX(var(--float-x));
+    opacity: 0;
+  }
+}
+
+.works {
+  background: linear-gradient(
+    180deg,
+    #121212 0%,
+    #171920 31.21%,
+    #3a4054 48.55%,
+    #a2a6b4 100%
+  );
+}
+
+.works_bg {
+  background: url('./assets/images/works_border.png') no-repeat;
+  background-size: 100% 100%;
+}
+
+.technology {
+  background: url('./assets/images/technology_bg.png') no-repeat;
+  background-size: cover;
+}
+
+.why1 {
+  background: url('./assets/images/te9.png') no-repeat;
+  background-size: 100% 100%;
+}
+.why2 {
+  background: url('./assets/images/te10.png') no-repeat;
+  background-size: 100% 100%;
+}
+
+.what {
+  background: url('./assets/images/what.png') no-repeat;
+  background-size: cover;
+}
+
+.wt1_bg {
+  background: url('./assets/images/what1.png') no-repeat;
+  background-size: 100% 100%;
+  position: relative;
+  &::after {
+    content: '';
+    position: absolute;
+    height: 96px;
+    width: 100%;
+    background: url('./assets/images/w1.png') no-repeat;
+    background-size: 100% 100%;
+    left: 0;
+    bottom: -90px;
+  }
+}
+
+.wt2_bg {
+  background: url('./assets/images/what2.png') no-repeat;
+  background-size: 100% 100%;
+  position: relative;
+  &::after {
+    content: '';
+    position: absolute;
+    height: 96px;
+    width: 100%;
+    background: url('./assets/images/w2.png') no-repeat;
+    background-size: 100% 100%;
+    left: 0;
+    bottom: -90px;
+  }
+}
+.wt3_bg {
+  background: url('./assets/images/what3.png') no-repeat;
+  background-size: 100% 100%;
+  position: relative;
+  &::after {
+    content: '';
+    position: absolute;
+    height: 96px;
+    width: 100%;
+    background: url('./assets/images/w3.png') no-repeat;
+    background-size: 100% 100%;
+    left: 0;
+    bottom: -90px;
+  }
+}
+
+.home_banner {
+  background: linear-gradient(180deg, #0f0f0f 0%, #000 100%);
+}
+
+.star {
+  width: 2px;
+  height: 2px;
+  background: #d9d9d9;
+  border-radius: 50%;
+  animation: radiate 3s infinite linear;
+}
+
+@keyframes radiate {
+  0% {
+    transform: scale(1);
+    opacity: 0.2;
+    background: #d9d9d9;
+  }
+  50% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 0.2;
+  }
+}
+
+.home_banner_bg {
+  background: url('./assets/images/banner.png') no-repeat;
+  background-size: 100% 100%;
+}
+
+.history {
+  background: url('./assets/images/history.png') no-repeat;
+  background-position: center bottom;
+  background-size: 100% auto;
+}
+
+.my-mint {
+  background: url('./assets/images/mint_bg.png') no-repeat;
+  background-position: center bottom;
+  background-size: 100% auto;
+}
+
+.my-page.ant-pagination .ant-pagination-item-active a {
+  color: #fff;
+}
+
+.my-page.ant-pagination .ant-pagination-item-active {
+  border: none;
+}
+
+.my-page a[disabled] {
+  color: #ffffff66;
+}
+
+.my-page.ant-pagination
+  .ant-pagination-jump-prev
+  .ant-pagination-item-container
+  .ant-pagination-item-ellipsis,
+.my-page.ant-pagination
+  .ant-pagination-jump-next
+  .ant-pagination-item-container
+  .ant-pagination-item-ellipsis {
+  color: #fff;
+}
+
+.my-select.ant-select-single.ant-select-open .ant-select-selection-item {
+  color: #fff;
+}
+
+.my-select.ant-select .ant-select-arrow {
+  color: #757575;
+}
+.my-select {
+  .ant-select-dropdown {
+    background: #1a1a1a;
+    padding: 8px 0;
+    border: 1px solid #dac89f1f;
+  }
+}
