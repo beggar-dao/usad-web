@@ -191,7 +191,7 @@ export default function Banner() {
               Learn More
             </div>
             <div className="text-base w-[180px] text-center ml-7 border border-[#FFFFFFA6] text-white rounded-[48px] h-[48px] leading-[48px]">
-              Down whitepaper
+              Down Whitepaper
             </div>
           </div>
         </div>
