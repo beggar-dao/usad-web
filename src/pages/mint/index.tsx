@@ -101,11 +101,15 @@ export default function Mint() {
                     onChange={(value) => {
                       setSelectedCurrency(value);
                     }}
-                    options={[
-                      { value: 'USAD', label: 'USAD' },
-                      { value: 'USDT', label: 'USDT' },
-                      { value: 'GBPC', label: 'GBPC' },
-                    ].map((item) => ({
+                    options={(active === 'buy'
+                      ? [
+                          { value: 'GBPC', label: 'GBPC' },
+                          { value: 'BTC', label: 'BTC' },
+                          { value: 'ETH', label: 'ETH' },
+                          { value: 'USDT', label: 'USDT' },
+                        ]
+                      : [{ value: 'USAD', label: 'USAD' }]
+                    ).map((item) => ({
                       label: (
                         <div className="flex items-center">
                           <div className="w-5 h-5 bg-[#1f8d09] rounded-full mr-2"></div>{' '}
@@ -141,11 +145,10 @@ export default function Mint() {
                     onChange={(value) => {
                       setSelectedCurrency1(value);
                     }}
-                    options={[
-                      { value: 'USAD', label: 'USAD' },
-                      { value: 'USDT', label: 'USDT' },
-                      { value: 'GBPC', label: 'GBPC' },
-                    ].map((item) => ({
+                    options={(active === 'buy'
+                      ? [{ value: 'USAD', label: 'USAD' }]
+                      : [{ value: 'GBPC', label: 'GBPC' }]
+                    ).map((item) => ({
                       label: (
                         <div className="flex items-center">
                           <div className="w-5 h-5 bg-[#1f8d09] rounded-full mr-2"></div>{' '}

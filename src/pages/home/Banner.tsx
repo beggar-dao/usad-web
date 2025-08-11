@@ -24,7 +24,7 @@ export default function Banner() {
         formatter: (params: any) => {
           // 自定义显示内容
           const data = params[0];
-          return `${data.axisValue}<br/> $${data.value.toFixed(2)}`;
+          return `${data.axisValue}<br/> $${data.value.toFixed(4)}`;
         },
         axisPointer: {
           type: 'none', // 禁用刻度线
@@ -60,8 +60,8 @@ export default function Banner() {
       },
       yAxis: {
         type: 'value',
-        min: 0.99,
-        max: 1.01,
+        min: 0.9901,
+        max: 1.0199,
         interval: 0.01,
         itemStyle: {
           color: '#FFFFFF73',
@@ -74,8 +74,15 @@ export default function Banner() {
         axisLabel: {
           formatter: (value: number) => {
             // 只显示 1, 1.01, 0.99
-            if (value === 1 || value === 1.01 || value === 0.99) {
-              return value.toFixed(2);
+            console.log(value, '/');
+            if (
+              value === 1.0001 ||
+              value === 1.0101 ||
+              value === 1.0199 ||
+              value === 0.9901
+            ) {
+              console.log(value);
+              return value.toFixed(4);
             }
             return '';
           },
@@ -83,7 +90,10 @@ export default function Banner() {
       },
       series: [
         {
-          data: [1.0, 1.01, 0.99, 1.0, 1.0, 1.0, 1.0, 1.0, 1.01, 1.0, 1.0, 1.0],
+          data: [
+            1.0101, 1.0199, 0.9901, 1.0051, 1.0051, 1.0051, 1.0051, 1.0051,
+            1.0188, 1.0051, 1.0051, 1.0101,
+          ],
           type: 'line',
           lineStyle: {
             color: '#DAC89F',
@@ -181,7 +191,7 @@ export default function Banner() {
               Learn More
             </div>
             <div className="text-base w-[180px] text-center ml-7 border border-[#FFFFFFA6] text-white rounded-[48px] h-[48px] leading-[48px]">
-              Down Witepaper
+              Down whitepaper
             </div>
           </div>
         </div>
@@ -202,7 +212,7 @@ export default function Banner() {
             </div>
             <div className="flex justify-between items-center">
               <span className="text-[32px] text-[#DAC89F] font-bold">
-                $1.00
+                $1.0001
               </span>
               <span className="text-[#1E990E] text-base font-medium">
                 +0.03%
@@ -212,16 +222,24 @@ export default function Banner() {
 
           <div ref={ref} className="h-64"></div>
 
-          <div className="mt-6 grid grid-cols-2 gap-4">
+          <div className="mt-6 grid grid-cols-3 gap-4">
             <div className="bg-[#FFFFFF12] p-5 rounded-lg">
               <div className="text-[#FFFFFF73] text-sm mb-1">Market Cap</div>
               <div className="font-bold  text-[18px] text-[#DAC89F]">
-                $94.78T
+                $94.7863T
               </div>
             </div>
             <div className="bg-[#FFFFFF12] p-5 rounded-lg">
               <div className="text-[#FFFFFF73] text-sm mb-1">Total Supply</div>
-              <div className="font-bold text-[18px] text-[#DAC89F]">94.49T</div>
+              <div className="font-bold text-[18px] text-[#DAC89F]">
+                94.4997T
+              </div>
+            </div>
+            <div className="bg-[#FFFFFF12] p-5 rounded-lg">
+              <div className="text-[#FFFFFF73] text-sm mb-1">On Circulated</div>
+              <div className="font-bold text-[18px] text-[#DAC89F]">
+                9.4997T
+              </div>
             </div>
           </div>
         </div>
