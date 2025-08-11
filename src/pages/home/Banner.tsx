@@ -226,19 +226,19 @@ export default function Banner() {
             <div className="bg-[#FFFFFF12] p-5 rounded-lg">
               <div className="text-[#FFFFFF73] text-sm mb-1">Market Cap</div>
               <div className="font-bold  text-[18px] text-[#DAC89F]">
-                $94.7863T
+                $94.4927T
               </div>
             </div>
             <div className="bg-[#FFFFFF12] p-5 rounded-lg">
               <div className="text-[#FFFFFF73] text-sm mb-1">Total Supply</div>
               <div className="font-bold text-[18px] text-[#DAC89F]">
-                94.4997T
+                94.4927T
               </div>
             </div>
             <div className="bg-[#FFFFFF12] p-5 rounded-lg">
               <div className="text-[#FFFFFF73] text-sm mb-1">On Circulated</div>
               <div className="font-bold text-[18px] text-[#DAC89F]">
-                9.4997T
+                94.4927T
               </div>
             </div>
           </div>
