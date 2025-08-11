@@ -147,7 +147,7 @@ export default function Mint() {
                     }}
                     options={(active === 'buy'
                       ? [{ value: 'USAD', label: 'USAD' }]
-                      : [{ value: 'GBPC', label: 'GBPC' }]
+                      : [{ value: 'GBPC', label: 'GBPC' },{ value: 'USDT', label: 'USDT' }]
                     ).map((item) => ({
                       label: (
                         <div className="flex items-center">
