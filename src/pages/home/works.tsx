@@ -167,18 +167,40 @@ export default function Works() {
         className="text-center text-base mt-[12px] leading-[25px] text-[#fff]"
       ></AnimatedContent>
       <div className=" mt-[80px] gap-[30px] flex items-end justify-center">
-        <img
-          src={work1}
-          className="block hover:scale-[1.05] transition-all w-[465px]"
-        />
-        <img
-          src={work2}
-          className="block hover:scale-[1.05] transition-all w-[500px]"
-        />
-        <img
-          src={work3}
-          className="block hover:scale-[1.05] transition-all w-[465px]"
-        />
+        <div className="w-[465px] hover:scale-[1.05] transition-all relative">
+          <img src={work1} className="block  w-full" />
+          <div className="absolute top-[62px] left-0 w-full h-full">
+            <div className="text-[28px] text-center text-white leading-[36px] font-bold">
+              Full Transparency
+            </div>
+            <div className="text-center text-[#fff] text-base leading-6 mt-4">
+              Real-time reserve audits and public smart <br /> contract code.
+            </div>
+          </div>
+        </div>
+        <div className="w-[500px] hover:scale-[1.05] transition-all relative">
+          <img src={work2} className="block  w-full" />
+          <div className="absolute top-[62px] left-0 w-full h-full">
+            <div className="text-[28px] text-center text-white leading-[36px] font-bold">
+              Community Governance
+            </div>
+            <div className="text-center text-[#fff] text-base leading-6 mt-4">
+              Token holders vote on protocol upgrades and <br /> parameter
+              adjustments.
+            </div>
+          </div>
+        </div>
+        <div className="w-[465px] hover:scale-[1.05] transition-all relative">
+          <img src={work3} className="block  w-full" />
+          <div className="absolute top-[62px] left-0 w-full h-full">
+            <div className="text-[28px] text-center text-white leading-[36px] font-bold">
+              Secure & Resilient
+            </div>
+            <div className="text-center text-[#fff] text-base leading-6 mt-4">
+              Multi-layer security architecture with <br /> regular audits.
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   );

@@ -192,7 +192,7 @@ export default function History() {
             </div>
 
             {/* Table Header */}
-            <div className="bg-[#22201A99] mb-[18px] px-[40px] h-[48px] leading-[48px] grid grid-cols-6 text-sm font-bold text-[#FFFFFF66]">
+            <div className="bg-[#22201A99] mb-[18px] px-[40px] h-[48px] leading-[48px] grid grid-cols-[1.5fr_1.5fr_1.5fr_1.5fr_1.5fr_1fr] text-sm font-bold text-[#FFFFFF66]">
               <div>Date</div>
               <div>Transaction Hash</div>
               <div>From</div>
@@ -206,7 +206,7 @@ export default function History() {
               {allTransactions.map((tx) => (
                 <div
                   key={tx.id}
-                  className="grid grid-cols-6 items-center hover:bg-[#22201A99] transition-all px-[40px] h-[56px] leading-[56px]"
+                  className="grid grid-cols-[1.5fr_1.5fr_1.5fr_1.5fr_1.5fr_1fr] items-center hover:bg-[#22201A99] transition-all px-[40px] h-[56px] leading-[56px]"
                 >
                   <div className="text-white text-sm">{tx.timestamp}</div>
                   <div className="flex items-center ">
