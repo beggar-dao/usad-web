@@ -1,6 +1,8 @@
+import gbpc_bi from '@/assets/images/gbpc_bi.png';
 import layer from '@/assets/images/layer.png';
+import other_bi from '@/assets/images/other_bi.png';
 import reserve from '@/assets/images/reserve.png';
-import Vector from '@/assets/images/Vector.png';
+import tgbp from '@/assets/images/tgbp.png';
 import work1 from '@/assets/images/work1.png';
 import work2 from '@/assets/images/work2.png';
 import work3 from '@/assets/images/work3.png';
@@ -22,7 +24,7 @@ export default function Works() {
       ></AnimatedContent>
       <div className="w-[1440px] m-auto grid grid-cols-2 gap-[56px] mt-[92px]">
         <div className="py-[82px] works_bg px-[56px] flex items-center gap-[50px]">
-          <img className="block w-[150px]" src={layer} />
+          <img className="block w-[148px]" src={layer} />
           <div className="flex-1">
             <AnimatedContent
               content="Protocol Layer"
@@ -39,7 +41,7 @@ export default function Works() {
           </div>
         </div>
         <div className="py-[82px] works_bg px-[56px] flex items-center gap-[50px]">
-          <img className="block w-[132px]" src={reserve} />
+          <img className="block w-[148px]" src={reserve} />
           <div className="flex-1">
             <AnimatedContent
               animateClassName="animate__bounceIn"
@@ -116,8 +118,20 @@ export default function Works() {
               <AnimatedNumber value={45} duration={1000} />%
             </div>
           </div>
-          <div className="h-[66px] w-[66px] rounded-full bg-[#46F6FF] flex items-center justify-center">
-            <img src={Vector} className="block w-[22px]" />
+          <div className="h-[66px] w-[66px] rounded-full bg-[#489FA4] flex items-center justify-center">
+            {/* <img src={Vector} className="block w-[22px]" /> */}
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="38"
+              height="40"
+              viewBox="0 0 38 40"
+              fill="none"
+            >
+              <path
+                d="M19 40C15.2422 40 11.5687 38.827 8.44417 36.6294C5.31964 34.4318 2.88436 31.3082 1.4463 27.6537C0.00823234 23.9992 -0.368031 19.9778 0.365088 16.0982C1.09821 12.2186 2.90778 8.65492 5.56498 5.85787C8.22218 3.06082 11.6077 1.15601 15.2933 0.384303C18.9789 -0.387401 22.7992 0.00866562 26.271 1.52242C29.7428 3.03617 32.7102 5.59962 34.7979 8.8886C36.8857 12.1776 38 16.0444 38 20C38 25.3043 35.9982 30.3914 32.435 34.1421C28.8718 37.8929 24.0391 40 19 40ZM19 4.28601C16.0475 4.28601 13.1612 5.20762 10.7063 6.93429C8.25134 8.66097 6.33794 11.1152 5.20806 13.9865C4.07817 16.8579 3.78254 20.0174 4.35855 23.0657C4.93456 26.1139 6.35635 28.9138 8.44411 31.1115C10.5319 33.3091 13.1918 34.8057 16.0876 35.4121C18.9834 36.0184 21.985 35.7072 24.7128 34.5178C27.4406 33.3285 29.7721 31.3144 31.4124 28.7302C33.0528 26.1461 33.9283 23.1079 33.9283 20C33.9283 15.8324 32.3555 11.8355 29.5559 8.88853C26.7563 5.94159 22.9592 4.28601 19 4.28601ZM21.8791 27.0713C21.1156 27.8749 20.08 28.3264 19.0003 28.3264C17.9206 28.3264 16.8851 27.8749 16.1215 27.0713L12.2829 23.0307C11.5195 22.2269 11.0906 21.1369 11.0906 20.0003C11.0906 18.8638 11.5195 17.7738 12.2829 16.97L16.1215 12.9293C16.8851 12.1258 17.9206 11.6743 19.0003 11.6743C20.08 11.6743 21.1156 12.1258 21.8791 12.9293L25.7178 16.97C26.4812 17.7738 26.91 18.8638 26.91 20.0003C26.91 21.1369 26.4812 22.2269 25.7178 23.0307L21.8791 27.0713ZM22.8386 18.99L19.9595 15.9593C19.8335 15.8266 19.6838 15.7214 19.5191 15.6496C19.3545 15.5777 19.1779 15.5408 18.9997 15.5408C18.8214 15.5408 18.6449 15.5777 18.4802 15.6496C18.3155 15.7214 18.1659 15.8266 18.0399 15.9593L15.1607 18.99C15.0347 19.1227 14.9347 19.2802 14.8664 19.4535C14.7982 19.6269 14.7631 19.8127 14.7631 20.0003C14.7631 20.188 14.7982 20.3738 14.8664 20.5471C14.9347 20.7205 15.0347 20.878 15.1607 21.0107L18.0399 24.0413C18.1659 24.174 18.3155 24.2793 18.4802 24.3511C18.6449 24.4229 18.8214 24.4599 18.9997 24.4599C19.1779 24.4599 19.3545 24.4229 19.5191 24.3511C19.6838 24.2793 19.8335 24.174 19.9595 24.0413L22.8386 21.0107C22.9647 20.878 23.0647 20.7205 23.1329 20.5471C23.2012 20.3738 23.2363 20.188 23.2363 20.0003C23.2363 19.8127 23.2012 19.6269 23.1329 19.4535C23.0647 19.2802 22.9647 19.1227 22.8386 18.99Z"
+                fill="#035D62"
+              />
+            </svg>
           </div>
         </div>
         <div className="p-[33px] bg-[#0000001F] rounded-[16px] flex items-center justify-between">
@@ -127,9 +141,10 @@ export default function Works() {
               <AnimatedNumber value={30} duration={1000} />%
             </div>
           </div>
-          <div className="h-[66px] w-[66px] rounded-full bg-[#F9B813] flex items-center justify-center">
+          {/* <div className="h-[66px] w-[66px] rounded-full bg-[#F9B813] flex items-center justify-center">
             <img src={Vector} className="block w-[22px]" />
-          </div>
+          </div> */}
+          <img src={gbpc_bi} className="block w-[66px]" />
         </div>
         <div className="p-[33px] bg-[#0000001F] rounded-[16px] flex items-center justify-between">
           <div>
@@ -138,9 +153,10 @@ export default function Works() {
               <AnimatedNumber value={15} duration={1000} />%
             </div>
           </div>
-          <div className="h-[66px] w-[66px] rounded-full bg-[#C93CAF] flex items-center justify-center">
+          {/* <div className="h-[66px] w-[66px] rounded-full bg-[#C93CAF] flex items-center justify-center">
             <img src={Vector} className="block w-[22px]" />
-          </div>
+          </div> */}
+          <img src={tgbp} className="block w-[66px]" />
         </div>
         <div className="p-[33px] bg-[#0000001F] rounded-[16px] flex items-center justify-between">
           <div>
@@ -149,9 +165,10 @@ export default function Works() {
               <AnimatedNumber value={10} duration={1000} />%
             </div>
           </div>
-          <div className="h-[66px] w-[66px] rounded-full bg-[#1F1F1F] flex items-center justify-center">
+          {/* <div className="h-[66px] w-[66px] rounded-full bg-[#1F1F1F] flex items-center justify-center">
             <img src={Vector} className="block w-[22px]" />
-          </div>
+          </div> */}
+          <img src={other_bi} className="block w-[66px]" />
         </div>
       </div>
       <AnimatedContent

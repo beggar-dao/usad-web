@@ -40,7 +40,7 @@ export default function Why() {
             All reserves and transactions publicly verifiable on the blockchain.
           </div>
           <div className="flex items-center justify-center  w-[240px] h-[240px] m-auto mt-[54px]">
-            <img src={te2} className="h-[196px] block" />
+            <img src={te2} className="h-[186px] block" />
           </div>
         </div>
 

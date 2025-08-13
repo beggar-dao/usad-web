@@ -102,7 +102,7 @@ export default function What() {
           </div>
         </div>
       </div>
-      <img src={what4} className="m-auto mt-[95px] w-[836px]" />
+      <img src={what4} className="m-auto mt-[95px] w-[1010px]" />
     </div>
   );
 }
