@@ -1,4 +1,6 @@
 import { FaDiscord, FaGithub, FaTelegram, FaTwitter } from 'react-icons/fa';
+
+import logo from '@/assets/images/logo.png';
 export default function Footer() {
   return (
     <footer className="bg-primary text-white pt-16 pb-8">
@@ -6,8 +8,7 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
           <div>
             <div className="text-2xl font-bold mb-6">
-              <span className="text-white">US</span>
-              <span className="text-[#DAC89F]">AD</span>
+              <img src={logo} className="h-[40px]" alt="" />
             </div>
             <p className="text-white/70 mb-6">
               The next generation of decentralized, asset-backed stablecoins.

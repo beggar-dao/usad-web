@@ -24,7 +24,7 @@ export default function Mint() {
     <PageAnimate>
       <div className="my-mint  pt-[133px] pb-[170px]">
         <div className="max-w-[1440px] m-auto flex justify-between ">
-          <div>
+          <div className="flex-1">
             <AnimatedContent
               content="Recharge local fiat currency to buy cryptocurrency"
               className="text-[32px] text-[#dac89f] leading-[48px] font-bold mb-[10px]"
