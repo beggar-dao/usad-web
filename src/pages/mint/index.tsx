@@ -1,4 +1,9 @@
+import btc_coin from '@/assets/images/btc_coin.png';
+import eth_coin from '@/assets/images/eth_coin.png';
+import gbpc_coin from '@/assets/images/gbpc_coin.png';
 import mint from '@/assets/images/mint1.png';
+import usad_coin from '@/assets/images/usad_coin.png';
+import usdt_coin from '@/assets/images/usdt_coin.png';
 import AnimatedContent from '@/components/Animate';
 import PageAnimate from '@/components/pageAnimate';
 import { ConfigProvider, Select } from 'antd';
@@ -8,7 +13,13 @@ export default function Mint() {
   const [selectedCurrency, setSelectedCurrency] = useState<string>('GBPC');
   const [selectedCurrency1, setSelectedCurrency1] = useState<string>('USAD');
   const [selectedCurrency2, setSelectedCurrency2] = useState<string>('GBPC');
-
+  const coinArr = [
+    { value: 'GBPC', img: gbpc_coin },
+    { value: 'BTC', img: btc_coin },
+    { value: 'ETH', img: eth_coin },
+    { value: 'USDT', img: usdt_coin },
+    { value: 'USAD', img: usad_coin },
+  ];
   return (
     <PageAnimate>
       <div className="my-mint  pt-[133px] pb-[170px]">
@@ -89,9 +100,30 @@ export default function Mint() {
                   <Select
                     className="flex-1 h-[48px] flex items-center select_cc my-select"
                     value={selectedCurrency}
+                    suffixIcon={
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="16"
+                        height="16"
+                        viewBox="0 0 16 16"
+                        fill="none"
+                      >
+                        <path
+                          d="M7.20759 10.9706C7.6079 11.4906 8.3921 11.4906 8.79241 10.9706L11.9568 6.85999C12.463 6.20243 11.9942 5.25 11.1644 5.25H4.83563C4.00579 5.25 3.53702 6.20243 4.04322 6.85999L7.20759 10.9706Z"
+                          fill="#757575"
+                        />
+                      </svg>
+                    }
                     labelRender={() => (
                       <div className="flex items-center">
-                        <div className="w-5 h-5 bg-[#1f8d09] rounded-full mr-2"></div>
+                        <img
+                          src={
+                            coinArr.find(
+                              (coin) => coin.value === selectedCurrency,
+                            )?.img || ''
+                          }
+                          className="w-[22px] h-[22px] object-contain bg-[#000] rounded-full mr-2"
+                        />
                         {selectedCurrency}
                       </div>
                     )}
@@ -103,21 +135,26 @@ export default function Mint() {
                     }}
                     options={(active === 'buy'
                       ? [
-                          { value: 'GBPC', label: 'GBPC' },
-                          { value: 'BTC', label: 'BTC' },
-                          { value: 'ETH', label: 'ETH' },
-                          { value: 'USDT', label: 'USDT' },
+                          { value: 'GBPC', label: 'GBPC', img: gbpc_coin },
+                          { value: 'BTC', label: 'BTC', img: btc_coin },
+                          { value: 'ETH', label: 'ETH', img: eth_coin },
+                          { value: 'USDT', label: 'USDT', img: usdt_coin },
                         ]
-                      : [{ value: 'USAD', label: 'USAD' }]
-                    ).map((item) => ({
-                      label: (
-                        <div className="flex items-center">
-                          <div className="w-5 h-5 bg-[#1f8d09] rounded-full mr-2"></div>{' '}
-                          {item.label}
-                        </div>
-                      ),
-                      value: item.value,
-                    }))}
+                      : [{ value: 'USAD', label: 'USAD', img: usad_coin }]
+                    ).map((item) => {
+                      return {
+                        label: (
+                          <div className="flex items-center">
+                            <img
+                              src={item?.img}
+                              className="w-[22px] h-[22px] object-contain bg-[#000] rounded-full mr-2"
+                            />
+                            {item.label}
+                          </div>
+                        ),
+                        value: item.value,
+                      };
+                    })}
                   ></Select>
                 </div>
               </div>
@@ -133,9 +170,30 @@ export default function Mint() {
                   <Select
                     className="flex-1 h-[48px] flex items-center select_cc1 my-select"
                     value={selectedCurrency1}
+                    suffixIcon={
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="16"
+                        height="16"
+                        viewBox="0 0 16 16"
+                        fill="none"
+                      >
+                        <path
+                          d="M7.20759 10.9706C7.6079 11.4906 8.3921 11.4906 8.79241 10.9706L11.9568 6.85999C12.463 6.20243 11.9942 5.25 11.1644 5.25H4.83563C4.00579 5.25 3.53702 6.20243 4.04322 6.85999L7.20759 10.9706Z"
+                          fill="#757575"
+                        />
+                      </svg>
+                    }
                     labelRender={() => (
                       <div className="flex items-center">
-                        <div className="w-5 h-5 bg-[#1f8d09] rounded-full mr-2"></div>
+                        <img
+                          src={
+                            coinArr.find(
+                              (coin) => coin.value === selectedCurrency1,
+                            )?.img || ''
+                          }
+                          className="w-[22px] h-[22px] object-contain bg-[#000] rounded-full mr-2"
+                        />
                         {selectedCurrency1}
                       </div>
                     )}
@@ -146,12 +204,18 @@ export default function Mint() {
                       setSelectedCurrency1(value);
                     }}
                     options={(active === 'buy'
-                      ? [{ value: 'USAD', label: 'USAD' }]
-                      : [{ value: 'GBPC', label: 'GBPC' },{ value: 'USDT', label: 'USDT' }]
+                      ? [{ value: 'USAD', label: 'USAD', img: usad_coin }]
+                      : [
+                          { value: 'GBPC', label: 'GBPC', img: gbpc_coin },
+                          { value: 'USDT', label: 'USDT', img: usdt_coin },
+                        ]
                     ).map((item) => ({
                       label: (
                         <div className="flex items-center">
-                          <div className="w-5 h-5 bg-[#1f8d09] rounded-full mr-2"></div>{' '}
+                          <img
+                            src={item?.img}
+                            className="w-[22px] h-[22px] object-contain bg-[#000] rounded-full mr-2"
+                          />
                           {item.label}
                         </div>
                       ),
@@ -167,9 +231,29 @@ export default function Mint() {
               <Select
                 className="flex-1 mt-[10px] rounded-lg h-[48px] flex items-center border border-[#DAC89F1F] select_cc2 my-select"
                 value={selectedCurrency2}
+                suffixIcon={
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    viewBox="0 0 16 16"
+                    fill="none"
+                  >
+                    <path
+                      d="M7.20759 10.9706C7.6079 11.4906 8.3921 11.4906 8.79241 10.9706L11.9568 6.85999C12.463 6.20243 11.9942 5.25 11.1644 5.25H4.83563C4.00579 5.25 3.53702 6.20243 4.04322 6.85999L7.20759 10.9706Z"
+                      fill="#757575"
+                    />
+                  </svg>
+                }
                 labelRender={() => (
                   <div className="flex items-center">
-                    <div className="w-5 h-5 bg-[#1f8d09] rounded-full mr-2"></div>
+                    <img
+                      src={
+                        coinArr.find((coin) => coin.value === selectedCurrency2)
+                          ?.img || ''
+                      }
+                      className="w-[22px] h-[22px] object-contain bg-[#000] rounded-full mr-2"
+                    />
                     {selectedCurrency2}
                   </div>
                 )}
@@ -180,11 +264,14 @@ export default function Mint() {
                 options={[
                   // { value: 'USAD', label: 'USAD' },
                   // { value: 'USDT', label: 'USDT' },
-                  { value: 'GBPC', label: 'GBPC' },
+                  { value: 'GBPC', label: 'GBPC', img: gbpc_coin },
                 ].map((item) => ({
                   label: (
                     <div className="flex items-center">
-                      <div className="w-5 h-5 bg-[#1f8d09] rounded-full mr-2"></div>{' '}
+                      <img
+                        src={item?.img}
+                        className="w-[22px] h-[22px] object-contain bg-[#000] rounded-full mr-2"
+                      />
                       {item.label}
                     </div>
                   ),
