@@ -159,7 +159,10 @@ export default function Banner() {
     createParticles();
   }, []);
   return (
-    <div id="particles" className="home_banner pt-[180px] pb-[194px] relative">
+    <div
+      id="particles"
+      className="home_banner pt-[30px] md:pt-[180px] pb-[40px] md:pb-[194px] relative"
+    >
       {/* {stars.map((star) => (
         <div
           key={star.id}
@@ -170,23 +173,23 @@ export default function Banner() {
           }}
         ></div>
       ))} */}
-      <div className="max-w-[1440px] m-auto flex items-center justify-between">
-        <div className="w-[624px]">
+      <div className="px-4 md:max-w-[1440px] m-auto flex flex-col gap-6 md:flex-row items-center justify-between">
+        <div className="w-full md:w-[43%]">
           <AnimatedContent
             content="The New Global"
-            className="text-white font-bold text-[56px] leading-[77px]"
+            className="text-white font-bold text-[28px] md:text-[56px] md:leading-[77px]"
             animateClassName="animate__lightSpeedInRight"
           />
           <AnimatedContent
             content="Currency for Web4 Era"
-            className="text-[#DAC89F]  font-bold text-[56px] leading-[77px]"
+            className="text-[#DAC89F]  font-bold text-[28px] md:text-[56px] md:leading-[77px]"
             animateClassName="animate__lightSpeedInLeft"
           ></AnimatedContent>
-          <div className="mt-[27px] text-base left-8 text-[#FFFFFFA6]">
+          <div className="mt-3 md:mt-[27px] text-base left-8 text-[#FFFFFFA6]">
             Fully decentralized, asset-backed stablecoin bringing transparency
             and financial inclusion to the global economy.
           </div>
-          <div className="mt-[110px] flex items-center">
+          <div className="mt-8 md:mt-[110px] flex items-center">
             <div className="text-base w-[180px] text-center text-[#060606] rounded-[48px] h-[48px] leading-[48px] bg-[#dac89f]">
               Learn More
             </div>
@@ -195,9 +198,9 @@ export default function Banner() {
             </div>
           </div>
         </div>
-        <div className="w-[666px] hover:scale-[1.05] transition-all p-10 home_banner_bg">
-          <div className="flex justify-between items-center mb-[20px]">
-            <div className="text-[20px] leading-[32px] text-[#DAC89F] font-bold">
+        <div className="w-full md:w-[46%] md:hover:scale-[1.05] transition-all p-4 md:p-10 home_banner_bg">
+          <div className="flex justify-between items-center mb-2 md:mb-[20px]">
+            <div className="text-[20px] leading-4 md:leading-[32px] text-[#DAC89F] font-bold">
               USAD
             </div>
             <div className="bg-[#1FA00DF2] text-white w-[55px] leading-6 text-center h-[24px] rounded-full text-sm font-medium">
@@ -211,7 +214,7 @@ export default function Banner() {
               <span className="text-[#FFFFFF73] text-sm">24h Change</span>
             </div>
             <div className="flex justify-between items-center">
-              <span className="text-[32px] text-[#DAC89F] font-bold">
+              <span className="text-base md:text-[32px] text-[#DAC89F] font-bold">
                 $1.0001
               </span>
               <span className="text-[#1E990E] text-base font-medium">
@@ -220,24 +223,28 @@ export default function Banner() {
             </div>
           </div>
 
-          <div ref={ref} className="h-64"></div>
+          <div ref={ref} className="h-32 md:h-64"></div>
 
-          <div className="mt-6 grid grid-cols-3 gap-4">
-            <div className="bg-[#FFFFFF12] p-5 rounded-lg">
-              <div className="text-[#FFFFFF73] text-sm mb-1">Market Cap</div>
-              <div className="font-bold  text-[18px] text-[#DAC89F]">
+          <div className="mt-2 md:mt-6 grid grid-cols-3 gap-4">
+            <div className="bg-[#FFFFFF12] p-2 md:p-5 rounded-lg">
+              <div className="text-[#FFFFFF73] text-xs md:text-sm mb-1">
+                Market Cap
+              </div>
+              <div className="font-bold text-xs md:text-[18px] text-[#DAC89F]">
                 $94.4927T
               </div>
             </div>
-            <div className="bg-[#FFFFFF12] p-5 rounded-lg">
+            <div className="bg-[#FFFFFF12] p-2 md:p-5 rounded-lg">
               <div className="text-[#FFFFFF73] text-sm mb-1">Total Supply</div>
-              <div className="font-bold text-[18px] text-[#DAC89F]">
+              <div className="font-bold text-xs md:text-[18px] text-[#DAC89F]">
                 94.4927T
               </div>
             </div>
-            <div className="bg-[#FFFFFF12] p-5 rounded-lg">
-              <div className="text-[#FFFFFF73] text-sm mb-1">On Circulated</div>
-              <div className="font-bold text-[18px] text-[#DAC89F]">
+            <div className="bg-[#FFFFFF12] p-2 md:p-5 rounded-lg">
+              <div className="text-[#FFFFFF73] text-xs md:text-sm mb-1">
+                On Circulated
+              </div>
+              <div className="font-bold text-xs md:text-[18px] text-[#DAC89F]">
                 94.4927T
               </div>
             </div>

@@ -20,20 +20,22 @@ export default function Header() {
   ];
   return (
     <div className="border-b border-b-[#FFFFFF24]">
-      <div className="flex w-[1440px] m-auto h-[82px] items-center ">
-        <div
+      <div className="flex px-4  md:max-w-[1440px] m-auto h-[82px] items-center justify-between md:justify-normal ">
+        <img
           onClick={() => history.push('/')}
-          className="font-bold cursor-pointer text-white text-[28px]"
-        >
-          <img src={logo} className="h-[40px]" alt="" />
-        </div>
-        <div className="ml-[138px] flex items-center">
+          src={logo}
+          className="h-[20px] md:h-[40px] cursor-pointer"
+          alt=""
+        />
+        <div className="md:ml-[138px] flex items-center">
           {nav.map((item, index) => {
             return (
               <div
                 key={index}
                 onClick={() => history.push(item.path)}
-                className={`mr-[66px] cursor-pointer transition-all font-[500] ${
+                className={`${
+                  index === nav.length - 1 ? '' : 'mr-6'
+                } md:mr-[66px] cursor-pointer transition-all font-[500] ${
                   location.pathname === item.path
                     ? 'text-[#DAC89F]'
                     : 'text-white'

@@ -12,7 +12,9 @@ export default function AnimatedContent({
   animateClassName?: string;
   children?: React.ReactNode;
 }) {
-  const [ref, inView] = useInView();
+  const [ref, inView] = useInView({
+    threshold: 0.1, // 触发动画的可见度阈值
+  });
   const [startAnimation, setStartAnimation] = useState(false);
 
   useEffect(() => {

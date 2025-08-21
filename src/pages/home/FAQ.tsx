@@ -40,7 +40,7 @@ export function FAQ() {
   };
 
   return (
-    <section className="py-[140px] bg-black">
+    <section className="py-[70px] md:py-[140px] bg-black">
       <div className="container mx-auto px-4">
         <div className="text-center mb-[60px]">
           <AnimatedContent

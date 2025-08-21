@@ -8,50 +8,55 @@ import work2 from '@/assets/images/work2.png';
 import work3 from '@/assets/images/work3.png';
 import AnimatedContent from '@/components/Animate';
 import AnimatedNumber from '@/components/AnimatedNumber';
+import 'swiper/css';
+import 'swiper/css/autoplay';
+import 'swiper/css/pagination';
+import { Autoplay, Pagination } from 'swiper/modules';
+import { Swiper, SwiperSlide } from 'swiper/react';
 export default function Works() {
   return (
-    <div className="works pt-[95px] pb-[120px]">
+    <div className="works pt-[40px] md:pt-[95px] pb-[60px] md:pb-[120px]">
       <AnimatedContent
-        className="text-[32px] font-bold text-center text-[#DAC89F]"
+        className="text-base md:text-[32px] font-bold px-4 md:px-0 text-left md:text-center text-[#DAC89F]"
         content="How USAD Works"
         animateClassName="animate__slideInDown"
       />
       <AnimatedContent
         content="USAD operates on two core layers, combining cutting-edge blockchain
-        technology <br /> with real-world asset backing."
+        technology with real-world asset backing."
         animateClassName="animate__slideInUp"
-        className="text-[14px] mt-3 text-white text-center"
+        className="text-[14px] px-4 mt-3 text-white text-left md:text-center"
       ></AnimatedContent>
-      <div className="w-[1440px] m-auto grid grid-cols-2 gap-[56px] mt-[92px]">
-        <div className="py-[82px] works_bg px-[56px] flex items-center gap-[50px]">
-          <img className="block w-[148px]" src={layer} />
+      <div className="px-4 md:max-w-[1440px] m-auto grid grid-cols-1 md:grid-cols-2 gap-[28px] md:gap-[56px] mt-[46px] md:mt-[92px]">
+        <div className="py-4 md:py-[82px] works_bg px-4 md:px-[56px] flex items-center gap-[25px] md:gap-[50px]">
+          <img className="block w-[74px] md:w-[148px]" src={layer} />
           <div className="flex-1">
             <AnimatedContent
               content="Protocol Layer"
-              className="text-[28px] leading-[48px] text-[#DAC89F]"
+              className="text-sm md:text-[28px] leading-6 md:leading-[48px] text-[#DAC89F]"
               animateClassName="animate__bounceIn"
             ></AnimatedContent>
             <AnimatedContent
               animateClassName="animate__headShake"
-              className="text-[14px]  text-white leading-5 font-[200]"
+              className="text-xs md:text-[14px]  text-white leading-5 font-[200]"
             >
               Natively deployed on TOK Chain with smart contracts managing
               minting, burning, and collateral tracking.
             </AnimatedContent>
           </div>
         </div>
-        <div className="py-[82px] works_bg px-[56px] flex items-center gap-[50px]">
-          <img className="block w-[148px]" src={reserve} />
+        <div className="py-4 md:py-[82px] works_bg px-4 md:px-[56px] flex items-center gap-[25px] md:gap-[50px]">
+          <img className="block w-[74px] md:w-[148px]" src={reserve} />
           <div className="flex-1">
             <AnimatedContent
               animateClassName="animate__bounceIn"
-              className="text-[28px] leading-[48px] text-[#DAC89F]"
+              className="text-sm md:text-[28px] leading-6 md:leading-[48px] text-[#DAC89F]"
             >
               Reserve Layer
             </AnimatedContent>
             <AnimatedContent
               animateClassName="animate__headShake"
-              className="text-[14px]  text-white leading-5 font-[200]"
+              className="text-xs md:text-[14px]  text-white leading-5 font-[200]"
             >
               Comprised of tokenized real-world assets including treasuries,
               GBPC, and other fiat-backed instruments.
@@ -61,69 +66,71 @@ export default function Works() {
       </div>
       <AnimatedContent
         animateClassName="animate__heartBeat"
-        className="text-[36px] text-[#DAC89F] font-bold text-center mt-[200px]"
+        className="text-[18px] md:text-[36px] px-4 md:px-0 text-[#DAC89F] font-bold text-left md:text-center mt-8 md:mt-[200px]"
       >
         Technical Specifications
       </AnimatedContent>
-      <div className="max-w-[1440px] m-auto grid grid-cols-5 mt-[72px]">
-        <div className="border-r border-r-[#FFFFFF14] h-[88px] flex flex-col justify-center">
+      <div className="px-4 md:max-w-[1440px] m-auto grid grid-cols-2 md:grid-cols-5 mt-5 md:mt-[72px]">
+        <div className="md:border-r md:border-r-[#FFFFFF14] h-[88px] flex flex-col justify-center">
           <div className="text-[14px] leading-[22px] text-white">
             Total Supply
           </div>
-          <div className="text-[28px] leading-[48px] text-[#DAC89F] font-bold">
+          <div className="text-[20px] md:text-[28px] leading-[48px] text-[#DAC89F] font-bold">
             <AnimatedNumber value={94.49} duration={1000} />T
           </div>
         </div>
-        <div className="border-r border-r-[#FFFFFF14] h-[88px] flex flex-col items-center justify-center">
+        <div className="md:border-r md:border-r-[#FFFFFF14] h-[88px] flex flex-col md:items-center justify-center">
           <div className="text-[14px] leading-[22px] text-white">
             Reserve Ratio
           </div>
-          <div className="text-[28px] leading-[48px] text-[#DAC89F] font-bold">
+          <div className="text-[20px] md:text-[28px] leading-[48px] text-[#DAC89F] font-bold">
             <AnimatedNumber value={137} duration={1000} />%
           </div>
         </div>
-        <div className="border-r border-r-[#FFFFFF14] h-[88px] flex flex-col items-center justify-center">
+        <div className="md:border-r md:border-r-[#FFFFFF14] h-[88px] flex flex-col md:items-center justify-center">
           <div className="text-[14px] leading-[22px] text-white">
             Blockchain
           </div>
-          <div className="text-[28px] leading-[48px] text-[#DAC89F] font-bold">
+          <div className="text-[20px] md:text-[28px] leading-[48px] text-[#DAC89F] font-bold">
             TOK Chain
           </div>
         </div>
-        <div className="border-r border-r-[#FFFFFF14] h-[88px] flex flex-col items-center justify-center">
+        <div className="md:border-r md:border-r-[#FFFFFF14] h-[88px] flex flex-col md:items-center justify-center">
           <div className="text-[14px] leading-[22px] text-white">
             Transaction Speed
           </div>
-          <div className="text-[28px] leading-[48px] text-[#DAC89F] font-bold">
+          <div className="text-[20px] md:text-[28px] leading-[48px] text-[#DAC89F] font-bold">
             3-5 seconds
           </div>
         </div>
-        <div className="h-[88px] flex flex-col items-end justify-center">
+        <div className="h-[88px] flex flex-col md:items-end justify-center">
           <div className="text-[14px] leading-[22px] text-white">
             Transaction Speed
           </div>
-          <div className="text-[28px] leading-[48px] text-[#DAC89F] font-bold">
+          <div className="text-[20px] md:text-[28px] leading-[48px] text-[#DAC89F] font-bold">
             <AnimatedNumber value={100} duration={1000} />%
           </div>
         </div>
       </div>
-      <div className="max-w-[1440px] m-auto mt-[66px] text-sm text-[#fff] leading-[22px]">
+      <div className="max-w-[1440px] hidden md:block m-auto mt-[66px] text-sm text-[#fff] leading-[22px]">
         Backing Assets
       </div>
-      <div className="max-w-[1440px] m-auto mt-[22px] text-[#fff] grid grid-cols-4 gap-8">
-        <div className="p-[33px] bg-[#0000001F] rounded-[16px] flex items-center justify-between">
-          <div>
-            <div className="text-white text-base">Tokenized Treasuries</div>
-            <div className="text-[#DAC89F] text-[28px] font-bold">
+      <div className="px-4 md:max-w-[1440px] m-auto mt-[22px] text-[#fff] grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8">
+        <div className="p-4 md:p-[33px] bg-[#0000001F] rounded-[16px] flex items-center justify-between">
+          <div className="flex-1">
+            <div className="text-white text-[10px] md:text-base">
+              Tokenized Treasuries
+            </div>
+            <div className="text-[#DAC89F] text-[14px] md:text-[28px] font-bold">
               <AnimatedNumber value={45} duration={1000} />%
             </div>
           </div>
-          <div className="h-[66px] w-[66px] rounded-full bg-[#489FA4] flex items-center justify-center">
+          <div className="h-[44px] w-[44px] rounded-full bg-[#489FA4] flex items-center justify-center">
             {/* <img src={Vector} className="block w-[22px]" /> */}
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              width="38"
-              height="40"
+              width="28"
+              height="30"
               viewBox="0 0 38 40"
               fill="none"
             >
@@ -134,57 +141,120 @@ export default function Works() {
             </svg>
           </div>
         </div>
-        <div className="p-[33px] bg-[#0000001F] rounded-[16px] flex items-center justify-between">
+        <div className="p-4 md:p-[33px] bg-[#0000001F] rounded-[16px] flex items-center justify-between">
           <div>
-            <div className="text-white text-base">GBPC</div>
-            <div className="text-[#DAC89F] text-[28px] font-bold">
+            <div className="text-white  text-[10px] md:text-base">GBPC</div>
+            <div className="text-[#DAC89F] text-[14px] md:text-[28px] font-bold">
               <AnimatedNumber value={30} duration={1000} />%
             </div>
           </div>
           {/* <div className="h-[66px] w-[66px] rounded-full bg-[#F9B813] flex items-center justify-center">
             <img src={Vector} className="block w-[22px]" />
           </div> */}
-          <img src={gbpc_bi} className="block w-[66px]" />
+          <img src={gbpc_bi} className="block w-[44px]" />
         </div>
-        <div className="p-[33px] bg-[#0000001F] rounded-[16px] flex items-center justify-between">
+        <div className="p-4 md:p-[33px] bg-[#0000001F] rounded-[16px] flex items-center justify-between">
           <div>
-            <div className="text-white text-base">TGBP</div>
-            <div className="text-[#DAC89F] text-[28px] font-bold">
+            <div className="text-white  text-[10px] md:text-base">TGBP</div>
+            <div className="text-[#DAC89F] text-[14px] md:text-[28px] font-bold">
               <AnimatedNumber value={15} duration={1000} />%
             </div>
           </div>
           {/* <div className="h-[66px] w-[66px] rounded-full bg-[#C93CAF] flex items-center justify-center">
             <img src={Vector} className="block w-[22px]" />
           </div> */}
-          <img src={tgbp} className="block w-[66px]" />
+          <img src={tgbp} className="block w-[44px]" />
         </div>
-        <div className="p-[33px] bg-[#0000001F] rounded-[16px] flex items-center justify-between">
+        <div className="p-4 md:p-[33px] bg-[#0000001F] rounded-[16px] flex items-center justify-between">
           <div>
-            <div className="text-white text-base">Other Assets</div>
-            <div className="text-[#DAC89F] text-[28px] font-bold">
+            <div className="text-white  text-[10px] md:text-base">
+              Other Assets
+            </div>
+            <div className="text-[#DAC89F] text-[14px] md:text-[28px] font-bold">
               <AnimatedNumber value={10} duration={1000} />%
             </div>
           </div>
           {/* <div className="h-[66px] w-[66px] rounded-full bg-[#1F1F1F] flex items-center justify-center">
             <img src={Vector} className="block w-[22px]" />
           </div> */}
-          <img src={other_bi} className="block w-[66px]" />
+          <img src={other_bi} className="block w-[44px]" />
         </div>
       </div>
       <AnimatedContent
         content="Transparency & Governance"
         animateClassName="animate__slideInUp"
-        className="text-center text-[36px] mt-[176px] text-[#DAC89F] font-bold"
+        className="text-left px-4 md:text-center text-[18px] md:text-[36px] mt-[30px] md:mt-[176px] text-[#DAC89F] font-bold"
       ></AnimatedContent>
       <AnimatedContent
         content="USAD is governed by its community through a decentralized autonomous
         organization (DAO), ensuring democratic <br /> decision-making and full
         transparency."
         animateClassName="animate__slideInUp"
-        className="text-center text-base mt-[12px] leading-[25px] text-[#fff]"
+        className="text-left md:text-center px-4 text-xs md:text-base mt-[12px] leading-[25px] text-[#fff]"
       ></AnimatedContent>
-      <div className=" mt-[80px] gap-[30px] flex items-end justify-center">
-        <div className="w-[465px] hover:scale-[1.05] transition-all relative">
+
+      <div className="md:hidden px-4 mt-[30px]">
+        <Swiper
+          modules={[Pagination, Autoplay]}
+          navigation={true}
+          autoplay={{
+            delay: 3000, // 自动播放延迟时间，单位为毫秒
+            disableOnInteraction: false, // 用户操作后是否停止自动播放
+          }}
+          pagination={{
+            clickable: true, // 使小圆点可点击
+            bulletClass: 'swiper-pagination-bullet',
+            bulletActiveClass: 'swiper-pagination-bullet-active',
+          }}
+          spaceBetween={50}
+          slidesPerView={1}
+        >
+          <SwiperSlide>
+            <div className="relative">
+              <img src={work1} className="block  w-full" />
+              <div className="absolute top-[62px] left-0 w-full h-full">
+                <div className="text-[28px] text-center text-white leading-[36px] font-bold">
+                  Full Transparency
+                </div>
+                <div className="text-center text-[#fff] text-base leading-6 mt-4">
+                  Real-time reserve audits and public smart <br /> contract
+                  code.
+                </div>
+              </div>
+            </div>
+          </SwiperSlide>
+          <SwiperSlide>
+            <div className="relative">
+              <img src={work2} className="block  w-full" />
+              <div className="absolute top-[62px] left-0 w-full h-full">
+                <div className="text-[28px] text-center text-white leading-[36px] font-bold">
+                  Community Governance
+                </div>
+                <div className="text-center text-[#fff] text-base leading-6 mt-4">
+                  Token holders vote on protocol upgrades and <br /> parameter
+                  adjustments.
+                </div>
+              </div>
+            </div>
+          </SwiperSlide>
+          <SwiperSlide>
+            <div className="relative">
+              <img src={work3} className="block  w-full" />
+              <div className="absolute top-[62px] left-0 w-full h-full">
+                <div className="text-[28px] text-center text-white leading-[36px] font-bold">
+                  Secure & Resilient
+                </div>
+                <div className="text-center text-[#fff] text-base leading-6 mt-4">
+                  Multi-layer security architecture with <br /> regular audits.
+                </div>
+              </div>
+            </div>
+          </SwiperSlide>
+        </Swiper>
+      </div>
+
+      <div className="max-w-[1440px] m-auto mt-[80px] gap-[30px] hidden md:flex items-end justify-center">
+        <div className="w-[32%] hover:scale-[1.05] transition-all relative">
           <img src={work1} className="block  w-full" />
           <div className="absolute top-[62px] left-0 w-full h-full">
             <div className="text-[28px] text-center text-white leading-[36px] font-bold">
@@ -195,7 +265,7 @@ export default function Works() {
             </div>
           </div>
         </div>
-        <div className="w-[500px] hover:scale-[1.05] transition-all relative">
+        <div className="w-[35%] hover:scale-[1.05] transition-all relative">
           <img src={work2} className="block  w-full" />
           <div className="absolute top-[62px] left-0 w-full h-full">
             <div className="text-[28px] text-center text-white leading-[36px] font-bold">
@@ -207,7 +277,7 @@ export default function Works() {
             </div>
           </div>
         </div>
-        <div className="w-[465px] hover:scale-[1.05] transition-all relative">
+        <div className="w-[32%] hover:scale-[1.05] transition-all relative">
           <img src={work3} className="block  w-full" />
           <div className="absolute top-[62px] left-0 w-full h-full">
             <div className="text-[28px] text-center text-white leading-[36px] font-bold">

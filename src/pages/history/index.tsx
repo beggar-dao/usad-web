@@ -133,10 +133,10 @@ export default function History() {
   };
   return (
     <PageAnimate>
-      <div className="history relative overflow-hidden py-[75px]">
-        <div className=" max-w-[1440px] mx-auto">
+      <div className="history relative overflow-hidden py-4 md:py-[75px]">
+        <div className="px-4 md:max-w-[1440px] mx-auto">
           {/* Header */}
-          <div className="text-center mb-8">
+          <div className="text-center hidden md:block mb-8">
             <AnimatedContent
               content="Transaction History"
               className="text-[44px] font-bold text-[#DAC89F] mb-4"
@@ -151,11 +151,11 @@ export default function History() {
           </div>
 
           {/* Main Content Container */}
-          <div className="border border-[#FFFFFF14]  py-4 rounded-[16px]">
+          <div className="border overflow-hidden  border-[#FFFFFF14]  md:py-4 rounded-[16px]">
             {/* Filter Tabs and Search */}
-            <div className="flex px-[40px] justify-between mb-[20px] gap-6">
+            <div className="flex flex-col md:flex-row px-4 md:px-[40px] md:justify-between mb-[20px] gap-6">
               {/* Filter Tabs */}
-              <div className="flex flex-1 gap-2">
+              <div className="flex flex-nowrap overflow-auto md:flex-1 gap-2">
                 {[
                   { key: 'all', label: 'All Transactions' },
                   { key: 'pending', label: 'Pending' },
@@ -179,7 +179,7 @@ export default function History() {
               </div>
 
               {/* Search */}
-              <div className="relative w-[245px] flex items-center">
+              <div className="relative flex w-full md:w-[245px] items-center">
                 <FiSearch className="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" />
                 <input
                   type="text"
@@ -191,50 +191,54 @@ export default function History() {
               </div>
             </div>
 
-            {/* Table Header */}
-            <div className="bg-[#22201A99] mb-[18px] px-[40px] h-[48px] leading-[48px] grid grid-cols-[1.5fr_1.5fr_1.5fr_1.5fr_1.5fr_1fr] text-sm font-bold text-[#FFFFFF66]">
-              <div>Date</div>
-              <div>Transaction Hash</div>
-              <div>From</div>
-              <div>To</div>
-              <div>Amount</div>
-              <div>Status</div>
-            </div>
-
-            {/* Transaction List */}
-            <div className="">
-              {allTransactions.map((tx) => (
-                <div
-                  key={tx.id}
-                  className="grid grid-cols-[1.5fr_1.5fr_1.5fr_1.5fr_1.5fr_1fr] items-center hover:bg-[#22201A99] transition-all px-[40px] h-[56px] leading-[56px]"
-                >
-                  <div className="text-white text-sm">{tx.timestamp}</div>
-                  <div className="flex items-center ">
-                    <span className="text-sm font-mono">{tx.txHash}</span>
-                    <FiCopy className="w-4 h-4 ml-4 cursor-pointer text-[#FFFFFF66]" />
-                  </div>
-                  <div className="text-white text-base flex items-center">
-                    <div className="w-5 h-5 bg-[#1B4ED9] rounded-full mr-[10px]"></div>
-                    {tx.from}
-                  </div>
-                  <div className="text-white text-base  flex items-center">
-                    <div className="w-5 h-5 bg-[#54AD01] rounded-full mr-[10px]"></div>
-                    {tx.to}
-                  </div>
-                  <div className="text-base text-white font-[200]">
-                    {tx.toAmount}
-                  </div>
-                  <div>
-                    <div
-                      className={`text-xs inline-block h-8 leading-8 rounded-[4px] px-6 bg-[#5B7B5F1F] ${getStatusColor(
-                        tx.status,
-                      )}`}
-                    >
-                      {tx.status}
-                    </div>
-                  </div>
+            <div className="w-full overflow-auto">
+              <div className="w-[1000px] md:w-auto">
+                {/* Table Header */}
+                <div className="bg-[#22201A99] whitespace-nowrap mb-[18px] px-[40px] h-[48px] leading-[48px] grid grid-cols-[1.5fr_1.5fr_1.5fr_1.5fr_1.5fr_1fr] text-sm font-bold text-[#FFFFFF66]">
+                  <div>Date</div>
+                  <div>Transaction Hash</div>
+                  <div>From</div>
+                  <div>To</div>
+                  <div>Amount</div>
+                  <div>Status</div>
                 </div>
-              ))}
+
+                {/* Transaction List */}
+                <div className="">
+                  {allTransactions.map((tx) => (
+                    <div
+                      key={tx.id}
+                      className="grid grid-cols-[1.5fr_1.5fr_1.5fr_1.5fr_1.5fr_1fr] items-center hover:bg-[#22201A99] transition-all px-[40px] h-[56px] leading-[56px]"
+                    >
+                      <div className="text-white text-sm">{tx.timestamp}</div>
+                      <div className="flex items-center ">
+                        <span className="text-sm font-mono">{tx.txHash}</span>
+                        <FiCopy className="w-4 h-4 ml-4 cursor-pointer text-[#FFFFFF66]" />
+                      </div>
+                      <div className="text-white text-base flex items-center">
+                        <div className="w-5 h-5 bg-[#1B4ED9] rounded-full mr-[10px]"></div>
+                        {tx.from}
+                      </div>
+                      <div className="text-white text-base  flex items-center">
+                        <div className="w-5 h-5 bg-[#54AD01] rounded-full mr-[10px]"></div>
+                        {tx.to}
+                      </div>
+                      <div className="text-base text-white font-[200]">
+                        {tx.toAmount}
+                      </div>
+                      <div>
+                        <div
+                          className={`text-xs inline-block h-8 leading-8 rounded-[4px] px-6 bg-[#5B7B5F1F] ${getStatusColor(
+                            tx.status,
+                          )}`}
+                        >
+                          {tx.status}
+                        </div>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
             </div>
           </div>
         </div>

@@ -23,9 +23,6 @@ importers:
       country-state-city:
         specifier: ^3.2.1
         version: 3.2.1
-      swiper:
-        specifier: ^11.2.10
-        version: 11.2.10
     devDependencies:
       '@rainbow-me/rainbowkit':
         specifier: ^2.2.8
@@ -69,6 +66,9 @@ importers:
       react-icons:
         specifier: ^5.5.0
         version: 5.5.0(react@18.3.1)
+      swiper:
+        specifier: ^11.2.10
+        version: 11.2.10
       tailwindcss:
         specifier: ^3
         version: 3.4.17

@@ -22,20 +22,20 @@ export default function Mint() {
   ];
   return (
     <PageAnimate>
-      <div className="my-mint  pt-[133px] pb-[170px]">
-        <div className="max-w-[1440px] m-auto flex justify-between ">
-          <div className="flex-1">
+      <div className="my-mint pt-6 pb-8 md:pt-[133px] md:pb-[170px]">
+        <div className="px-4 md:max-w-[1440px] m-auto flex gap-6 flex-col md:flex-row justify-between ">
+          <div className="flex-1 pr-10">
             <AnimatedContent
               content="Recharge local fiat currency to buy cryptocurrency"
-              className="text-[32px] text-[#dac89f] leading-[48px] font-bold mb-[10px]"
+              className="text-[16px] md:text-[32px] text-[#dac89f] leading-6 md:leading-[48px] font-bold mb-[10px]"
               animateClassName="animate__slideInDown"
             ></AnimatedContent>
             <AnimatedContent
               content="Recharge funds through a bank account and then use the cash balance to buy USAD."
-              className=" leading-6 text-sm text-[#FFFFFFA6]"
+              className="leading-6 text-xs md:text-sm text-[#FFFFFFA6]"
               animateClassName="animate__slideInUp"
             ></AnimatedContent>
-            <img src={mint} className="block w-[557px]" />
+            <img src={mint} className="hidden md:block w-[557px]" />
           </div>
           <ConfigProvider
             theme={{
@@ -60,7 +60,7 @@ export default function Mint() {
               style={{
                 background: `linear-gradient(180deg, #0D0D0D 0%, #0D0D0C 100%)`,
               }}
-              className="w-[560px] px-[32px] rounded-[24px] border border-[#DAC89F33]"
+              className="w-full md:w-[560px] px-4 md:px-[32px] rounded-[24px] border border-[#DAC89F33]"
             >
               <div className="flex items-center mb-6">
                 <div
@@ -88,14 +88,14 @@ export default function Mint() {
                   Sell
                 </div>
               </div>
-              <div className=" rounded-[12px] bg-[#FFFFFF08] py-5 px-6">
+              <div className=" rounded-[12px] bg-[#FFFFFF08] py-3 md:py-5 px-3 md:px-6">
                 <div className="text-[14px] text-[#FFFFFFD9] leading-[26px]">
                   You will pay
                 </div>
                 <div className="flex mt-3 items-center justify-between">
                   <input
                     placeholder="0.00"
-                    className="bg-transparent flex-1 outline-none text-[#fff] text-[32px] leading-[42px]"
+                    className="bg-transparent w-[160px] md:w-auto flex-1 outline-none text-[#fff] text-[32px] leading-[42px]"
                   />
                   <Select
                     className="flex-1 h-[48px] flex items-center select_cc my-select"
@@ -158,14 +158,14 @@ export default function Mint() {
                   ></Select>
                 </div>
               </div>
-              <div className="mt-7 rounded-[12px] bg-[#FFFFFF08] py-5 px-6">
+              <div className="mt-7 rounded-[12px] bg-[#FFFFFF08] py-3 md:py-5 px-3 md:px-6">
                 <div className="text-[14px] text-[#FFFFFFD9] leading-[26px]">
                   You receive
                 </div>
                 <div className="flex mt-3 items-center justify-between">
                   <input
                     placeholder="0.00"
-                    className="bg-transparent flex-1 outline-none text-[#fff] text-[32px] leading-[42px]"
+                    className="bg-transparent w-[160px] md:w-auto flex-1 outline-none text-[#fff] text-[32px] leading-[42px]"
                   />
                   <Select
                     className="flex-1 h-[48px] flex items-center select_cc1 my-select"

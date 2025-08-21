@@ -19,6 +19,20 @@ body,
   animation-iteration-count: infinite;
 }
 
+@media (min-width: 768px) {
+  .md\:max-w-\[1440px\] {
+    max-width: 1600px !important;
+    padding-left: 80px !important;
+    padding-right: 80px !important;
+  }
+}
+
+.max-w-\[1440px\] {
+  max-width: 1600px !important;
+  padding-left: 80px !important;
+  padding-right: 80px !important;
+}
+
 /* 粒子动画定义 */
 @keyframes float {
   0% {
