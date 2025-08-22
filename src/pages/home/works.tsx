@@ -76,7 +76,7 @@ export default function Works() {
             Total Supply
           </div>
           <div className="text-[20px] md:text-[28px] leading-[48px] text-[#DAC89F] font-bold">
-            <AnimatedNumber value={94.49} duration={1000} />T
+            <AnimatedNumber value={94} duration={1000} /> Trillions
           </div>
         </div>
         <div className="md:border-r md:border-r-[#FFFFFF14] h-[88px] flex flex-col md:items-center justify-center">
@@ -103,14 +103,14 @@ export default function Works() {
             3-5 seconds
           </div>
         </div>
-        <div className="h-[88px] flex flex-col md:items-end justify-center">
+        {/* <div className="h-[88px] flex flex-col md:items-end justify-center">
           <div className="text-[14px] leading-[22px] text-white">
             Transaction Speed
           </div>
           <div className="text-[20px] md:text-[28px] leading-[48px] text-[#DAC89F] font-bold">
             <AnimatedNumber value={100} duration={1000} />%
           </div>
-        </div>
+        </div> */}
       </div>
       <div className="max-w-[1440px] hidden md:block m-auto mt-[66px] text-sm text-[#fff] leading-[22px]">
         Backing Assets

@@ -18,7 +18,7 @@ const faqData = [
   {
     question: 'How is the value of USAD maintained?',
     answer:
-      'USAD maintains its $1 peg through over-collateralization with a diversified basket of assets and an automated system that adjusts supply based on market demand.',
+      'USAD maintains its $1 peg through over-collateralization with a diversified basket of assets and an automated system that adjusts circulation based on market demand.',
   },
   {
     question: 'Can I redeem USAD for fiat currency?',
