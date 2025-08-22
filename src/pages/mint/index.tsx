@@ -230,7 +230,7 @@ export default function Mint() {
               <div className="mt-8 text-white text-sm">Pay</div>
               <Select
                 className="flex-1 mt-[10px] rounded-lg h-[48px] flex items-center border border-[#DAC89F1F] select_cc2 my-select"
-                value={selectedCurrency2}
+                value={selectedCurrency}
                 suffixIcon={
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -249,12 +249,12 @@ export default function Mint() {
                   <div className="flex items-center">
                     <img
                       src={
-                        coinArr.find((coin) => coin.value === selectedCurrency2)
+                        coinArr.find((coin) => coin.value === selectedCurrency)
                           ?.img || ''
                       }
                       className="w-[22px] h-[22px] object-contain bg-[#000] rounded-full mr-2"
                     />
-                    {selectedCurrency2}
+                    {selectedCurrency}
                   </div>
                 )}
                 getPopupContainer={() => document.querySelector('.select_cc2')}
@@ -264,7 +264,14 @@ export default function Mint() {
                 options={[
                   // { value: 'USAD', label: 'USAD' },
                   // { value: 'USDT', label: 'USDT' },
-                  { value: 'GBPC', label: 'GBPC', img: gbpc_coin },
+                  {
+                    value: selectedCurrency,
+                    label: selectedCurrency,
+                    img:
+                      coinArr.find((coin) => coin.value === selectedCurrency)
+                        ?.img || '',
+                  },
+                  // { value: 'GBPC', label: 'GBPC', img: gbpc_coin },
                 ].map((item) => ({
                   label: (
                     <div className="flex items-center">

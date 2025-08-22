@@ -110,53 +110,54 @@ export default function What() {
       <AnimatedContent
         content="USAD addresses the flaws of traditional stablecoins with a transparent,
         decentralized, and asset-backed approach. <br /> Unlike other
-        stablecoins, USAD features a fixed supply of 94.49T,
+        stablecoins, USAD features a fixed supply of 94.49 Trillion,
         over-collateralization, and community governance through a DAO."
         className="text-sm md:text-[16px] mt-4 md:mt-[30px] text-left text-white md:text-center leading-5 md:leading-[26px]"
         animateClassName="animate__slideInUp"
       ></AnimatedContent>
       <div className="md:max-w-[1440px] m-auto grid grid-cols-2 gap-4 md:gap-0 md:grid-cols-4 mt-[36px] md:mt-[72px]">
-        <div className="md:border-r md:border-r-[#FFFFFF14] md:h-[106px] flex  justify-start">
+        <div className="md:border-r md:border-r-[#FFFFFF14] px-2 flex  justify-start">
           <div>
             <img src={right} className="w-8 h-8 block" />
             <div className="text-base md:text-[24px] leading-6 md:leading-[48px] text-[#DAC89F] font-bold">
               Decentralized Governance
             </div>
             <div className="text-xs md:text-[16px] leading-[22px] font-[200] text-white">
-              Community-driven decision making
+              Community-driven decision making enables financial equity
             </div>
           </div>
         </div>
-        <div className="h-[106px]  md:hidden  justify-end">
+        <div className=" px-2  md:hidden  justify-end">
           <div>
             <img src={right} className="w-8 h-8 block" />
             <div className="text-base md:text-[24px] leading-6 md:leading-[48px] text-[#DAC89F] font-bold">
               On-Chain Transparency
             </div>
             <div className="text-xs md:text-[16px] leading-[22px] font-[200] text-white">
-              Real-time auditability
+              Real-time auditability provides real trust
             </div>
           </div>
         </div>
-        <div className="md:border-r md:border-r-[#FFFFFF14]  md:h-[106px] flex  md:justify-center">
+        <div className="md:border-r md:border-r-[#FFFFFF14] px-2   flex  md:justify-center">
           <div>
             <img src={right} className="w-8 h-8 block" />
             <div className="text-base md:text-[24px] leading-6 md:leading-[48px] text-[#DAC89F] font-bold">
               Fixed Supply
             </div>
             <div className="text-xs md:text-[16px] leading-[22px] font-[200] text-white">
-              94.49T total tokens
+              94.49 trillion total supply equivalent to the M2 of the 4 biggest
+              countries in the world
             </div>
           </div>
         </div>
-        <div className="md:border-r md:border-r-[#FFFFFF14]  md:h-[106px] flex md:justify-center">
+        <div className="md:border-r md:border-r-[#FFFFFF14] px-2  flex md:justify-center">
           <div>
             <img src={right} className="w-8 h-8 block" />
             <div className="text-base md:text-[24px] leading-6 md:leading-[48px] text-[#DAC89F] font-bold">
               Over-Collateralized
             </div>
             <div className="text-xs md:text-[16px] leading-[22px] font-[200] text-white">
-              137% reserve ratio
+              137% reserve ratio ensures your assets safety
             </div>
           </div>
         </div>
@@ -167,7 +168,7 @@ export default function What() {
               On-Chain Transparency
             </div>
             <div className="text-xs md:text-[16px] leading-[22px] font-[200] text-white">
-              Real-time auditability
+              Real-time auditability provides real trust
             </div>
           </div>
         </div>

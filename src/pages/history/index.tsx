@@ -1,9 +1,21 @@
+import btc_coin from '@/assets/images/btc_coin.png';
+import eth_coin from '@/assets/images/eth_coin.png';
+import gbpc_coin from '@/assets/images/gbpc_coin.png';
+import usad_coin from '@/assets/images/usad_coin.png';
+import usdt_coin from '@/assets/images/usdt_coin.png';
 import AnimatedContent from '@/components/Animate';
 import PageAnimate from '@/components/pageAnimate';
 import { ConfigProvider, Pagination } from 'antd';
 import { useState } from 'react';
 import { FiCopy, FiSearch } from 'react-icons/fi';
 
+const coinIcon = {
+  btc: btc_coin,
+  eth: eth_coin,
+  usdt: usdt_coin,
+  gbpc: gbpc_coin,
+  usad: usad_coin,
+};
 export default function History() {
   const [searchTerm, setSearchTerm] = useState('');
   const [activeFilter, setActiveFilter] = useState('all');
@@ -20,108 +32,46 @@ export default function History() {
         return 'text-gray-400';
     }
   };
+
+  const formatNumber = (num: number) => {
+    return new Intl.NumberFormat('en-US', {
+      minimumFractionDigits: 2,
+      maximumFractionDigits: 2,
+    }).format(num);
+  };
+
+  const generateMockTransactions = (count: number) => {
+    return Array.from({ length: count }, (_, index) => {
+      // 生成随机交易哈希
+      const generateRandomTxHash = () => {
+        const randomHex = () => Math.floor(Math.random() * 16).toString(16);
+        let hash = '';
+        for (let i = 0; i < 32; i++) {
+          hash += randomHex();
+        }
+        return `0x${hash.substring(0, 4)}...${hash.substring(28)}`;
+      };
+      const coin = ['btc', 'udst', 'gbpc', 'usdt', 'eth'];
+
+      return {
+        id: `${index + 1}`,
+        type: 'Mint',
+        from: coin[Math.floor(Math.random() * 5)],
+        to: 'USAD',
+        fromAmount: `${(Math.random() * 10000).toFixed(2)}`,
+        toAmount: formatNumber(Math.random() * 10000),
+        timestamp: new Date(
+          Date.now() - Math.floor(Math.random() * 30 * 24 * 60 * 60 * 1000),
+        ).toLocaleString(),
+        status: ['Completed', 'Pending', 'Failed'][
+          Math.floor(Math.random() * 3)
+        ],
+        txHash: generateRandomTxHash(), // 使用生成的随机哈希
+      };
+    });
+  };
   // Mock transaction data
-  const allTransactions = [
-    {
-      id: '1',
-      type: 'Mint',
-      from: 'GBPC',
-      to: 'USAD',
-      fromAmount: '1,000',
-      toAmount: '1,080',
-      timestamp: '2025-01-15 14:30',
-      status: 'Completed',
-      txHash: '0x754c...2d96',
-    },
-    {
-      id: '2',
-      type: 'Mint',
-      from: 'GBPC',
-      to: 'USAD',
-      fromAmount: '1,000',
-      toAmount: '23123.232',
-      timestamp: '2025-01-14 14:30',
-      status: 'Completed',
-      txHash: '0x754c...2d96',
-    },
-    {
-      id: '3',
-      type: 'Mint',
-      from: 'GBPC',
-      to: 'USAD',
-      fromAmount: '1,000',
-      toAmount: '1,080',
-      timestamp: '2025-01-13 14:30',
-      status: 'Completed',
-      txHash: '0x754c...2d96',
-    },
-    {
-      id: '4',
-      type: 'Mint',
-      from: 'GBPC',
-      to: 'USAD',
-      fromAmount: '1,000',
-      toAmount: '1,080',
-      timestamp: '2025-01-12 14:30',
-      status: 'Completed',
-      txHash: '0x754c...2d96',
-    },
-    {
-      id: '5',
-      type: 'Mint',
-      from: 'GBPC',
-      to: 'USAD',
-      fromAmount: '1,000',
-      toAmount: '23123.232',
-      timestamp: '2025-01-11 14:30',
-      status: 'Completed',
-      txHash: '0x754c...2d96',
-    },
-    {
-      id: '6',
-      type: 'Mint',
-      from: 'GBPC',
-      to: 'USAD',
-      fromAmount: '12,000',
-      toAmount: '23123.2120',
-      timestamp: '2025-01-15 14:30',
-      status: 'Completed',
-      txHash: '0x754c...2d96',
-    },
-    {
-      id: '7',
-      type: 'Mint',
-      from: 'GBPC',
-      to: 'USAD',
-      fromAmount: '1,000',
-      toAmount: '1,080',
-      timestamp: '2025-01-09 14:30',
-      status: 'Completed',
-      txHash: '0x754c...2d96',
-    },
-    {
-      id: '8',
-      type: 'Mint',
-      from: 'GBPC',
-      to: 'USAD',
-      fromAmount: '1,000',
-      toAmount: '1,080',
-      timestamp: '2025-01-08 14:30',
-      status: 'Completed',
-      txHash: '0x754c...2d96',
-    },
-    {
-      id: '9',
-      type: 'Mint',
-      from: 'GBPC',
-      to: 'USAD',
-      fromAmount: '1,000',
-      toAmount: '1,080',
-      timestamp: '2025-01-07 14:30',
-      status: 'Completed',
-      txHash: '0x754c...2d96',
-    },
-  ];
+  const allTransactions = generateMockTransactions(10);
   const itemRender = (_, type, originalElement) => {
     if (type === 'prev') {
       return <a>Previous</a>;
@@ -131,6 +81,7 @@ export default function History() {
     }
     return originalElement;
   };
+
   return (
     <PageAnimate>
       <div className="history relative overflow-hidden py-4 md:py-[75px]">
@@ -216,11 +167,18 @@ export default function History() {
                         <FiCopy className="w-4 h-4 ml-4 cursor-pointer text-[#FFFFFF66]" />
                       </div>
                       <div className="text-white text-base flex items-center">
-                        <div className="w-5 h-5 bg-[#1B4ED9] rounded-full mr-[10px]"></div>
-                        {tx.from}
+                        <img
+                          src={coinIcon[tx.from]}
+                          className="w-5 h-5 bg-[#1B4ED9] rounded-full mr-[10px]"
+                        />
+
+                        {tx.from.toUpperCase()}
                       </div>
                       <div className="text-white text-base  flex items-center">
-                        <div className="w-5 h-5 bg-[#54AD01] rounded-full mr-[10px]"></div>
+                        <img
+                          src={usad_coin}
+                          className="w-5 h-5 bg-[#54AD01] rounded-full mr-[10px]"
+                        />
                         {tx.to}
                       </div>
                       <div className="text-base text-white font-[200]">

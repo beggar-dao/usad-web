@@ -10,7 +10,7 @@ export default function Header() {
       path: '/',
     },
     {
-      name: 'Mint',
+      name: 'Circulate',
       path: '/mint',
     },
     {

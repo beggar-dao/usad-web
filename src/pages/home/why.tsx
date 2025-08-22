@@ -220,7 +220,7 @@ export default function Why() {
                     Fixed Supply Model
                   </div>
                   <div className="text-xs mt-1 text-[#FFFFFF73] leading-[22px]">
-                    94.49T total tokens with no inflationary issuance.
+                    94.49 Trillion total tokens with no inflationary issuance.
                   </div>
                 </div>
               </div>
@@ -274,7 +274,7 @@ export default function Why() {
                     Fixed Supply Model
                   </div>
                   <div className="text-xs mt-1 text-[#FFFFFF73] leading-[22px]">
-                    94.49T total tokens with no inflationary issuance.
+                    94.49 Trillion total tokens with no inflationary issuance.
                   </div>
                 </div>
               </div>
@@ -331,7 +331,7 @@ export default function Why() {
                 Fixed Supply Model
               </div>
               <div className="text-sm mt-1 text-[#FFFFFF73] leading-[22px]">
-                94.49T total tokens with no inflationary issuance.
+                94.49 Trillion total tokens with no inflationary issuance.
               </div>
             </div>
           </div>
@@ -383,7 +383,7 @@ export default function Why() {
                 Fixed Supply Model
               </div>
               <div className="text-sm mt-1 text-[#FFFFFF73] leading-[22px]">
-                94.49T total tokens with no inflationary issuance.
+                94.49 Trillion total tokens with no inflationary issuance.
               </div>
             </div>
           </div>

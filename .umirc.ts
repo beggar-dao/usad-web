@@ -8,7 +8,8 @@ export default defineConfig({
   request: {
     dataField: 'data', // Configure dataField for useRequest to directly consume response.data
   },
-
+  title: 'USAD',
+  favicons: ['/favicon.png'],
   // Define environment variables that should be available in the browser
   define: {
     'process.env.UMI_APP_API_BASE_URL': process.env.UMI_APP_API_BASE_URL || '',

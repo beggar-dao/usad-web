@@ -230,22 +230,22 @@ export default function Banner() {
               <div className="text-[#FFFFFF73] text-xs md:text-sm mb-1">
                 Market Cap
               </div>
-              <div className="font-bold text-xs md:text-[18px] text-[#DAC89F]">
-                $94.4927T
+              <div className="font-bold text-xs md:text-[16px] text-[#DAC89F]">
+                94.4927 Trillion
               </div>
             </div>
             <div className="bg-[#FFFFFF12] p-2 md:p-5 rounded-lg">
               <div className="text-[#FFFFFF73] text-sm mb-1">Total Supply</div>
-              <div className="font-bold text-xs md:text-[18px] text-[#DAC89F]">
-                94.4927T
+              <div className="font-bold text-xs md:text-[16px] text-[#DAC89F]">
+                94.4927 Trillion
               </div>
             </div>
             <div className="bg-[#FFFFFF12] p-2 md:p-5 rounded-lg">
               <div className="text-[#FFFFFF73] text-xs md:text-sm mb-1">
-                On Circulated
+                In Circulated
               </div>
-              <div className="font-bold text-xs md:text-[18px] text-[#DAC89F]">
-                94.4927T
+              <div className="font-bold text-xs md:text-[16px] text-[#DAC89F]">
+                19.8985 Trillion
               </div>
             </div>
           </div>

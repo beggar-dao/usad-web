@@ -5,7 +5,7 @@ export default function Footer() {
   return (
     <footer className="bg-primary text-white pt-8 md:pt-16 pb-8">
       <div className="px-4 md:max-w-[1440px] mx-auto ">
-        <div className="grid grid-cols-2 md:grid-cols-2  gap-8 mb-12">
+        <div className="grid grid-cols-2 md:grid-cols-4  gap-8 mb-12">
           <div>
             <div className="text-2xl font-bold mb-6">
               <img src={logo} className="h-[28px] md:h-[40px]" alt="" />
