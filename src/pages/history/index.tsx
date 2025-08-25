@@ -99,6 +99,45 @@ export default function History() {
           name="description"
           content="Track USAD history on Pathenom. See recent mints, supply changes, and records over time. Verify activity and use data exports to follow updates confidently."
         />
+        <script type="application/ld+json">
+          {`{
+            "@context": "https://schema.org",
+            "@graph": [
+              {
+                "@type": "WebPage",
+                "@id": "https://pathenom.com/history#webpage",
+                "url": "https://pathenom.com/history",
+                "name": "USAD History on Pathenom | Supply and Records",
+                "description": "Track USAD history on Pathenom. See recent mints and supply changes with time records. Use this page to follow updates and verify on chain activity.",
+                "isPartOf": { "@id": "https://pathenom.com/#website" },
+                "inLanguage": "en"
+              },
+              {
+                "@type": "BreadcrumbList",
+                "@id": "https://pathenom.com/history#breadcrumb",
+                "itemListElement": [
+                  { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://pathenom.com/" },
+                  { "@type": "ListItem", "position": 2, "name": "History", "item": "https://pathenom.com/history" }
+                ]
+              },
+              {
+                "@type": "Dataset",
+                "name": "USAD Minting and Supply History",
+                "description": "A dataset of USAD mint transactions and supply changes recorded on Pathenom.",
+                "url": "https://pathenom.com/history",
+                "creator": { "@type": "Organization", "name": "Pathenom" },
+                "distribution": [
+                  {
+                    "@type": "DataDownload",
+                    "encodingFormat": "text/html",
+                    "contentUrl": "https://pathenom.com/history"
+                  }
+                ],
+                "license": "https://opensource.org/licenses/MIT"
+              }
+            ]
+          }`}
+        </script>
       </Helmet>
       <div className="history relative overflow-hidden py-4 md:py-[75px]">
         <div className="px-4 md:max-w-[1440px] mx-auto">

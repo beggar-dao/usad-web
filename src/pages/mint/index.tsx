@@ -30,6 +30,53 @@ export default function Mint() {
           name="description"
           content="Mint USAD on Pathenom in a few steps. Connect your wallet, set the amount, review fees and limits, then confirm. Tips for faster support and safer transactions."
         />
+        <script type="application/ld+json">
+          {`{
+            "@context": "https://schema.org",
+            "@graph": [
+              {
+                "@type": "WebPage",
+                "@id": "https://pathenom.com/mint#webpage",
+                "url": "https://pathenom.com/mint",
+                "name": "Mint USAD on Pathenom | Quick Start Guide",
+                "description": "Mint USAD on Pathenom in a few steps. Connect a wallet, set the amount, review fees and limits, then confirm. Tips for safety and faster issue resolution.",
+                "isPartOf": { "@id": "https://pathenom.com/#website" },
+                "inLanguage": "en"
+              },
+              {
+                "@type": "BreadcrumbList",
+                "@id": "https://pathenom.com/mint#breadcrumb",
+                "itemListElement": [
+                  { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://pathenom.com/" },
+                  { "@type": "ListItem", "position": 2, "name": "Mint", "item": "https://pathenom.com/mint" }
+                ]
+              },
+              {
+                "@type": "HowTo",
+                "name": "How to Mint USAD on Pathenom",
+                "description": "A step-by-step guide to minting USAD on Pathenom.",
+                "totalTime": "PT2M",
+                "step": [
+                  {
+                    "@type": "HowToStep",
+                    "name": "Connect Wallet",
+                    "text": "Connect your compatible wallet to Pathenom.com."
+                  },
+                  {
+                    "@type": "HowToStep",
+                    "name": "Set Mint Amount",
+                    "text": "Enter the amount of USAD you want to mint."
+                  },
+                  {
+                    "@type": "HowToStep",
+                    "name": "Review and Confirm",
+                    "text": "Review fees, limits, and confirm the mint transaction."
+                  }
+                ]
+              }
+            ]
+          }`}
+        </script>
       </Helmet>
       <div className="my-mint pt-6 pb-8 md:pt-[133px] md:pb-[170px]">
         <div className="px-4 md:max-w-[1440px] m-auto flex gap-6 flex-col md:flex-row justify-between ">
