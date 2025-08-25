@@ -7,7 +7,7 @@ import AnimatedContent from '@/components/Animate';
 import PageAnimate from '@/components/pageAnimate';
 import { Helmet } from '@umijs/max';
 import { ConfigProvider, Pagination } from 'antd';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { FiCopy, FiSearch } from 'react-icons/fi';
 
 const coinIcon = {
@@ -17,23 +17,11 @@ const coinIcon = {
   gbpc: gbpc_coin,
   usad: usad_coin,
 };
+
 export default function History() {
   const [searchTerm, setSearchTerm] = useState('');
-  const [activeFilter, setActiveFilter] = useState('all');
-
-  const getStatusColor = (status: string) => {
-    switch (status) {
-      case 'Completed':
-        return 'text-green-400';
-      case 'Pending':
-        return 'text-yellow-400';
-      case 'Failed':
-        return 'text-red-400';
-      default:
-        return 'text-gray-400';
-    }
-  };
-
+  const [activeFilter, setActiveFilter] = useState('All');
+  const [allTransactions, setAllTransactions] = useState<any[]>([]);
   const formatNumber = (num: number) => {
     return new Intl.NumberFormat('en-US', {
       minimumFractionDigits: 2,
@@ -52,7 +40,7 @@ export default function History() {
         }
         return `0x${hash.substring(0, 4)}...${hash.substring(28)}`;
       };
-      const coin = ['btc', 'udst', 'gbpc', 'usdt', 'eth'];
+      const coin = ['btc', 'usdt', 'gbpc', 'usdt', 'eth'];
 
       return {
         id: `${index + 1}`,
@@ -64,15 +52,34 @@ export default function History() {
         timestamp: new Date(
           Date.now() - Math.floor(Math.random() * 30 * 24 * 60 * 60 * 1000),
         ).toLocaleString(),
-        status: ['Completed', 'Pending', 'Failed'][
-          Math.floor(Math.random() * 3)
-        ],
+        status:
+          activeFilter === 'All'
+            ? ['Completed', 'Pending', 'Failed'][Math.floor(Math.random() * 3)]
+            : activeFilter,
         txHash: generateRandomTxHash(), // 使用生成的随机哈希
       };
     });
   };
+
+  useEffect(() => {
+    setAllTransactions(generateMockTransactions(10));
+  }, [activeFilter]);
+
+  const getStatusColor = (status: string) => {
+    switch (status) {
+      case 'Completed':
+        return 'text-green-400';
+      case 'Pending':
+        return 'text-yellow-400';
+      case 'Failed':
+        return 'text-red-400';
+      default:
+        return 'text-gray-400';
+    }
+  };
+
   // Mock transaction data
-  const allTransactions = generateMockTransactions(10);
+  // const allTransactions = generateMockTransactions(10);
   const itemRender = (_, type, originalElement) => {
     if (type === 'prev') {
       return <a>Previous</a>;
@@ -117,10 +124,10 @@ export default function History() {
               {/* Filter Tabs */}
               <div className="flex flex-nowrap overflow-auto md:flex-1 gap-2">
                 {[
-                  { key: 'all', label: 'All Transactions' },
-                  { key: 'pending', label: 'Pending' },
-                  { key: 'completed', label: 'Completed' },
-                  { key: 'failed', label: 'Failed' },
+                  { key: 'All', label: 'All Transactions' },
+                  { key: 'Pending', label: 'Pending' },
+                  { key: 'Completed', label: 'Completed' },
+                  { key: 'Failed', label: 'Failed' },
                 ].map((filter) => (
                   <button
                     key={filter.key}
@@ -227,6 +234,9 @@ export default function History() {
               className="my-page select-none"
               total={50}
               itemRender={itemRender}
+              onChange={() => {
+                setAllTransactions(generateMockTransactions(10));
+              }}
               showSizeChanger={false}
             />
           </ConfigProvider>

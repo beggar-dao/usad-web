@@ -90,7 +90,10 @@ export default function What() {
             Designed for global use, enabling seamless transactions across
             borders and financial systems.
           </div>
-          <img src={what1_1} className="block mt-8 w-full m-auto" />
+          <img
+            src={what1_1}
+            className="block max-w-[320px] mt-8 w-full m-auto"
+          />
         </div>
         <div className="wt2_bg hover:scale-[1.05] transition-all   px-[40px] py-[56px]">
           <div className="text-[#DAC89F] line-clamp-1 text-[28px] font-bold leading-[36px]">
@@ -100,7 +103,10 @@ export default function What() {
             Each token is backed by a diversified basket of real-world assets,
             ensuring stability and trust.
           </div>
-          <img src={what2_2} className="block mt-8 w-full m-auto" />
+          <img
+            src={what2_2}
+            className="block max-w-[320px] mt-8 w-full m-auto"
+          />
         </div>
         <div className="wt3_bg hover:scale-[1.05] transition-all  px-[40px] py-[56px]">
           <div className="text-[#DAC89F] text-[28px] line-clamp-1 font-bold leading-[36px]">
@@ -110,7 +116,10 @@ export default function What() {
             Built on TOK Chain for enhanced security, transparency, and
             decentralized governance.
           </div>
-          <img src={what3_3} className="block mt-8 w-full m-auto" />
+          <img
+            src={what3_3}
+            className="block max-w-[320px] mt-8 w-full m-auto"
+          />
         </div>
       </div>
 
@@ -129,7 +138,7 @@ export default function What() {
         animateClassName="animate__slideInUp"
       ></AnimatedContent>
       <div className="md:max-w-[1440px] m-auto grid grid-cols-2 gap-4 md:gap-0 md:grid-cols-4 mt-[36px] md:mt-[72px]">
-        <div className="md:border-r md:border-r-[#FFFFFF14] px-2 flex  justify-start">
+        <div className="md:border-r md:border-r-[#FFFFFF14] px-2 md:px-[30px] flex  justify-start">
           <div>
             <img src={right} className="w-8 h-8 block" />
             <div className="text-base md:text-[24px] leading-6 md:leading-[48px] text-[#DAC89F] font-bold">
@@ -140,7 +149,7 @@ export default function What() {
             </div>
           </div>
         </div>
-        <div className=" px-2  md:hidden  justify-end">
+        <div className=" px-2 md:px-[30px]  md:hidden  justify-end">
           <div>
             <img src={right} className="w-8 h-8 block" />
             <div className="text-base md:text-[24px] leading-6 md:leading-[48px] text-[#DAC89F] font-bold">
@@ -151,7 +160,7 @@ export default function What() {
             </div>
           </div>
         </div>
-        <div className="md:border-r md:border-r-[#FFFFFF14] px-2   flex  md:justify-center">
+        <div className="md:border-r md:border-r-[#FFFFFF14] px-2 md:px-[30px]   flex  md:justify-center">
           <div>
             <img src={right} className="w-8 h-8 block" />
             <div className="text-base md:text-[24px] leading-6 md:leading-[48px] text-[#DAC89F] font-bold">
@@ -163,7 +172,7 @@ export default function What() {
             </div>
           </div>
         </div>
-        <div className="md:border-r md:border-r-[#FFFFFF14] px-2  flex md:justify-center">
+        <div className="md:border-r md:border-r-[#FFFFFF14] px-2 md:px-[30px]  flex md:justify-center">
           <div>
             <img src={right} className="w-8 h-8 block" />
             <div className="text-base md:text-[24px] leading-6 md:leading-[48px] text-[#DAC89F] font-bold">
@@ -174,7 +183,7 @@ export default function What() {
             </div>
           </div>
         </div>
-        <div className="h-[106px] hidden md:flex  justify-end">
+        <div className=" hidden md:flex  px-2 md:px-[30px]">
           <div>
             <img src={right} className="w-8 h-8 block" />
             <div className="text-base md:text-[24px] leading-6 md:leading-[48px] text-[#DAC89F] font-bold">

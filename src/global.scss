@@ -12,6 +12,20 @@ body,
   background-size: cover;
 }
 
+.swiper-pagination-bullet {
+  width: 24px;
+  height: 8px;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 6px;
+}
+
+.swiper-pagination-bullet.swiper-pagination-bullet-active {
+  width: 48px;
+  height: 8px;
+  background: #dac89f;
+  border-radius: 6px;
+}
+
 .particle {
   position: absolute;
   border-radius: 50%;
