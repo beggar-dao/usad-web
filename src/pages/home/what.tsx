@@ -1,4 +1,7 @@
 import right from '@/assets/images/right.png';
+import what1_1 from '@/assets/images/what1_1.png';
+import what2_2 from '@/assets/images/what2_2.png';
+import what3_3 from '@/assets/images/what3_3.png';
 import what4 from '@/assets/images/what4.png';
 import AnimatedContent from '@/components/Animate';
 import 'swiper/css';
@@ -8,10 +11,13 @@ import { Autoplay, Pagination } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
 export default function What() {
   return (
-    <div className="what px-4 md:px-0 pt-8 md:pt-[129px] pb-10 md:pb-[85px]">
+    <div
+      id="whatUSAD"
+      className="what px-4 md:px-0 pt-8 md:pt-[129px] pb-10 md:pb-[85px]"
+    >
       <AnimatedContent
         content="What is USAD?"
-        className="text-[26px] md:text-[52px] text-center font-bold leading-6 md:leading-[48px] text-[#dac89f]"
+        className="text-[26px]  md:text-[52px] text-center font-bold leading-6 md:leading-[48px] text-[#dac89f]"
         animateClassName="animate__slideInDown"
       ></AnimatedContent>
       <AnimatedContent
@@ -37,72 +43,79 @@ export default function What() {
           slidesPerView={1}
         >
           <SwiperSlide>
-            <div className="wt1_bg  h-[440px] px-[20px] py-[28px]">
-              <div className="text-[#DAC89F] text-[24px] font-bold leading-[20px]">
+            <div className="wt1_bg  px-[20px] py-[28px]">
+              <div className="text-[#DAC89F]  text-[24px] font-bold leading-[20px]">
                 Borderless Currency
               </div>
-              <div className="mt-3 text-[#FFFFFFA6] leading-[24px] font-[200] text-sm">
+              <div className="mt-3 text-[#FFFFFFA6] line-clamp-2 leading-[24px] font-[200] text-sm">
                 Designed for global use, enabling seamless transactions across
                 borders and financial systems.
               </div>
+              <img src={what1_1} className="block mt-4 w-full m-auto" />
             </div>
           </SwiperSlide>
           <SwiperSlide>
-            <div className="wt2_bg   h-[440px] px-[20px] py-[28px]">
+            <div className="wt2_bg  px-[20px] py-[28px]">
               <div className="text-[#DAC89F] text-[24px] font-bold leading-[20px]">
                 Asset-Backed
               </div>
-              <div className="mt-3 text-[#FFFFFFA6] leading-[24px] font-[200] text-sm">
+              <div className="mt-3 text-[#FFFFFFA6] line-clamp-2 leading-[24px] font-[200] text-sm">
                 Each token is backed by a diversified basket of real-world
                 assets, ensuring stability and trust.
               </div>
+              <img src={what2_2} className="block mt-4 w-full m-auto" />
             </div>
           </SwiperSlide>
           <SwiperSlide>
-            <div className="wt3_bg h-[440px] px-[20px] py-[28px]">
+            <div className="wt3_bg px-[20px] py-[28px]">
               <div className="text-[#DAC89F] text-[24px] font-bold leading-[20px]">
                 Web4 Technology
               </div>
-              <div className="mt-3 text-[#FFFFFFA6] leading-[24px] font-[200] text-sm">
+              <div className="mt-3 text-[#FFFFFFA6] line-clamp-2 leading-[24px] font-[200] text-sm">
                 Built on TOK Chain for enhanced security, transparency, and
                 decentralized governance.
               </div>
+              <img src={what3_3} className="block mt-4 w-full m-auto" />
             </div>
           </SwiperSlide>
         </Swiper>
       </div>
 
       <div className="px-4 hidden md:grid md:max-w-[1440px] m-auto mt-[80px] md:grid-cols-3 gap-[32px]">
-        <div className="wt1_bg hover:scale-[1.05] transition-all h-[560px] px-[40px] py-[56px]">
-          <div className="text-[#DAC89F] text-[28px] font-bold leading-[36px]">
+        <div className="wt1_bg hover:scale-[1.05] transition-all  px-[40px] py-[56px]">
+          <div className="text-[#DAC89F] line-clamp-1 text-[28px] font-bold leading-[36px]">
             Borderless Currency
           </div>
-          <div className="mt-6 text-[#FFFFFFA6] leading-[26px] font-[200] text-base">
+          <div className="mt-6 text-[#FFFFFFA6] line-clamp-2 leading-[26px] font-[200] text-base">
             Designed for global use, enabling seamless transactions across
             borders and financial systems.
           </div>
+          <img src={what1_1} className="block mt-8 w-full m-auto" />
         </div>
-        <div className="wt2_bg hover:scale-[1.05] transition-all h-[560px] px-[40px] py-[56px]">
-          <div className="text-[#DAC89F] text-[28px] font-bold leading-[36px]">
+        <div className="wt2_bg hover:scale-[1.05] transition-all   px-[40px] py-[56px]">
+          <div className="text-[#DAC89F] line-clamp-1 text-[28px] font-bold leading-[36px]">
             Asset-Backed
           </div>
-          <div className="mt-6 text-[#FFFFFFA6] leading-[26px] font-[200] text-base">
+          <div className="mt-6 text-[#FFFFFFA6] line-clamp-2 leading-[26px] font-[200] text-base">
             Each token is backed by a diversified basket of real-world assets,
             ensuring stability and trust.
           </div>
+          <img src={what2_2} className="block mt-8 w-full m-auto" />
         </div>
-        <div className="wt3_bg hover:scale-[1.05] transition-all h-[560px] px-[40px] py-[56px]">
-          <div className="text-[#DAC89F] text-[28px] font-bold leading-[36px]">
+        <div className="wt3_bg hover:scale-[1.05] transition-all  px-[40px] py-[56px]">
+          <div className="text-[#DAC89F] text-[28px] line-clamp-1 font-bold leading-[36px]">
             Web4 Technology
           </div>
-          <div className="mt-6 text-[#FFFFFFA6] leading-[26px] font-[200] text-base">
+          <div className="mt-6 text-[#FFFFFFA6] line-clamp-2 leading-[26px] font-[200] text-base">
             Built on TOK Chain for enhanced security, transparency, and
             decentralized governance.
           </div>
+          <img src={what3_3} className="block mt-8 w-full m-auto" />
         </div>
       </div>
 
       <AnimatedContent
+        id="features"
         content="Breaking Away from Traditional Models"
         className="mt-[88px] md:mt-[169px] text-[24px] md:text-[32px] text-[#DAC89F] font-bold text-left md:text-center"
         animateClassName="animate__slideInDown"

@@ -10,7 +10,7 @@ import { Autoplay, Pagination } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
 export default function News() {
   return (
-    <div className="bg-[#D6CFC7] py-[60px] md:py-[120px]">
+    <div id="news" className="bg-[#D6CFC7] py-[60px] md:py-[120px]">
       <AnimatedContent
         content="News & Updates"
         animateClassName="animate__slideInDown"
@@ -172,7 +172,7 @@ export default function News() {
           </div>
         </div>
       </div>
-      <div className="text-center text-[24px] md:text-[48px] font-bold text-black mt-[89px] md:mt-[198px]">
+      {/* <div className="text-center text-[24px] md:text-[48px] font-bold text-black mt-[89px] md:mt-[198px]">
         Join Our Community{' '}
       </div>
       <div className="text-center w-full md:w-[670px] m-auto mt-5 leading-[24px] text-[#584E4E] text-base font-normal">
@@ -184,7 +184,7 @@ export default function News() {
         <div className="text-white hover:opacity-80 transition-all text-base text-center py-3 px-[52px] bg-[#000] rounded-[48px] inline-block m-auto mt-[48px]">
           Join Discord
         </div>
-      </div>
+      </div> */}
     </div>
   );
 }

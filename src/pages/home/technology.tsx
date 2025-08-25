@@ -2,7 +2,7 @@ import AnimatedContent from '@/components/Animate';
 import technology1 from '../../assets/images/technology1.png';
 export default function technology() {
   return (
-    <div className="technology pt-[30px] md:pt-[120px]">
+    <div id="technology" className="technology pt-[30px] md:pt-[120px]">
       <AnimatedContent
         animateClassName="animate__slideInDown"
         content="Technology"

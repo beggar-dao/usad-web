@@ -1,6 +1,7 @@
 import { defineConfig } from '@umijs/max';
 
 export default defineConfig({
+  helmet: true,
   antd: {},
   access: {},
   model: {},
@@ -18,6 +19,27 @@ export default defineConfig({
     'process.env.UMI_APP_APP_ENV': process.env.UMI_APP_APP_ENV || 'development',
     'process.env.UMI_APP_DEBUG_MODE': process.env.UMI_APP_DEBUG_MODE || 'true',
   },
+  // 添加 Google Analytics 脚本
+  scripts: [
+    {
+      src: 'https://www.googletagmanager.com/gtag/js?id=G-W7429VYYMS',
+      async: true,
+    },
+    {
+      content: `
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-W7429VYYMS');
+      `,
+    },
+  ],
+  metas: [
+    {
+      name: 'google-site-verification',
+      content: 'w4G4ZzQaX5I0UnWTFgi12qq5X2yjBvllf0jlShLfKwY',
+    },
+  ],
   links: [
     {
       rel: 'stylesheet',

@@ -19,8 +19,8 @@ export default function Header() {
     },
   ];
   return (
-    <div className="border-b border-b-[#FFFFFF24]">
-      <div className="flex px-4  md:max-w-[1440px] m-auto h-[82px] items-center justify-between md:justify-normal ">
+    <div className="border-b border-b-[#FFFFFF24] ">
+      <div className="flex px-4  md:max-w-[1440px] m-auto h-[87px] items-center justify-between md:justify-normal ">
         <img
           onClick={() => history.push('/')}
           src={logo}

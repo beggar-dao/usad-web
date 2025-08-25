@@ -6,6 +6,7 @@ import usad_coin from '@/assets/images/usad_coin.png';
 import usdt_coin from '@/assets/images/usdt_coin.png';
 import AnimatedContent from '@/components/Animate';
 import PageAnimate from '@/components/pageAnimate';
+import { Helmet } from '@umijs/max';
 import { ConfigProvider, Select } from 'antd';
 import { useState } from 'react';
 export default function Mint() {
@@ -22,11 +23,19 @@ export default function Mint() {
   ];
   return (
     <PageAnimate>
+      <Helmet>
+        <title>Mint USAD on Pathenom | Quick Start Guide and Tips</title>
+        <meta name="keywords" content="USAD, Mint" />
+        <meta
+          name="description"
+          content="Mint USAD on Pathenom in a few steps. Connect your wallet, set the amount, review fees and limits, then confirm. Tips for faster support and safer transactions."
+        />
+      </Helmet>
       <div className="my-mint pt-6 pb-8 md:pt-[133px] md:pb-[170px]">
         <div className="px-4 md:max-w-[1440px] m-auto flex gap-6 flex-col md:flex-row justify-between ">
           <div className="flex-1 pr-10">
             <AnimatedContent
-              content="Recharge local fiat currency to buy cryptocurrency"
+              content="Recharge local fiat currency to <br/> buy cryptocurrency"
               className="text-[16px] md:text-[32px] text-[#dac89f] leading-6 md:leading-[48px] font-bold mb-[10px]"
               animateClassName="animate__slideInDown"
             ></AnimatedContent>
@@ -88,7 +97,7 @@ export default function Mint() {
                   Sell
                 </div>
               </div>
-              <div className=" rounded-[12px] bg-[#FFFFFF08] py-3 md:py-5 px-3 md:px-6">
+              <div className=" rounded-[12px] bg-[#FFFFFF08] py-3 md:py-5 px-3 md:px-6 pr-0 md:pr-3">
                 <div className="text-[14px] text-[#FFFFFFD9] leading-[26px]">
                   You will pay
                 </div>
@@ -158,7 +167,7 @@ export default function Mint() {
                   ></Select>
                 </div>
               </div>
-              <div className="mt-7 rounded-[12px] bg-[#FFFFFF08] py-3 md:py-5 px-3 md:px-6">
+              <div className="mt-7 rounded-[12px] bg-[#FFFFFF08] py-3 md:py-5 px-3 md:px-6 pr-0 md:pr-3">
                 <div className="text-[14px] text-[#FFFFFFD9] leading-[26px]">
                   You receive
                 </div>

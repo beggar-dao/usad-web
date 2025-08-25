@@ -1,9 +1,12 @@
 import right from '@/assets/images/right.png';
 import te1 from '@/assets/images/te1.png';
+import te10_1 from '@/assets/images/te10_1.png';
 import te2 from '@/assets/images/te2.png';
 import te3 from '@/assets/images/te3.png';
 import te4 from '@/assets/images/te4.png';
 import te5 from '@/assets/images/te5.png';
+import te9_1 from '@/assets/images/te9_1.png';
+
 import AnimatedContent from '@/components/Animate';
 import 'swiper/css';
 import 'swiper/css/autoplay';
@@ -43,7 +46,7 @@ export default function Why() {
           <SwiperSlide>
             <div className="px-[20px] py-[30px] gap-6 flex items-center justify-between rounded-[24px] transition-all duration-300 ">
               <div className="flex-1">
-                <div className="text-[#DAC89F] font-bold leading-[36px]">
+                <div className="text-[#DAC89F] font-bold leading-[36px] md:text-[28px] text-[14px]">
                   Stability
                 </div>
                 <div className="mt-6 text-[16px] text-[#FFFFFFE5] leading-6 font-[200]">
@@ -55,7 +58,7 @@ export default function Why() {
             </div>
             <div className="px-[20px] py-[30px] gap-6 flex items-center justify-between rounded-[24px] transition-all duration-300 ">
               <div className="flex-1">
-                <div className="text-[#DAC89F] font-bold leading-[36px]">
+                <div className="text-[#DAC89F] font-bold leading-[36px] md:text-[28px] text-[14px]">
                   Transparency
                 </div>
                 <div className="mt-6 text-[16px] text-[#FFFFFFE5] leading-6 font-[200]">
@@ -68,7 +71,7 @@ export default function Why() {
 
             <div className="px-[20px] py-[30px] gap-6 flex items-center justify-between rounded-[24px] transition-all duration-300 ">
               <div className="flex-1">
-                <div className="text-[#DAC89F] font-bold leading-[36px]">
+                <div className="text-[#DAC89F] font-bold leading-[36px] md:text-[28px] text-[14px]">
                   Security
                 </div>
                 <div className="mt-6 text-[16px] text-[#FFFFFFE5] leading-6 font-[200]">
@@ -81,7 +84,7 @@ export default function Why() {
           <SwiperSlide>
             <div className="px-[20px] py-[30px] gap-6 flex items-center justify-between rounded-[24px] transition-all duration-300 ">
               <div className="flex-1">
-                <div className="text-[#DAC89F] font-bold leading-[36px]">
+                <div className="text-[#DAC89F] font-bold leading-[36px] md:text-[28px] text-[14px]">
                   Global Access
                 </div>
                 <div className="mt-6 text-[16px] text-[#FFFFFFE5] leading-6 font-[200]">
@@ -93,7 +96,7 @@ export default function Why() {
             </div>
             <div className="px-[20px] py-[30px] gap-6 flex items-center justify-between rounded-[24px] transition-all duration-300 ">
               <div className="flex-1">
-                <div className="text-[#DAC89F] font-bold leading-[36px]">
+                <div className="text-[#DAC89F] font-bold leading-[36px] md:text-[28px] text-[14px]">
                   Fast Transactions
                 </div>
                 <div className="mt-6 text-[16px] text-[#FFFFFFE5] leading-6 font-[200]">
@@ -104,7 +107,7 @@ export default function Why() {
             </div>
             <div className="px-[20px] py-[30px] gap-6 flex items-center justify-between rounded-[24px] transition-all duration-300 ">
               <div className="flex-1">
-                <div className="text-[#DAC89F] font-bold leading-[36px]">
+                <div className="text-[#DAC89F] font-bold leading-[36px] md:text-[28px] text-[14px]">
                   DAO Governance
                 </div>
                 <div className="mt-6 text-[16px] text-[#FFFFFFE5] leading-6 font-[200]">
@@ -119,7 +122,7 @@ export default function Why() {
 
       <div className="px-4 md:max-w-[1440px] m-auto mt-[80px] hidden md:grid grid-cols-1 md:grid-cols-3 gap-[72px]">
         <div className="px-[40px] py-[60px] rounded-[24px] transition-all duration-300 hover:bg-[#1b1b1b]">
-          <div className="text-[#DAC89F] font-bold leading-[36px]">
+          <div className="text-[#DAC89F] font-bold leading-[36px] md:text-[28px] text-[14px]">
             Stability
           </div>
           <div className="mt-6 text-[16px] text-[#FFFFFFE5] leading-6 font-[200]">
@@ -131,7 +134,7 @@ export default function Why() {
           </div>
         </div>
         <div className="px-[40px] py-[60px] rounded-[24px] transition-all duration-300 hover:bg-[#1b1b1b]">
-          <div className="text-[#DAC89F] font-bold leading-[36px]">
+          <div className="text-[#DAC89F] font-bold leading-[36px] md:text-[28px] text-[14px]">
             Transparency
           </div>
           <div className="mt-6 text-[16px] text-[#FFFFFFE5] leading-6 font-[200]">
@@ -143,7 +146,7 @@ export default function Why() {
         </div>
 
         <div className="px-[40px] py-[60px] rounded-[24px] transition-all duration-300 hover:bg-[#1b1b1b]">
-          <div className="text-[#DAC89F] font-bold leading-[36px]">
+          <div className="text-[#DAC89F] font-bold leading-[36px] md:text-[28px] text-[14px]">
             Security
           </div>
           <div className="mt-6 text-[16px] text-[#FFFFFFE5] leading-6 font-[200]">
@@ -155,7 +158,7 @@ export default function Why() {
         </div>
 
         <div className="px-[40px] py-[60px] rounded-[24px] transition-all duration-300 hover:bg-[#1b1b1b]">
-          <div className="text-[#DAC89F] font-bold leading-[36px]">
+          <div className="text-[#DAC89F] font-bold leading-[36px] md:text-[28px] text-[14px]">
             Global Access
           </div>
           <div className="mt-6 text-[16px] text-[#FFFFFFE5] leading-6 font-[200]">
@@ -167,7 +170,7 @@ export default function Why() {
           </div>
         </div>
         <div className="px-[40px] py-[60px] rounded-[24px] transition-all duration-300 hover:bg-[#1b1b1b]">
-          <div className="text-[#DAC89F] font-bold leading-[36px]">
+          <div className="text-[#DAC89F] font-bold leading-[36px] md:text-[28px] text-[14px]">
             Fast Transactions
           </div>
           <div className="mt-6 text-[16px] text-[#FFFFFFE5] leading-6 font-[200]">
@@ -178,7 +181,7 @@ export default function Why() {
           </div>
         </div>
         <div className="px-[40px] py-[60px] rounded-[24px] transition-all duration-300 hover:bg-[#1b1b1b]">
-          <div className="text-[#DAC89F] font-bold leading-[36px]">
+          <div className="text-[#DAC89F] font-bold leading-[36px] md:text-[28px] text-[14px]">
             DAO Governance
           </div>
           <div className="mt-6 text-[16px] text-[#FFFFFFE5] leading-6 font-[200]">
@@ -207,7 +210,7 @@ export default function Why() {
           slidesPerView={1}
         >
           <SwiperSlide>
-            <div className="p-4 h-[720px] why1">
+            <div className="p-4 why1">
               <AnimatedContent
                 content="USAD vs Traditional Stablecoins"
                 animateClassName="animate__bounce"
@@ -258,10 +261,11 @@ export default function Why() {
                   </div>
                 </div>
               </div>
+              <img src={te9_1} className="w-full block mt-4" />
             </div>
           </SwiperSlide>
           <SwiperSlide>
-            <div className="p-4 h-[720px] why2">
+            <div className="p-4 why2">
               <AnimatedContent
                 animateClassName="animate__bounce"
                 className="text-[#DAC89F] mb-2 text-base md:text-[32px] leading-[36px] font-bold"
@@ -312,13 +316,14 @@ export default function Why() {
                   </div>
                 </div>
               </div>
+              <img src={te10_1} className="w-full block mt-4" />
             </div>
           </SwiperSlide>
         </Swiper>
       </div>
 
       <div className="px-4 md:max-w-[1440px] m-auto mt-[75px] md:mt-[150px] gap-[60px] hidden md:flex justify-between">
-        <div className="p-[60px] h-[850px] why1">
+        <div className="p-[60px]  why1">
           <AnimatedContent
             content="USAD vs Traditional Stablecoins"
             animateClassName="animate__bounce"
@@ -369,8 +374,9 @@ export default function Why() {
               </div>
             </div>
           </div>
+          <img src={te9_1} className="w-full block mt-9" />
         </div>
-        <div className="p-[60px] h-[850px] why2">
+        <div className="p-[60px]  why2">
           <AnimatedContent
             animateClassName="animate__bounce"
             className="text-[#DAC89F] mb-8 text-[32px] leading-[36px] font-bold"
@@ -421,6 +427,7 @@ export default function Why() {
               </div>
             </div>
           </div>
+          <img src={te10_1} className="w-full block mt-9" />
         </div>
       </div>
     </div>

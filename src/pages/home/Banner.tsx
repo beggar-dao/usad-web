@@ -190,12 +190,20 @@ export default function Banner() {
             and financial inclusion to the global economy.
           </div>
           <div className="mt-8 md:mt-[110px] flex items-center">
-            <div className="text-base w-[180px] text-center text-[#060606] rounded-[48px] h-[48px] leading-[48px] bg-[#dac89f]">
+            <div
+              onClick={() => {
+                const element = document.getElementById('whatUSAD');
+                if (element) {
+                  element.scrollIntoView({ behavior: 'smooth' });
+                }
+              }}
+              className="text-base cursor-pointer w-[180px] text-center text-[#060606] rounded-[48px] h-[48px] leading-[48px] bg-[#dac89f]"
+            >
               Learn More
             </div>
-            <div className="text-base w-[180px] text-center ml-7 border border-[#FFFFFFA6] text-white rounded-[48px] h-[48px] leading-[48px]">
+            {/* <div className="text-base w-[180px] text-center ml-7 border border-[#FFFFFFA6] text-white rounded-[48px] h-[48px] leading-[48px]">
               Down Whitepaper
-            </div>
+            </div> */}
           </div>
         </div>
         <div className="w-full md:w-[46%] md:hover:scale-[1.05] transition-all p-4 md:p-10 home_banner_bg">

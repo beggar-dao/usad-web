@@ -1,11 +1,12 @@
 import { FaDiscord, FaGithub, FaTelegram, FaTwitter } from 'react-icons/fa';
 
 import logo from '@/assets/images/logo.png';
+import { history } from '@umijs/max';
 export default function Footer() {
   return (
     <footer className="bg-primary text-white pt-8 md:pt-16 pb-8">
       <div className="px-4 md:max-w-[1440px] mx-auto ">
-        <div className="grid grid-cols-2 md:grid-cols-4  gap-8 mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-3  gap-8 mb-12">
           <div>
             <div className="text-2xl font-bold mb-6">
               <img src={logo} className="h-[28px] md:h-[40px]" alt="" />
@@ -44,23 +45,29 @@ export default function Footer() {
           <div>
             <h4 className="text-lg font-semibold mb-6">Quick Links</h4>
             <ul className="space-y-3">
-              <li>
-                <a
-                  href="#home"
-                  className="text-white/70 hover:text-[#DAC89F] transition-colors"
-                >
+              <li
+                onClick={() => {
+                  history.push('/');
+                }}
+                className="cursor-pointer"
+              >
+                <a className="text-white/70 hover:text-[#DAC89F] transition-colors">
                   Home
                 </a>
               </li>
-              <li>
-                <a
-                  href="#about"
-                  className="text-white/70 hover:text-[#DAC89F] transition-colors"
-                >
-                  About
-                </a>
-              </li>
-              <li>
+
+              <li
+                onClick={() => {
+                  history.push('/');
+                  setTimeout(() => {
+                    let faq = document.getElementById('features');
+                    if (faq) {
+                      faq.scrollIntoView({ behavior: 'smooth' });
+                    }
+                  }, 500);
+                }}
+                className="cursor-pointer"
+              >
                 <a
                   href="#features"
                   className="text-white/70 hover:text-[#DAC89F] transition-colors"
@@ -68,7 +75,18 @@ export default function Footer() {
                   Features
                 </a>
               </li>
-              <li>
+              <li
+                onClick={() => {
+                  history.push('/');
+                  setTimeout(() => {
+                    let faq = document.getElementById('technology');
+                    if (faq) {
+                      faq.scrollIntoView({ behavior: 'smooth' });
+                    }
+                  }, 500);
+                }}
+                className="cursor-pointer"
+              >
                 <a
                   href="#tech"
                   className="text-white/70 hover:text-[#DAC89F] transition-colors"
@@ -76,26 +94,42 @@ export default function Footer() {
                   Technology
                 </a>
               </li>
-              <li>
-                <a
-                  href="#faq"
-                  className="text-white/70 hover:text-[#DAC89F] transition-colors"
-                >
+              <li
+                onClick={() => {
+                  history.push('/');
+                  setTimeout(() => {
+                    let faq = document.getElementById('faq');
+                    if (faq) {
+                      faq.scrollIntoView({ behavior: 'smooth' });
+                    }
+                  }, 500);
+                }}
+                className="cursor-pointer"
+              >
+                <a className="text-white/70 hover:text-[#DAC89F] transition-colors">
                   FAQ
                 </a>
               </li>
-              <li>
-                <a
-                  href="#news"
-                  className="text-white/70 hover:text-[#DAC89F] transition-colors"
-                >
+              <li
+                onClick={() => {
+                  history.push('/');
+                  setTimeout(() => {
+                    let faq = document.getElementById('news');
+                    if (faq) {
+                      faq.scrollIntoView({ behavior: 'smooth' });
+                    }
+                  }, 500);
+                }}
+                className="cursor-pointer"
+              >
+                <a className="text-white/70 hover:text-[#DAC89F] transition-colors">
                   News
                 </a>
               </li>
             </ul>
           </div>
 
-          <div>
+          {/* <div>
             <h4 className="text-lg font-semibold mb-6">Resources</h4>
             <ul className="space-y-3">
               <li>
@@ -147,7 +181,7 @@ export default function Footer() {
                 </a>
               </li>
             </ul>
-          </div>
+          </div> */}
 
           <div>
             <h4 className="text-lg font-semibold mb-6">Contact</h4>

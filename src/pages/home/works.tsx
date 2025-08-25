@@ -70,8 +70,8 @@ export default function Works() {
       >
         Technical Specifications
       </AnimatedContent>
-      <div className="px-4 md:max-w-[1440px] m-auto grid grid-cols-2 md:grid-cols-5 mt-5 md:mt-[72px]">
-        <div className="md:border-r md:border-r-[#FFFFFF14] h-[88px] flex flex-col justify-center">
+      <div className="px-4 md:max-w-[1440px] m-auto grid grid-cols-2 md:grid-cols-4 mt-5 md:mt-[72px]">
+        <div className="md:border-r md:border-r-[#FFFFFF14] h-[88px] flex flex-col md:items-center justify-center">
           <div className="text-[14px] leading-[22px] text-white">
             Total Supply
           </div>
@@ -95,7 +95,7 @@ export default function Works() {
             TOK Chain
           </div>
         </div>
-        <div className="md:border-r md:border-r-[#FFFFFF14] h-[88px] flex flex-col md:items-center justify-center">
+        <div className=" h-[88px] flex flex-col md:items-center justify-center">
           <div className="text-[14px] leading-[22px] text-white">
             Transaction Speed
           </div>

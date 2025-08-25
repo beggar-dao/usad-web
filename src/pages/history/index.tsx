@@ -5,6 +5,7 @@ import usad_coin from '@/assets/images/usad_coin.png';
 import usdt_coin from '@/assets/images/usdt_coin.png';
 import AnimatedContent from '@/components/Animate';
 import PageAnimate from '@/components/pageAnimate';
+import { Helmet } from '@umijs/max';
 import { ConfigProvider, Pagination } from 'antd';
 import { useState } from 'react';
 import { FiCopy, FiSearch } from 'react-icons/fi';
@@ -84,6 +85,14 @@ export default function History() {
 
   return (
     <PageAnimate>
+      <Helmet>
+        <title>USAD History on Pathenom | Supply, Records, and Timeline</title>
+        <meta name='keywords" content="USAD, History' />
+        <meta
+          name="description"
+          content="Track USAD history on Pathenom. See recent mints, supply changes, and records over time. Verify activity and use data exports to follow updates confidently."
+        />
+      </Helmet>
       <div className="history relative overflow-hidden py-4 md:py-[75px]">
         <div className="px-4 md:max-w-[1440px] mx-auto">
           {/* Header */}
@@ -102,7 +111,7 @@ export default function History() {
           </div>
 
           {/* Main Content Container */}
-          <div className="border overflow-hidden  border-[#FFFFFF14]  md:py-4 rounded-[16px]">
+          <div className="border overflow-hidden bg-[#FFFFFF14] border-[#FFFFFF14]  md:py-4 rounded-[16px]">
             {/* Filter Tabs and Search */}
             <div className="flex flex-col md:flex-row px-4 md:px-[40px] md:justify-between mb-[20px] gap-6">
               {/* Filter Tabs */}

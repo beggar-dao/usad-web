@@ -6,11 +6,13 @@ export default function AnimatedContent({
   className = '',
   animateClassName = '',
   children,
+  id = '',
 }: {
   className?: string;
   content?: string | React.ReactNode;
   animateClassName?: string;
   children?: React.ReactNode;
+  id?: string;
 }) {
   const [ref, inView] = useInView({
     threshold: 0.1, // 触发动画的可见度阈值
@@ -25,6 +27,7 @@ export default function AnimatedContent({
   return (
     <div
       ref={ref}
+      id={id}
       className={`${className} ${
         startAnimation ? `animate__animated ${animateClassName}` : ''
       }`}
