@@ -9,7 +9,7 @@ export default defineConfig({
   request: {
     dataField: 'data', // Configure dataField for useRequest to directly consume response.data
   },
-  title: 'USAD',
+  title: 'USAD by Pathenom',
   favicons: ['/favicon.png'],
   // Define environment variables that should be available in the browser
   define: {
@@ -35,6 +35,11 @@ export default defineConfig({
     },
   ],
   metas: [
+    {
+      name: 'description',
+      content:
+        'Pathenom is the home of USAD. Learn how to mint USAD, redeem GBPC, and view verified history. Start fast with clear steps, fees, and safety notes for new users',
+    },
     {
       name: 'google-site-verification',
       content: 'w4G4ZzQaX5I0UnWTFgi12qq5X2yjBvllf0jlShLfKwY',
