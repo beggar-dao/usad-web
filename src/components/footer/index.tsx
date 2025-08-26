@@ -1,7 +1,6 @@
-import { FaDiscord, FaGithub, FaTelegram, FaTwitter } from 'react-icons/fa';
-
 import logo from '@/assets/images/logo.png';
 import { history } from '@umijs/max';
+import { FaXTwitter } from 'react-icons/fa6';
 export default function Footer() {
   return (
     <footer className="bg-primary text-white pt-8 md:pt-16 pb-8">
@@ -16,12 +15,13 @@ export default function Footer() {
             </p>
             <div className="flex space-x-4">
               <a
-                href="#"
+                href="https://x.com/usadfinance"
+                target="_blank"
                 className="text-white hover:text-[#DAC89F] transition-colors"
               >
-                <FaTwitter className="w-5 h-5" />
+                <FaXTwitter className="w-5 h-5" />
               </a>
-              <a
+              {/* <a
                 href="#"
                 className="text-white hover:text-[#DAC89F] transition-colors"
               >
@@ -38,7 +38,7 @@ export default function Footer() {
                 className="text-white hover:text-[#DAC89F] transition-colors"
               >
                 <FaGithub className="w-5 h-5" />
-              </a>
+              </a> */}
             </div>
           </div>
 
@@ -188,14 +188,14 @@ export default function Footer() {
             <ul className="space-y-3">
               <li className="flex items-start">
                 <i className="fa fa-envelope text-[#DAC89F] mt-1 mr-3"></i>
-                <span className="text-white/70">info@usad.com</span>
+                <span className="text-white/70">pathenom@vn.com</span>
               </li>
-              <li className="flex items-start">
+              {/* <li className="flex items-start">
                 <i className="fa fa-map-marker text-[#DAC89F] mt-1 mr-3"></i>
                 <span className="text-white/70">
                   123 Blockchain Avenue, Crypto City
                 </span>
-              </li>
+              </li> */}
             </ul>
           </div>
         </div>
