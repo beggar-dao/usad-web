@@ -49,7 +49,7 @@ export default function News() {
                 <div className="text-[12px] text-[#737373] mb-[22px]">
                   Jul 23, 2025
                 </div>
-                <div className="text-[18px] line-clamp-2 text-[#000] mb-[15px]">
+                <div className="text-[18px] line-clamp-1 text-[#000] mb-[15px]">
                   The Collapse of Old Web3
                 </div>
                 <div className="text-[14px] line-clamp-2 text-[#737373] leading-6 mb-[30px]">
@@ -83,7 +83,7 @@ export default function News() {
                 <div className="text-[12px] text-[#737373] mb-[22px]">
                   Jul 30, 2025
                 </div>
-                <div className="text-[18px] line-clamp-2 text-[#000] mb-[15px]">
+                <div className="text-[18px] line-clamp-1 text-[#000] mb-[15px]">
                   USAD and Web4 — The Birth of a Monetary Ideology
                 </div>
                 <div className="text-[14px] line-clamp-2 text-[#737373] leading-6 mb-[30px]">
