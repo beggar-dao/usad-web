@@ -275,10 +275,10 @@ export default function Why() {
                 <img src={right} className="w-8 h-8 block" />
                 <div>
                   <div className="text-[14px] text-white leading-[30px]">
-                    Fixed Supply Model
+                    Inflation-Proof Value
                   </div>
                   <div className="text-xs mt-1 text-[#FFFFFF73] leading-[22px]">
-                    94.49 Trillion total tokens with no inflationary issuance.
+                    94.49T fixed supply ensures zero dilution · Your assets stay protected
                   </div>
                 </div>
               </div>
@@ -286,11 +286,10 @@ export default function Why() {
                 <img src={right} className="w-8 h-8 block" />
                 <div>
                   <div className="text-[14px] text-white leading-[30px]">
-                    Multi-Asset Collateral
+                    Diversified Security
                   </div>
                   <div className="text-xs mt-1 text-[#FFFFFF73] leading-[22px]">
-                    Diversified basket including tokenized treasuries and
-                    fiat-backed assets.
+                   Bond-backed + fiat-collateralized · Most secure stablecoin reserves
                   </div>
                 </div>
               </div>
@@ -298,10 +297,10 @@ export default function Why() {
                 <img src={right} className="w-8 h-8 block" />
                 <div>
                   <div className="text-[14px] text-white leading-[30px]">
-                    Decentralized Governanceodel
+                    Community Governance
                   </div>
                   <div className="text-xs mt-1 text-[#FFFFFF73] leading-[22px]">
-                    Community votes determine protocol upgrades and parameters.
+                   You vote on all changes · No centralized control
                   </div>
                 </div>
               </div>
@@ -309,10 +308,10 @@ export default function Why() {
                 <img src={right} className="w-8 h-8 block" />
                 <div>
                   <div className="text-[14px] text-white leading-[30px]">
-                    Full Transparency
+                    Total Transparency
                   </div>
                   <div className="text-xs mt-1 text-[#FFFFFF73] leading-[22px]">
-                    Real-time on-chain reserve verification and regular audits.
+                    Live reserve verification · Always fully backed
                   </div>
                 </div>
               </div>
@@ -386,10 +385,10 @@ export default function Why() {
             <img src={right} className="w-8 h-8 block" />
             <div>
               <div className="text-[20px] text-white leading-[30px]">
-                Fixed Supply Model
+                Inflation-Proof Value
               </div>
               <div className="text-sm mt-1 text-[#FFFFFF73] leading-[22px]">
-                94.49 Trillion total tokens with no inflationary issuance.
+                94.49T fixed supply ensures zero dilution · Your assets stay protected
               </div>
             </div>
           </div>
@@ -397,11 +396,10 @@ export default function Why() {
             <img src={right} className="w-8 h-8 block" />
             <div>
               <div className="text-[20px] text-white leading-[30px]">
-                Multi-Asset Collateral
+                Diversified Security
               </div>
               <div className="text-sm mt-1 text-[#FFFFFF73] leading-[22px]">
-                Diversified basket including tokenized treasuries and
-                fiat-backed assets.
+                Bond-backed + fiat-collateralized · Most secure stablecoin reserves
               </div>
             </div>
           </div>
@@ -409,10 +407,10 @@ export default function Why() {
             <img src={right} className="w-8 h-8 block" />
             <div>
               <div className="text-[20px] text-white leading-[30px]">
-                Decentralized Governanceodel
+                Community Governance
               </div>
               <div className="text-sm mt-1 text-[#FFFFFF73] leading-[22px]">
-                Community votes determine protocol upgrades and parameters.
+                You vote on all changes · No centralized control
               </div>
             </div>
           </div>
@@ -420,10 +418,10 @@ export default function Why() {
             <img src={right} className="w-8 h-8 block" />
             <div>
               <div className="text-[20px] text-white leading-[30px]">
-                Full Transparency
+                Total Transparency
               </div>
               <div className="text-sm mt-1 text-[#FFFFFF73] leading-[22px]">
-                Real-time on-chain reserve verification and regular audits.
+                Live reserve verification · Always fully backed
               </div>
             </div>
           </div>
