@@ -30,7 +30,7 @@ export default function Works() {
       <div className="px-4 md:max-w-[1440px] m-auto grid grid-cols-1 md:grid-cols-2 gap-[28px] md:gap-[56px] mt-[46px] md:mt-[92px]">
         <div onClick={()=>{
           window.open('https://tokscan.io/address/0xdcd23789633479A052B881d90556EC5957324C50', '_blank')
-        }} className="py-4 md:py-[82px] works_bg px-4 md:px-[56px] flex items-center gap-[25px] md:gap-[50px]">
+        }} className="py-4 md:py-[82px] cursor-pointer works_bg px-4 md:px-[56px] flex items-center gap-[25px] md:gap-[50px]">
           <img className="block w-[74px] md:w-[148px]" src={layer} />
           <div className="flex-1">
             <AnimatedContent
