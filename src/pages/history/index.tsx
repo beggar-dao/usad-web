@@ -50,7 +50,7 @@ export default function History() {
         fromAmount: `${(Math.random() * 10000).toFixed(2)}`,
         toAmount: formatNumber(Math.random() * 10000),
         timestamp: new Date(
-          Date.now() - Math.floor(index * 10 * 24 * 60 * 60 * 1000),
+          Date.now() - Math.floor(index * 24 * 60 * 60 * 1000),
         ).toLocaleString(),
         status:
           activeFilter === 'All'
