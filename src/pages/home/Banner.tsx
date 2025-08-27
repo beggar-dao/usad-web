@@ -233,7 +233,7 @@ function getRecent12Days() {
             </div>
             <div className="flex justify-between items-center">
               <span className="text-base md:text-[32px] text-[#DAC89F] font-bold">
-                $1.0001
+                $1.0101
               </span>
               <span className="text-[#1E990E] text-base font-medium">
                 +0.03%
