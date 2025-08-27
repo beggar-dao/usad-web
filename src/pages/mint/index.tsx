@@ -341,7 +341,16 @@ export default function Mint() {
                   value: item.value,
                 }))}
               ></Select>
-              <div className="mt-[45px] cursor-pointer mb-[32px] transition-all duration-300 active:bg-[#CCB47D] hover:bg-[#F1E3C1] rounded-lg h-[48px] justify-center font-bold text-[#000] bg-[#DAC89F] flex items-center">
+              <div onClick={()=>{
+if(selectedCurrency === 'BTC'){
+  location.href = 'https://kai.com/futures/BTC-USAD'
+  return 
+}
+if(selectedCurrency === 'ETH'){
+  location.href = 'https://kai.com/futures/ETH-USAD'
+  return 
+}
+}} className="mt-[45px] cursor-pointer mb-[32px] transition-all duration-300 active:bg-[#CCB47D] hover:bg-[#F1E3C1] rounded-lg h-[48px] justify-center font-bold text-[#000] bg-[#DAC89F] flex items-center">
                 {active === 'buy' ? 'Buy' : 'Sell'}
               </div>
             </div>
