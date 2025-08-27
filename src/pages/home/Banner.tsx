@@ -63,7 +63,7 @@ function getRecent12Days() {
       xAxis: {
         show: false,
         type: 'category',
-        data: getRecent12Days(),
+        data: getRecent12Days().reverse(),
         splitLine: {
           show: false, // 隐藏 y 轴网格线
         },
