@@ -121,74 +121,74 @@ export default function Why() {
       </div>
 
       <div className="px-4 md:max-w-[1440px] m-auto mt-[80px] hidden md:grid grid-cols-1 md:grid-cols-3 gap-[72px]">
-        <div className="px-[40px] py-[60px] rounded-[24px] transition-all duration-300 hover:bg-[#1b1b1b]">
+        <div className="p-[40px] rounded-[24px] transition-all duration-300 hover:bg-[#1b1b1b]">
           <div className="text-[#DAC89F] font-bold leading-[36px] md:text-[28px] text-[14px]">
             Stability
           </div>
-          <div className="mt-6 text-[16px] text-[#FFFFFFE5] leading-6 font-[200]">
+          <div className="mt-5 text-[16px] line-clamp-2 text-[#FFFFFFE5] leading-6 font-[200]">
             Maintains $1 peg through diversified asset backing and real-time
             reserve management.
           </div>
-          <div className="flex items-center justify-center  w-[240px] h-[240px] m-auto mt-[54px]">
-            <img src={te1} className="h-[207px] block" />
+          <div className="flex items-center justify-center  w-[180px] h-[180px] m-auto mt-[40px]">
+            <img src={te1} className="h-[180px] block" />
           </div>
         </div>
-        <div className="px-[40px] py-[60px] rounded-[24px] transition-all duration-300 hover:bg-[#1b1b1b]">
+        <div className="p-[40px] rounded-[24px] transition-all duration-300 hover:bg-[#1b1b1b]">
           <div className="text-[#DAC89F] font-bold leading-[36px] md:text-[28px] text-[14px]">
             Transparency
           </div>
-          <div className="mt-6 text-[16px] text-[#FFFFFFE5] leading-6 font-[200]">
+          <div className="mt-5 text-[16px] line-clamp-2 text-[#FFFFFFE5] leading-6 font-[200]">
             All reserves and transactions publicly verifiable on the blockchain.
           </div>
-          <div className="flex items-center justify-center  w-[240px] h-[240px] m-auto mt-[54px]">
-            <img src={te2} className="h-[186px] block" />
+          <div className="flex items-center justify-center  w-[180px] h-[180px] m-auto mt-[40px]">
+            <img src={te2} className="h-[135px] block" />
           </div>
         </div>
 
-        <div className="px-[40px] py-[60px] rounded-[24px] transition-all duration-300 hover:bg-[#1b1b1b]">
+        <div className="p-[40px] rounded-[24px] transition-all duration-300 hover:bg-[#1b1b1b]">
           <div className="text-[#DAC89F] font-bold leading-[36px] md:text-[28px] text-[14px]">
             Security
           </div>
-          <div className="mt-6 text-[16px] text-[#FFFFFFE5] leading-6 font-[200]">
+          <div className="mt-5 text-[16px] line-clamp-2 text-[#FFFFFFE5] leading-6 font-[200]">
             Built on TOK Chain with advanced cryptographic protections.
           </div>
-          <div className="flex items-center justify-center  w-[240px] h-[240px] m-auto mt-[54px]">
-            <img src={te3} className="h-[214px] block" />
+          <div className="flex items-center justify-center  w-[180px] h-[180px] m-auto mt-[40px]">
+            <img src={te3} className="h-[148px] block" />
           </div>
         </div>
 
-        <div className="px-[40px] py-[60px] rounded-[24px] transition-all duration-300 hover:bg-[#1b1b1b]">
-          <div className="text-[#DAC89F] font-bold leading-[36px] md:text-[28px] text-[14px]">
+        <div className="p-[40px] rounded-[24px] transition-all duration-300 hover:bg-[#1b1b1b]">
+          <div className="text-[#DAC89F]  font-bold leading-[36px] md:text-[28px] text-[14px]">
             Global Access
           </div>
-          <div className="mt-6 text-[16px] text-[#FFFFFFE5] leading-6 font-[200]">
+          <div className="mt-5 text-[16px] line-clamp-2 text-[#FFFFFFE5] leading-6 font-[200]">
             Accessible to anyone with internet, regardless of location or
             financial status.
           </div>
-          <div className="flex items-center justify-center  w-[240px] h-[240px] m-auto mt-[54px]">
-            <img src={te2} className="h-[196px] block" />
+          <div className="flex items-center justify-center  w-[180px] h-[180px] m-auto mt-[40px]">
+            <img src={te2} className="h-[147px] block" />
           </div>
         </div>
-        <div className="px-[40px] py-[60px] rounded-[24px] transition-all duration-300 hover:bg-[#1b1b1b]">
+        <div className="p-[40px] rounded-[24px] transition-all duration-300 hover:bg-[#1b1b1b]">
           <div className="text-[#DAC89F] font-bold leading-[36px] md:text-[28px] text-[14px]">
             Fast Transactions
           </div>
-          <div className="mt-6 text-[16px] text-[#FFFFFFE5] leading-6 font-[200]">
+          <div className="mt-5 text-[16px] line-clamp-2 text-[#FFFFFFE5] leading-6 font-[200]">
             Lightning-fast settlement times optimized for global use.
           </div>
-          <div className="flex items-center justify-center  w-[240px] h-[240px] m-auto mt-[54px]">
-            <img src={te4} className="h-[226px] block" />
+          <div className="flex items-center justify-center  w-[180px] h-[180px] m-auto mt-[40px]">
+            <img src={te4} className="h-[165px] block" />
           </div>
         </div>
-        <div className="px-[40px] py-[60px] rounded-[24px] transition-all duration-300 hover:bg-[#1b1b1b]">
+        <div className="p-[40px] rounded-[24px] transition-all duration-300 hover:bg-[#1b1b1b]">
           <div className="text-[#DAC89F] font-bold leading-[36px] md:text-[28px] text-[14px]">
             DAO Governance
           </div>
-          <div className="mt-6 text-[16px] text-[#FFFFFFE5] leading-6 font-[200]">
+          <div className="mt-5 text-[16px] line-clamp-2 text-[#FFFFFFE5] leading-6 font-[200]">
             Community-driven decisions through decentralized voting.
           </div>
-          <div className="flex items-center justify-center  w-[240px] h-[240px] m-auto mt-[54px]">
-            <img src={te5} className="h-[168px] block" />
+          <div className="flex items-center justify-center  w-[180px] h-[180px] m-auto mt-[40px]">
+            <img src={te5} className="h-[126px] block" />
           </div>
         </div>
       </div>
@@ -278,7 +278,8 @@ export default function Why() {
                     Inflation-Proof Value
                   </div>
                   <div className="text-xs mt-1 text-[#FFFFFF73] leading-[22px]">
-                    94.49T fixed supply ensures zero dilution · Your assets stay protected
+                    94.49T fixed supply ensures zero dilution · Your assets stay
+                    protected
                   </div>
                 </div>
               </div>
@@ -289,7 +290,8 @@ export default function Why() {
                     Diversified Security
                   </div>
                   <div className="text-xs mt-1 text-[#FFFFFF73] leading-[22px]">
-                   Bond-backed + fiat-collateralized · Most secure stablecoin reserves
+                    Bond-backed + fiat-collateralized · Most secure stablecoin
+                    reserves
                   </div>
                 </div>
               </div>
@@ -300,7 +302,7 @@ export default function Why() {
                     Community Governance
                   </div>
                   <div className="text-xs mt-1 text-[#FFFFFF73] leading-[22px]">
-                   You vote on all changes · No centralized control
+                    You vote on all changes · No centralized control
                   </div>
                 </div>
               </div>
@@ -388,7 +390,8 @@ export default function Why() {
                 Inflation-Proof Value
               </div>
               <div className="text-sm mt-1 text-[#FFFFFF73] leading-[22px]">
-                94.49T fixed supply ensures zero dilution · Your assets stay protected
+                94.49T fixed supply ensures zero dilution · Your assets stay
+                protected
               </div>
             </div>
           </div>
@@ -399,7 +402,8 @@ export default function Why() {
                 Diversified Security
               </div>
               <div className="text-sm mt-1 text-[#FFFFFF73] leading-[22px]">
-                Bond-backed + fiat-collateralized · Most secure stablecoin reserves
+                Bond-backed + fiat-collateralized · Most secure stablecoin
+                reserves
               </div>
             </div>
           </div>
