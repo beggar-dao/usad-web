@@ -5,6 +5,7 @@ import te2 from '@/assets/images/te2.png';
 import te3 from '@/assets/images/te3.png';
 import te4 from '@/assets/images/te4.png';
 import te5 from '@/assets/images/te5.png';
+import te6 from '@/assets/images/te6.png';
 import te9_1 from '@/assets/images/te9_1.png';
 
 import AnimatedContent from '@/components/Animate';
@@ -166,7 +167,7 @@ export default function Why() {
             financial status.
           </div>
           <div className="flex items-center justify-center  w-[164px] h-[164px] m-auto mt-[30px]">
-            <img src={te2} className="h-[133px] block" />
+            <img src={te6} className="h-[133px] block" />
           </div>
         </div>
         <div className="p-[40px] rounded-[24px] transition-all duration-300 hover:bg-[#1b1b1b]">

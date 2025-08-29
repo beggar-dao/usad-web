@@ -28,9 +28,15 @@ export default function Works() {
         className="text-[14px] px-4 mt-3 text-white text-left md:text-center"
       ></AnimatedContent>
       <div className="px-4 md:max-w-[1440px] m-auto grid grid-cols-1 md:grid-cols-2 gap-[28px] md:gap-[56px] mt-[46px] md:mt-[92px]">
-        <div onClick={()=>{
-          window.open('https://tokscan.io/address/0xdcd23789633479A052B881d90556EC5957324C50', '_blank')
-        }} className="py-4 md:py-[82px] cursor-pointer works_bg px-4 md:px-[56px] flex items-center gap-[25px] md:gap-[50px]">
+        <div
+          onClick={() => {
+            window.open(
+              'https://tokscan.io/address/0xdcd23789633479A052B881d90556EC5957324C50',
+              '_blank',
+            );
+          }}
+          className="py-4 md:py-[82px] cursor-pointer works_bg px-4 md:px-[56px] flex items-center gap-[25px] md:gap-[50px]"
+        >
           <img className="block w-[74px] md:w-[148px]" src={layer} />
           <div className="flex-1">
             <AnimatedContent
@@ -127,12 +133,12 @@ export default function Works() {
               <AnimatedNumber value={45} duration={1000} />%
             </div>
           </div>
-          <div className="h-[44px] w-[44px] rounded-full bg-[#489FA4] flex items-center justify-center">
+          <div className="h-[66px] w-[66px] rounded-full bg-[#489FA4] flex items-center justify-center">
             {/* <img src={Vector} className="block w-[22px]" /> */}
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              width="28"
-              height="30"
+              width="38"
+              height="40"
               viewBox="0 0 38 40"
               fill="none"
             >
@@ -153,7 +159,7 @@ export default function Works() {
           {/* <div className="h-[66px] w-[66px] rounded-full bg-[#F9B813] flex items-center justify-center">
             <img src={Vector} className="block w-[22px]" />
           </div> */}
-          <img src={gbpc_bi} className="block w-[44px]" />
+          <img src={gbpc_bi} className="block w-[66px]" />
         </div>
         <div className="p-4 md:p-[33px] bg-[#0000001F] rounded-[16px] flex items-center justify-between">
           <div>
@@ -165,7 +171,7 @@ export default function Works() {
           {/* <div className="h-[66px] w-[66px] rounded-full bg-[#C93CAF] flex items-center justify-center">
             <img src={Vector} className="block w-[22px]" />
           </div> */}
-          <img src={tgbp} className="block w-[44px]" />
+          <img src={tgbp} className="block w-[66px]" />
         </div>
         <div className="p-4 md:p-[33px] bg-[#0000001F] rounded-[16px] flex items-center justify-between">
           <div>
@@ -179,7 +185,7 @@ export default function Works() {
           {/* <div className="h-[66px] w-[66px] rounded-full bg-[#1F1F1F] flex items-center justify-center">
             <img src={Vector} className="block w-[22px]" />
           </div> */}
-          <img src={other_bi} className="block w-[44px]" />
+          <img src={other_bi} className="block w-[66px]" />
         </div>
       </div>
       <AnimatedContent
