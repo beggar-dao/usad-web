@@ -120,7 +120,7 @@ export default function Why() {
         </Swiper>
       </div>
 
-      <div className="px-4 md:max-w-[1440px] m-auto mt-[80px] hidden md:grid grid-cols-1 md:grid-cols-3 gap-[72px]">
+      <div className="px-4 md:max-w-[1440px] m-auto mt-[48px] hidden md:grid grid-cols-1 md:grid-cols-3 gap-[16px]">
         <div className="p-[40px] rounded-[24px] transition-all duration-300 hover:bg-[#1b1b1b]">
           <div className="text-[#DAC89F] font-bold leading-[36px] md:text-[28px] text-[14px]">
             Stability
@@ -129,8 +129,8 @@ export default function Why() {
             Maintains $1 peg through diversified asset backing and real-time
             reserve management.
           </div>
-          <div className="flex items-center justify-center  w-[180px] h-[180px] m-auto mt-[40px]">
-            <img src={te1} className="h-[180px] block" />
+          <div className="flex items-center justify-center  w-[164px] h-[164px] m-auto mt-[30px]">
+            <img src={te1} className="h-[148px] block" />
           </div>
         </div>
         <div className="p-[40px] rounded-[24px] transition-all duration-300 hover:bg-[#1b1b1b]">
@@ -140,8 +140,8 @@ export default function Why() {
           <div className="mt-5 text-[16px] line-clamp-2 text-[#FFFFFFE5] leading-6 font-[200]">
             All reserves and transactions publicly verifiable on the blockchain.
           </div>
-          <div className="flex items-center justify-center  w-[180px] h-[180px] m-auto mt-[40px]">
-            <img src={te2} className="h-[135px] block" />
+          <div className="flex items-center justify-center  w-[164px] h-[164px] m-auto mt-[30px]">
+            <img src={te2} className="h-[120px] block" />
           </div>
         </div>
 
@@ -152,8 +152,8 @@ export default function Why() {
           <div className="mt-5 text-[16px] line-clamp-2 text-[#FFFFFFE5] leading-6 font-[200]">
             Built on TOK Chain with advanced cryptographic protections.
           </div>
-          <div className="flex items-center justify-center  w-[180px] h-[180px] m-auto mt-[40px]">
-            <img src={te3} className="h-[148px] block" />
+          <div className="flex items-center justify-center  w-[164px] h-[164px] m-auto mt-[30px]">
+            <img src={te3} className="h-[135px] block" />
           </div>
         </div>
 
@@ -165,8 +165,8 @@ export default function Why() {
             Accessible to anyone with internet, regardless of location or
             financial status.
           </div>
-          <div className="flex items-center justify-center  w-[180px] h-[180px] m-auto mt-[40px]">
-            <img src={te2} className="h-[147px] block" />
+          <div className="flex items-center justify-center  w-[164px] h-[164px] m-auto mt-[30px]">
+            <img src={te2} className="h-[133px] block" />
           </div>
         </div>
         <div className="p-[40px] rounded-[24px] transition-all duration-300 hover:bg-[#1b1b1b]">
@@ -176,8 +176,8 @@ export default function Why() {
           <div className="mt-5 text-[16px] line-clamp-2 text-[#FFFFFFE5] leading-6 font-[200]">
             Lightning-fast settlement times optimized for global use.
           </div>
-          <div className="flex items-center justify-center  w-[180px] h-[180px] m-auto mt-[40px]">
-            <img src={te4} className="h-[165px] block" />
+          <div className="flex items-center justify-center  w-[164px] h-[164px] m-auto mt-[30px]">
+            <img src={te4} className="h-[150px] block" />
           </div>
         </div>
         <div className="p-[40px] rounded-[24px] transition-all duration-300 hover:bg-[#1b1b1b]">
@@ -187,8 +187,8 @@ export default function Why() {
           <div className="mt-5 text-[16px] line-clamp-2 text-[#FFFFFFE5] leading-6 font-[200]">
             Community-driven decisions through decentralized voting.
           </div>
-          <div className="flex items-center justify-center  w-[180px] h-[180px] m-auto mt-[40px]">
-            <img src={te5} className="h-[126px] block" />
+          <div className="flex items-center justify-center  w-[164px] h-[164px] m-auto mt-[30px]">
+            <img src={te5} className="h-[115px] block" />
           </div>
         </div>
       </div>
