@@ -3,6 +3,7 @@ import layer from '@/assets/images/layer.png';
 import other_bi from '@/assets/images/other_bi.png';
 import reserve from '@/assets/images/reserve.png';
 import tgbp from '@/assets/images/tgbp.png';
+import token_icon from '@/assets/images/token_icon.png';
 import work1 from '@/assets/images/work1.png';
 import work2 from '@/assets/images/work2.png';
 import work3 from '@/assets/images/work3.png';
@@ -133,8 +134,7 @@ export default function Works() {
               <AnimatedNumber value={45} duration={1000} />%
             </div>
           </div>
-          <div className="h-[66px] w-[66px] rounded-full bg-[#489FA4] flex items-center justify-center">
-            {/* <img src={Vector} className="block w-[22px]" /> */}
+          {/* <div className="h-[66px] w-[66px] rounded-full bg-[#489FA4] flex items-center justify-center">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="38"
@@ -147,7 +147,8 @@ export default function Works() {
                 fill="#035D62"
               />
             </svg>
-          </div>
+          </div> */}
+          <img src={token_icon} className="block w-[44px] md:w-[66px]" />
         </div>
         <div className="p-4 md:p-[33px] bg-[#0000001F] rounded-[16px] flex items-center justify-between">
           <div>
@@ -159,7 +160,7 @@ export default function Works() {
           {/* <div className="h-[66px] w-[66px] rounded-full bg-[#F9B813] flex items-center justify-center">
             <img src={Vector} className="block w-[22px]" />
           </div> */}
-          <img src={gbpc_bi} className="block w-[66px]" />
+          <img src={gbpc_bi} className="block w-[44px] md:w-[66px]" />
         </div>
         <div className="p-4 md:p-[33px] bg-[#0000001F] rounded-[16px] flex items-center justify-between">
           <div>
@@ -171,7 +172,7 @@ export default function Works() {
           {/* <div className="h-[66px] w-[66px] rounded-full bg-[#C93CAF] flex items-center justify-center">
             <img src={Vector} className="block w-[22px]" />
           </div> */}
-          <img src={tgbp} className="block w-[66px]" />
+          <img src={tgbp} className="block w-[44px] md:w-[66px]" />
         </div>
         <div className="p-4 md:p-[33px] bg-[#0000001F] rounded-[16px] flex items-center justify-between">
           <div>
@@ -185,7 +186,7 @@ export default function Works() {
           {/* <div className="h-[66px] w-[66px] rounded-full bg-[#1F1F1F] flex items-center justify-center">
             <img src={Vector} className="block w-[22px]" />
           </div> */}
-          <img src={other_bi} className="block w-[66px]" />
+          <img src={other_bi} className="block w-[44px] md:w-[66px]" />
         </div>
       </div>
       <AnimatedContent
