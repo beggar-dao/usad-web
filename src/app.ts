@@ -1,8 +1,7 @@
-import { history, type RequestConfig } from '@umijs/max';
+import { type RequestConfig } from '@umijs/max';
 import 'animate.css';
 import { message } from 'antd';
 import React from 'react';
-import { envConfig } from './config/env';
 // Initialize token manager
 
 // Error handling scheme: Error types
@@ -29,8 +28,8 @@ interface ResponseStructure {
  */
 export const request: RequestConfig = {
   // Base configuration
-  baseURL: envConfig.apiBaseUrl,
-  timeout: envConfig.apiTimeout,
+  baseURL: 'https://api.thegbpc.com',
+  timeout: 300000,
   headers: {
     'X-Requested-With': 'XMLHttpRequest',
   },
@@ -165,15 +164,15 @@ export const request: RequestConfig = {
     (response: any) => {
       let data = response.data;
       message.destroy();
-      if (data.code === 'A10005') {
-        history.push('/Auth/Login');
-      }
-      if (data.code !== '00000') {
-        message.error(data.message || 'An unexpected error occurred.');
-        return Promise.reject(response);
-      }
+      // if (data.code === 'A10005') {
+      //   history.push('/Auth/Login');
+      // }
+      // if (data.code !== '00000') {
+      //   message.error(data.message || 'An unexpected error occurred.');
+      //   return Promise.reject(response);
+      // }
 
-      return response;
+      return data;
     },
   ],
 };

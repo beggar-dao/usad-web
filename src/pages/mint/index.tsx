@@ -6,11 +6,13 @@ import usad_coin from '@/assets/images/usad_coin.png';
 import usdt_coin from '@/assets/images/usdt_coin.png';
 import AnimatedContent from '@/components/Animate';
 import PageAnimate from '@/components/pageAnimate';
-import { Helmet } from '@umijs/max';
+import { Helmet, request } from '@umijs/max';
 import { ConfigProvider, Select } from 'antd';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 export default function Mint() {
   const [active, setActive] = useState<'buy' | 'sell'>('buy');
+  const [receiveValue, setReceiveValue] = useState<string>('');
+  const [bl, setBl] = useState<string>('');
   const [selectedCurrency, setSelectedCurrency] = useState<string>('GBPC');
   const [selectedCurrency1, setSelectedCurrency1] = useState<string>('USAD');
   const [selectedCurrency2, setSelectedCurrency2] = useState<string>('GBPC');
@@ -21,6 +23,44 @@ export default function Mint() {
     { value: 'USDT', img: usdt_coin },
     { value: 'USAD', img: usad_coin },
   ];
+  const getBl = async (value: any) => {
+    if (selectedCurrency === 'BTC' || selectedCurrency === 'ETH') {
+      let res = await request(
+        `/general/token/price/${selectedCurrency.toLowerCase()}_usdt`,
+        {
+          method: 'GET',
+        },
+      );
+      setBl(res.last);
+      setReceiveValue((value * res.last).toFixed(2));
+      return;
+    }
+    setBl('1');
+    setReceiveValue(value);
+  };
+  const handlerBuyInput = (e: any, dom?: any) => {
+    const value = dom ? e.value : e.currentTarget.value || 0;
+    // 使用正则表达式验证输入，只允许数字和小数点
+    const regex = /^[0-9]*\.?[0-9]*$/;
+    // 如果输入不符合规则，则阻止输入
+    if (!regex.test(value)) {
+      // 移除所有非数字和小数点的字符
+      const validValue = value.replace(/[^0-9.]/g, '');
+      // 确保最多只有一个小数点
+      const parts = validValue.split('.');
+      const formattedValue =
+        parts.length > 2
+          ? `${parts[0]}.${parts.slice(1).join('')}`
+          : validValue;
+      dom
+        ? (e.value = formattedValue)
+        : (e.currentTarget.value = formattedValue);
+    }
+    getBl(dom ? e.value : e.currentTarget.value);
+  };
+  useEffect(() => {
+    handlerBuyInput(document.getElementById('buyInput') as any, 'dom');
+  }, [selectedCurrency]);
   return (
     <PageAnimate>
       <Helmet>
@@ -151,6 +191,8 @@ export default function Mint() {
                 <div className="flex mt-3 items-center justify-between">
                   <input
                     placeholder="0.00"
+                    onInput={(e) => handlerBuyInput(e)}
+                    id="buyInput"
                     className="bg-transparent w-[160px] md:w-auto flex-1 outline-none text-[#fff] text-[32px] leading-[42px]"
                   />
                   <Select
@@ -221,6 +263,8 @@ export default function Mint() {
                 <div className="flex mt-3 items-center justify-between">
                   <input
                     placeholder="0.00"
+                    readOnly
+                    value={receiveValue}
                     className="bg-transparent w-[160px] md:w-auto flex-1 outline-none text-[#fff] text-[32px] leading-[42px]"
                   />
                   <Select
@@ -280,9 +324,12 @@ export default function Mint() {
                   ></Select>
                 </div>
               </div>
-              <div className="mt-3 text-[#FFFFFF66] leading-[26px] text-sm">
-                1USDT ≈ 1.08 USAD
-              </div>
+              {bl ? (
+                <div className="mt-3 text-[#FFFFFF66] leading-[26px] text-sm">
+                  1 {selectedCurrency} ≈ {bl} {selectedCurrency1}
+                </div>
+              ) : null}
+
               <div className="mt-8 text-white text-sm">Pay</div>
               <Select
                 className="flex-1 mt-[10px] rounded-lg h-[48px] flex items-center border border-[#DAC89F1F] select_cc2 my-select"
@@ -341,16 +388,19 @@ export default function Mint() {
                   value: item.value,
                 }))}
               ></Select>
-              <div onClick={()=>{
-if(selectedCurrency === 'BTC'){
-  location.href = 'https://kai.com/futures/BTC-USAD'
-  return 
-}
-if(selectedCurrency === 'ETH'){
-  location.href = 'https://kai.com/futures/ETH-USAD'
-  return 
-}
-}} className="mt-[45px] cursor-pointer mb-[32px] transition-all duration-300 active:bg-[#CCB47D] hover:bg-[#F1E3C1] rounded-lg h-[48px] justify-center font-bold text-[#000] bg-[#DAC89F] flex items-center">
+              <div
+                onClick={() => {
+                  if (selectedCurrency === 'BTC') {
+                    location.href = 'https://kai.com/futures/BTC-USAD';
+                    return;
+                  }
+                  if (selectedCurrency === 'ETH') {
+                    location.href = 'https://kai.com/futures/ETH-USAD';
+                    return;
+                  }
+                }}
+                className="mt-[45px] cursor-pointer mb-[32px] transition-all duration-300 active:bg-[#CCB47D] hover:bg-[#F1E3C1] rounded-lg h-[48px] justify-center font-bold text-[#000] bg-[#DAC89F] flex items-center"
+              >
                 {active === 'buy' ? 'Buy' : 'Sell'}
               </div>
             </div>
