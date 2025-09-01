@@ -134,11 +134,11 @@ export default defineConfig({
   links: [
     {
       rel: 'stylesheet',
-      href: 'https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css',
+      href: '/font-awesome.min.css',
     },
     {
       rel: 'stylesheet',
-      href: 'https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap',
+      href: '/css2.css',
     },
   ],
 
