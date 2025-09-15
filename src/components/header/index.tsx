@@ -13,10 +13,10 @@ export default function Header() {
       name: 'Circulate',
       path: '/mint',
     },
-    {
-      name: 'History',
-      path: '/history',
-    },
+    // {
+    //   name: 'History',
+    //   path: '/history',
+    // },
   ];
   return (
     <div className="border-b border-b-[#FFFFFF24] ">

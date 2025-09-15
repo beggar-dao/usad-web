@@ -398,6 +398,10 @@ export default function Mint() {
                     location.href = 'https://kai.com/futures/ETH-USAD';
                     return;
                   }
+                  if (selectedCurrency === 'USDT') {
+                    location.href = 'https://kai.com/convert';
+                    return;
+                  }
                 }}
                 className="mt-[45px] cursor-pointer mb-[32px] transition-all duration-300 active:bg-[#CCB47D] hover:bg-[#F1E3C1] rounded-lg h-[48px] justify-center font-bold text-[#000] bg-[#DAC89F] flex items-center"
               >
