@@ -15,7 +15,10 @@
     "@ant-design/pro-components": "^2.4.4",
     "@umijs/max": "^4.4.11",
     "antd": "^5.4.0",
-    "country-state-city": "^3.2.1"
+    "clsx": "^2.1.1",
+    "country-state-city": "^3.2.1",
+    "dayjs": "^1.11.18",
+    "tailwind-merge": "^3.3.1"
   },
   "devDependencies": {
     "@rainbow-me/rainbowkit": "^2.2.8",

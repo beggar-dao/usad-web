@@ -1,0 +1,162 @@
+import { ReactComponent as CloseSvg } from '@/assets/images/close.svg';
+import { ReactComponent as CreateSvg } from '@/assets/images/create.svg';
+import { ReactComponent as DelSvg } from '@/assets/images/del.svg';
+import { ReactComponent as EditSvg } from '@/assets/images/edit.svg';
+import { ReactComponent as PeopleSvg } from '@/assets/images/people.svg';
+import TimeLine from '@/components/Timeline';
+import { history, useModel } from '@umijs/max';
+import { Popconfirm } from 'antd';
+import { useEffect, useState } from 'react';
+import AddUbo from '../add';
+export default function Step1_1() {
+  const { setUboModal, uboList, handleDelUbo, handleGetUboList, businessData } =
+    useModel('verify');
+  const [obj, setObj] = useState({});
+
+  useEffect(() => {
+    if (businessData.id) {
+      handleGetUboList();
+    }
+  }, [businessData]);
+  const handleSubmit = async () => {
+    history.push('/user/verification/corporate/step2_2');
+  };
+  return (
+    <>
+      <AddUbo data={obj} />
+      <div className="flex items-center justify-between pb-3 text-[24px] font-bold text-[#202B4B]">
+        <div></div>
+        <CloseSvg
+          className="cursor-pointer"
+          onClick={() => {
+            history.push('/user/verification');
+          }}
+        />
+      </div>
+      <div className="w-[588px] relative m-auto rounded-[16px] pt-[40px] border border-[#F0F1F1]">
+        <TimeLine active={2} progress={100} />
+        <div className="w-full h-[600px] pb-8 overflow-y-auto px-8">
+          <div className="text-[24px] text-black font-bold mb-3">
+            Associated parties of your company
+          </div>
+          <div className="text-sm !mb-4 text-[#5b6276] leading-[24px]">
+            Check the associated parties of your company and,if necessary, edit
+            them
+          </div>
+          <div className="mt-[48px] text-[#5B6276] text-sm leading-6">UBO</div>
+          {uboList
+            .filter((item: any) => item.type === 0)
+            .map((_: any, index) => (
+              <div
+                key={index}
+                className="mt-2 bg-[#F2F6FA] rounded-xl py-3 px-4"
+              >
+                <div className="flex items-center justify-between">
+                  <div className="flex items-center gap-2 text-[14px] text-[#202B4B]">
+                    <PeopleSvg /> {_.firstname} {_.lastname}
+                  </div>
+                  <div className="items-center cursor-pointer flex gap-2">
+                    <EditSvg
+                      onClick={() => {
+                        setObj(_);
+                        setUboModal(true);
+                      }}
+                    />
+                    <Popconfirm
+                      title="Delete"
+                      description="Are you sure to delete this ?"
+                      onConfirm={() => handleDelUbo(_.id)}
+                      okText="Yes"
+                      cancelText="No"
+                    >
+                      <DelSvg />
+                    </Popconfirm>
+                  </div>
+                </div>
+                <div className="mt-3 text-[#5B6276] text-sm">{_.email}</div>
+              </div>
+            ))}
+          {uboList.filter((item: any) => item.type === 0).length !== 5 ? (
+            <div
+              onClick={() => {
+                setObj({
+                  type: 0,
+                });
+                setUboModal(true);
+              }}
+              className="inline-flex mt-2 cursor-pointer items-center text-[14px] text-[#202B4B] px-6 h-[40px] border border-[#202B4B1F] rounded-lg"
+            >
+              <CreateSvg className="mr-2" /> Add individual
+            </div>
+          ) : null}
+          <div className="mt-[24px] text-[#5B6276] text-sm leading-6">
+            Representative
+          </div>
+          {uboList
+            .filter((item: any) => item.type === 1)
+            .map((_: any, index) => (
+              <div
+                key={index}
+                className="mt-2 bg-[#F2F6FA] rounded-xl py-3 px-4"
+              >
+                <div className="flex items-center justify-between">
+                  <div className="flex items-center gap-2 text-[14px] text-[#202B4B]">
+                    <PeopleSvg /> {_.firstname} {_.lastname}
+                  </div>
+                  <div className="items-center cursor-pointer flex gap-2">
+                    <EditSvg
+                      onClick={() => {
+                        setObj(_);
+                        setUboModal(true);
+                      }}
+                    />
+                    <Popconfirm
+                      title="Delete"
+                      description="Are you sure to delete this ?"
+                      onConfirm={() => handleDelUbo(_.id)}
+                      okText="Yes"
+                      cancelText="No"
+                    >
+                      <DelSvg />
+                    </Popconfirm>
+                  </div>
+                </div>
+                <div className="mt-3 text-[#5B6276] text-sm">{_.email}</div>
+              </div>
+            ))}
+          {uboList.filter((item: any) => item.type === 1).length !== 5 ? (
+            <div
+              onClick={() => {
+                setObj({
+                  type: 1,
+                });
+                setUboModal(true);
+              }}
+              className="inline-flex mt-2 cursor-pointer items-center text-[14px] text-[#202B4B] px-6 h-[40px] border border-[#202B4B1F] rounded-lg"
+            >
+              <CreateSvg className="mr-2" /> Add individual
+            </div>
+          ) : null}
+        </div>
+        <div className="w-full rounded-bl-2xl rounded-br-2xl  h-[104px] px-[40px] gap-[23px] bg-[#fbfbfb] flex items-center justify-between">
+          <div
+            onClick={() => (uboList.length ? handleSubmit() : null)}
+            className={`w-[390px] ${
+              !uboList.length ? ' opacity-60' : ''
+            }  cursor-pointer h-[48px] leading-[48px] text-center text-white font-[500] bg-[#202b4b] rounded-lg`}
+          >
+            Continue
+          </div>
+          <div
+            onClick={() => {
+              history.back();
+            }}
+            className="flex-1 cursor-pointer h-[48px] leading-[48px] border border-[#202B4B14] rounded-lg font-[500] text-center"
+          >
+            Back
+          </div>
+        </div>
+      </div>
+    </>
+  );
+}
