@@ -92,14 +92,11 @@ export default function useAuthModel() {
    * Initialize authentication state from stored tokens
    */
   useEffect(() => {
-    console.log('🚀 Auth model initializing...');
     const authenticated = tokenManager.isAuthenticated();
-    console.log('🔐 Is authenticated:', authenticated);
     setIsAuthenticated(authenticated);
 
     // If authenticated, fetch user info
     if (authenticated) {
-      console.log('✅ User is authenticated, fetching user info...');
       fetchUserInfo();
     } else {
       console.log('❌ User is not authenticated');
@@ -130,14 +127,8 @@ export default function useAuthModel() {
         setUser({
           ...response.data,
         });
-        // setIsAuthenticated(true);
         setError(null);
         setLoginModel(true);
-
-        // message.success('Login successful!');
-
-        // Redirect to dashboard or home page
-        // history.push('/');
       }
 
       return response;

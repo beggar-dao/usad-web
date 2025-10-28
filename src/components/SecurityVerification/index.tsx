@@ -4,7 +4,7 @@ import {
   disable2faAxios,
   secondaryLogin,
   sendCaptcha,
-} from '@/services/api/gbpc';
+} from '@/services/user';
 import { history, useModel } from '@umijs/max';
 import { Checkbox, ConfigProvider, Form, Input, Modal } from 'antd';
 import { useEffect, useState } from 'react';

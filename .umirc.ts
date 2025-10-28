@@ -155,6 +155,138 @@ export default defineConfig({
       path: '/mint',
       component: './mint',
     },
+    {
+      path: '/Auth/Login',
+      component: './Login',
+    },
+    {
+      path: '/Auth/CreateAccount',
+      component: './CreateAccount',
+    },
+    {
+      path: '/Auth/ResetPassword',
+      component: './ResetPassword',
+    },
+    {
+      path: '/Auth/Setup2FA',
+      component: './Setup2FA',
+    },
+    {
+      path: '/user',
+      component: './user/index',
+      routes: [
+        { path: '/user/profile', component: './user/profile' },
+        { path: '/user/verification', component: './user/verification' },
+        {
+          path: '/user/addressWhitelist',
+          component: './user/addressWhitelist',
+        },
+        {
+          path: '/user/history',
+          component: './user/history',
+        },
+        {
+          path: '/user/payment',
+          component: './user/payment',
+        },
+        {
+          path: '/user/wallet',
+          component: './user/wallet',
+        },
+        {
+          path: '/user/gbpc',
+          component: './user/gbpc',
+        },
+        {
+          path: '/user/gbpc/transfer',
+          component: './user/gbpc/transfer',
+        },
+        {
+          path: '/user/gbpc/deposit',
+          component: './user/gbpc/deposit',
+        },
+        {
+          path: '/user/gbpc/withdraw',
+          component: './user/gbpc/withdraw',
+        },
+        {
+          path: '/user/gbpc/buy',
+          component: './user/gbpc/buy',
+        },
+        {
+          path: '/user/gbpc/buy',
+          component: './user/gbpc/buy',
+        },
+        {
+          path: '/user/gbpc/buy',
+          component: './user/gbpc/buy',
+        },
+        {
+          path: '/user/gbpc/buy',
+          component: './user/gbpc/buy',
+        },
+        {
+          path: '/user/payment/addBank',
+          component: './user/addBank',
+        },
+        {
+          path: '/user/verification/start',
+          component: './user/start',
+        },
+        {
+          path: '/user/verification/individual',
+          component: './user/individual',
+        },
+        {
+          path: '/user/verification/corporate',
+          component: './user/corporate',
+        },
+        {
+          path: '/user/verification/individual/step1_1',
+          component: './user/individual/step1_1',
+        },
+        {
+          path: '/user/verification/individual/step1_2',
+          component: './user/individual/step1_2',
+        },
+        {
+          path: '/user/verification/individual/step1_3',
+          component: './user/individual/step1_3',
+        },
+        {
+          path: '/user/verification/individual/step2',
+          component: './user/individual/step2',
+        },
+        {
+          path: '/user/verification/individual/step3',
+          component: './user/individual/step3',
+        },
+        {
+          path: '/user/verification/complete',
+          component: './user/complete',
+        },
+        {
+          path: '/user/verification/corporate/step1',
+          component: './user/corporate/step1',
+        },
+        {
+          path: '/user/verification/corporate/step2_1',
+          component: './user/corporate/step2_1',
+        },
+        {
+          path: '/user/verification/corporate/step2_2',
+          component: './user/corporate/step2_2',
+        },
+        {
+          path: '/user/verification/corporate/step3',
+          component: './user/corporate/step3',
+        },
+        {
+          path: '/user/verification/corporate/step3_1',
+          component: './user/corporate/step3_1',
+        },
+      ],
+    },
   ],
 
   npmClient: 'pnpm',

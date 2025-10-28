@@ -3,7 +3,7 @@ import { EyeInvisibleOutlined, EyeTwoTone } from '@ant-design/icons';
 import { useModel, history } from '@umijs/max';
 import { Form, Input } from 'antd';
 import { useEffect, useState } from 'react';
-import { resetPassword } from '@/services/api/gbpc';
+import { resetPassword } from '@/services/user';
 
 const LoginForm = () => {
   const { setLoginModel, resetStep, setAlertInfo } = useModel('dialogState');
