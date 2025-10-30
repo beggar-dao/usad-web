@@ -6,13 +6,14 @@ import { Country, State } from 'country-state-city';
 import { useEffect, useState } from 'react';
 export default function ProfileTab1() {
   const [qrCode, setQrCode] = useState<any>({});
-  const [self, setSelf] = useState<any>({});
+  const [_, setSelf] = useState<any>({});
   const { user, setUser } = useModel('auth');
   const [code, setCode] = useState('');
   const [form] = Form.useForm();
   const [selectedCountry, setSelectedCountry] = useState<string>('');
   const [availableStates, setAvailableStates] = useState<any[]>([]);
   const { setAlertInfo } = useModel('dialogState');
+
   const getSelfFunc = async () => {
     const res = await getSelf();
     form.setFieldsValue(res?.data || {});
@@ -27,6 +28,7 @@ export default function ProfileTab1() {
     }
     setSelf(res?.data || {});
   };
+
   const getQrCodeFunc = async () => {
     const res = await get2fa();
     setQrCode(res?.data || {});
@@ -66,7 +68,7 @@ export default function ProfileTab1() {
     if (navigator.clipboard && window.ClipboardItem) {
       navigator.clipboard
         .writeText(text)
-        .then(() => {})
+        .then(() => { })
         .catch((err) => {
           console.error('Failed to copy:', err);
           fallbackCopyTextToClipboard(text); // 回退到 execCommand
@@ -117,10 +119,6 @@ export default function ProfileTab1() {
               Form: {
                 itemMarginBottom: 16,
               },
-              Input: {},
-              Select: {
-                selectorBg: '#F2F6FA',
-              },
             },
           }}
         >
@@ -150,10 +148,6 @@ export default function ProfileTab1() {
                     className="register-input"
                   />
                 </Form.Item>
-                {/* <div className="text-sm text-[#5B6276] mb-2">First Name</div>
-                <div className="bg-[#F2F6FA] rounded-lg leading-[52px] px-4 h-[52px] text-sm text-[#202B4B]">
-                  {self?.firstname || ''}
-                </div> */}
               </div>
               <div className="flex-1">
                 <Form.Item
@@ -173,10 +167,6 @@ export default function ProfileTab1() {
                     className="register-input"
                   />
                 </Form.Item>
-                {/* <div className="text-sm text-[#5B6276] mb-2">Last Name</div>
-                <div className="bg-[#F2F6FA] rounded-lg px-4 h-[52px] leading-[52px] text-sm text-[#202B4B]">
-                  {self?.lastname || ''}
-                </div> */}
               </div>
             </div>
             <div className="">
@@ -191,18 +181,8 @@ export default function ProfileTab1() {
                   },
                 ]}
               >
-                <Input
-                  type="email"
-                  disabled
-                  variant="borderless"
-                  placeholder="Your Email Address"
-                  className="register-input"
-                />
+                <Input type="email" disabled placeholder="Your Email Address" />
               </Form.Item>
-              {/* <div className="text-sm text-[#5B6276] mb-2">Email</div>
-              <div className="bg-[#F2F6FA] rounded-lg px-4 h-[52px] leading-[52px] text-sm text-[#202B4B]">
-                {self?.email || ''}
-              </div> */}
             </div>
             <div className="flex mt-0 gap-8 justify-between">
               <div className="flex-1">
@@ -217,8 +197,8 @@ export default function ProfileTab1() {
                   ]}
                 >
                   <Select
-                    className="no-border-select"
                     showSearch
+                    size="large"
                     placeholder="Select your country"
                     value={selectedCountry}
                     onChange={handleCountryChange}
@@ -239,12 +219,6 @@ export default function ProfileTab1() {
                     ))}
                   </Select>
                 </Form.Item>
-                {/* <div className="text-sm text-[#5B6276] mb-2">
-                  Country of Residence
-                </div>
-                <div className="bg-[#F2F6FA] rounded-lg px-4 h-[52px] leading-[52px] text-sm text-[#202B4B]">
-                  {Country.getCountryByCode(self?.country || '')?.name}
-                </div> */}
               </div>
               <div className="flex-1">
                 <Form.Item
@@ -258,8 +232,8 @@ export default function ProfileTab1() {
                   ]}
                 >
                   <Select
-                    className="no-border-select"
                     showSearch
+                    size="large"
                     placeholder="Select your state/province"
                     disabled={!selectedCountry || availableStates.length === 0}
                     filterOption={(input, option) =>
@@ -272,8 +246,8 @@ export default function ProfileTab1() {
                       !selectedCountry
                         ? 'Please select a country first'
                         : availableStates.length === 0
-                        ? 'No states/provinces available'
-                        : 'No matching states/provinces'
+                          ? 'No states/provinces available'
+                          : 'No matching states/provinces'
                     }
                   >
                     {availableStates.map((state) => (
@@ -283,23 +257,18 @@ export default function ProfileTab1() {
                     ))}
                   </Select>
                 </Form.Item>
-                {/* <div className="text-sm text-[#5B6276] mb-2">State</div>
-                <div className="bg-[#F2F6FA] rounded-lg px-4 h-[52px] leading-[52px] text-sm text-[#202B4B]">
-                  {State.getStateByCodeAndCountry(self?.province, self?.country)
-                    ?.name || ''}
-                </div> */}
               </div>
             </div>
             <div className="mt-0">
               <div className="text-sm text-[#5B6276] mb-2">Time zone</div>
-              <div className="bg-[#F2F6FA] rounded-lg px-4 h-[52px] leading-[52px] text-sm text-[#202B4B]">
+              <div className="bg-[#1E2023] rounded px-4 h-[48px] leading-[48px] text-sm">
                 {Intl.DateTimeFormat().resolvedOptions().timeZone}
               </div>
             </div>
             <Button
               htmlType="submit"
               type="primary"
-              className="mt-12 cursor-pointer w-[214px] h-[48px] bg-[#202B4B] flex justify-center items-center text-center text-white rounded-lg"
+              className="gradient-button mt-12 cursor-pointer flex justify-center items-center text-center text-white"
             >
               Confirm
             </Button>
@@ -307,19 +276,19 @@ export default function ProfileTab1() {
         </ConfigProvider>
       </div>
       {!user.is2FA ? (
-        <div className="p-[40px] mt-[32px] rounded-[8px] max-w-[424px] bg-[#202B4B05]">
-          <div className="text-[#202B4B] text-center text-[16px] font-[600]">
+        <div className="p-[40px] mt-[32px] rounded-[8px] max-w-[424px] text-white bg-[#1A1A1B] border-[1px] border-[#505050]">
+          <div className="text-center text-[16px] font-[600]">
             Set up Two-factor Authentication
           </div>
-          <div className="mt-3 text-[#9EA6BC] text-sm leading-[22px] text-center">
+          <div className="mt-3 text-sm leading-[22px] text-center text-[#71757A]">
             If you don't already have an authenticator app, download Google
             Authenticator from the App Store or Play Store.
           </div>
-          <div className="mt-6 text-[#202B4B] text-xs font-[600] flex items-center gap-2">
+          <div className="mt-6 text-xs font-[600] flex items-center gap-2">
             <CheckOutlined className="text-[#9EE29D]" />
             <div>Open Authenticator App</div>
           </div>
-          <div className="mt-3 text-[#202B4B] text-xs font-[600] flex items-center gap-2">
+          <div className="mt-3 text-xs font-[600] flex items-center gap-2">
             <CheckOutlined className="text-[#9EE29D]" />
             <div>Scan the QR code to add a new token</div>
           </div>
@@ -328,7 +297,7 @@ export default function ProfileTab1() {
               src={`data:image/png;base64,${qrCode?.qrCodeImage}`}
               className="m-auto  mb-2 block w-[160px] h-[160px]"
             />
-            <div className="flex text-sm text-[#9EA6BC] items-center justify-center">
+            <div className="flex text-sm items-center justify-center">
               Account token (Key): {qrCode?.secret}{' '}
               <CopyOutlined
                 onClick={() => copy(qrCode?.secret)}
@@ -336,20 +305,21 @@ export default function ProfileTab1() {
               />
             </div>
             <div className="mt-8">
-              <div className="text-[#5B6276] text-sm mb-2">
+              <div className="text-sm mb-2">
                 Google Authentication*
               </div>
               <Input
-                variant="borderless"
-                className="h-[48px] bg-[#F2F6FA]"
+                size="large"
                 onChange={(e) => setCode(e.target.value)}
                 placeholder="Enter Google Authenticator code"
               />
-              <div
-                onClick={bindCode}
-                className="mt-[40px] cursor-pointer bg-[#202B4B] rounded-lg text-white leading-[48px] text-center"
-              >
-                Enable
+              <div className="flex justify-center">
+                <Button
+                  onClick={bindCode}
+                  className="mt-[40px] cursor-pointer text-white text-center gray-gradient-button"
+                >
+                  Enable
+                </Button>
               </div>
             </div>
           </div>

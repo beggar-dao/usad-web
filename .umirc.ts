@@ -2,7 +2,43 @@ import { defineConfig } from '@umijs/max';
 
 export default defineConfig({
   helmet: true,
-  antd: {},
+  antd: {
+    dark: true,
+    configProvider: {
+      theme: {
+        token: {
+          borderRadius: 4,
+          colorPrimary: '#FFD58E',
+          colorBorder: '#272831',
+        },
+        components: {
+          Tabs: {
+            colorText: '#ADB1B8',
+            colorTextActive: '#fff',
+            titleFontSize: 16,
+          },
+          Form: {
+            colorLabel: '#ADB1B8',
+          },
+          Input: {
+            colorBorder: '#1E2023',
+            colorBgContainer: '#1E2023',
+            colorTextPlaceholder: '#666',
+            paddingInlineLG: 16,
+            paddingBlockLG: 13,
+            inputFontSizeLG: 14,
+          },
+          Select: {
+            colorBorder: '#1E2023',
+            colorBgContainer: '#1E2023',
+            colorTextPlaceholder: '#666',
+            controlHeightLG: 48,
+            fontSizeLG: 14,
+          }
+        }
+      },
+    },
+  },
   access: {},
   model: {},
   initialState: {},
@@ -174,6 +210,7 @@ export default defineConfig({
     {
       path: '/user',
       component: './user/index',
+      footer: false,
       routes: [
         { path: '/user/profile', component: './user/profile' },
         { path: '/user/verification', component: './user/verification' },

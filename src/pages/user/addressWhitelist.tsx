@@ -114,10 +114,6 @@ export default function AddressWhitelist() {
                   Form: {
                     itemMarginBottom: 16,
                   },
-                  Input: {},
-                  Select: {
-                    selectorBg: '#F2F6FA',
-                  },
                 },
               }}
             >

@@ -132,10 +132,7 @@ export default function ChangeEmail() {
                 },
               ]}
             >
-              <Input
-                className="bg-[#F2F6FA]"
-                placeholder="Enter your current email"
-              />
+              <Input placeholder="Enter your current email" />
             </Form.Item>
 
             <Form.Item
@@ -162,10 +159,7 @@ export default function ChangeEmail() {
                 }),
               ]}
             >
-              <Input
-                className="bg-[#F2F6FA]"
-                placeholder="Enter your new email"
-              />
+              <Input placeholder="Enter your new email" />
             </Form.Item>
 
             <Form.Item
@@ -187,10 +181,7 @@ export default function ChangeEmail() {
                 }),
               ]}
             >
-              <Input
-                className="bg-[#F2F6FA]"
-                placeholder="Confirm your new email"
-              />
+              <Input placeholder="Confirm your new email" />
             </Form.Item>
 
             <Form.Item
@@ -212,18 +203,16 @@ export default function ChangeEmail() {
                 suffix={
                   <button
                     type="button"
-                    className={`text-sm ${
-                      isCounting
-                        ? 'text-gray-400'
-                        : 'text-[#63BCFF] hover:text-[#52a1e3] cursor-pointer'
-                    }`}
+                    className={`text-sm ${isCounting
+                      ? 'text-gray-400'
+                      : 'text-[#63BCFF] hover:text-[#52a1e3] cursor-pointer'
+                      }`}
                     onClick={handleSend}
                     disabled={isCounting || !form.getFieldValue('newEmail')}
                   >
                     {isCounting ? `${countdown}s` : 'Send'}
                   </button>
                 }
-                className="bg-[#F2F6FA]"
                 placeholder="Enter verification code"
               />
             </Form.Item>

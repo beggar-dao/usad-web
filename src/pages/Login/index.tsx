@@ -68,10 +68,6 @@ const LoginForm = () => {
                       Form: {
                         itemMarginBottom: 16,
                       },
-                      Input: {},
-                      Select: {
-                        selectorBg: '#F2F6FA',
-                      },
                     },
                   }}
                 >

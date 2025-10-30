@@ -89,6 +89,7 @@ export function onRouteChange({ clientRoutes, location }) {
         'Forgot your password? Securely reset your USAD login credentials and regain access to your account.',
     },
   ];
+
   const route = matchRoutes(clientRoutes, location.pathname)?.pop()?.route;
 
   if (route) {

@@ -20,11 +20,13 @@ export default function ChangePassword() {
       show: true,
     });
   };
+
   useEffect(() => {
     if (!passwordModel) {
       form.resetFields();
     }
   }, [passwordModel]);
+
   return (
     <Modal
       onCancel={() => {
@@ -58,10 +60,7 @@ export default function ChangePassword() {
                 },
               ]}
             >
-              <Input.Password
-                className="bg-[#F2F6FA]"
-                placeholder="Please enter your current password."
-              />
+              <Input.Password placeholder="Please enter your current password." />
             </Form.Item>
             <div className="flex items-center font-bold mb-3 text-[14px]">
               New Password
@@ -79,10 +78,7 @@ export default function ChangePassword() {
                 },
               ]}
             >
-              <Input.Password
-                className="bg-[#F2F6FA]"
-                placeholder="Please enter a new password."
-              />
+              <Input.Password placeholder="Please enter a new password." />
             </Form.Item>
             <div className="flex items-center font-bold mb-3 text-[14px]">
               Confirm New Password
@@ -108,10 +104,7 @@ export default function ChangePassword() {
                 }),
               ]}
             >
-              <Input.Password
-                className="bg-[#F2F6FA]"
-                placeholder="Please enter again your new password."
-              />
+              <Input.Password placeholder="Please enter again your new password." />
             </Form.Item>
             <div className="flex items-center font-bold mb-3 text-[14px]">
               <GoogleSvg className="mr-3" />
@@ -126,10 +119,7 @@ export default function ChangePassword() {
                 },
               ]}
             >
-              <Input
-                className="bg-[#F2F6FA]"
-                placeholder="Please enter the Google Authenticator code"
-              />
+              <Input placeholder="Please enter the Google Authenticator code" />
             </Form.Item>
           </Form>
           <div

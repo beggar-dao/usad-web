@@ -111,12 +111,12 @@ export default function SecurityVerification({
 
     let res = disabled2fa
       ? await disable2faAxios({
-          ...values,
-        })
+        ...values,
+      })
       : await secondaryLogin({
-          userId: user.id,
-          ...values,
-        });
+        userId: user.id,
+        ...values,
+      });
     let data = res?.data || {};
 
     if (disabled2fa) {
@@ -168,25 +168,24 @@ export default function SecurityVerification({
     >
       <div className="px-[16px] py-[16px]">
         <div
-          className={`text-[24px] text-[#202b4b] ${
-            disabled2fa ? 'mb-[8px]' : 'mb-[30px]'
-          } font-bold text-center`}
+          className={`text-[24px] text-[#202b4b] ${disabled2fa ? 'mb-[8px]' : 'mb-[30px]'
+            } font-bold text-center`}
         >
           {withDrawForm.valid
             ? 'Confirm to Withdraw'
             : transferForm.valid
-            ? 'Confirm Transfer'
-            : addressObj.setting
-            ? 'Disable 24 Hour Lock'
-            : addressObj.batch
-            ? 'Add in Batches'
-            : addressObj.add
-            ? 'Add an Address'
-            : addressObj.delete
-            ? 'Delete Address'
-            : disabled2fa
-            ? `Two-Factor Authentication`
-            : `Security Verification`}
+              ? 'Confirm Transfer'
+              : addressObj.setting
+                ? 'Disable 24 Hour Lock'
+                : addressObj.batch
+                  ? 'Add in Batches'
+                  : addressObj.add
+                    ? 'Add an Address'
+                    : addressObj.delete
+                      ? 'Delete Address'
+                      : disabled2fa
+                        ? `Two-Factor Authentication`
+                        : `Security Verification`}
         </div>
 
         {withDrawForm.valid ? (
@@ -260,17 +259,15 @@ export default function SecurityVerification({
                 variant="borderless"
                 suffix={
                   <div
-                    className={`text-sm h-[26px] ${
-                      isCounting
-                        ? 'text-gray-400'
-                        : 'text-[#63BCFF] cursor-pointer'
-                    }`}
+                    className={`text-sm h-[26px] ${isCounting
+                      ? 'text-gray-400'
+                      : 'text-[#63BCFF] cursor-pointer'
+                      }`}
                     onClick={handleSend}
                   >
                     {isCounting ? `${countdown}s` : 'Send'}
                   </div>
                 }
-                className="bg-[#F2F6FA]"
                 placeholder="Please enter the email verification code"
               />
             </Form.Item>
@@ -291,7 +288,7 @@ export default function SecurityVerification({
                 >
                   <Input
                     variant="borderless"
-                    className="bg-[#F2F6FA] h-[40px]"
+                    className="h-[40px]"
                     placeholder="Please enter the Google Authenticator code"
                   />
                 </Form.Item>

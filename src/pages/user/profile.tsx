@@ -1,4 +1,4 @@
-import { ConfigProvider, Tabs } from 'antd';
+import { Tabs } from 'antd';
 import { useEffect, useState } from 'react';
 import ProfileSecurity from './components/ProfileSecurity';
 import ProfileTab1 from './components/ProfileTab1';
@@ -19,36 +19,27 @@ export default function Profile() {
       children: <ProfileSecurity setActiveKey={setActiveKey} />,
     },
   ];
+
   useEffect(() => {
     return () => {
       sessionStorage.removeItem('activeKey');
     };
   }, []);
+
   return (
-    <>
-      <div className=" pb-6 text-[24px] font-bold text-[#202B4B]">
+    <div>
+      <div className=" pb-6 text-[24px] font-bold text-white">
         Account Setting
       </div>
-      <ConfigProvider
-        theme={{
-          components: {
-            Tabs: {
-              /* 这里是你的组件 token */
-              titleFontSize: 16,
-            },
-          },
+      <Tabs
+        activeKey={activeKey}
+        onChange={(key) => {
+          sessionStorage.setItem('activeKey', key);
+          setActiveKey(key);
         }}
-      >
-        <Tabs
-          activeKey={activeKey}
-          onChange={(key) => {
-            sessionStorage.setItem('activeKey', key);
-            setActiveKey(key);
-          }}
-          className="gbpc-tabs"
-          items={items}
-        />
-      </ConfigProvider>
-    </>
+        className="gbpc-tabs"
+        items={items}
+      />
+    </div>
   );
 }

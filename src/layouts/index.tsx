@@ -64,7 +64,7 @@ export default () => {
         <Header />
         <div id="gbpc-scroll" className="flex-1 overflow-auto">
           <Outlet />
-          {location.pathname.includes('/Auth/') ? null : <Footer />}
+          {location.pathname.includes('/Auth/') || location.pathname.includes('/user/') ? null : <Footer />}
         </div>
         <Modal
           open={sessionModal}

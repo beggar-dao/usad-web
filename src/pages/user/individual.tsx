@@ -65,10 +65,6 @@ export default function Individual() {
                 Form: {
                   itemMarginBottom: 16,
                 },
-                Input: {},
-                Select: {
-                  selectorBg: '#F2F6FA',
-                },
               },
             }}
           >
@@ -126,7 +122,7 @@ export default function Individual() {
                   placeholder="mm/dd/yyyy"
                   format="MM/DD/YYYY"
                   maxDate={dayjs()}
-                  className="w-full bg-[#F2F6FA]"
+                  className="w-full"
                 />
               </Form.Item>
 

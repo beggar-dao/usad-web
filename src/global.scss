@@ -228,3 +228,22 @@ body,
     border: 1px solid #dac89f1f;
   }
 }
+
+.gbpc-tabs.ant-tabs .ant-tabs-tab.ant-tabs-tab-active .ant-tabs-tab-btn {
+  color: #fff !important;
+  font-weight: bold;
+}
+
+.gradient-button {
+  width: 244px;
+  height: 48px;
+  background: linear-gradient(90deg, #C69F58 0.11%, #FFEECF 16.21%, #A56F2A 51.22%, #C69F58 99.79%);
+  border-radius: 60px;
+}
+
+.gray-gradient-button {
+  width: 244px;
+  height: 48px;
+  background: linear-gradient(90deg, #DDDDDD 0.11%, #FDFDFD 23.77%, #868686 56.53%, #DDDDDD 99.79%);
+  border-radius: 60px;
+}

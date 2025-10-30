@@ -8,9 +8,6 @@ import { useState } from 'react';
 export default function Header() {
   const location = useLocation();
   const { logout, user } = useModel('auth');
-  const [expand, setExpand] = useState(false);
-  const { isWeb } = useModel('window');
-  const toggleExpand = () => setExpand(!expand);
 
   const nav = [
     {
@@ -68,6 +65,7 @@ export default function Header() {
           menu={{ items: userMenuItems }}
           placement="bottomRight"
           trigger={['click']}
+          className="my-dropdown"
         >
           <Button
             type="text"
@@ -85,14 +83,12 @@ export default function Header() {
         <>
           <NavLink
             to="/Auth/Login"
-            onClick={() => setExpand(false)}
             className="btn btn-login py-[10px] mr-[8px] bg-[transparent]"
           >
             <span className="font-[500]">Log in</span>
           </NavLink>
           <NavLink
             to="/Auth/CreateAccount"
-            onClick={() => setExpand(false)}
             className="btn btn-sigup py-[10px]"
           >
             <span className="font-[500]">Sign Up</span>

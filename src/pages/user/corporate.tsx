@@ -48,10 +48,6 @@ export default function Step1_1() {
                 Form: {
                   itemMarginBottom: 16,
                 },
-                Input: {},
-                Select: {
-                  selectorBg: '#F2F6FA',
-                },
               },
             }}
           >

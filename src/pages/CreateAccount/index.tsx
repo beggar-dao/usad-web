@@ -178,10 +178,6 @@ const CreateAccountForm = () => {
                     Form: {
                       itemMarginBottom: 16,
                     },
-                    Input: {},
-                    Select: {
-                      selectorBg: '#F2F6FA',
-                    },
                   },
                 }}
               >
@@ -261,11 +257,11 @@ const CreateAccountForm = () => {
                           message: 'Please enter the verification code!',
                         },
                       ]}
-                      // extra={
-                      //   captchaSent
-                      //     ? '✅ Verification code sent to your email'
-                      //     : ''
-                      // }
+                    // extra={
+                    //   captchaSent
+                    //     ? '✅ Verification code sent to your email'
+                    //     : ''
+                    // }
                     >
                       <div
                         style={{
@@ -291,8 +287,8 @@ const CreateAccountForm = () => {
                           {captchaLoading
                             ? 'Sending...'
                             : isCounting
-                            ? `${countdown}s`
-                            : 'Send Code'}
+                              ? `${countdown}s`
+                              : 'Send Code'}
                         </Button>
                       </div>
                     </Form.Item>
@@ -344,19 +340,17 @@ const CreateAccountForm = () => {
                           }}
                         >
                           <i
-                            className={`bi ${
-                              showPassword ? 'bi-eye' : 'bi-eye-slash'
-                            }`}
+                            className={`bi ${showPassword ? 'bi-eye' : 'bi-eye-slash'
+                              }`}
                           ></i>
                         </span>
                         <div className="flex justify-between pt-[10px] w-full">
                           <div className="w-[22%]">
                             <div
-                              className={`h-[2px] rounded-full ${
-                                watchFields?.password?.length >= 8
+                              className={`h-[2px] rounded-full ${watchFields?.password?.length >= 8
                                   ? 'bg-[#3EA5F2]'
                                   : 'bg-[#eee]'
-                              }`}
+                                }`}
                             ></div>
                             <div className="font-inter text-[#9EA6BC] text-[12px] leading-[18px] font-normal">
                               8 symbols
@@ -364,11 +358,10 @@ const CreateAccountForm = () => {
                           </div>
                           <div className="w-[22%]">
                             <div
-                              className={`h-[2px] rounded-full ${
-                                /[a-z]/.test(watchFields?.password) && watchFields?.password?.length
+                              className={`h-[2px] rounded-full ${/[a-z]/.test(watchFields?.password) && watchFields?.password?.length
                                   ? 'bg-[#3EA5F2]'
                                   : 'bg-[#eee]'
-                              }`}
+                                }`}
                             ></div>
                             <div className="font-inter text-[#9EA6BC] text-[12px] leading-[18px] font-normal">
                               Lower Case
@@ -376,11 +369,10 @@ const CreateAccountForm = () => {
                           </div>
                           <div className="w-[22%]">
                             <div
-                              className={`h-[2px] rounded-full ${
-                                /[A-Z]/.test(watchFields?.password)
+                              className={`h-[2px] rounded-full ${/[A-Z]/.test(watchFields?.password)
                                   ? 'bg-[#3EA5F2]'
                                   : 'bg-[#eee]'
-                              }`}
+                                }`}
                             ></div>
                             <div className="font-inter text-[#9EA6BC] text-[12px] leading-[18px] font-normal">
                               Upper Case
@@ -388,11 +380,10 @@ const CreateAccountForm = () => {
                           </div>
                           <div className="w-[22%]">
                             <div
-                              className={`h-[2px] rounded-full ${
-                                /[0-9]/.test(watchFields?.password)
+                              className={`h-[2px] rounded-full ${/[0-9]/.test(watchFields?.password)
                                   ? 'bg-[#3EA5F2]'
                                   : 'bg-[#eee]'
-                              }`}
+                                }`}
                             ></div>
                             <div className="font-inter text-[#9EA6BC] text-[12px] leading-[18px] font-normal">
                               Number
@@ -447,9 +438,8 @@ const CreateAccountForm = () => {
                           }}
                         >
                           <i
-                            className={`bi ${
-                              showConfirmPassword ? 'bi-eye' : 'bi-eye-slash'
-                            }`}
+                            className={`bi ${showConfirmPassword ? 'bi-eye' : 'bi-eye-slash'
+                              }`}
                           ></i>
                         </span>
                       </div>
@@ -540,8 +530,8 @@ const CreateAccountForm = () => {
                           !selectedCountry
                             ? 'Please select a country first'
                             : availableStates.length === 0
-                            ? 'No states/provinces available'
-                            : 'No matching states/provinces'
+                              ? 'No states/provinces available'
+                              : 'No matching states/provinces'
                         }
                       >
                         {availableStates.map((state) => (
@@ -626,8 +616,8 @@ const CreateAccountForm = () => {
                               value
                                 ? Promise.resolve()
                                 : Promise.reject(
-                                    new Error('Agree to terms and conditions'),
-                                  ),
+                                  new Error('Agree to terms and conditions'),
+                                ),
                           },
                         ]}
                       >

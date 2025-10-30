@@ -96,10 +96,7 @@ export default function AddUbo({ data }: any) {
                 },
               ]}
             >
-              <Input
-                className="bg-[#F2F6FA]"
-                placeholder="Please enter first name."
-              />
+              <Input placeholder="Please enter first name." />
             </Form.Item>
 
             <Form.Item
@@ -112,10 +109,7 @@ export default function AddUbo({ data }: any) {
                 },
               ]}
             >
-              <Input
-                className="bg-[#F2F6FA]"
-                placeholder="Please enter last name."
-              />
+              <Input placeholder="Please enter last name." />
             </Form.Item>
             <Form.Item
               name="email"
@@ -131,10 +125,7 @@ export default function AddUbo({ data }: any) {
                 },
               ]}
             >
-              <Input
-                className="bg-[#F2F6FA]"
-                placeholder="Please enter email."
-              />
+              <Input placeholder="Please enter email." />
             </Form.Item>
           </Form>
           <div

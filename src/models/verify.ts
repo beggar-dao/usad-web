@@ -107,13 +107,16 @@ export default function () {
   const init = () => {
     if (!user.id) return;
     getVeriSelf().then((res) => {
-      setVerifi(res.data || {});
+
+      setVerifi(res?.data || {});
+
       if (res?.data?.status === 0) {
         setIndividualData(res.data || {});
       }
     });
     getCorporateSelf().then((res) => {
-      setCorporate(res.data || {});
+      setCorporate(res?.data || {});
+
       if (
         res?.data?.status === 0 ||
         res?.data?.status === 1 ||
