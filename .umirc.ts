@@ -36,7 +36,7 @@ export default defineConfig({
             fontSizeLG: 14,
           },
           Button: {
-            defaultShadow: 'none',
+            primaryShadow: 'none',
           }
         }
       },

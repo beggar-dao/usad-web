@@ -4,11 +4,7 @@ import { useEffect, useRef } from 'react';
 
 export default function Banner() {
   const ref = useRef<HTMLDivElement>(null);
-  const stars = Array.from({ length: 30 }, (_, i) => ({
-    id: i,
-    top: Math.random() * 100, // 随机生成 0-100% 的 top 值
-    left: Math.random() * 100, // 随机生成 0-100% 的 left 值
-  }));
+
   function getRecent12Days() {
     const days = [];
     const today = new Date();
@@ -166,21 +162,12 @@ export default function Banner() {
     // 创建粒子
     createParticles();
   }, []);
+
   return (
     <div
       id="particles"
       className="home_banner pt-[30px] md:pt-[180px] pb-[40px] md:pb-[194px] relative"
     >
-      {/* {stars.map((star) => (
-        <div
-          key={star.id}
-          className="absolute w-[4px] h-[4px] rounded-full star"
-          style={{
-            top: `${star.top}%`,
-            left: `${star.left}%`,
-          }}
-        ></div>
-      ))} */}
       <div className="px-4 md:max-w-[1440px] m-auto flex flex-col gap-6 md:flex-row items-center justify-between">
         <div className="w-full md:w-[43%]">
           <AnimatedContent

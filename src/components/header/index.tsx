@@ -3,7 +3,6 @@ import { LogoutOutlined, UserOutlined } from '@ant-design/icons';
 import { history, NavLink, useLocation } from '@umijs/max';
 import { useModel } from '@umijs/max';
 import { Avatar, Button, Dropdown } from 'antd';
-import { useState } from 'react';
 
 export default function Header() {
   const location = useLocation();
@@ -100,8 +99,8 @@ export default function Header() {
 
   return (
     <div className="border-b border-b-[#FFFFFF24]">
-      <div className="container mx-auto w-full flex items-center">
-        <div className="flex flex-1 px-4 h-[87px] items-center">
+      <div className="container mx-auto w-full flex items-center gap-4">
+        <div className="flex flex-1 h-[87px] items-center">
           <img
             onClick={() => history.push('/')}
             src={logo}

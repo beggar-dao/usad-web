@@ -148,7 +148,7 @@ export default function Step1_1() {
                 beforeUpload={beforeUpload}
                 customRequest={uploadFile}
                 onChange={(data) =>
-                  handleUploadChange(data, 'personalPhotoData')
+                  handleUploadChange(data, "personalPhotoData")
                 }
                 className=" z-10 absolute left-0 right-0 w-full h-full"
               >
