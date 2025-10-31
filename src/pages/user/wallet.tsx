@@ -137,7 +137,7 @@ export default function Wallet() {
                       onClick={() => {
                         setOpen(true);
                       }}
-                      className="gold-gradient-bg cursor-pointer  flex-1 rounded-lg leading-10 text-center text-white text-xs font-bold"
+                      className="gold-gradient-bg cursor-pointer flex-1 rounded-lg leading-10 text-center text-white text-xs font-bold"
                     >
                       Deposit
                     </div>
@@ -145,7 +145,7 @@ export default function Wallet() {
                       onClick={() => {
                         history.push('/user/gbpc/transfer');
                       }}
-                      className="border border-[#25282C] cursor-pointer flex-1 rounded-lg leading-10 text-center text-[202B4B] text-xs font-bold bg-[#1E2023]"
+                      className="border border-[#25282C] cursor-pointer flex-1 rounded-lg leading-10 text-center text-white text-xs font-bold bg-[#1E2023]"
                     >
                       Transfer
                     </div>
