@@ -157,7 +157,7 @@ export default function ProfileSecurity({ setActiveKey }: any) {
               </div>
               <div className="text-sm text-[#71757A] font-[300]">
                 Account abnormal?{' '}
-                <span className="text-[#63BCFF]">Deactivate an Account</span>
+                <span className="text-[#C69F58] cursor-pointer">Deactivate an Account</span>
               </div>
             </div>
           </div>
