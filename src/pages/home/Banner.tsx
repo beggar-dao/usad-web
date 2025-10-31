@@ -9,29 +9,29 @@ export default function Banner() {
     top: Math.random() * 100, // 随机生成 0-100% 的 top 值
     left: Math.random() * 100, // 随机生成 0-100% 的 left 值
   }));
-function getRecent12Days() {
-  const days = [];
-  const today = new Date();
-  
-  // 从今天开始，往前推11天，共12天
-  for (let i = 0; i < 12; i++) {
-    // 创建当前偏移量的日期对象
-    const date = new Date();
-    date.setTime(today.getTime() - i * 24 * 60 * 60 * 1000);
-    
-    // 获取年、月、日
-    const year = date.getFullYear();
-    // 月份从0开始，所以需要+1
-    const month = String(date.getMonth() + 1).padStart(2, '0');
-    const day = String(date.getDate()).padStart(2, '0');
-    
-    // 格式化为YYYY-MM-DD并添加到数组
-    days.push(`${year}-${month}-${day}`);
+  function getRecent12Days() {
+    const days = [];
+    const today = new Date();
+
+    // 从今天开始，往前推11天，共12天
+    for (let i = 0; i < 12; i++) {
+      // 创建当前偏移量的日期对象
+      const date = new Date();
+      date.setTime(today.getTime() - i * 24 * 60 * 60 * 1000);
+
+      // 获取年、月、日
+      const year = date.getFullYear();
+      // 月份从0开始，所以需要+1
+      const month = String(date.getMonth() + 1).padStart(2, '0');
+      const day = String(date.getDate()).padStart(2, '0');
+
+      // 格式化为YYYY-MM-DD并添加到数组
+      days.push(`${year}-${month}-${day}`);
+    }
+
+    return days;
   }
-  
-  return days;
-}
-  
+
   useEffect(() => {
     var myChart = echarts.init(ref.current);
     const option = {
@@ -84,14 +84,12 @@ function getRecent12Days() {
         axisLabel: {
           formatter: (value: number) => {
             // 只显示 1, 1.01, 0.99
-            console.log(value, '/');
             if (
               value === 1.0001 ||
               value === 1.0101 ||
               value === 1.0199 ||
               value === 0.9901
             ) {
-              console.log(value);
               return value.toFixed(4);
             }
             return '';

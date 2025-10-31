@@ -83,13 +83,13 @@ export default function Header() {
         <>
           <NavLink
             to="/Auth/Login"
-            className="btn btn-login py-[10px] mr-[8px] bg-[transparent]"
+            className="py-[10px] mx-4 bg-[transparent]"
           >
             <span className="font-[500]">Log in</span>
           </NavLink>
           <NavLink
             to="/Auth/CreateAccount"
-            className="btn btn-sigup py-[10px]"
+            className="py-[10px] mx-4"
           >
             <span className="font-[500]">Sign Up</span>
           </NavLink>

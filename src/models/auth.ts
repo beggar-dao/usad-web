@@ -121,12 +121,12 @@ export default function useAuthModel() {
         skipAuth: true,
       });
 
+      console.log('response', response)
+
       if (response.success && response.data) {
         // localStorage.setItem('userInfo', JSON.stringify(response.data || {}));
         // Update global state
-        setUser({
-          ...response.data,
-        });
+        setUser(response.data);
         setError(null);
         setLoginModel(true);
       }

@@ -12,6 +12,7 @@ import {
 } from 'antd';
 import { Country, State } from 'country-state-city';
 import { useEffect, useState } from 'react';
+import bgImg from '@/assets/images/login.png'
 
 const CreateAccountForm = () => {
   const { isWeb } = useModel('window')
@@ -161,7 +162,7 @@ const CreateAccountForm = () => {
         <section className={`${isWeb ? 'flex-1 max-w-[1440px] m-auto flex items-center justify-between' : ''}`}>
           {isWeb && <img
             className="block !w-[620px]"
-            src="../images/img_login.png"
+            src={bgImg}
             alt="Login Illustration"
           />}
           <div className={`${isWeb ? 'w-[488px]' : 'w-full'}`}>
@@ -169,7 +170,7 @@ const CreateAccountForm = () => {
               {/* Fixed Header */}
               <div className={`${isWeb ? 'register-header border-b-0 pb-0' : 'bg-transparent'}`}>
                 <h2 className={`register-title ${isWeb ? 'text-center' : 'text-left text-[18px] mb-[10px]'}`}>
-                  Create a GBPC Account
+                  Create an USAD Account
                 </h2>
               </div>
               <ConfigProvider
@@ -257,11 +258,6 @@ const CreateAccountForm = () => {
                           message: 'Please enter the verification code!',
                         },
                       ]}
-                    // extra={
-                    //   captchaSent
-                    //     ? '✅ Verification code sent to your email'
-                    //     : ''
-                    // }
                     >
                       <div
                         style={{
@@ -348,8 +344,8 @@ const CreateAccountForm = () => {
                           <div className="w-[22%]">
                             <div
                               className={`h-[2px] rounded-full ${watchFields?.password?.length >= 8
-                                  ? 'bg-[#3EA5F2]'
-                                  : 'bg-[#eee]'
+                                ? 'bg-[#3EA5F2]'
+                                : 'bg-[#eee]'
                                 }`}
                             ></div>
                             <div className="font-inter text-[#9EA6BC] text-[12px] leading-[18px] font-normal">
@@ -359,8 +355,8 @@ const CreateAccountForm = () => {
                           <div className="w-[22%]">
                             <div
                               className={`h-[2px] rounded-full ${/[a-z]/.test(watchFields?.password) && watchFields?.password?.length
-                                  ? 'bg-[#3EA5F2]'
-                                  : 'bg-[#eee]'
+                                ? 'bg-[#3EA5F2]'
+                                : 'bg-[#eee]'
                                 }`}
                             ></div>
                             <div className="font-inter text-[#9EA6BC] text-[12px] leading-[18px] font-normal">
@@ -370,8 +366,8 @@ const CreateAccountForm = () => {
                           <div className="w-[22%]">
                             <div
                               className={`h-[2px] rounded-full ${/[A-Z]/.test(watchFields?.password)
-                                  ? 'bg-[#3EA5F2]'
-                                  : 'bg-[#eee]'
+                                ? 'bg-[#3EA5F2]'
+                                : 'bg-[#eee]'
                                 }`}
                             ></div>
                             <div className="font-inter text-[#9EA6BC] text-[12px] leading-[18px] font-normal">
@@ -381,8 +377,8 @@ const CreateAccountForm = () => {
                           <div className="w-[22%]">
                             <div
                               className={`h-[2px] rounded-full ${/[0-9]/.test(watchFields?.password)
-                                  ? 'bg-[#3EA5F2]'
-                                  : 'bg-[#eee]'
+                                ? 'bg-[#3EA5F2]'
+                                : 'bg-[#eee]'
                                 }`}
                             ></div>
                             <div className="font-inter text-[#9EA6BC] text-[12px] leading-[18px] font-normal">
@@ -444,28 +440,6 @@ const CreateAccountForm = () => {
                         </span>
                       </div>
                     </Form.Item>
-
-                    {/* Username */}
-                    {/* <Form.Item
-                      label="Username"
-                      name="username"
-                      rules={[
-                        {
-                          required: true,
-                          message: 'Please enter your username!',
-                        },
-                        {
-                          min: 3,
-                          message: 'Username must be at least 3 characters!',
-                        },
-                      ]}
-                    >
-                      <Input
-                        type="text"
-                        placeholder="Your Username"
-                        className="register-input"
-                      />
-                    </Form.Item> */}
 
                     {/* Country */}
                     <Form.Item
@@ -564,8 +538,8 @@ const CreateAccountForm = () => {
                   </div>
 
                   {/* Fixed Bottom Area */}
-                  <div className={`register-footer ${isWeb ? 'relative border-t-0' : 'absolute bg-[#fbfbfb] bottom-0 left-[0] right-[0] px-[20px]'}`}>
-                    <div className={`bg-[#FBFBFB] absolute ${isWeb ? 'left-[-30px] top-0 bottom-[-30px] right-[-30px]' : 'left-[-20px] right-[-20px] px-[20px]'}`}></div>
+                  <div className={`register-footer ${isWeb ? 'relative border-t-0' : 'absolute bottom-0 left-[0] right-[0] px-[20px]'}`}>
+                    <div className={`absolute ${isWeb ? 'left-[-30px] top-0 bottom-[-30px] right-[-30px]' : 'left-[-20px] right-[-20px] px-[20px]'}`}></div>
                     {/* Buy/Redeem Question */}
                     <div className="relative z-40 px-[20px]">
                       <Form.Item

@@ -6,7 +6,7 @@ import {
   sendCaptcha,
 } from '@/services/user';
 import { history, useModel } from '@umijs/max';
-import { Checkbox, ConfigProvider, Form, Input, Modal } from 'antd';
+import { Checkbox, Form, Input, Modal } from 'antd';
 import { useEffect, useState } from 'react';
 
 export default function SecurityVerification({
@@ -160,15 +160,15 @@ export default function SecurityVerification({
       onCancel={() => {
         setLoginModel(false);
       }}
-      zIndex={9999}
       centered
+      zIndex={9999}
       maskClosable={false}
       footer={null}
       open={loginModel}
     >
       <div className="px-[16px] py-[16px]">
         <div
-          className={`text-[24px] text-[#202b4b] ${disabled2fa ? 'mb-[8px]' : 'mb-[30px]'
+          className={`text-[24px] ${disabled2fa ? 'mb-[8px]' : 'mb-[30px]'
             } font-bold text-center`}
         >
           {withDrawForm.valid
@@ -237,97 +237,93 @@ export default function SecurityVerification({
           </div>
         ) : null}
 
-        <ConfigProvider>
-          <Form form={form} size="large">
-            <div className="flex items-center font-bold mb-3 text-[14px] text-[#5B6276]">
-              <EmailSvg className="mr-3" />A verification code will be sent to{' '}
-              <span className="text-[#6ECE82] pl-1 font-normal">
-                {user.email || ''}
-              </span>
-            </div>
-
-            <Form.Item
-              name="captcha"
-              rules={[
-                {
-                  required: true,
-                  message: 'Please enter the email verification code',
-                },
-              ]}
-            >
-              <Input
-                variant="borderless"
-                suffix={
-                  <div
-                    className={`text-sm h-[26px] ${isCounting
-                      ? 'text-gray-400'
-                      : 'text-[#63BCFF] cursor-pointer'
-                      }`}
-                    onClick={handleSend}
-                  >
-                    {isCounting ? `${countdown}s` : 'Send'}
-                  </div>
-                }
-                placeholder="Please enter the email verification code"
-              />
-            </Form.Item>
-            {user.is2FA ? (
-              <>
-                <div className="flex items-center font-bold mb-3 text-[14px]">
-                  <GoogleSvg className="mr-3" />
-                  Google 2FA Code
-                </div>
-                <Form.Item
-                  name="totp"
-                  rules={[
-                    {
-                      required: true,
-                      message: 'Please enter the Google Authenticator code',
-                    },
-                  ]}
-                >
-                  <Input
-                    variant="borderless"
-                    className="h-[40px]"
-                    placeholder="Please enter the Google Authenticator code"
-                  />
-                </Form.Item>
-              </>
-            ) : null}
-
-            {withDrawForm.valid || transferForm.valid ? (
-              <Form.Item name={'checked'} valuePropName="checked">
-                <Checkbox>
-                  No verification needed for this address next time
-                </Checkbox>
-              </Form.Item>
-            ) : null}
-          </Form>
-          <div className="flex mt-12 items-center justify-between gap-6">
-            <div
-              onClick={() => onFinish()}
-              className="text-base hover:opacity-90 flex-1 text-white h-[48px] text-center bg-[#202B4B] leading-[48px] cursor-pointer rounded-[8px]"
-            >
-              {disabled2fa ? 'Disable' : 'Confirm'}
-            </div>
-            <div
-              onClick={() => setLoginModel(false)}
-              className="flex-1 hover:opacity-90 text-[#202B4B] border border-[#202B4B1F] text-center h-[48px] leading-[48px] cursor-pointer rounded-[8px]"
-            >
-              Cancel
-            </div>
+        <Form form={form} size="large">
+          <div className="flex items-center font-bold mb-3 text-[14px] text-[#ADB2B8]">
+            <EmailSvg className="mr-3" />A verification code will be sent to{' '}
+            <span className="text-[#6ECE82] pl-1 font-normal">
+              {user.email || ''}
+            </span>
           </div>
-          {!disabled2fa ? (
-            <div
-              onClick={() => {
-                window.open('/ContactUs', '_blank');
-              }}
-              className="text-xs cursor-pointer text-center text-[#63bcff] mt-[16px]"
-            >
-              Having problems with verification?
-            </div>
+
+          <Form.Item
+            name="captcha"
+            rules={[
+              {
+                required: true,
+                message: 'Please enter the email verification code',
+              },
+            ]}
+          >
+            <Input
+              suffix={
+                <div
+                  className={`text-sm h-[26px] ${isCounting
+                    ? 'text-gray-400'
+                    : 'text-[#63BCFF] cursor-pointer'
+                    }`}
+                  onClick={handleSend}
+                >
+                  {isCounting ? `${countdown}s` : 'Send'}
+                </div>
+              }
+              placeholder="Please enter the email verification code"
+            />
+          </Form.Item>
+          {user.is2FA ? (
+            <>
+              <div className="flex items-center font-bold mb-3 text-[14px]">
+                <GoogleSvg className="mr-3" />
+                Google 2FA Code
+              </div>
+              <Form.Item
+                name="totp"
+                rules={[
+                  {
+                    required: true,
+                    message: 'Please enter the Google Authenticator code',
+                  },
+                ]}
+              >
+                <Input
+                  className="h-[40px]"
+                  placeholder="Please enter the Google Authenticator code"
+                />
+              </Form.Item>
+            </>
           ) : null}
-        </ConfigProvider>
+
+          {withDrawForm.valid || transferForm.valid ? (
+            <Form.Item name={'checked'} valuePropName="checked">
+              <Checkbox>
+                No verification needed for this address next time
+              </Checkbox>
+            </Form.Item>
+          ) : null}
+        </Form>
+        <div className="flex mt-12 items-center justify-between gap-6">
+          <div
+            onClick={() => onFinish()}
+            className="text-base hover:opacity-90 flex-1 text-white h-[48px] text-center gold-gradient-bg leading-[48px] cursor-pointer rounded-[8px]"
+          >
+            {disabled2fa ? 'Disable' : 'Confirm'}
+          </div>
+          <div
+            onClick={() => setLoginModel(false)}
+            className="flex-1 hover:opacity-90 border border-[#505050] text-center h-[48px] leading-[48px] cursor-pointer rounded-[8px]"
+          >
+            Cancel
+          </div>
+        </div>
+        {!disabled2fa ? (
+          <div
+            onClick={() => {
+              window.open('/ContactUs', '_blank');
+            }}
+            className="text-xs cursor-pointer text-center text-[#FFD58E] mt-[16px]"
+          >
+            Having problems with verification?
+          </div>
+        ) : null}
       </div>
     </Modal>
   );

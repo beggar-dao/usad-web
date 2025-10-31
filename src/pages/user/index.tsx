@@ -99,8 +99,8 @@ export default function UserIndex() {
     <PageAnimate>
       <div className="bg-section ">
         <div className="footer_bg">
-          <div className="flex justify-between mb-[80px] overflow-hidden">
-            <div className="w-[256px] min-h-[800px] py-[34px] bg-[#05060F] border-r-[1px] border-[#272831]">
+          <div className="flex justify-between overflow-hidden">
+            <div className="w-[256px] h-[calc(100vh-88px)] py-[34px] bg-[#05060F] border-r-[1px] border-[#272831]">
               <div className="px-6 pb-6 text-xs font-bold text-[#969696]">
                 MAIN MENU
               </div>
@@ -110,8 +110,9 @@ export default function UserIndex() {
                     <div
                       key={index}
                       onClick={() => item?.onClick()}
-                      className={cn("cursor-pointer h-[50px] transition-all duration-700 rounded-[8px] text-[#666] flex items-center px-6", item.checked ? 'border-[1px] border-[#505050]' : '')}
-                      style={{ background: item.checked ? 'linear-gradient(91.51deg, #212121 0%, #121314 100%)' : '' }}
+                      className={cn("cursor-pointer w-[205px] h-[50px] border-box rounded-[8px] text-[#666] flex items-center px-6 hover:border-[1px] hover:border-[#505050] hover:black-gradient-bg1",
+                        item.checked ? 'border-[1px] border-[#505050] black-gradient-bg1' : ''
+                      )}
                     >
                       {item.name}
                     </div>
@@ -119,7 +120,7 @@ export default function UserIndex() {
                 })}
               </div>
             </div>
-            <div className="flex-1 px-8 m-[34px] p-[32px] rounded border-[1px] border-[#505050] relative" style={{ background: 'linear-gradient(182.38deg, #212121 2.38%, #000000 14.39%)' }}>
+            <div className="flex-1 px-8 m-[34px] p-[32px] rounded border-[1px] border-[#505050] relative black-gradient-bg2">
               <Outlet />
             </div>
           </div>

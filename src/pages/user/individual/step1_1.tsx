@@ -213,8 +213,8 @@ export default function Step1_1() {
                       <>
                         {(individualData?.addressProof_fileList &&
                           individualData?.addressProof_fileList[0].type ===
-                            'application/pdf') ||
-                        imageError ? (
+                          'application/pdf') ||
+                          imageError ? (
                           <embed
                             type="application/pdf"
                             src={`data:application/pdf;base64,${individualData.addressProof}`}
@@ -251,7 +251,7 @@ export default function Step1_1() {
             </Form>
           </ConfigProvider>
         </div>
-        <div className="w-full rounded-bl-2xl rounded-br-2xl  h-[104px] px-[40px] gap-[23px] bg-[#fbfbfb] flex items-center justify-between">
+        <div className="w-full rounded-bl-2xl rounded-br-2xl  h-[104px] px-[40px] gap-[23px] flex items-center justify-between">
           <div
             onClick={handleSubmit}
             className="w-[390px] cursor-pointer h-[48px] leading-[48px] text-center text-white font-[500] bg-[#202b4b] rounded-lg"

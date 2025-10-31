@@ -138,12 +138,11 @@ export default function Step1_1() {
             </div>
           ) : null}
         </div>
-        <div className="w-full rounded-bl-2xl rounded-br-2xl  h-[104px] px-[40px] gap-[23px] bg-[#fbfbfb] flex items-center justify-between">
+        <div className="w-full rounded-bl-2xl rounded-br-2xl  h-[104px] px-[40px] gap-[23px] flex items-center justify-between">
           <div
             onClick={() => (uboList.length ? handleSubmit() : null)}
-            className={`w-[390px] ${
-              !uboList.length ? ' opacity-60' : ''
-            }  cursor-pointer h-[48px] leading-[48px] text-center text-white font-[500] bg-[#202b4b] rounded-lg`}
+            className={`w-[390px] ${!uboList.length ? ' opacity-60' : ''
+              }  cursor-pointer h-[48px] leading-[48px] text-center text-white font-[500] bg-[#202b4b] rounded-lg`}
           >
             Continue
           </div>

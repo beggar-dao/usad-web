@@ -1,4 +1,5 @@
 import lock from '@/assets/images/lock.png';
+
 export default function No2fa({
   title = 'Two-factor authentication required',
   children,
@@ -8,9 +9,9 @@ export default function No2fa({
 }) {
   return (
     <div className="h-full flex items-center justify-center">
-      <div className="w-[690px] bg-[#F3F9FF] rounded-2xl border border-[#202B4B0A] py-[60px] m-auto">
-        <img src={lock} className="block m-auto w-[103px]" />
-        <div className="text-center text-[24px] mt-6 text-[#202B4B]">
+      <div className="w-[690px] black-gradient-bg2 rounded-2xl border border-[#505050] py-[60px] m-auto">
+        <img src={lock} className="block m-auto w-[180px]" />
+        <div className="text-center text-[24px] mt-6">
           {title}
         </div>
         <div className="mt-4 text-center leading-6 text-[#5B6276] text-sm">

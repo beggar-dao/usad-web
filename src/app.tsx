@@ -1,4 +1,4 @@
-import { matchRoutes, type RequestConfig } from '@umijs/max';
+import { matchRoutes, history, type RequestConfig } from '@umijs/max';
 import 'animate.css';
 import { message } from 'antd';
 import { envConfig } from './config/env';
@@ -38,16 +38,17 @@ export const request: RequestConfig = {
   responseInterceptors: [
     (response: any) => {
       let data = response.data;
-      message.destroy();
-      // if (data.code === 'A10005') {
-      //   history.push('/Auth/Login');
-      // }
-      // if (data.code !== '00000') {
-      //   message.error(data.message || 'An unexpected error occurred.');
-      //   return Promise.reject(response);
-      // }
 
-      return data;
+      if (data.code === 'A10005') {
+        history.push('/Auth/Login');
+      }
+
+      if (data.code !== '00000') {
+        message.error(data.message || 'An unexpected error occurred.');
+        return Promise.reject(response);
+      }
+
+      return response;
     },
   ],
 };

@@ -2,8 +2,9 @@ import PageAnimate from '@/components/pageAnimate';
 import type { LoginFormData } from '@/services/types/auth';
 import { EyeInvisibleOutlined, EyeTwoTone } from '@ant-design/icons';
 import { useModel } from '@umijs/max';
-import { Button, Checkbox, ConfigProvider, Form, Input, Spin } from 'antd';
+import { Button, Checkbox, Form, Input, Spin } from 'antd';
 import { useEffect, useState } from 'react';
+import bgImg from '@/assets/images/login.png'
 
 const LoginForm = () => {
   const [form] = Form.useForm();
@@ -51,114 +52,103 @@ const LoginForm = () => {
     <PageAnimate>
       {/* <SecurityVerification /> */}
       <div className={`${isWeb ? 'bg-login flex items-center' : ''}`}>
-        <div className={`${isWeb ? 'max-w-[1440px] !m-auto w-full flex items-center justify-between' : ''}`}>
+        <div className={`${isWeb ? 'max-w-[1440px] !m-auto w-full flex items-center justify-between py-10' : ''}`}>
           {isWeb && <img
             className="block !w-[620px]"
-            src="../images/img_login.png"
+            src={bgImg}
             alt="Login Illustration"
           />}
           <div className={`${isWeb ? 'w-[488px]' : ''}`}>
             <div className={`${isWeb ? 'container !mt-0 card-dataprotection !pl-6 !pr-6' : 'px-[20px]'}`}>
               <h2 className={`${isWeb ? 'register-title !mb-8' : 'text-[18px] pt-[16px] pb-[10px] leading-[26px] font-[700]'}`}>Welcome back!</h2>
-
               <Spin spinning={loginLoading}>
-                <ConfigProvider
-                  theme={{
-                    components: {
-                      Form: {
-                        itemMarginBottom: 16,
-                      },
-                    },
-                  }}
+                <Form
+                  form={form}
+                  name="login"
+                  onFinish={handleSubmit}
+                  onFinishFailed={handleSubmitFailed}
+                  layout="vertical"
+                  className="register-form"
+                  size="large"
                 >
-                  <Form
-                    form={form}
-                    name="login"
-                    onFinish={handleSubmit}
-                    onFinishFailed={handleSubmitFailed}
-                    layout="vertical"
-                    className="register-form"
-                    size="large"
+                  <Form.Item
+                    label="Email"
+                    name="email"
+                    rules={[
+                      {
+                        required: true,
+                        message: 'Please enter your email!',
+                      },
+                      {
+                        type: 'email',
+                        message: 'Please enter a valid email!',
+                      },
+                    ]}
                   >
-                    <Form.Item
-                      label="Email"
-                      name="email"
-                      rules={[
-                        {
-                          required: true,
-                          message: 'Please enter your email!',
-                        },
-                        {
-                          type: 'email',
-                          message: 'Please enter a valid email!',
-                        },
-                      ]}
-                    >
-                      <Input
-                        placeholder="Enter your email"
-                        className="register-input"
-                      />
-                    </Form.Item>
+                    <Input
+                      placeholder="Enter your email"
+                      className="register-input"
+                    />
+                  </Form.Item>
 
-                    <Form.Item
-                      label="Password"
-                      name="password"
-                      rules={[
-                        {
-                          required: true,
-                          message: 'Please enter your password!',
-                        },
-                        {
-                          min: 6,
-                          message: 'Password must be at least 6 characters!',
-                        },
-                      ]}
-                    >
-                      <Input.Password
-                        placeholder="Enter your password"
-                        className="register-input"
-                        iconRender={(visible) => {
-                          return (
-                            <button
-                              type="button"
-                              onClick={togglePasswordVisibility}
-                            >
-                              {visible ? (
-                                <EyeTwoTone />
-                              ) : (
-                                <EyeInvisibleOutlined />
-                              )}
-                            </button>
-                          );
-                        }}
-                        type={showPassword ? 'text' : 'password'}
-                      />
-                    </Form.Item>
+                  <Form.Item
+                    label="Password"
+                    name="password"
+                    rules={[
+                      {
+                        required: true,
+                        message: 'Please enter your password!',
+                      },
+                      {
+                        min: 6,
+                        message: 'Password must be at least 6 characters!',
+                      },
+                    ]}
+                  >
+                    <Input.Password
+                      placeholder="Enter your password"
+                      className="register-input"
+                      iconRender={(visible) => {
+                        return (
+                          <button
+                            type="button"
+                            onClick={togglePasswordVisibility}
+                          >
+                            {visible ? (
+                              <EyeTwoTone />
+                            ) : (
+                              <EyeInvisibleOutlined />
+                            )}
+                          </button>
+                        );
+                      }}
+                      type={showPassword ? 'text' : 'password'}
+                    />
+                  </Form.Item>
 
-                    <Form.Item
-                      name="rememberMe"
-                      valuePropName="checked"
-                      className="checkbox-top-align"
-                    >
-                      <Checkbox>
-                        <span className="font-[300]">Remember Me</span>
-                      </Checkbox>
-                    </Form.Item>
+                  <Form.Item
+                    name="rememberMe"
+                    valuePropName="checked"
+                    className="checkbox-top-align"
+                  >
+                    <Checkbox>
+                      <span className="font-[300]">Remember Me</span>
+                    </Checkbox>
+                  </Form.Item>
 
-                    <Form.Item>
-                      <Button
-                        type="primary"
-                        htmlType="submit"
-                        className="register-button h-[48px]"
-                        loading={loginLoading}
-                        disabled={loginLoading}
-                        block
-                      >
-                        {loginLoading ? 'Logging in...' : 'Log in'}
-                      </Button>
-                    </Form.Item>
-                  </Form>
-                </ConfigProvider>
+                  <Form.Item>
+                    <Button
+                      type="primary"
+                      htmlType="submit"
+                      className="register-button h-[48px]"
+                      loading={loginLoading}
+                      disabled={loginLoading}
+                      block
+                    >
+                      {loginLoading ? 'Logging in...' : 'Log in'}
+                    </Button>
+                  </Form.Item>
+                </Form>
               </Spin>
               <div className="flex justify-between">
                 <p className="register-footer font-[300] !text-xs !border-0">

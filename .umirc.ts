@@ -34,6 +34,9 @@ export default defineConfig({
             colorTextPlaceholder: '#666',
             controlHeightLG: 48,
             fontSizeLG: 14,
+          },
+          Button: {
+            defaultShadow: 'none',
           }
         }
       },

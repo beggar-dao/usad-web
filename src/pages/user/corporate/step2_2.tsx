@@ -46,7 +46,7 @@ export default function Step2_2() {
     if (navigator.clipboard && window.ClipboardItem) {
       navigator.clipboard
         .writeText(text)
-        .then(() => {})
+        .then(() => { })
         .catch((err) => {
           console.error('Failed to copy:', err);
           fallbackCopyTextToClipboard(text); // 回退到 execCommand
@@ -181,8 +181,8 @@ export default function Step2_2() {
           </div>
         </div>
         {uboList.length &&
-        uboList.filter((item: any) => item.status === 0).length === 0 ? (
-          <div className="w-full rounded-bl-2xl rounded-br-2xl  h-[104px] px-[40px] gap-[23px] bg-[#fbfbfb] flex items-center justify-between">
+          uboList.filter((item: any) => item.status === 0).length === 0 ? (
+          <div className="w-full rounded-bl-2xl rounded-br-2xl  h-[104px] px-[40px] gap-[23px] flex items-center justify-between">
             <div
               onClick={handleSubmit}
               className="w-[390px] cursor-pointer h-[48px] leading-[48px] text-center text-white font-[500] bg-[#202b4b] rounded-lg"

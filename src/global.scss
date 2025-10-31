@@ -238,12 +238,36 @@ body,
   width: 244px;
   height: 48px;
   background: linear-gradient(90deg, #C69F58 0.11%, #FFEECF 16.21%, #A56F2A 51.22%, #C69F58 99.79%);
-  border-radius: 60px;
+  border-radius: 48px;
 }
 
 .gray-gradient-button {
   width: 244px;
   height: 48px;
   background: linear-gradient(90deg, #DDDDDD 0.11%, #FDFDFD 23.77%, #868686 56.53%, #DDDDDD 99.79%);
-  border-radius: 60px;
+  border-radius: 48px;
+}
+
+.gold-gradient-bg {
+  background: linear-gradient(90deg, #C69F58 0.11%, #FFEECF 16.21%, #A56F2A 51.22%, #C69F58 99.79%);
+}
+
+.gray-gradient-bg {
+  background: linear-gradient(90deg, #DDDDDD 0.11%, #FDFDFD 23.77%, #868686 56.53%, #DDDDDD 99.79%);
+}
+
+.black-gradient-bg1 {
+  background: linear-gradient(91.51deg, #212121 0%, #121314 100%);
+}
+
+.black-gradient-bg2 {
+  background: linear-gradient(182.38deg, #212121 2.38%, #000000 14.39%);
+}
+
+.ant-modal {
+  .ant-modal-content {
+    border: 1px solid #505050;
+    border-radius: 16px;
+    @extend .black-gradient-bg2;
+  }
 }
