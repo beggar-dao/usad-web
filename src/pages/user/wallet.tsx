@@ -12,6 +12,7 @@ export default function Wallet() {
   const [visible, setVisible] = useState(false);
   const [data, setData] = useState<any>({});
   const { user } = useModel('auth');
+
   useEffect(() => {
     walletAccount().then((res) => {
       setData(res.data || {});
@@ -38,18 +39,18 @@ export default function Wallet() {
               <DepositContent />
             </div>
           </Modal>
-          <div className=" pb-6 text-[24px] font-bold text-[#202B4B]">
+          <div className=" pb-6 text-[24px] font-bold text-white">
             Wallet
           </div>
-          <div className="text-xs text-[#5b6276]">Total balance</div>
+          <div className="text-xs text-[#ADB1B8]">Total balance</div>
           <div className="flex items-center mt-3">
-            <div className="text-[32px] mr-3 font-bold text-[#202B4B]">
+            <div className="text-[32px] mr-3 font-bold text-white">
               £{' '}
               {!visible
                 ? data?.assets?.reduce(
-                    (pre, cur) => pre + Number(cur.balance),
-                    0,
-                  ) || 0
+                  (pre, cur) => pre + Number(cur.balance),
+                  0,
+                ) || 0
                 : '*****'}
             </div>
             <div
@@ -63,33 +64,32 @@ export default function Wallet() {
           </div>
           {/* <div className=" font-bold text-[#6ECE82] mt-2">+0.00</div> */}
 
-          <div className="text-xs text-[#5b6276] mt-[85px]">Your Holdings:</div>
+          <div className="text-xs text-[#ADB1B8] mt-[85px]">Your Holdings:</div>
           <div className="grid grid-cols-2 mt-[18px] gap-[16px]">
             {data?.assets?.map((item, index) => {
               return (
                 <div
                   key={index}
-                  className="px-8 py-9 rounded-2xl border border-[#202B4B0A] bg-[#F4F7FF]"
+                  className="px-8 py-9 rounded-2xl border border-[#505050] bg-[#1A1A1B]"
                 >
                   <div className="flex mb-7">
                     <div className="w-[80px] h-[80px] mr-4 relative">
                       <img
-                        src={'/images/gbpc.png'}
+                        src={'/images/usad.png'}
                         className="block w-full h-full"
                       />
                       <img
-                        src={`/images/${item.chainId == '60' ? 'eth' : ''}${
-                          item.chainId == '195' ? 'tron' : ''
-                        }.png`}
+                        src={`/images/${item.chainId == '60' ? 'eth' : ''}${item.chainId == '195' ? 'tron' : ''
+                          }.png`}
                         className="absolute right-0 bottom-0 w-6 h-6"
                       />
                     </div>
                     <div className="flex-1 overflow-auto">
-                      <div className="text-[32px] leading-8 mr-3 font-bold text-[#202B4B]">
+                      <div className="text-[32px] leading-8 mr-3 font-bold text-white">
                         £ {item.balance || 0}
                       </div>
-                      <div className="text-sm text-[#8F93A1] leading-8">
-                        <span className="text-[#202B4B] font-bold">Pound</span>{' '}
+                      <div className="text-sm text-[#ADB1B8] leading-8">
+                        <span className="text-white font-bold">Pound</span>{' '}
                         GBPC on {item.chainId == '60' ? 'Ethereum' : ''}
                         {item.chainId == '195' ? 'TRON' : ''} (
                         {item.chainId == '60' ? 'ETH' : ''}
@@ -108,18 +108,18 @@ export default function Wallet() {
                   </div>
                   <div className="grid grid-cols-2">
                     <div>
-                      <div className="text-[18px] text-[#202B4B]">
+                      <div className="text-[18px] text-white">
                         {item.pendingBalance || '0.00'}
                       </div>
-                      <div className="text-sm text-[#8F93A1] mt-2">
+                      <div className="text-sm text-[#ADB1B8] mt-2">
                         Pending Transfers
                       </div>
                     </div>
                     <div>
-                      <div className="text-[18px] text-[#202B4B]">
+                      <div className="text-[18px] text-white">
                         {item.freezeBalance || '0.00'}
                       </div>
-                      <div className="text-sm text-[#8F93A1] mt-2">
+                      <div className="text-sm text-[#ADB1B8] mt-2">
                         Frozen Tokens
                       </div>
                     </div>
@@ -129,7 +129,7 @@ export default function Wallet() {
                       onClick={() => {
                         history.push('/user/gbpc/buy');
                       }}
-                      className="bg-[#202B4B] flex-1 cursor-pointer rounded-lg leading-10 text-center text-white text-xs font-bold"
+                      className="gold-gradient-bg flex-1 cursor-pointer rounded-lg leading-10 text-center text-white text-xs font-bold"
                     >
                       Buy GBPC
                     </div>
@@ -137,7 +137,7 @@ export default function Wallet() {
                       onClick={() => {
                         setOpen(true);
                       }}
-                      className="bg-[#202B4B] cursor-pointer  flex-1 rounded-lg leading-10 text-center text-white text-xs font-bold"
+                      className="gold-gradient-bg cursor-pointer  flex-1 rounded-lg leading-10 text-center text-white text-xs font-bold"
                     >
                       Deposit
                     </div>
@@ -145,7 +145,7 @@ export default function Wallet() {
                       onClick={() => {
                         history.push('/user/gbpc/transfer');
                       }}
-                      className="border border-[#202B4B1F] cursor-pointer flex-1 rounded-lg leading-10 text-center text-[202B4B] text-xs font-bold"
+                      className="border border-[#25282C] cursor-pointer flex-1 rounded-lg leading-10 text-center text-[202B4B] text-xs font-bold bg-[#1E2023]"
                     >
                       Transfer
                     </div>
@@ -153,7 +153,7 @@ export default function Wallet() {
                       onClick={() => {
                         history.push('/user/gbpc/withdraw');
                       }}
-                      className="border border-[#202B4B1F] cursor-pointer flex-1 rounded-lg leading-10 text-center text-[#202B4B] text-xs font-bold"
+                      className="border border-[#25282C] cursor-pointer flex-1 rounded-lg leading-10 text-center text-white text-xs font-bold bg-[#1E2023]"
                     >
                       Withdraw
                     </div>
