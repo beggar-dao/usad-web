@@ -1,15 +1,15 @@
+import bgImg from '@/assets/images/login.png';
 import PageAnimate from '@/components/pageAnimate';
 import type { LoginFormData } from '@/services/types/auth';
 import { EyeInvisibleOutlined, EyeTwoTone } from '@ant-design/icons';
 import { useModel } from '@umijs/max';
 import { Button, Checkbox, Form, Input, Spin } from 'antd';
 import { useEffect, useState } from 'react';
-import bgImg from '@/assets/images/login.png'
 
 const LoginForm = () => {
   const [form] = Form.useForm();
   const { login, loginLoading, clearError, setUser } = useModel('auth');
-  const { isWeb } = useModel('window')
+  const { isWeb } = useModel('window');
   const [showPassword, setShowPassword] = useState(false);
 
   // Clear any previous errors when component mounts
@@ -50,17 +50,38 @@ const LoginForm = () => {
 
   return (
     <PageAnimate>
-      {/* <SecurityVerification /> */}
       <div className={`${isWeb ? 'bg-login flex items-center' : ''}`}>
-        <div className={`${isWeb ? 'max-w-[1440px] !m-auto w-full flex items-center justify-between py-10' : ''}`}>
-          {isWeb && <img
-            className="block !w-[620px]"
-            src={bgImg}
-            alt="Login Illustration"
-          />}
-          <div className={`${isWeb ? 'w-[488px]' : ''}`}>
-            <div className={`${isWeb ? 'container !mt-0 card-dataprotection !pl-6 !pr-6' : 'px-[20px]'}`}>
-              <h2 className={`${isWeb ? 'register-title !mb-8' : 'text-[18px] pt-[16px] pb-[10px] leading-[26px] font-[700]'}`}>Welcome back!</h2>
+        <div
+          className={`${
+            isWeb
+              ? 'max-w-[980px] m-auto w-full flex items-center justify-between my-10 p-10 black-gradient-bg2 border rounded-2xl border-[#505050]'
+              : ''
+          }`}
+        >
+          {isWeb && (
+            <img
+              className="block w-[346px]"
+              src={bgImg}
+              alt="Login Illustration"
+            />
+          )}
+          <div className={`${isWeb ? 'w-[392px]' : ''}`}>
+            <div
+              className={`${
+                isWeb
+                  ? 'container !mt-0 card-dataprotection !pl-6 !pr-6'
+                  : 'px-[20px]'
+              }`}
+            >
+              <h2
+                className={`${
+                  isWeb
+                    ? 'text-[24px] !mb-8 text-center'
+                    : 'text-[18px] pt-[16px] pb-[10px] leading-[26px] font-[700]'
+                }`}
+              >
+                Welcome back!
+              </h2>
               <Spin spinning={loginLoading}>
                 <Form
                   form={form}
@@ -132,7 +153,9 @@ const LoginForm = () => {
                     className="checkbox-top-align"
                   >
                     <Checkbox>
-                      <span className="font-[300]">Remember Me</span>
+                      <span className="font-[300] text-[#ADB1B8]">
+                        Remember Me
+                      </span>
                     </Checkbox>
                   </Form.Item>
 
@@ -140,7 +163,7 @@ const LoginForm = () => {
                     <Button
                       type="primary"
                       htmlType="submit"
-                      className="register-button h-[48px]"
+                      className="h-[48px] gold-gradient-bg rounded-[12px]"
                       loading={loginLoading}
                       disabled={loginLoading}
                       block
@@ -151,15 +174,15 @@ const LoginForm = () => {
                 </Form>
               </Spin>
               <div className="flex justify-between">
-                <p className="register-footer font-[300] !text-xs !border-0">
+                <p className="register-footer text-[#ADB1B8] font-[300] !text-xs !border-0">
                   Don&apos;t have an account yet?{' '}
-                  <a className="text-[#3EA5F2]" href="/Auth/CreateAccount">
+                  <a className="text-[#C69F58]" href="/Auth/CreateAccount">
                     Register
                   </a>
                 </p>
                 <p className="register-footer font-[300] !text-xs !border-0">
                   Forgot password?{' '}
-                  <a className="text-[#3EA5F2]" href="/Auth/ResetPassword">
+                  <a className="text-[#C69F58]" href="/Auth/ResetPassword">
                     Reset
                   </a>
                 </p>

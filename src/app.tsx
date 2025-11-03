@@ -1,8 +1,8 @@
-import { matchRoutes, history, type RequestConfig } from '@umijs/max';
+import { history, matchRoutes, type RequestConfig } from '@umijs/max';
 import 'animate.css';
 import { message } from 'antd';
-import { envConfig } from './config/env';
 import React from 'react';
+import { envConfig } from './config/env';
 
 /**
  * Request configuration for UmiJS following best practices
@@ -59,11 +59,13 @@ export function rootContainer(container: React.ReactNode) {
 
 export function onRouteChange({ clientRoutes, location }) {
   const ele = document.getElementById('gbpc-scroll');
+
   setTimeout(() => {
     if (ele) {
       ele.scrollTop = 0;
     }
   }, 0);
+
   const metas = [
     {
       path: '/',
