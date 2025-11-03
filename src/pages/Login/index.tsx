@@ -50,7 +50,7 @@ const LoginForm = () => {
 
   return (
     <PageAnimate>
-      <div className={`${isWeb ? 'bg-login flex items-center' : ''}`}>
+      <div className={`${isWeb ? 'flex items-center' : ''}`}>
         <div
           className={`${
             isWeb
@@ -66,13 +66,7 @@ const LoginForm = () => {
             />
           )}
           <div className={`${isWeb ? 'w-[392px]' : ''}`}>
-            <div
-              className={`${
-                isWeb
-                  ? 'container !mt-0 card-dataprotection !pl-6 !pr-6'
-                  : 'px-[20px]'
-              }`}
-            >
+            <div className={`${isWeb ? 'container mt-0 px-6' : 'px-[20px]'}`}>
               <h2
                 className={`${
                   isWeb

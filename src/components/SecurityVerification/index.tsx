@@ -1,10 +1,6 @@
 import { ReactComponent as EmailSvg } from '@/assets/images/email.svg';
 import { ReactComponent as GoogleSvg } from '@/assets/images/google.svg';
-import {
-  disable2faAxios,
-  secondaryLogin,
-  sendCaptcha,
-} from '@/services/user';
+import { disable2faAxios, secondaryLogin, sendCaptcha } from '@/services/user';
 import { history, useModel } from '@umijs/max';
 import { Checkbox, Form, Input, Modal } from 'antd';
 import { useEffect, useState } from 'react';
@@ -111,12 +107,12 @@ export default function SecurityVerification({
 
     let res = disabled2fa
       ? await disable2faAxios({
-        ...values,
-      })
+          ...values,
+        })
       : await secondaryLogin({
-        userId: user.id,
-        ...values,
-      });
+          userId: user.id,
+          ...values,
+        });
     let data = res?.data || {};
 
     if (disabled2fa) {
@@ -168,24 +164,25 @@ export default function SecurityVerification({
     >
       <div className="px-[16px] py-[16px]">
         <div
-          className={`text-[24px] ${disabled2fa ? 'mb-[8px]' : 'mb-[30px]'
-            } font-bold text-center`}
+          className={`text-[24px] ${
+            disabled2fa ? 'mb-[8px]' : 'mb-[30px]'
+          } font-bold text-center`}
         >
           {withDrawForm.valid
             ? 'Confirm to Withdraw'
             : transferForm.valid
-              ? 'Confirm Transfer'
-              : addressObj.setting
-                ? 'Disable 24 Hour Lock'
-                : addressObj.batch
-                  ? 'Add in Batches'
-                  : addressObj.add
-                    ? 'Add an Address'
-                    : addressObj.delete
-                      ? 'Delete Address'
-                      : disabled2fa
-                        ? `Two-Factor Authentication`
-                        : `Security Verification`}
+            ? 'Confirm Transfer'
+            : addressObj.setting
+            ? 'Disable 24 Hour Lock'
+            : addressObj.batch
+            ? 'Add in Batches'
+            : addressObj.add
+            ? 'Add an Address'
+            : addressObj.delete
+            ? 'Delete Address'
+            : disabled2fa
+            ? `Two-Factor Authentication`
+            : `Security Verification`}
         </div>
 
         {withDrawForm.valid ? (
@@ -238,7 +235,7 @@ export default function SecurityVerification({
         ) : null}
 
         <Form form={form} size="large">
-          <div className="flex items-center font-bold mb-3 text-[14px] text-[#ADB2B8]">
+          <div className="flex items-center mb-3 text-[14px] text-[#D9D9D9]">
             <EmailSvg className="mr-3" />A verification code will be sent to{' '}
             <span className="text-[#6ECE82] pl-1 font-normal">
               {user.email || ''}
@@ -257,10 +254,11 @@ export default function SecurityVerification({
             <Input
               suffix={
                 <div
-                  className={`text-sm h-[26px] ${isCounting
-                    ? 'text-gray-400'
-                    : 'text-[#63BCFF] cursor-pointer'
-                    }`}
+                  className={`text-sm h-[26px] ${
+                    isCounting
+                      ? 'text-gray-400'
+                      : 'text-[#63BCFF] cursor-pointer'
+                  }`}
                   onClick={handleSend}
                 >
                   {isCounting ? `${countdown}s` : 'Send'}
@@ -271,7 +269,7 @@ export default function SecurityVerification({
           </Form.Item>
           {user.is2FA ? (
             <>
-              <div className="flex items-center font-bold mb-3 text-[14px]">
+              <div className="flex items-center mb-3 text-[14px] text-[#D9D9D9]">
                 <GoogleSvg className="mr-3" />
                 Google 2FA Code
               </div>

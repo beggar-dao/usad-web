@@ -1,7 +1,6 @@
 import logo from '@/assets/images/logo.png';
 import { LogoutOutlined, UserOutlined } from '@ant-design/icons';
-import { history, NavLink, useLocation } from '@umijs/max';
-import { useModel } from '@umijs/max';
+import { history, NavLink, useLocation, useModel } from '@umijs/max';
 import { Avatar, Button, Dropdown } from 'antd';
 
 export default function Header() {
@@ -66,29 +65,21 @@ export default function Header() {
           trigger={['click']}
           className="my-dropdown"
         >
-          <Button
-            type="text"
-            className="d-flex align-items-center gap-2"
-          >
+          <Button type="text" className="d-flex align-items-center gap-2">
             <Avatar size="small" icon={<UserOutlined />} />
-            <span className="text-white">
-              {user.email}
-            </span>
+            <span className="text-white">{user.email}</span>
           </Button>
         </Dropdown>
       );
     } else {
       return (
         <>
-          <NavLink
-            to="/Auth/Login"
-            className="py-[10px] mx-4 bg-[transparent]"
-          >
+          <NavLink to="/Auth/Login" className="h-8 px-5 mx-4 leading-8">
             <span className="font-[500]">Log in</span>
           </NavLink>
           <NavLink
             to="/Auth/CreateAccount"
-            className="py-[10px] mx-4"
+            className="h-8 px-5 mx-4 gold-gradient-bg rounded leading-8"
           >
             <span className="font-[500]">Sign Up</span>
           </NavLink>
@@ -113,11 +104,13 @@ export default function Header() {
                 <div
                   key={index}
                   onClick={() => history.push(item.path)}
-                  className={`${index === nav.length - 1 ? '' : 'mr-6'
-                    } md:mr-[66px] cursor-pointer transition-all font-[500] ${location.pathname === item.path
+                  className={`${
+                    index === nav.length - 1 ? '' : 'mr-6'
+                  } md:mr-[66px] cursor-pointer transition-all font-[500] ${
+                    location.pathname === item.path
                       ? 'text-[#DAC89F]'
                       : 'text-white'
-                    }`}
+                  }`}
                 >
                   {item.name}
                 </div>
@@ -125,7 +118,7 @@ export default function Header() {
             })}
           </div>
         </div>
-        <div className='flex justify-content-end'>
+        <div className="flex justify-content-end">
           <MobileHeaderRight />
         </div>
       </div>

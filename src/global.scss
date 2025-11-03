@@ -271,3 +271,14 @@ body,
     @extend .black-gradient-bg2;
   }
 }
+
+.alert-warning-box {
+  background-color: rgba(255, 166, 0, 0.04);
+  border: 1px solid rgba(255, 166, 0, 0.12);
+  border-radius: 8px;
+  color: #e67300;
+  font-size: 14px;
+  padding: 12px;
+  margin-bottom: 24px;
+  font-family: Inter, sans-serif;
+}
