@@ -13,7 +13,7 @@ export default function Complete() {
   }, []);
   return (
     <>
-      <div className="w-[588px] relative m-auto rounded-[16px] pt-[40px] border border-[#F0F1F1]">
+      <div className="w-[588px] relative m-auto rounded-[16px] pt-[40px] border border-[#505050]">
         <TimeLine active={4} progress={100} />
         <div className="flex h-[700px] flex-col justify-center items-center">
           <div>

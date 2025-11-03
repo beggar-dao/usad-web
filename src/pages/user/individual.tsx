@@ -6,9 +6,11 @@ import { ConfigProvider, DatePicker, Form, Input, Select } from 'antd';
 import { Country } from 'country-state-city';
 import dayjs from 'dayjs';
 import { useEffect } from 'react';
+
 export default function Individual() {
   const [form] = Form.useForm();
   const { individualData, setIndividualData } = useModel('verify');
+
   const handleSubmit = async () => {
     form.validateFields().then(async (values) => {
       console.log(values);
@@ -29,6 +31,7 @@ export default function Individual() {
       history.push('/user/verification/individual/step1_1');
     });
   };
+
   useEffect(() => {
     if (individualData && (individualData as any).birthday) {
       // 确保birthday是dayjs对象格式
@@ -45,6 +48,7 @@ export default function Individual() {
       });
     }
   }, [individualData]);
+
   return (
     <>
       <div className="flex items-center justify-between pb-3 text-[24px] font-bold text-[#202B4B]">
@@ -56,7 +60,7 @@ export default function Individual() {
           }}
         />
       </div>
-      <div className="w-[588px] relative m-auto rounded-[16px] pt-[40px] border border-[#F0F1F1]">
+      <div className="w-[588px] relative m-auto rounded-[16px] pt-[40px] border border-[#505050]">
         <TimeLine active={1} progress={25} />
         <div className="w-full h-[600px] overflow-y-auto px-8">
           <ConfigProvider
@@ -68,13 +72,13 @@ export default function Individual() {
               },
             }}
           >
-            <div className="text-[24px] text-black font-bold mb-4">
+            <div className="text-[24px] text-white font-bold mb-4">
               Personal Details
             </div>
             <Form
               form={form}
               layout="vertical"
-              className="register-form-layout h-auto"
+              className="h-auto"
               size="large"
             >
               <Form.Item
@@ -192,7 +196,7 @@ export default function Individual() {
         <div className="w-full rounded-bl-2xl rounded-br-2xl  h-[104px] px-[40px] gap-[23px] flex items-center justify-between">
           <div
             onClick={handleSubmit}
-            className="w-[390px] cursor-pointer h-[48px] leading-[48px] text-center text-white font-[500] bg-[#202b4b] rounded-lg"
+            className="w-[390px] cursor-pointer h-[48px] leading-[48px] text-center text-white font-[500] gold-gradient-bg rounded-lg"
           >
             Continue
           </div>
@@ -200,7 +204,7 @@ export default function Individual() {
             onClick={() => {
               history.back();
             }}
-            className="flex-1 cursor-pointer h-[48px] leading-[48px] border border-[#202B4B14] rounded-lg font-[500] text-center"
+            className="flex-1 cursor-pointer h-[48px] leading-[48px] border border-[#25282C] bg-[#1E2023] rounded-lg font-[500] text-center text-[#C69F58]"
           >
             Back
           </div>

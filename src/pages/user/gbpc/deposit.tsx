@@ -39,7 +39,7 @@ export default function Buy() {
         />
       </div>
 
-      <div className="w-[580px] p-8 m-auto !mt-[96px] border border-[#F0F1F1] rounded-2xl">
+      <div className="w-[580px] p-8 m-auto !mt-[96px] border border-[#505050] rounded-2xl">
         <DepositContent />
       </div>
     </>

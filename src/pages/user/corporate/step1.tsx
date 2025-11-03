@@ -4,16 +4,12 @@ import { businessRelness } from '@/services/user';
 import { history, useModel } from '@umijs/max';
 import { ConfigProvider, Form, Input, Select } from 'antd';
 import { useEffect } from 'react';
+
 export default function Step1_1() {
   const [form] = Form.useForm();
   const { setBusinessData, businessData } = useModel('verify');
   const handleSubmit = async () => {
     form.validateFields().then(async (values) => {
-      console.log(values);
-      // setBusinessData({
-      //   ...businessData,
-      //   ...values,
-      // });
       let res = await businessRelness({
         ...businessData,
         ...values,
@@ -32,6 +28,7 @@ export default function Step1_1() {
       ...businessData,
     });
   }, [businessData]);
+
   return (
     <>
       <div className="flex items-center justify-between pb-3 text-[24px] font-bold text-[#202B4B]">
@@ -43,7 +40,7 @@ export default function Step1_1() {
           }}
         />
       </div>
-      <div className="w-[588px] relative m-auto rounded-[16px] pt-[40px] border border-[#F0F1F1]">
+      <div className="w-[588px] relative m-auto rounded-[16px] pt-[40px] border border-[#505050]">
         <TimeLine active={1} progress={100} />
         <div className="w-full h-[600px] overflow-y-auto px-8">
           <ConfigProvider
@@ -51,10 +48,6 @@ export default function Step1_1() {
               components: {
                 Form: {
                   itemMarginBottom: 16,
-                },
-                Input: {},
-                Select: {
-                  selectorBg: '#F2F6FA',
                 },
               },
             }}
@@ -128,7 +121,7 @@ export default function Step1_1() {
         <div className="w-full rounded-bl-2xl rounded-br-2xl  h-[104px] px-[40px] gap-[23px] flex items-center justify-between">
           <div
             onClick={handleSubmit}
-            className="w-[390px] cursor-pointer h-[48px] leading-[48px] text-center text-white font-[500] bg-[#202b4b] rounded-lg"
+            className="w-[390px] cursor-pointer h-[48px] leading-[48px] text-center text-white font-[500] gold-gradient-bg rounded-lg"
           >
             Continue
           </div>
@@ -136,7 +129,7 @@ export default function Step1_1() {
             onClick={() => {
               history.back();
             }}
-            className="flex-1 cursor-pointer h-[48px] leading-[48px] border border-[#202B4B14] rounded-lg font-[500] text-center"
+            className="flex-1 cursor-pointer h-[48px] leading-[48px] border border-[#25282C] rounded-lg font-[500] text-center text-[#C69F58]"
           >
             Back
           </div>

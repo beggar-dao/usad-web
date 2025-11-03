@@ -46,7 +46,7 @@ export default function VerificationStart() {
   ];
   return (
     <>
-      <div className="flex items-center justify-between pb-3 text-[24px] font-bold text-[#202B4B]">
+      <div className="flex items-center justify-between pb-3 text-[24px] font-bold text-white">
         <div>
           {params.get('type') === 'individual'
             ? 'Individual Verification'
@@ -59,7 +59,7 @@ export default function VerificationStart() {
           }}
         />
       </div>
-      <div className="text-[20px] leading-[36px] text-[#202B4B] mt-[108px]">
+      <div className="text-[20px] leading-[36px] text-[#ADB1B8] mt-[108px]">
         Let's get you verified <br /> Follow the simple steps below
       </div>
       <div className="mt-[40px] flex gap-[62px] items-center">
@@ -67,13 +67,13 @@ export default function VerificationStart() {
           (item, index) => (
             <div
               key={index}
-              className="border-0 relative flex-1 px-6 py-[30px] border-[#202B4B0A] bg-[#F4F7FF] rounded-[16px] "
+              className="border relative flex-1 px-6 py-[30px] border-[#505050] black-gradient-bg1 rounded-[16px] "
             >
               <div className="flex justify-end">{item.icon}</div>
-              <div className="text-[#5B6276] mt-[10px] text-[20px] font-[400]">
+              <div className="text-[#666] mt-[10px] text-[20px] font-[400]">
                 {item.name}
               </div>
-              <div className="text-[#202b4b] mt-[10px] text-[18px] font-bold h-[42px]">
+              <div className="text-white mt-[10px] text-[18px] font-bold h-[42px]">
                 {item.content}
               </div>
               {index !== 2 ? (
@@ -90,11 +90,11 @@ export default function VerificationStart() {
               ? history.push('/user/verification/individual')
               : history.push('/user/verification/corporate');
           }}
-          className="h-[48px] cursor-pointer leading-[48px] hover:opacity-[90] transition-all bg-[#202B4B] rounded-lg px-[40px] text-white text-base"
+          className="h-[48px] cursor-pointer leading-[48px] hover:opacity-[80] transition-all gold-gradient-bg rounded-lg px-[40px] text-white text-base"
         >
           Continue on this device
         </div>
-        <div className="h-[48px] cursor-pointer leading-[48px] border border-[#202B4B14] text-[#202B4B] hover:opacity-[90] transition-all rounded-lg px-[40px] text-base">
+        <div className="h-[48px] cursor-pointer leading-[48px] bg-[#1E2023] border border-[#25282C] text-[#C69F58] hover:opacity-[80] transition-all rounded-lg px-[40px] text-base">
           Continue on phone
         </div>
       </div>

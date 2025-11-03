@@ -84,7 +84,7 @@ export default function Step2_2() {
           }}
         />
       </div>
-      <div className="w-[588px] relative m-auto rounded-[16px] py-[40px] border border-[#F0F1F1]">
+      <div className="w-[588px] relative m-auto rounded-[16px] py-[40px] border border-[#505050]">
         <TimeLine active={3} progress={100} />
         <div className="w-full h-[600px] pb-10 overflow-y-auto px-8">
           <div className="text-[24px] text-black font-bold mb-3">

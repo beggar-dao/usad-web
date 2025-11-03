@@ -31,7 +31,6 @@ export default function Verification() {
     },
   };
   useEffect(() => {
-    console.log('verification init');
     init();
   }, []);
 
@@ -39,7 +38,7 @@ export default function Verification() {
     <>
       {user.is2FA ? (
         <>
-          <div className=" pb-3 text-[24px] font-bold text-[#202B4B]">
+          <div className="pb-3 text-[24px] font-bold text-white">
             Verification
           </div>
           {verifi.status === 2 && corporate.status === 2 ? (
@@ -53,10 +52,9 @@ export default function Verification() {
               {status[2]?.name}
             </div>
           ) : null}
-
           <div
             style={{ minHeight: `calc(100% - 96px)` }}
-            className="grid grid-cols-2 items-center  gap-8 "
+            className="grid grid-cols-2 items-center gap-8 max-w-[1084px] mx-auto"
           >
             <div
               onClick={() => {
@@ -70,17 +68,16 @@ export default function Verification() {
                 setBusinessData({});
                 history.push('/user/verification/start?type=individual');
               }}
-              className={`${
-                verifi.status === 1 ||
+              className={`${verifi.status === 1 ||
                 verifi.status === 2 ||
                 corporate.status === 1
-                  ? ' opacity-50'
-                  : ''
-              } flex-1 px-2 bg-[#F4F7FF] relative cursor-pointer border border-[#202B4B0A] rounded-2xl pt-[52px] max-w-[420px]`}
+                ? ' opacity-50'
+                : ''
+                } flex-1 px-2 black-gradient-bg1 relative cursor-pointer border border-[#505050] rounded-2xl pt-[52px]`}
             >
               {(corporate.status !== 2 ||
                 (verifi.status !== 2 && corporate.status === 2)) &&
-              verifi.status !== 0 ? (
+                verifi.status !== 0 ? (
                 <div
                   style={{
                     backgroundColor: status[verifi.status]?.bgColor,
@@ -95,9 +92,8 @@ export default function Verification() {
               <div className="text-[24px] font-[700] mt-6 text-center">
                 Individual Verification
               </div>
-              <div className="text-sm mb-[40px] text-center text-[#5b6276] leading-[26px] px-[50px]">
-                Individual VeriAvailable for individuals 18 years of age or
-                olderfication
+              <div className="text-sm mb-[40px] text-center text-[#ADB1B8] leading-[26px] px-[50px]">
+                Available for individuals 18 years of age or older
               </div>
             </div>
 
@@ -114,15 +110,14 @@ export default function Verification() {
                 }
                 history.push('/user/verification/start?type=corporate');
               }}
-              className={`${
-                verifi.status === 1 || corporate.status === 2
-                  ? ' opacity-50'
-                  : ''
-              } flex-1 px-2 relative bg-[#F4F7FF] cursor-pointer border border-[#202B4B0A] rounded-2xl pt-[52px] max-w-[420px]`}
+              className={`${verifi.status === 1 || corporate.status === 2
+                ? ' opacity-50'
+                : ''
+                } flex-1 px-2 black-gradient-bg1 relative cursor-pointer border border-[#505050] rounded-2xl pt-[52px]`}
             >
               {(verifi.status !== 2 ||
                 (verifi.status !== 2 && corporate.status === 2)) &&
-              corporate.status !== 0 ? (
+                corporate.status !== 0 ? (
                 <div
                   style={{
                     backgroundColor: status[corporate.status]?.bgColor,
@@ -137,7 +132,7 @@ export default function Verification() {
               <div className="text-[24px] font-[700] mt-6 text-center">
                 Corporate Verification
               </div>
-              <div className="text-sm mb-[40px] text-center text-[#5b6276] leading-[26px] px-[50px]">
+              <div className="text-sm mb-[40px] text-center text-[#ADB1B8] leading-[26px] px-[50px]">
                 An account in the name of a corporation/partnership/trust
               </div>
             </div>

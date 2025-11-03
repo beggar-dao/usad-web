@@ -5,9 +5,11 @@ import { history, useModel } from '@umijs/max';
 import { ConfigProvider, Form, Input, Select } from 'antd';
 import { Country } from 'country-state-city';
 import { useEffect } from 'react';
+
 export default function Step1_1() {
   const [form] = Form.useForm();
   const { setBusinessData, businessData } = useModel('verify');
+
   const handleSubmit = async () => {
     form.validateFields().then(async (values) => {
       console.log(values);
@@ -23,11 +25,13 @@ export default function Step1_1() {
       history.push('/user/verification/corporate/step1');
     });
   };
+
   useEffect(() => {
     form.setFieldsValue({
       ...businessData,
     });
   }, [businessData]);
+
   return (
     <>
       <div className="flex items-center justify-between pb-3 text-[24px] font-bold text-[#202B4B]">
@@ -39,7 +43,7 @@ export default function Step1_1() {
           }}
         />
       </div>
-      <div className="w-[588px] relative m-auto rounded-[16px] pt-[40px] border border-[#F0F1F1]">
+      <div className="w-[588px] relative m-auto rounded-[16px] pt-[40px] border border-[#505050]">
         <TimeLine active={1} progress={50} />
         <div className="w-full h-[600px] overflow-y-auto px-8">
           <ConfigProvider
@@ -51,17 +55,17 @@ export default function Step1_1() {
               },
             }}
           >
-            <div className="text-[24px] text-black font-bold mb-3">
+            <div className="text-[24px] text-white font-bold mb-3">
               Company information
             </div>
-            <div className="text-sm !mb-4 text-[#5b6276] leading-[24px]">
+            <div className="text-sm !mb-4 text-[#666] leading-[24px]">
               The online registry search does not support this jurisdiction.
               Please provide company details manually.
             </div>
             <Form
               form={form}
               layout="vertical"
-              className="register-form-layout h-auto"
+              className="h-auto"
               size="large"
             >
               <Form.Item
@@ -106,11 +110,7 @@ export default function Step1_1() {
                   },
                 ]}
               >
-                <Input
-                  type="text"
-                  placeholder="Company name"
-                  className="register-input"
-                />
+                <Input type="text" placeholder="Company name" />
               </Form.Item>
               <Form.Item
                 label="Registration number"
@@ -123,11 +123,7 @@ export default function Step1_1() {
                   },
                 ]}
               >
-                <Input
-                  type="text"
-                  placeholder="Registration number"
-                  className="register-input"
-                />
+                <Input type="text" placeholder="Registration number" />
               </Form.Item>
               <Form.Item
                 label="Legal address"
@@ -139,11 +135,7 @@ export default function Step1_1() {
                   },
                 ]}
               >
-                <Input
-                  type="text"
-                  placeholder="Legal address"
-                  className="register-input"
-                />
+                <Input type="text" placeholder="Legal address" />
               </Form.Item>
               <Form.Item
                 label="Tax ID"
@@ -155,11 +147,7 @@ export default function Step1_1() {
                   },
                 ]}
               >
-                <Input
-                  type="text"
-                  placeholder="Tax ID"
-                  className="register-input"
-                />
+                <Input type="text" placeholder="Tax ID" />
               </Form.Item>
             </Form>
           </ConfigProvider>
@@ -167,7 +155,7 @@ export default function Step1_1() {
         <div className="w-full rounded-bl-2xl rounded-br-2xl  h-[104px] px-[40px] gap-[23px] flex items-center justify-between">
           <div
             onClick={handleSubmit}
-            className="w-[390px] cursor-pointer h-[48px] leading-[48px] text-center text-white font-[500] bg-[#202b4b] rounded-lg"
+            className="w-[390px] cursor-pointer h-[48px] leading-[48px] text-center text-white font-[500] gold-gradient-bg rounded-lg"
           >
             Continue
           </div>
@@ -175,7 +163,7 @@ export default function Step1_1() {
             onClick={() => {
               history.back();
             }}
-            className="flex-1 cursor-pointer h-[48px] leading-[48px] border border-[#202B4B14] rounded-lg font-[500] text-center"
+            className="flex-1 cursor-pointer h-[48px] leading-[48px] border border-[#25282C] rounded-lg font-[500] text-center text-[#C69F58]"
           >
             Back
           </div>

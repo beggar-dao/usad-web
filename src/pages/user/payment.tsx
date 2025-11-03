@@ -40,12 +40,12 @@ export default function Payment() {
       <VerifyBank />
       {user.is2FA ? (
         <>
-          <div className="text-[24px] mb-6 font-bold text-[#202B4B]">
+          <div className="text-[24px] mb-6 font-bold text-white">
             Bank Accounts
           </div>
           {list.length ? (
             <>
-              <div className="rounded-lg border border-[#F0F1F1] overflow-hidden">
+              <div className="rounded-lg border border-[#505050] overflow-hidden">
                 <div className="grid grid-cols-[1.5fr_1.5fr_1.5fr_0.6fr] text-sm bg-[#202B4B4D] h-[40px] leading-[40px] text-white px-3">
                   <div className="px-[18px]">Bank Name</div>
                   <div className="px-[18px]">Account IBAN</div>
@@ -115,9 +115,8 @@ export default function Payment() {
                 onClick={() => {
                   history.push('/user/payment/addBank');
                 }}
-                className={`mt-12 cursor-pointer w-[214px] h-[48px] bg-[#202B4B] flex justify-center items-center text-center ${
-                  list.length >= 5 ? 'text-[#000]' : 'text-white'
-                } rounded-lg`}
+                className={`mt-12 cursor-pointer w-[214px] h-[48px] bg-[#202B4B] flex justify-center items-center text-center ${list.length >= 5 ? 'text-[#000]' : 'text-white'
+                  } rounded-lg`}
               >
                 Add Bank Account
               </Button>

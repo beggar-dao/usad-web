@@ -8,7 +8,8 @@ import { history, useModel, useSearchParams } from '@umijs/max';
 
 import { Form, Upload } from 'antd';
 import { useEffect } from 'react';
-export default function Step1_1() {
+
+export default function Step3_1() {
   const [form] = Form.useForm();
   const { user } = useModel('auth');
   const { setAlertInfo } = useModel('dialogState');
@@ -43,14 +44,15 @@ export default function Step1_1() {
       if (user.id) {
         history.push('/user/verification/corporate/step2_2');
       }
-      // history.push('/user/verification/complete?type=kyb');
     });
   };
+
   useEffect(() => {
     form.setFieldsValue({
       ...individualData,
     });
   }, [individualData]);
+
   return (
     <>
       <div className="flex items-center justify-between pb-3 text-[24px] font-bold text-[#202B4B]">
@@ -62,29 +64,16 @@ export default function Step1_1() {
           }}
         />
       </div>
-      <div className="w-[588px] relative m-auto rounded-[16px] pt-[40px] border border-[#F0F1F1]">
+      <div className="w-[588px] relative m-auto rounded-[16px] pt-[40px] border border-[#505050]">
         <TimeLine active={3} progress={100} />
         <div className="w-full h-[600px] overflow-y-auto px-8">
-          <div className="text-[24px] text-black font-bold mb-4">
+          <div className="text-[24px] text-white font-bold mb-4">
             FaceMatch ID
           </div>
-          {/* {!'是否有上传图片' ? (
-            <div className="bg-[#F3F9FF] rounded-lg overflow-hidden h-[325px]"></div>
-          ) : (
-            <Upload.Dragger
-              maxCount={1}
-              accept=".jpg,.jpeg,.png,.gif,.webp,.helc"
-              beforeUpload={beforeUpload}
-              customRequest={uploadFile}
-              onChange={(data) => handleUploadChange(data, 'personalPhotoData')}
-            >
-              <img src={face} className="block w-full" />
-            </Upload.Dragger>
-          )} */}
           <Form
             form={form}
             layout="vertical"
-            className="register-form-layout h-auto"
+            className="h-auto"
             size="large"
           >
             <Form.Item

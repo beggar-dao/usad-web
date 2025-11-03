@@ -54,25 +54,12 @@ export default function Step1_1() {
           }}
         />
       </div>
-      <div className="w-[588px] relative m-auto rounded-[16px] pt-[40px] border border-[#F0F1F1]">
+      <div className="w-[588px] relative m-auto rounded-[16px] pt-[40px] border border-[#505050]">
         <TimeLine active={3} progress={100} />
         <div className="w-full h-[600px] overflow-y-auto px-8">
-          <div className="text-[24px] text-black font-bold mb-4">
+          <div className="text-[24px] text-white font-bold mb-4">
             FaceMatch ID
           </div>
-          {/* {!'是否有上传图片' ? (
-            <div className="bg-[#F3F9FF] rounded-lg overflow-hidden h-[325px]"></div>
-          ) : (
-            <Upload.Dragger
-              maxCount={1}
-              accept=".jpg,.jpeg,.png,.gif,.webp,.helc"
-              beforeUpload={beforeUpload}
-              customRequest={uploadFile}
-              onChange={(data) => handleUploadChange(data, 'personalPhotoData')}
-            >
-              <img src={face} className="block w-full" />
-            </Upload.Dragger>
-          )} */}
           <Form
             form={form}
             layout="vertical"
@@ -112,16 +99,16 @@ export default function Step1_1() {
             </Form.Item>
           </Form>
 
-          <div className="mt-4 text-base text-[#000] font-[700]">Tips</div>
-          <div className="mt-3 flex items-center text-sm text-[#202b4b]">
+          <div className="mt-4 text-base text-[#F5F7FF] font-[700]">Tips</div>
+          <div className="mt-3 flex items-center text-sm text-[#F5F7FF]">
             <CheckedSvg className="mr-2" />
             Find a well lit place
           </div>
-          <div className="mt-3 flex items-center text-sm text-[#202b4b]">
+          <div className="mt-3 flex items-center text-sm text-[#F5F7FF]">
             <CheckedSvg className="mr-2" />
             Ensure your face is within the frame
           </div>
-          <div className="mt-3 flex items-center text-sm text-[#202b4b]">
+          <div className="mt-3 flex items-center text-sm text-[#F5F7FF]">
             <ErrorSvg className="mr-2" />
             Don't wear hats, glasses and masks
           </div>
@@ -132,7 +119,7 @@ export default function Step1_1() {
         <div className="w-full rounded-bl-2xl rounded-br-2xl  h-[104px] px-[40px] gap-[23px] flex items-center justify-between">
           <div
             onClick={handleSubmit}
-            className="w-[390px] relative cursor-pointer h-[48px] leading-[48px] text-center text-white font-[500] bg-[#202b4b] rounded-lg"
+            className="w-[390px] relative cursor-pointer h-[48px] leading-[48px] text-center text-white font-[500] gold-gradient-bg rounded-lg"
           >
             {!individualData?.personalPhotoData ? (
               <Upload
@@ -156,7 +143,7 @@ export default function Step1_1() {
             onClick={() => {
               history.back();
             }}
-            className="flex-1 cursor-pointer h-[48px] leading-[48px] border border-[#202B4B14] rounded-lg font-[500] text-center"
+            className="flex-1 cursor-pointer h-[48px] leading-[48px] border border-[#25282C] rounded-lg font-[500] text-center text-[#C69F58]"
           >
             Back
           </div>

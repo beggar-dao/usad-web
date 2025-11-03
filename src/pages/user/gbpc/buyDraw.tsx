@@ -42,7 +42,7 @@ export default function BuyDraw({ currency }: { currency: string }) {
           <div className="text-sm text-[#5B6276]">
             Use your bank account to make a transfer to the bank detailsbelow
           </div>
-          <div className="mt-10 p-4 border border-[#F0F1F1] rounded-lg">
+          <div className="mt-10 p-4 border border-[#505050] rounded-lg">
             <div className="flex leading-8 items-start gap-4 text-sm justify-between">
               <div className="text-[#A3ABC0]">Account Name </div>
               <div className="text-[#202B4B] flex items-center gap-2 justify-end text-right flex-1">

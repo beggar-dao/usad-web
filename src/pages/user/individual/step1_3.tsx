@@ -41,7 +41,7 @@ export default function Step1_1() {
           }}
         />
       </div>
-      <div className="w-[588px] relative m-auto rounded-[16px] pt-[40px] border border-[#F0F1F1]">
+      <div className="w-[588px] relative m-auto rounded-[16px] pt-[40px] border border-[#505050]">
         <TimeLine active={1} progress={100} />
         <div className="w-full h-[600px] overflow-y-auto px-8">
           <ConfigProvider

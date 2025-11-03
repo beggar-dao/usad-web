@@ -13,7 +13,7 @@ export default function AddBank() {
   };
   return (
     <div className="flex h-full flex-col">
-      <div className="pb-6 text-[24px] font-bold text-[#202B4B]">
+      <div className="pb-6 text-[24px] font-bold text-white">
         Bank Accounts
       </div>
       <div className="text-base text-[#202B4B] pb-7 border-b border-b-[#E9E9E9]">

@@ -8,7 +8,8 @@ import { history, useModel, useSearchParams } from '@umijs/max';
 import { ConfigProvider, Form, Radio, Select, Upload } from 'antd';
 import { Country } from 'country-state-city';
 import { useEffect } from 'react';
-export default function Step1_1() {
+
+export default function Step3() {
   const [form] = Form.useForm();
   const [searchParams] = useSearchParams();
   const {
@@ -18,21 +19,13 @@ export default function Step1_1() {
     individualData,
     setIndividualData,
   } = useModel('verify');
+
   const handleSubmit = async () => {
     form.validateFields().then(async (values) => {
       setIndividualData({
         ...individualData,
         ...values,
       });
-      // await businessRealness({
-      //   id: searchParams.get('id'),
-      //   code: searchParams.get('code'),
-      //   ...values,
-      //   ...individualData,
-      //   firstPhotoData_fileList: undefined,
-      //   secondPhotoData_fileList: undefined,
-      //   personalPhotoData_fileList: undefined,
-      // });
       history.push(
         `/user/verification/corporate/step3_1?code=${searchParams.get(
           'code',
@@ -40,6 +33,7 @@ export default function Step1_1() {
       );
     });
   };
+
   useEffect(() => {
     form.setFieldsValue({
       ...individualData,
@@ -68,17 +62,8 @@ export default function Step1_1() {
         }));
       }
     }
-    // 如果切换到Passport类型，清除secondPhotoData字段的值
-    // if (certificateType === '0') {
-    //   form.setFieldValue('secondPhotoData', undefined);
-    //   // 清除secondPhotoData_fileList状态
-    //   setIndividualData((prev) => ({
-    //     ...prev,
-    //     secondPhotoData: undefined,
-    //     secondPhotoData_fileList: undefined,
-    //   }));
-    // }
   }, [certificateType]);
+
   return (
     <>
       <div className="flex items-center justify-between pb-3 text-[24px] font-bold text-[#202B4B]">
@@ -90,7 +75,7 @@ export default function Step1_1() {
           }}
         />
       </div>
-      <div className="w-[588px] relative m-auto rounded-[16px] pt-[40px] border border-[#F0F1F1]">
+      <div className="w-[588px] relative m-auto rounded-[16px] pt-[40px] border border-[#505050]">
         <TimeLine active={3} progress={100} />
         <div className="w-full h-[600px] overflow-y-auto px-8">
           <ConfigProvider

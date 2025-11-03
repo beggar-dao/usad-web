@@ -7,6 +7,7 @@ export default function AddUbo({ data }: any) {
   const { uboModal, setUboModal, handleCreateUbo } = useModel('verify');
   const roles = Form.useWatch((values) => values.type, form);
   const { setAlertInfo } = useModel('dialogState');
+
   const onFinish = async () => {
     let values = await form.validateFields();
     await handleCreateUbo({
@@ -20,6 +21,7 @@ export default function AddUbo({ data }: any) {
     });
     setUboModal(false);
   };
+
   useEffect(() => {
     if (!uboModal) {
       form.resetFields();
@@ -27,6 +29,7 @@ export default function AddUbo({ data }: any) {
       form.setFieldsValue(data);
     }
   }, [uboModal]);
+
   return (
     <Modal
       onCancel={() => {
@@ -41,13 +44,13 @@ export default function AddUbo({ data }: any) {
         <div className="text-[24px] mb-2 font-bold text-center">
           Add {roles === 0 ? 'UBO' : 'Representative'}
         </div>
-        <div className="text-center !mb-5 text-xs leading-5 text-[#5B6276]">
+        <div className="text-center !mb-5 text-xs leading-5 text-[#666]">
           Provide information about the individual
         </div>
-        <div className="text-[14px] font-bold text-[#202B4B] leading-[26px]">
+        <div className="text-[14px] font-bold text-[#ADB1B8] leading-[26px]">
           Select roles
         </div>
-        <div className="my-2 text-xs text-[#5B6276] leading-5">
+        <div className="my-2 text-xs text-[#ADB1B8] leading-5">
           If this beneficiary has several roles, you can fill out a
           questionnaire for them automatically
         </div>
@@ -130,7 +133,7 @@ export default function AddUbo({ data }: any) {
           </Form>
           <div
             onClick={() => onFinish()}
-            className="text-base  hover:opacity-90 text-white h-[48px] text-center mt-12 bg-[#202B4B] leading-[48px] cursor-pointer rounded-[8px]"
+            className="text-base hover:opacity-80 text-white h-[48px] text-center mt-12 gold-gradient-bg leading-[48px] cursor-pointer rounded-[8px]"
           >
             Create beneficiary
           </div>
