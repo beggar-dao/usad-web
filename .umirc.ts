@@ -243,36 +243,36 @@ export default defineConfig({
           component: './user/wallet',
         },
         {
-          path: '/user/gbpc',
-          component: './user/gbpc',
+          path: '/user/usad',
+          component: './user/usad',
         },
         {
-          path: '/user/gbpc/transfer',
-          component: './user/gbpc/transfer',
+          path: '/user/usad/transfer',
+          component: './user/usad/transfer',
         },
         {
-          path: '/user/gbpc/deposit',
-          component: './user/gbpc/deposit',
+          path: '/user/usad/deposit',
+          component: './user/usad/deposit',
         },
         {
-          path: '/user/gbpc/withdraw',
-          component: './user/gbpc/withdraw',
+          path: '/user/usad/withdraw',
+          component: './user/usad/withdraw',
         },
         {
-          path: '/user/gbpc/buy',
-          component: './user/gbpc/buy',
+          path: '/user/usad/buy',
+          component: './user/usad/buy',
         },
         {
-          path: '/user/gbpc/buy',
-          component: './user/gbpc/buy',
+          path: '/user/usad/buy',
+          component: './user/usad/buy',
         },
         {
-          path: '/user/gbpc/buy',
-          component: './user/gbpc/buy',
+          path: '/user/usad/buy',
+          component: './user/usad/buy',
         },
         {
-          path: '/user/gbpc/buy',
-          component: './user/gbpc/buy',
+          path: '/user/usad/buy',
+          component: './user/usad/buy',
         },
         {
           path: '/user/payment/addBank',

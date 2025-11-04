@@ -70,11 +70,11 @@ export default function UserIndex() {
       },
     },
     {
-      name: 'GBPC',
-      url: '/user/gbpc',
-      checked: location.pathname.includes('/user/gbpc'),
+      name: 'USAD',
+      url: '/user/usad',
+      checked: location.pathname.includes('/user/usad'),
       onClick: () => {
-        history.push('/user/gbpc');
+        history.push('/user/usad');
       },
     },
     {

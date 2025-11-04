@@ -5,7 +5,7 @@ import { CopyOutlined, EyeFilled, EyeInvisibleFilled } from '@ant-design/icons';
 import { history, useModel } from '@umijs/max';
 import { Modal } from 'antd';
 import { useEffect, useState } from 'react';
-import DepositContent from './gbpc/deposit_content';
+import DepositContent from './usad/deposit_content';
 
 export default function Wallet() {
   const [open, setOpen] = useState(false);
@@ -127,7 +127,7 @@ export default function Wallet() {
                   <div className="flex mt-[56px] items-center justify-between gap-3">
                     <div
                       onClick={() => {
-                        history.push('/user/gbpc/buy');
+                        history.push('/user/usad/buy');
                       }}
                       className="gold-gradient-bg flex-1 cursor-pointer rounded-lg leading-10 text-center text-white text-xs font-bold"
                     >
@@ -143,7 +143,7 @@ export default function Wallet() {
                     </div>
                     <div
                       onClick={() => {
-                        history.push('/user/gbpc/transfer');
+                        history.push('/user/usad/transfer');
                       }}
                       className="border border-[#25282C] cursor-pointer flex-1 rounded-lg leading-10 text-center text-white text-xs font-bold bg-[#1E2023]"
                     >
@@ -151,7 +151,7 @@ export default function Wallet() {
                     </div>
                     <div
                       onClick={() => {
-                        history.push('/user/gbpc/withdraw');
+                        history.push('/user/usad/withdraw');
                       }}
                       className="border border-[#25282C] cursor-pointer flex-1 rounded-lg leading-10 text-center text-white text-xs font-bold bg-[#1E2023]"
                     >

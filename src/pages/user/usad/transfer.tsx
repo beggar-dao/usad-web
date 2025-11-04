@@ -63,7 +63,7 @@ export default function Buy() {
         <div className="text-sm cursor-pointer leading-[26px] text-[#5B6276] flex items-center gap-6">
           <span
             onClick={() => {
-              history.push('/user/gbpc/buy');
+              history.push('/user/usad/buy');
             }}
           >
             Buy GBPC
@@ -73,14 +73,14 @@ export default function Buy() {
           </span>
           <span
             onClick={() => {
-              history.push('/user/gbpc/deposit');
+              history.push('/user/usad/deposit');
             }}
           >
             Deposit GBPC
           </span>
           <span
             onClick={() => {
-              history.push('/user/gbpc/withdraw');
+              history.push('/user/usad/withdraw');
             }}
           >
             Fiat withdraw
@@ -89,7 +89,7 @@ export default function Buy() {
         <CloseSvg
           className="cursor-pointer"
           onClick={() => {
-            history.push('/user/gbpc');
+            history.push('/user/usad');
           }}
         />
       </div>

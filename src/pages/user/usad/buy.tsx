@@ -4,6 +4,7 @@ import { ConfigProvider, Form, InputNumber, Select } from 'antd';
 import { useEffect, useState } from 'react';
 import BuyDraw from './buyDraw';
 import BuySuccess from './buySuccess';
+
 export default function Buy() {
   const [form] = Form.useForm();
   const [checkedBank, setCheckedBank] = useState({});
@@ -55,21 +56,21 @@ export default function Buy() {
           </span>
           <span
             onClick={() => {
-              history.push('/user/gbpc/transfer');
+              history.push('/user/usad/transfer');
             }}
           >
             Transfer
           </span>
           <span
             onClick={() => {
-              history.push('/user/gbpc/deposit');
+              history.push('/user/usad/deposit');
             }}
           >
             Deposit GBPC
           </span>
           <span
             onClick={() => {
-              history.push('/user/gbpc/withdraw');
+              history.push('/user/usad/withdraw');
             }}
           >
             Fiat withdraw
@@ -78,7 +79,7 @@ export default function Buy() {
         <CloseSvg
           className="cursor-pointer"
           onClick={() => {
-            history.push('/user/gbpc');
+            history.push('/user/usad');
           }}
         />
       </div>
