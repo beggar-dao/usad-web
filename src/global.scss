@@ -290,3 +290,11 @@ body,
   margin-bottom: 24px;
   font-family: Inter, sans-serif;
 }
+
+.gold-gradient-text {
+  background: linear-gradient(90deg, #C69F58 0.11%, #FFEECF 16.21%, #A56F2A 51.22%, #C69F58 99.79%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+}

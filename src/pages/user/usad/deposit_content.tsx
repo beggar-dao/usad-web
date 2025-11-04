@@ -89,7 +89,7 @@ export default function DepositContent() {
             allowClear
             onChange={handlerChange}
             style={{ width: '100%', height: '47px' }}
-            dropdownRender={(menu) => <>{menu}</>}
+            popupRender={(menu) => <>{menu}</>}
             optionRender={(option) => {
               return (
                 <>
@@ -97,7 +97,7 @@ export default function DepositContent() {
                     <div>{option.label}</div>
                     <div>≈{option.data.mins}</div>
                   </div>
-                  <div className="flex text-[#9EA6BC] items-center justify-between">
+                  <div className="flex text-[#81858C] items-center justify-between font-normal">
                     <div>{option.data.name}</div>
                     <div>{option.data.count}</div>
                   </div>
@@ -141,7 +141,7 @@ export default function DepositContent() {
         </Form.Item>
         {addressObj.address ? (
           <>
-            <div className="text-sm mb-1 mt-3 text-[#ADB1B8] leading-[22px]">
+            <div className="text-sm mb-1 mt-3 text-white leading-[22px]">
               Deposit Address
             </div>
             <div className="bg-[#1E2023] rounded-lg p-4 border border-[#25282C]">
