@@ -46,7 +46,7 @@ export default function Payment() {
           {list.length ? (
             <>
               <div className="rounded-lg border border-[#505050] overflow-hidden">
-                <div className="grid grid-cols-[1.5fr_1.5fr_1.5fr_0.6fr] text-sm bg-[#202B4B4D] h-[40px] leading-[40px] text-white px-3">
+                <div className="grid grid-cols-[1.5fr_1.5fr_1.5fr_0.6fr] text-sm black-gradient-bg1 h-[40px] leading-[40px] text-white px-3">
                   <div className="px-[18px]">Bank Name</div>
                   <div className="px-[18px]">Account IBAN</div>
                   <div className="px-[18px]">Status</div>
@@ -59,14 +59,14 @@ export default function Payment() {
                       className="grid grid-cols-[1.5fr_1.5fr_1.5fr_0.6fr] flex items-center  px-3"
                     >
                       <div className="px-[18px] py-[15px]">
-                        <p className="text-sm font-semibold text-[#202b4b] ">
+                        <p className="text-sm font-semibold text-white">
                           {obj.bankName}
                         </p>
-                        <p className="text-sm text-[#202b4b] mt-1">
+                        <p className="text-sm text-[#81858C] mt-1">
                           {obj.holderName}
                         </p>
                       </div>
-                      <div className="px-[18px] text-sm text-[#202b4b]  py-[15px]">
+                      <div className="px-[18px] text-sm text-[#ADB1B8] py-[15px]">
                         {obj.iban}
                       </div>
                       <div className="px-[18px]">
@@ -102,7 +102,7 @@ export default function Payment() {
                         }}
                       >
                         {obj.status !== 1 ? (
-                          <DeleteOutlined className="text-[#202B4B]" />
+                          <DeleteOutlined className="text-white" />
                         ) : null}
                       </div>
                     </div>
@@ -115,12 +115,12 @@ export default function Payment() {
                 onClick={() => {
                   history.push('/user/payment/addBank');
                 }}
-                className={`mt-12 cursor-pointer w-[214px] h-[48px] bg-[#202B4B] flex justify-center items-center text-center ${list.length >= 5 ? 'text-[#000]' : 'text-white'
+                className={`mt-12 cursor-pointer w-[214px] h-[48px] gold-gradient-bg flex justify-center items-center text-center ${list.length >= 5 ? 'text-[#000]' : 'text-white'
                   } rounded-lg`}
               >
                 Add Bank Account
               </Button>
-              <div className="text-[#A3ABC0] mt-3 text-sm">
+              <div className="text-[#ADB1B8] mt-3 text-sm">
                 You can only add up to 5 account
               </div>
             </>

@@ -21,8 +21,8 @@ export default function ConfirmModal({
       open={confirmModal}
     >
       <div className="px-4 !py-5">
-        <div className="text-center mb-[50px] mt-[30px] text-[#5B6276] text-sm leading-[22px]">
-          {content || 'Are you sure you want to delete this bank account'}
+        <div className="text-center mb-[50px] mt-[30px] text-white text-sm leading-[22px]">
+          {content || 'Are you sure you want to delete this bank account?'}
         </div>
         <div className="flex items-center justify-between">
           <div
@@ -30,7 +30,7 @@ export default function ConfirmModal({
               confirm();
               // setConfirmModal(false);
             }}
-            className="text-white flex-1 text-center cursor-pointer font-bold rounded-lg bg-[#202B4B] leading-[48px]"
+            className="text-white flex-1 text-center cursor-pointer font-bold rounded-lg gold-gradient-bg leading-[48px]"
           >
             Yes
           </div>
@@ -38,7 +38,7 @@ export default function ConfirmModal({
             onClick={() => {
               setConfirmModal(false);
             }}
-            className="border flex-1 ml-6 text-center cursor-pointer text-[#202B4B] font-bold border-[#202B4B1F] rounded-lg leading-[48px]"
+            className="border flex-1 ml-6 text-center cursor-pointer text-[#C69F58] font-bold border-[#4F4F4F] rounded-lg leading-[48px]"
           >
             No
           </div>

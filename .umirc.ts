@@ -37,6 +37,15 @@ export default defineConfig({
           },
           Button: {
             primaryShadow: 'none',
+          },
+          Radio: {
+            colorBorder: '#5B6276',
+            radioSize: 20,
+            dotSize: 6,
+            colorPrimary: '#5B6276',
+          },
+          Checkbox: {
+            colorBorder: '#ADB1B8'
           }
         }
       },

@@ -18,7 +18,9 @@ import { useEffect, useState } from 'react';
 import AddressBatchModal from './components/addressBatchModal';
 import AddressModal from './components/addressModal';
 import WithDraw from './components/withdraw/add';
+
 let timeout: any = null;
+
 export default function AddressWhitelist() {
   const { user } = useModel('auth');
   const [form] = Form.useForm();
@@ -40,6 +42,7 @@ export default function AddressWhitelist() {
     !!setting.newAddressTransferLock,
   );
   const { setLoginModel } = useModel('dialogState');
+
   const onChange = async (checked: boolean) => {
     if (checked) {
       setCheckedSwitch(checked);
@@ -57,6 +60,7 @@ export default function AddressWhitelist() {
   useEffect(() => {
     setCheckedSwitch(!!setting.newAddressTransferLock);
   }, [setting.newAddressTransferLock]);
+
   const onChangeAddress = (e: any) => {
     clearTimeout(timeout);
     timeout = setTimeout(() => {
@@ -67,10 +71,12 @@ export default function AddressWhitelist() {
       });
     }, 500);
   };
+
   useEffect(() => {
     handleSettingAddressWhitelist();
     getAddress();
   }, []);
+
   if (verifi?.status !== 2 && corporate?.status !== 2) {
     return (
       <No2fa title="KYC/KYB verification required">
@@ -83,6 +89,7 @@ export default function AddressWhitelist() {
       </No2fa>
     );
   }
+
   return (
     <>
       {user.is2FA ? (
@@ -96,10 +103,10 @@ export default function AddressWhitelist() {
               setLoginModel(true);
             }}
           />
-          <div className=" pb-6 text-[24px] font-bold text-[#202B4B]">
+          <div className=" pb-6 text-[24px] font-bold text-white">
             Address Whitelist
           </div>
-          <div className="text-sm text-[#202B4B] leading-[26px] flex items-center">
+          <div className="text-sm text-[#ADB1B8] leading-[26px] flex items-center">
             Transfers are unavailable for newly saved addresses for 24 hours
             <Tooltip
               title={`For your security, any newly added address will be locked for 24 hours before it becomes active. This precaution helps protect your account from unauthorized activity. Deposits can still be made.`}
@@ -108,102 +115,84 @@ export default function AddressWhitelist() {
             </Tooltip>
           </div>
           <div className="!mt-5 flex items-start justify-between">
-            <ConfigProvider
-              theme={{
-                components: {
-                  Form: {
-                    itemMarginBottom: 16,
-                  },
-                },
-              }}
+            <Form
+              form={form}
+              className="register-form-layout"
+              size="large"
+              layout="vertical"
             >
-              <Form
-                form={form}
-                className="register-form-layout"
-                size="large"
-                layout="vertical"
-              >
-                <div className="flex gap-[40px]">
-                  <Form.Item name={'chainType'} label={'Chain Type'}>
-                    <Select
-                      className="no-border-select"
-                      placeholder="Please select a chain type"
-                      allowClear
-                      style={{ width: '260px', height: '47px' }}
-                      onChange={(value) => {
-                        getAddress({
-                          ...form.getFieldsValue(),
-                          chainType: value,
-                          pageNumber: 1,
-                        });
-                      }}
-                      dropdownRender={(menu) => (
+              <div className="flex gap-[40px]">
+                <Form.Item name={'chainType'} label={'Chain Type'}>
+                  <Select
+                    className="no-border-select"
+                    placeholder="Please select a chain type"
+                    allowClear
+                    style={{ width: '260px', height: '47px' }}
+                    onChange={(value) => {
+                      getAddress({
+                        ...form.getFieldsValue(),
+                        chainType: value,
+                        pageNumber: 1,
+                      });
+                    }}
+                    popupRender={(menu) => menu}
+                    optionRender={(option) => {
+                      return (
                         <>
-                          {/* <div className="p-4 m-2 bg-[#FFA60014] leading-[22px] border-[1px] border-[#F3974F] rounded-lg text-[#EE6700] text-sm">
-                        Note: Once successfully added, your withdrawal/transfer
-                        address cannot be modified.
-                      </div> */}
-                          {menu}
+                          <div className="flex items-center justify-between">
+                            <div>{option.label}</div>
+                            <div>≈{option.data.mins}</div>
+                          </div>
+                          <div className="flex text-[#9EA6BC] items-center justify-between">
+                            <div>{option.data.name}</div>
+                            <div>{option.data.count}</div>
+                          </div>
                         </>
-                      )}
-                      optionRender={(option) => {
-                        return (
-                          <>
-                            <div className="flex items-center justify-between">
-                              <div>{option.label}</div>
-                              <div>≈{option.data.mins}</div>
-                            </div>
-                            <div className="flex text-[#9EA6BC] items-center justify-between">
-                              <div>{option.data.name}</div>
-                              <div>{option.data.count}</div>
-                            </div>
-                          </>
-                        );
-                      }}
+                      );
+                    }}
+                  >
+                    <Select.Option
+                      name="Ethereum(ERC20)"
+                      count={`6 Confirmation/s`}
+                      mins={`2 mins`}
+                      value="ETH"
                     >
-                      <Select.Option
-                        name="Ethereum(ERC20)"
-                        count={`6 Confirmation/s`}
-                        mins={`2 mins`}
-                        value="ETH"
-                      >
-                        ETH
-                      </Select.Option>
-                      <Select.Option
-                        name="Tron(ERC20)"
-                        count={`6 Confirmation/s`}
-                        mins={`1 mins`}
-                        value="TRX"
-                      >
-                        TRX
-                      </Select.Option>
-                      <Select.Option
-                        name="Solana"
-                        count={`3 Confirmation/s`}
-                        mins={`30 sec`}
-                        value="SOL"
-                      >
-                        SOL
-                      </Select.Option>
-                    </Select>
-                  </Form.Item>
-                  <Form.Item name={'address'} label={'Search Address'}>
-                    <Input
-                      onChange={onChangeAddress}
-                      className="w-[260px] register-input"
-                      placeholder="Enter the address or add a n..."
-                    />
-                  </Form.Item>
-                </div>
-              </Form>
-            </ConfigProvider>
+                      ETH
+                    </Select.Option>
+                    <Select.Option
+                      name="Tron(ERC20)"
+                      count={`6 Confirmation/s`}
+                      mins={`1 mins`}
+                      value="TRX"
+                    >
+                      TRX
+                    </Select.Option>
+                    <Select.Option
+                      name="Solana"
+                      count={`3 Confirmation/s`}
+                      mins={`30 sec`}
+                      value="SOL"
+                    >
+                      SOL
+                    </Select.Option>
+                  </Select>
+                </Form.Item>
+                <Form.Item name={'address'} label={'Search Address'}>
+                  <Input
+                    onChange={onChangeAddress}
+                    className="w-[260px] register-input"
+                    placeholder="Enter the address or add a n..."
+                  />
+                </Form.Item>
+              </div>
+            </Form>
             <div className="flex gap-4">
               <div
                 onClick={() => {
                   setAddressObj({});
                   setAddressModal(true);
                 }}
-                className="px-4 h-8 leading-8 cursor-pointer text-xs rounded-lg bg-[#202B4B] text-white font-bold"
+                className="px-4 h-8 leading-8 cursor-pointer text-xs rounded-lg bg-[#4D4D4D] text-white font-bold"
               >
                 +Add
               </div>
@@ -211,14 +200,14 @@ export default function AddressWhitelist() {
                 onClick={() => {
                   setAddressBatchModal(true);
                 }}
-                className="text-xs h-8 leading-8 cursor-pointer text-center px-4 border border-[#202B4B1F] rounded-md font-bold"
+                className="text-xs h-8 leading-8 cursor-pointer text-center px-4 border border-[#4D4D4D] rounded-md font-bold"
               >
                 Add in Batches
               </div>
             </div>
           </div>
-          <div className="border mt-3 border-[#cecece] rounded-lg  overflow-hidden">
-            <div className="px-6 h-10 text-sm items-center grid grid-cols-[1fr_1fr_2fr_5fr_1.5fr] bg-[#202B4B4D] text-white leading-6">
+          <div className="border mt-3 border-[#505050] rounded-lg  overflow-hidden">
+            <div className="px-6 h-10 text-sm items-center grid grid-cols-[1fr_1fr_2fr_5fr_1.5fr] black-gradient-bg1 text-white leading-6">
               <div>Assets</div>
               <div>Network</div>
               <div>Tag</div>
@@ -229,7 +218,7 @@ export default function AddressWhitelist() {
               return (
                 <div
                   key={index}
-                  className="px-6 min-h-[50px] text-xs items-center grid grid-cols-[1fr_1fr_2fr_5fr_1.5fr]  text-[#202B4B] leading-6"
+                  className="px-6 min-h-[50px] text-xs items-center grid grid-cols-[1fr_1fr_2fr_5fr_1.5fr] text-[#ADB1B8] leading-6"
                 >
                   <div className="w-full">{item.currency}</div>
                   <div className="w-full">{item.chainType}</div>
@@ -273,7 +262,7 @@ export default function AddressWhitelist() {
               );
             })}
             {addressList.length === 0 && (
-              <div className="px-6 text-center h-[120px] flex justify-center text-sm items-center  text-[#202B4B] leading-6">
+              <div className="px-6 text-center h-[120px] flex justify-center text-sm items-center  text-[#ADB1B8] leading-6">
                 No data
               </div>
             )}
@@ -307,7 +296,7 @@ export default function AddressWhitelist() {
             </div>
           ) : null}
 
-          <div className="text-[#666C7E] text-base mt-[36px] mb-[7px]">
+          <div className="text-white text-base mt-[36px] mb-[7px]">
             Withdrawal/Transfer Security
           </div>
 
@@ -331,10 +320,10 @@ export default function AddressWhitelist() {
                 />
               </svg>
               <div className="flex-1">
-                <div className="text-[#202B4B] font-bold">
+                <div className="text-white font-bold">
                   New Address Transfer 24h Lock
                 </div>
-                <div className="text-sm text-[#5B6276] font-[300]">
+                <div className="text-sm text-[#71757A] font-[300]">
                   Once enabled
                 </div>
               </div>
@@ -346,7 +335,7 @@ export default function AddressWhitelist() {
                 </div>
               ) : null}
 
-              <div className="flex items-center text-sm text-[#202B4B]">
+              <div className="flex items-center text-sm text-white">
                 <img
                   className="block w-6 h-6 mr-2"
                   src={checkedSwitch ? checked : disabled}
@@ -399,24 +388,20 @@ export default function AddressWhitelist() {
                 <circle cx="28" cy="26" r="1" fill="#040000" />
               </svg>
               <div className="flex-1">
-                <div className="text-[#202B4B] font-bold">
+                <div className="text-white font-bold">
                   Manage Crypto Withdrawal/Transfer Limits
                 </div>
-                <div className="text-sm text-[#5B6276] font-[300]">
+                <div className="text-sm text-[#71757A] font-[300]">
                   Once enabled
                 </div>
               </div>
             </div>
             <div className="flex w-[300px] justify-between items-center ">
-              <div className="flex items-center text-sm text-[#202B4B]">
-                {/* <img className="block w-6 h-6 mr-2" src={checked} />{' '} */}
-              </div>
               <Button
                 onClick={() => {
                   setWithDrawModal(true);
                 }}
                 variant="solid"
-                className="cursor-pointer"
               >
                 Setting
               </Button>

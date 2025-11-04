@@ -52,11 +52,10 @@ const LoginForm = () => {
     <PageAnimate>
       <div className={`${isWeb ? 'flex items-center' : ''}`}>
         <div
-          className={`${
-            isWeb
-              ? 'max-w-[980px] m-auto w-full flex items-center justify-between my-10 p-10 black-gradient-bg2 border rounded-2xl border-[#505050]'
-              : ''
-          }`}
+          className={`${isWeb
+            ? 'max-w-[980px] m-auto w-full flex items-center justify-between my-10 p-10 black-gradient-bg2 border rounded-2xl border-[#505050]'
+            : ''
+            }`}
         >
           {isWeb && (
             <img
@@ -68,11 +67,10 @@ const LoginForm = () => {
           <div className={`${isWeb ? 'w-[392px]' : ''}`}>
             <div className={`${isWeb ? 'container mt-0 px-6' : 'px-[20px]'}`}>
               <h2
-                className={`${
-                  isWeb
-                    ? 'text-[24px] !mb-8 text-center'
-                    : 'text-[18px] pt-[16px] pb-[10px] leading-[26px] font-[700]'
-                }`}
+                className={`${isWeb
+                  ? 'text-[24px] !mb-8 text-center'
+                  : 'text-[18px] pt-[16px] pb-[10px] leading-[26px] font-[700]'
+                  }`}
               >
                 Welcome back!
               </h2>
@@ -168,13 +166,13 @@ const LoginForm = () => {
                 </Form>
               </Spin>
               <div className="flex justify-between">
-                <p className="register-footer text-[#ADB1B8] font-[300] !text-xs !border-0">
+                <p className="text-[#ADB1B8] font-[300] !text-xs !border-0">
                   Don&apos;t have an account yet?{' '}
                   <a className="text-[#C69F58]" href="/Auth/CreateAccount">
                     Register
                   </a>
                 </p>
-                <p className="register-footer font-[300] !text-xs !border-0">
+                <p className="font-[300] !text-xs !border-0">
                   Forgot password?{' '}
                   <a className="text-[#C69F58]" href="/Auth/ResetPassword">
                     Reset
