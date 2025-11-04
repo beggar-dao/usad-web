@@ -177,7 +177,7 @@ const LoginForm = () => {
               block
               type="primary"
               htmlType="submit"
-              className="gray-gradient-bg h-[48px] rounded-[12px] mt-32"
+              className="gray-gradient-bg1 h-[48px] rounded-[12px] mt-32"
             >
               Confirm
             </Button>

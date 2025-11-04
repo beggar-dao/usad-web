@@ -18,7 +18,7 @@ export default defineConfig({
             titleFontSize: 16,
           },
           Form: {
-            colorLabel: '#ADB1B8',
+            labelColor: '#ADB1B8',
           },
           Input: {
             colorBorder: '#1E2023',

@@ -149,11 +149,10 @@ const CreateAccountForm = () => {
     <PageAnimate>
       <div className={`${isWeb ? 'flex items-center' : ''}`}>
         <section
-          className={`${
-            isWeb
+          className={`${isWeb
               ? 'flex-1 max-w-[980px] m-auto flex items-center justify-between my-10 p-10 black-gradient-bg2 border rounded-2xl border-[#505050] overflow-hidden'
               : ''
-          }`}
+            }`}
         >
           {isWeb && (
             <img
@@ -166,11 +165,10 @@ const CreateAccountForm = () => {
             {/* Fixed Header */}
             <div className={`${isWeb ? ' border-b-0 pb-0' : 'bg-transparent'}`}>
               <h2
-                className={`${
-                  isWeb
+                className={`${isWeb
                     ? 'text-[24px] text-center mb-8'
                     : 'text-left text-[18px] mb-[10px]'
-                }`}
+                  }`}
               >
                 Create an USAD Account
               </h2>
@@ -184,11 +182,10 @@ const CreateAccountForm = () => {
             >
               {/* Scrollable Content Area */}
               <div
-                className={`${
-                  isWeb
+                className={`${isWeb
                     ? 'px-[12px] pt-0 max-h-[460px] overflow-y-auto'
                     : 'pb-[300px]'
-                }`}
+                  }`}
               >
                 {/* First Name and Last Name */}
                 <div style={{ display: isWeb ? 'flex' : 'block', gap: '10px' }}>
@@ -268,8 +265,8 @@ const CreateAccountForm = () => {
                       {captchaLoading
                         ? 'Sending...'
                         : isCounting
-                        ? `${countdown}s`
-                        : 'Send Code'}
+                          ? `${countdown}s`
+                          : 'Send Code'}
                     </Button>
                   </div>
                 </Form.Item>
@@ -320,19 +317,17 @@ const CreateAccountForm = () => {
                       }}
                     >
                       <i
-                        className={`bi ${
-                          showPassword ? 'bi-eye' : 'bi-eye-slash'
-                        }`}
+                        className={`bi ${showPassword ? 'bi-eye' : 'bi-eye-slash'
+                          }`}
                       ></i>
                     </span>
                     <div className="flex justify-between pt-[10px] w-full">
                       <div className="w-[22%]">
                         <div
-                          className={`h-[2px] rounded-full ${
-                            watchFields?.password?.length >= 8
+                          className={`h-[2px] rounded-full ${watchFields?.password?.length >= 8
                               ? 'gold-gradient-bg'
                               : 'bg-[#eee]'
-                          }`}
+                            }`}
                         ></div>
                         <div className="font-inter text-[#9EA6BC] text-[12px] leading-[18px] font-normal">
                           8 symbols
@@ -340,12 +335,11 @@ const CreateAccountForm = () => {
                       </div>
                       <div className="w-[22%]">
                         <div
-                          className={`h-[2px] rounded-full ${
-                            /[a-z]/.test(watchFields?.password) &&
-                            watchFields?.password?.length
+                          className={`h-[2px] rounded-full ${/[a-z]/.test(watchFields?.password) &&
+                              watchFields?.password?.length
                               ? 'gold-gradient-bg'
                               : 'bg-[#eee]'
-                          }`}
+                            }`}
                         ></div>
                         <div className="font-inter text-[#9EA6BC] text-[12px] leading-[18px] font-normal">
                           Lower Case
@@ -353,11 +347,10 @@ const CreateAccountForm = () => {
                       </div>
                       <div className="w-[22%]">
                         <div
-                          className={`h-[2px] rounded-full ${
-                            /[A-Z]/.test(watchFields?.password)
+                          className={`h-[2px] rounded-full ${/[A-Z]/.test(watchFields?.password)
                               ? 'gold-gradient-bg'
                               : 'bg-[#eee]'
-                          }`}
+                            }`}
                         ></div>
                         <div className="font-inter text-[#9EA6BC] text-[12px] leading-[18px] font-normal">
                           Upper Case
@@ -365,11 +358,10 @@ const CreateAccountForm = () => {
                       </div>
                       <div className="w-[22%]">
                         <div
-                          className={`h-[2px] rounded-full ${
-                            /[0-9]/.test(watchFields?.password)
+                          className={`h-[2px] rounded-full ${/[0-9]/.test(watchFields?.password)
                               ? 'gold-gradient-bg'
                               : 'bg-[#eee]'
-                          }`}
+                            }`}
                         ></div>
                         <div className="font-inter text-[#9EA6BC] text-[12px] leading-[18px] font-normal">
                           Number
@@ -423,9 +415,8 @@ const CreateAccountForm = () => {
                       }}
                     >
                       <i
-                        className={`bi ${
-                          showConfirmPassword ? 'bi-eye' : 'bi-eye-slash'
-                        }`}
+                        className={`bi ${showConfirmPassword ? 'bi-eye' : 'bi-eye-slash'
+                          }`}
                       ></i>
                     </span>
                   </div>
@@ -492,8 +483,8 @@ const CreateAccountForm = () => {
                       !selectedCountry
                         ? 'Please select a country first'
                         : availableStates.length === 0
-                        ? 'No states/provinces available'
-                        : 'No matching states/provinces'
+                          ? 'No states/provinces available'
+                          : 'No matching states/provinces'
                     }
                   >
                     {availableStates.map((state) => (
@@ -525,18 +516,16 @@ const CreateAccountForm = () => {
 
               {/* Fixed Bottom Area */}
               <div
-                className={`${
-                  isWeb
+                className={`${isWeb
                     ? 'relative border-t-0'
                     : 'absolute bottom-0 left-[0] right-[0] px-[20px]'
-                }`}
+                  }`}
               >
                 <div
-                  className={`absolute ${
-                    isWeb
+                  className={`absolute ${isWeb
                       ? 'left-[-30px] top-0 bottom-[-30px] right-[-30px]'
                       : 'left-[-20px] right-[-20px] px-[20px]'
-                  }`}
+                    }`}
                 ></div>
                 {/* Buy/Redeem Question */}
                 <div className="relative z-40 px-[20px]">
@@ -588,8 +577,8 @@ const CreateAccountForm = () => {
                           value
                             ? Promise.resolve()
                             : Promise.reject(
-                                new Error('Agree to terms and conditions'),
-                              ),
+                              new Error('Agree to terms and conditions'),
+                            ),
                       },
                     ]}
                   >
@@ -620,7 +609,7 @@ const CreateAccountForm = () => {
                     <Button
                       type="primary"
                       htmlType="submit"
-                      className="gray-gradient-bg h-[48px] rounded-[12px]"
+                      className="gray-gradient-bg1 h-[48px] rounded-[12px]"
                       loading={registerLoading}
                       disabled={registerLoading || !submittable}
                       block

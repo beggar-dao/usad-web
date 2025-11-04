@@ -252,8 +252,12 @@ body,
   background: linear-gradient(90deg, #C69F58 0.11%, #FFEECF 16.21%, #A56F2A 51.22%, #C69F58 99.79%);
 }
 
-.gray-gradient-bg {
+.gray-gradient-bg1 {
   background: linear-gradient(90deg, #DDDDDD 0.11%, #FDFDFD 23.77%, #868686 56.53%, #DDDDDD 99.79%);
+}
+
+.gray-gradient-bg2 {
+  background: linear-gradient(74.66deg, #DDDDDD 4.13%, #FDFDFD 20.85%, #868686 64.68%, #DDDDDD 101%);
 }
 
 .black-gradient-bg1 {
@@ -262,6 +266,10 @@ body,
 
 .black-gradient-bg2 {
   background: linear-gradient(182.38deg, #212121 2.38%, #000000 14.39%);
+}
+
+.black-gradient-bg3 {
+  background: linear-gradient(270deg, rgba(255, 255, 255, 0) 0%, rgba(248, 250, 251, 0.1) 100%);
 }
 
 .ant-modal {
