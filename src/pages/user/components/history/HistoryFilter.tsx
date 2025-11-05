@@ -1,5 +1,5 @@
 import { TransactionsParams } from '@/services/wallet/account';
-import { ConfigProvider, DatePicker, Form, Select } from 'antd';
+import { DatePicker, Form, Select } from 'antd';
 import dayjs from 'dayjs';
 import { FunctionComponent } from 'react';
 import {
@@ -35,49 +35,30 @@ const HistoryFilter: FunctionComponent<Props> = ({ onValuesChange }) => {
 
   return (
     <div className="flex items-start">
-      <ConfigProvider
-        theme={{
-          components: {
-            Form: {
-              itemMarginBottom: 16,
-            },
-            Input: {},
-            Select: {
-              selectorBg: '#F2F6FA',
-              optionActiveBg: 'rgba(32, 43, 75, 0.08)',
-              optionSelectedBg: 'rgba(32, 43, 75, 0.16)',
-            },
-            DatePicker: {
-              multipleItemBg: 'red',
-            },
-          },
-        }}
+      <Form
+        colon={false}
+        form={form}
+        variant="filled"
+        className="register-form-layout"
+        size="middle"
+        onValuesChange={handleValuesChange}
+        initialValues={{ coin: '', tradeType: '', status: '' }}
       >
-        <Form
-          colon={false}
-          form={form}
-          variant="filled"
-          className="register-form-layout"
-          size="middle"
-          onValuesChange={handleValuesChange}
-          initialValues={{ coin: '', tradeType: '', status: '' }}
-        >
-          <div className="grid grid-cols-[0.8fr_1.4fr_0.8fr_1.5fr] gap-[24px]">
-            <Form.Item name={'coin'} label={'Coin'}>
-              <Select options={CurrencyTypeOptions} />
-            </Form.Item>
-            <Form.Item name={'tradeType'} label={'Transaction Type'}>
-              <Select options={TradeTypeOptions} />
-            </Form.Item>
-            <Form.Item name={'status'} label={'Status'}>
-              <Select options={StatusOptions} />
-            </Form.Item>
-            <Form.Item name="timeRange" label={'Date'}>
-              <DatePicker.RangePicker />
-            </Form.Item>
-          </div>
-        </Form>
-      </ConfigProvider>
+        <div className="grid grid-cols-[0.8fr_1.4fr_0.8fr_1.5fr] gap-[24px]">
+          <Form.Item name={'coin'} label={'Coin'}>
+            <Select options={CurrencyTypeOptions} />
+          </Form.Item>
+          <Form.Item name={'tradeType'} label={'Transaction Type'}>
+            <Select options={TradeTypeOptions} />
+          </Form.Item>
+          <Form.Item name={'status'} label={'Status'}>
+            <Select options={StatusOptions} />
+          </Form.Item>
+          <Form.Item name="timeRange" label={'Date'}>
+            <DatePicker.RangePicker />
+          </Form.Item>
+        </div>
+      </Form>
     </div>
   );
 };
