@@ -143,7 +143,7 @@ export default function AddressWhitelist() {
                             <div>{option.label}</div>
                             <div>≈{option.data.mins}</div>
                           </div>
-                          <div className="flex text-[#9EA6BC] items-center justify-between">
+                          <div className="flex text-[#81858C] items-center justify-between font-normal">
                             <div>{option.data.name}</div>
                             <div>{option.data.count}</div>
                           </div>
@@ -192,7 +192,7 @@ export default function AddressWhitelist() {
                   setAddressObj({});
                   setAddressModal(true);
                 }}
-                className="px-4 h-8 leading-8 cursor-pointer text-xs rounded-lg bg-[#4D4D4D] text-white font-bold"
+                className="px-4 h-8 leading-8 text-center cursor-pointer text-xs rounded-lg gold-gradient-bg text-white font-bold"
               >
                 +Add
               </div>
@@ -200,7 +200,7 @@ export default function AddressWhitelist() {
                 onClick={() => {
                   setAddressBatchModal(true);
                 }}
-                className="text-xs h-8 leading-8 cursor-pointer text-center px-4 border border-[#4D4D4D] rounded-md font-bold"
+                className="text-xs h-8 leading-8 text-center cursor-pointer px-4 border border-[#4D4D4D] rounded-md font-bold"
               >
                 Add in Batches
               </div>
@@ -296,11 +296,11 @@ export default function AddressWhitelist() {
             </div>
           ) : null}
 
-          <div className="text-white text-base mt-[36px] mb-[7px]">
+          <div className="text-white text-base mt-[36px] mb-2 text-[#ADB1B8]">
             Withdrawal/Transfer Security
           </div>
 
-          <div className="border-b-[#E9E9E9] border-b flex justify-between py-[20px]">
+          <div className="border-b-[#25282C] border-b flex justify-between py-[20px]">
             <div className="flex flex-1 items-center !gap-5">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -309,14 +309,14 @@ export default function AddressWhitelist() {
                 viewBox="0 0 48 48"
                 fill="none"
               >
-                <circle cx="24" cy="24" r="24" fill="#F6F6F6" />
+                <circle cx="24" cy="24" r="24" fill="#191919" />
                 <path
                   d="M23.7781 25.3315C21.6948 25.3315 20 23.6869 20 21.6656C20 19.6444 21.6948 18 23.7781 18C25.8615 18 27.5563 19.6446 27.5563 21.6659C27.5563 23.6871 25.8615 25.3315 23.7781 25.3315ZM23.7781 19.2938C22.43 19.2938 21.3334 20.358 21.3334 21.6656C21.3334 22.9732 22.43 24.0377 23.7781 24.0377C25.1263 24.0377 26.2229 22.9734 26.2229 21.6659C26.2229 20.3583 25.1263 19.2938 23.7781 19.2938Z"
-                  fill="#202B4B"
+                  fill="#BBBBBB"
                 />
                 <path
                   d="M23.6677 34.2699C23.5387 34.2699 23.4098 34.2336 23.2976 34.1612C22.9587 33.9418 15 28.7195 15 22.4098C15 17.7727 18.8883 14 23.6677 14C28.447 14 32.3353 17.773 32.3353 22.4101C32.3353 28.6416 24.3799 33.9364 24.0412 34.1588C23.9285 34.2329 23.7982 34.2699 23.6677 34.2699ZM23.6677 15.294C19.6235 15.294 16.3334 18.4864 16.3334 22.4098C16.3334 27.3024 22.1236 31.7352 23.6653 32.828C25.2052 31.7234 31.002 27.2413 31.002 22.4098C31.002 18.4864 27.7118 15.294 23.6677 15.294Z"
-                  fill="#202B4B"
+                  fill="#BBBBBB"
                 />
               </svg>
               <div className="flex-1">
@@ -355,7 +355,7 @@ export default function AddressWhitelist() {
             </div>
           </div>
 
-          <div className="border-b-[#E9E9E9] border-b flex justify-between py-[20px]">
+          <div className="flex justify-between py-[20px]">
             <div className="flex flex-1 items-center !gap-5">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -364,12 +364,12 @@ export default function AddressWhitelist() {
                 viewBox="0 0 48 48"
                 fill="none"
               >
-                <circle cx="24" cy="24" r="24" fill="#F6F6F6" />
+                <circle cx="24" cy="24" r="24" fill="#191919" />
                 <path
                   d="M21.5 17.5C22.647 16.7354 24.47 14.9768 26.3123 13.3866C27.2012 12.6195 28.5425 12.8526 29.1729 13.8431L31.5 17.5"
                   stroke="black"
-                  stroke-width="1.2"
-                  stroke-linecap="round"
+                  strokeWidth="1.2"
+                  strokeLinecap="round"
                 />
                 <rect
                   x="13.6"
@@ -377,15 +377,15 @@ export default function AddressWhitelist() {
                   width="21.8"
                   height="16.8"
                   rx="3.4"
-                  stroke="#040000"
-                  stroke-width="1.2"
+                  stroke="#BBBBBB"
+                  strokeWidth="1.2"
                 />
                 <path
                   d="M28 21.5996H35.4004V30.4004H28C26.1222 30.4004 24.5996 28.8778 24.5996 27V25C24.5996 23.1222 26.1222 21.5996 28 21.5996Z"
-                  stroke="#040000"
-                  stroke-width="1.2"
+                  stroke="#BBBBBB"
+                  strokeWidth="1.2"
                 />
-                <circle cx="28" cy="26" r="1" fill="#040000" />
+                <circle cx="28" cy="26" r="1" fill="#BBBBBB" />
               </svg>
               <div className="flex-1">
                 <div className="text-white font-bold">

@@ -96,7 +96,7 @@ const HistoryTable: FunctionComponent<Props> = ({ filterParams }) => {
     },
   ];
 
-  const handlePageChange = useCallback((page: number, pageSize?: number) => {
+  const handlePageChange = useCallback((page: number) => {
     // Handle page change if needed
     setPageNumber(page);
   }, []);
@@ -107,8 +107,8 @@ const HistoryTable: FunctionComponent<Props> = ({ filterParams }) => {
         theme={{
           components: {
             Table: {
+              borderColor: '#272831',
               headerColor: 'rgba(255, 255, 255, 0.85)',
-              headerBg: 'rgba(32, 43, 75, 0.3)',
               headerSplitColor: 'transparent',
             },
           },
@@ -127,6 +127,7 @@ const HistoryTable: FunctionComponent<Props> = ({ filterParams }) => {
             total: data?._meta.totalCount ?? 0,
             onChange: handlePageChange,
           }}
+          className="black-gradient-bg4"
         />
       </ConfigProvider>
     </div>

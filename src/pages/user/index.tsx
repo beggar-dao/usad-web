@@ -1,4 +1,3 @@
-import PageAnimate from '@/components/pageAnimate';
 import { cn } from '@/utils/cn';
 import {
   history,
@@ -93,39 +92,38 @@ export default function UserIndex() {
         logout();
       },
     },
-  ]
+  ];
 
   return (
-    <PageAnimate>
-      <div className="bg-section ">
-        <div className="footer_bg">
-          <div className="flex justify-between overflow-hidden">
-            <div className="w-[256px] h-[calc(100vh-88px)] py-[34px] bg-[#05060F] border-r-[1px] border-[#272831]">
-              <div className="px-6 pb-6 text-xs font-bold text-[#969696]">
-                MAIN MENU
-              </div>
-              <div className="px-6">
-                {meunList.map((item: any, index) => {
-                  return (
-                    <div
-                      key={index}
-                      onClick={() => item?.onClick()}
-                      className={cn("cursor-pointer w-[205px] h-[50px] border-box rounded-[8px] text-[#666] flex items-center px-6 hover:border-[1px] hover:border-[#505050] hover:black-gradient-bg1",
-                        item.checked ? 'border-[1px] border-[#505050] black-gradient-bg1' : ''
-                      )}
-                    >
-                      {item.name}
-                    </div>
-                  );
-                })}
-              </div>
-            </div>
-            <div className="flex-1 px-8 m-[34px] p-[32px] rounded border-[1px] border-[#505050] relative black-gradient-bg2">
-              <Outlet />
-            </div>
+    <div className="bg-section">
+      <div className="flex justify-between overflow-hidden">
+        <div className="w-[256px] h-[calc(100vh-88px)] absolute top-[88px] py-[34px] bg-[#05060F] border-r-[1px] border-[#272831]">
+          <div className="px-6 pb-6 text-xs font-bold text-[#969696]">
+            MAIN MENU
+          </div>
+          <div className="px-6">
+            {meunList.map((item: any, index) => {
+              return (
+                <div
+                  key={index}
+                  onClick={() => item?.onClick()}
+                  className={cn(
+                    'cursor-pointer w-[205px] h-[50px] border-box rounded-[8px] text-[#666] flex items-center px-6 hover:border-[1px] hover:border-[#505050] hover:black-gradient-bg1',
+                    item.checked
+                      ? 'border-[1px] border-[#505050] black-gradient-bg1'
+                      : '',
+                  )}
+                >
+                  {item.name}
+                </div>
+              );
+            })}
           </div>
         </div>
+        <div className="px-8 m-[34px] p-[32px] rounded border-[1px] border-[#505050] relative left-[256px] black-gradient-bg2 w-[calc(100%-320px)]">
+          <Outlet />
+        </div>
       </div>
-    </PageAnimate>
+    </div>
   );
 }

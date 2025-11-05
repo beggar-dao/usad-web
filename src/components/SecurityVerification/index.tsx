@@ -282,10 +282,7 @@ export default function SecurityVerification({
                   },
                 ]}
               >
-                <Input
-                  className="h-[40px]"
-                  placeholder="Please enter the Google Authenticator code"
-                />
+                <Input placeholder="Please enter the Google Authenticator code" />
               </Form.Item>
             </>
           ) : null}

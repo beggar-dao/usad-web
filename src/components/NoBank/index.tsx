@@ -3,7 +3,7 @@ import { history } from '@umijs/max';
 
 export default function NoBank() {
   return (
-    <div className="h-full flex items-center justify-center">
+    <div className="h-full flex items-center justify-center mb-16">
       <div className="w-[690px] black-gradient-bg2 rounded-2xl border border-[#505050] py-[40px] m-auto">
         <img src={lock} className="block m-auto w-[180px]" />
         <div className="text-center text-[14px] mt-[20px] mb-[24px] text-[#ADB1B8]">

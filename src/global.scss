@@ -272,6 +272,10 @@ body,
   background: linear-gradient(270deg, rgba(255, 255, 255, 0) 0%, rgba(248, 250, 251, 0.1) 100%);
 }
 
+.black-gradient-bg4 {
+  background: linear-gradient(0deg, #040404, #040404), linear-gradient(0deg, #111315, #111315), linear-gradient(91.51deg, #212121 0%, #121314 100%);
+}
+
 .ant-modal {
   .ant-modal-content {
     border: 1px solid #505050;

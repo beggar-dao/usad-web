@@ -16,6 +16,10 @@ export default function Header() {
       name: 'Circulate',
       path: '/mint',
     },
+    {
+      name: 'History',
+      path: '/user/history',
+    },
   ];
 
   /**

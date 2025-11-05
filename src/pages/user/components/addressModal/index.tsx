@@ -1,14 +1,7 @@
 import usad from '@/assets/images/usad_coin.png';
 import { InfoCircleOutlined } from '@ant-design/icons';
 import { useModel } from '@umijs/max';
-import {
-  Checkbox,
-  Form,
-  Input,
-  Modal,
-  Select,
-  Tooltip,
-} from 'antd';
+import { Checkbox, Form, Input, Modal, Select, Tooltip } from 'antd';
 import { useEffect } from 'react';
 
 export default function AddressModal() {
@@ -138,7 +131,7 @@ export default function AddressModal() {
                       <div>{option.label}</div>
                       <div>≈{option.data.mins}</div>
                     </div>
-                    <div className="flex text-[#9EA6BC] items-center justify-between px-[8px]">
+                    <div className="flex text-[#81858C] items-center justify-between px-[8px] font-normal">
                       <div>{option.data.name}</div>
                       <div>{option.data.count}</div>
                     </div>

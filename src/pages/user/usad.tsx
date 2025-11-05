@@ -1,7 +1,7 @@
-import buy from '@/assets/images/usad-coin.png';
 import deposit from '@/assets/images/deposit.png';
 import fiat from '@/assets/images/fiat.png';
 import transfer from '@/assets/images/transfer.png';
+import buy from '@/assets/images/usad-coin.png';
 import No2fa from '@/components/No2fa';
 import { history, useModel } from '@umijs/max';
 
@@ -18,7 +18,7 @@ export default function USAD() {
               onClick={() => {
                 history.push('/user/usad/buy');
               }}
-              className="h-[300px] w-full flex flex-col items-center justify-center black-gradient-bg1 rounded-2xl "
+              className="h-[300px] w-full flex flex-col items-center justify-center black-gradient-bg1 rounded-2xl border border-[#505050]"
             >
               <img src={buy} className="w-[140px] h-[140px] block" />
               <div className="mt-[30px] text-[24px] font-bold text-white">
@@ -32,7 +32,7 @@ export default function USAD() {
               onClick={() => {
                 history.push('/user/usad/transfer');
               }}
-              className="h-[300px] w-full flex flex-col items-center justify-center black-gradient-bg1 rounded-2xl "
+              className="h-[300px] w-full flex flex-col items-center justify-center black-gradient-bg1 rounded-2xl border border-[#505050]"
             >
               <img src={transfer} className="w-[140px] h-[140px] block" />
               <div className="mt-[30px] text-[24px] font-bold text-white">
@@ -44,7 +44,7 @@ export default function USAD() {
               onClick={() => {
                 history.push('/user/usad/deposit');
               }}
-              className="h-[300px] w-full flex flex-col items-center justify-center black-gradient-bg1 rounded-2xl "
+              className="h-[300px] w-full flex flex-col items-center justify-center black-gradient-bg1 rounded-2xl border border-[#505050]"
             >
               <img src={deposit} className="w-[140px] h-[140px] block" />
               <div className="mt-[30px] text-[24px] font-bold text-white">
@@ -58,7 +58,7 @@ export default function USAD() {
               onClick={() => {
                 history.push('/user/usad/withdraw');
               }}
-              className="h-[300px] w-full flex flex-col items-center justify-center black-gradient-bg1 rounded-2xl "
+              className="h-[300px] w-full flex flex-col items-center justify-center black-gradient-bg1 rounded-2xl border border-[#505050]"
             >
               <img src={fiat} className="w-[220px] h-[140px] block" />
               <div className="mt-[30px] text-[24px] font-bold text-white">
