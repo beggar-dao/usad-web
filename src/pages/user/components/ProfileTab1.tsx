@@ -4,6 +4,7 @@ import { useModel } from '@umijs/max';
 import { Button, ConfigProvider, Form, Input, Select } from 'antd';
 import { Country, State } from 'country-state-city';
 import { useEffect, useState } from 'react';
+
 export default function ProfileTab1() {
   const [qrCode, setQrCode] = useState<any>({});
   const [_, setSelf] = useState<any>({});
