@@ -71,7 +71,7 @@ export default function Header() {
         >
           <Button type="text" className="d-flex align-items-center gap-2">
             <Avatar size="small" icon={<UserOutlined />} />
-            <span className="text-white">{user.email}</span>
+            <span className="text-white">{user.username || user.email}</span>
           </Button>
         </Dropdown>
       );
@@ -108,13 +108,11 @@ export default function Header() {
                 <div
                   key={index}
                   onClick={() => history.push(item.path)}
-                  className={`${
-                    index === nav.length - 1 ? '' : 'mr-6'
-                  } md:mr-[66px] cursor-pointer transition-all font-[500] ${
-                    location.pathname === item.path
+                  className={`${index === nav.length - 1 ? '' : 'mr-6'
+                    } md:mr-[66px] cursor-pointer transition-all font-[500] ${location.pathname === item.path
                       ? 'text-[#DAC89F]'
                       : 'text-white'
-                  }`}
+                    }`}
                 >
                   {item.name}
                 </div>

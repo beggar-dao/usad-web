@@ -80,7 +80,7 @@ export default function VerifyBank() {
               onClick={() => {
                 setStatus('second');
               }}
-              className="text-white flex-1 text-center cursor-pointer font-bold rounded-lg gold-gradient-bg leading-[48px]"
+              className="text-white flex-1 text-center cursor-pointer font-bold rounded-lg gold-gradient-bg leading-[48px] text-shadow"
             >
               Continue
             </div>
@@ -156,7 +156,7 @@ export default function VerifyBank() {
           <div className="flex items-center mt-[48px] justify-between">
             <div
               onClick={handlerComplete}
-              className="text-white flex-1 text-center cursor-pointer font-bold rounded-lg gold-gradient-bg leading-[48px]"
+              className="text-white flex-1 text-center cursor-pointer font-bold rounded-lg gold-gradient-bg leading-[48px] text-shadow"
             >
               Payment Completed
             </div>
@@ -177,7 +177,7 @@ export default function VerifyBank() {
           <div className="flex items-center mt-[48px] justify-between">
             <div
               onClick={handlerCancel}
-              className="text-white flex-1 text-center cursor-pointer font-bold rounded-lg gold-gradient-bg leading-[48px]"
+              className="text-white flex-1 text-center cursor-pointer font-bold rounded-lg gold-gradient-bg leading-[48px] text-shadow"
             >
               Done
             </div>

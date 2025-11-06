@@ -291,7 +291,7 @@ export default function Buy() {
         </Form>
         <div
           onClick={handleSubmit}
-          className="mt-[80px] font-bold cursor-pointer leading-[48px] w-full rounded-lg gold-gradient-bg text-white text-center"
+          className="mt-[80px] font-bold cursor-pointer leading-[48px] w-full rounded-lg gold-gradient-bg text-white text-center text-shadow"
         >
           Confirm
         </div>

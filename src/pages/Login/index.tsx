@@ -155,7 +155,7 @@ const LoginForm = () => {
                     <Button
                       type="primary"
                       htmlType="submit"
-                      className="h-[48px] gold-gradient-bg rounded-[12px]"
+                      className="h-[48px] gold-gradient-bg rounded-[12px] text-shadow"
                       loading={loginLoading}
                       disabled={loginLoading}
                       block

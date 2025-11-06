@@ -129,7 +129,7 @@ export default function Wallet() {
                       onClick={() => {
                         history.push('/user/usad/buy');
                       }}
-                      className="gold-gradient-bg flex-1 cursor-pointer rounded-lg leading-10 text-center text-white text-xs font-bold"
+                      className="gold-gradient-bg flex-1 cursor-pointer rounded-lg leading-10 text-center text-white text-xs font-bold text-shadow"
                     >
                       Buy GBPC
                     </div>
@@ -137,7 +137,7 @@ export default function Wallet() {
                       onClick={() => {
                         setOpen(true);
                       }}
-                      className="gold-gradient-bg cursor-pointer flex-1 rounded-lg leading-10 text-center text-white text-xs font-bold"
+                      className="gold-gradient-bg cursor-pointer flex-1 rounded-lg leading-10 text-center text-white text-xs font-bold text-shadow"
                     >
                       Deposit
                     </div>

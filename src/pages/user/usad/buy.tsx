@@ -235,7 +235,7 @@ export default function Buy() {
 
             <div
               onClick={handlerSubmit}
-              className="mt-[80px] font-bold cursor-pointer leading-[48px] w-full rounded-lg gold-gradient-bg text-white text-center"
+              className="mt-[80px] font-bold cursor-pointer leading-[48px] w-full rounded-lg gold-gradient-bg text-white text-center text-shadow"
             >
               Buy USAD
             </div>

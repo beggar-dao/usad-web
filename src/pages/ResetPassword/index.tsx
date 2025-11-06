@@ -98,7 +98,7 @@ const LoginForm = () => {
               block
               type="primary"
               htmlType="submit"
-              className="gold-gradient-bg h-[48px] rounded-[12px] mt-32"
+              className="gold-gradient-bg h-[48px] rounded-[12px] mt-32 text-shadow"
             >
               Next
             </Button>

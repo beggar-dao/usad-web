@@ -148,7 +148,7 @@ export default function AddBank() {
             <Button
               htmlType="submit"
               type="primary"
-              className="mt-12 cursor-pointer w-[214px] h-[48px] gold-gradient-bg flex justify-center items-center text-center text-white rounded-lg"
+              className="mt-12 cursor-pointer w-[214px] h-[48px] gold-gradient-bg flex justify-center items-center text-center text-white rounded-lg text-shadow"
             >
               Verify Bank
             </Button>

@@ -115,7 +115,7 @@ export default function Payment() {
                 onClick={() => {
                   history.push('/user/payment/addBank');
                 }}
-                className={`mt-12 cursor-pointer w-[214px] h-[48px] gold-gradient-bg flex justify-center items-center text-center ${list.length >= 5 ? 'text-[#000]' : 'text-white'
+                className={`mt-12 cursor-pointer w-[214px] h-[48px] gold-gradient-bg flex justify-center items-center text-shadow text-center ${list.length >= 5 ? 'text-[#000]' : 'text-white'
                   } rounded-lg`}
               >
                 Add Bank Account

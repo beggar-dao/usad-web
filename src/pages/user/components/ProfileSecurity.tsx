@@ -53,7 +53,7 @@ export default function ProfileSecurity({ setActiveKey }: any) {
               }}
               variant="solid"
               shape="round"
-              className="gold-gradient-bg"
+              className="gold-gradient-bg text-shadow"
             >
               Change
             </Button>
@@ -93,7 +93,7 @@ export default function ProfileSecurity({ setActiveKey }: any) {
               }}
               variant="solid"
               shape="round"
-              className="gold-gradient-bg"
+              className="gold-gradient-bg text-shadow"
             >
               Change Email
             </Button>
@@ -145,7 +145,7 @@ export default function ProfileSecurity({ setActiveKey }: any) {
             </div>
           </div>
           <div className="flex items-center gap-9">
-            <Button variant="solid" shape="round" className="gold-gradient-bg">Management</Button>
+            <Button variant="solid" shape="round" className="gold-gradient-bg text-shadow">Management</Button>
           </div>
         </div>
         <div className="border-b-[#25282C] border-b-0 flex justify-between py-[20px]">
@@ -162,7 +162,7 @@ export default function ProfileSecurity({ setActiveKey }: any) {
             </div>
           </div>
           <div className="flex items-center gap-9">
-            <Button variant="solid" shape="round" className="gold-gradient-bg">View</Button>
+            <Button variant="solid" shape="round" className="gold-gradient-bg text-shadow">View</Button>
           </div>
         </div>
       </div>

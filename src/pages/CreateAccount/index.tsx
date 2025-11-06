@@ -150,8 +150,8 @@ const CreateAccountForm = () => {
       <div className={`${isWeb ? 'flex items-center' : ''}`}>
         <section
           className={`${isWeb
-              ? 'flex-1 max-w-[980px] m-auto flex items-center justify-between my-10 p-10 black-gradient-bg2 border rounded-2xl border-[#505050] overflow-hidden'
-              : ''
+            ? 'flex-1 max-w-[980px] m-auto flex items-center justify-between my-10 p-10 black-gradient-bg2 border rounded-2xl border-[#505050] overflow-hidden'
+            : ''
             }`}
         >
           {isWeb && (
@@ -166,8 +166,8 @@ const CreateAccountForm = () => {
             <div className={`${isWeb ? ' border-b-0 pb-0' : 'bg-transparent'}`}>
               <h2
                 className={`${isWeb
-                    ? 'text-[24px] text-center mb-8'
-                    : 'text-left text-[18px] mb-[10px]'
+                  ? 'text-[24px] text-center mb-8'
+                  : 'text-left text-[18px] mb-[10px]'
                   }`}
               >
                 Create an USAD Account
@@ -183,8 +183,8 @@ const CreateAccountForm = () => {
               {/* Scrollable Content Area */}
               <div
                 className={`${isWeb
-                    ? 'px-[12px] pt-0 max-h-[460px] overflow-y-auto'
-                    : 'pb-[300px]'
+                  ? 'px-[12px] pt-0 max-h-[460px] overflow-y-auto'
+                  : 'pb-[300px]'
                   }`}
               >
                 {/* First Name and Last Name */}
@@ -259,7 +259,7 @@ const CreateAccountForm = () => {
                       onClick={handleSendCaptcha}
                       loading={captchaLoading}
                       disabled={isCounting}
-                      className="gold-gradient-bg text-sm h-[48px] rounded-lg"
+                      className="gold-gradient-bg text-sm h-[48px] rounded-lg text-shadow"
                       style={{ flexShrink: 0, width: 'auto' }}
                     >
                       {captchaLoading
@@ -325,8 +325,8 @@ const CreateAccountForm = () => {
                       <div className="w-[22%]">
                         <div
                           className={`h-[2px] rounded-full ${watchFields?.password?.length >= 8
-                              ? 'gold-gradient-bg'
-                              : 'bg-[#eee]'
+                            ? 'gold-gradient-bg'
+                            : 'bg-[#eee]'
                             }`}
                         ></div>
                         <div className="font-inter text-[#9EA6BC] text-[12px] leading-[18px] font-normal">
@@ -336,9 +336,9 @@ const CreateAccountForm = () => {
                       <div className="w-[22%]">
                         <div
                           className={`h-[2px] rounded-full ${/[a-z]/.test(watchFields?.password) &&
-                              watchFields?.password?.length
-                              ? 'gold-gradient-bg'
-                              : 'bg-[#eee]'
+                            watchFields?.password?.length
+                            ? 'gold-gradient-bg'
+                            : 'bg-[#eee]'
                             }`}
                         ></div>
                         <div className="font-inter text-[#9EA6BC] text-[12px] leading-[18px] font-normal">
@@ -348,8 +348,8 @@ const CreateAccountForm = () => {
                       <div className="w-[22%]">
                         <div
                           className={`h-[2px] rounded-full ${/[A-Z]/.test(watchFields?.password)
-                              ? 'gold-gradient-bg'
-                              : 'bg-[#eee]'
+                            ? 'gold-gradient-bg'
+                            : 'bg-[#eee]'
                             }`}
                         ></div>
                         <div className="font-inter text-[#9EA6BC] text-[12px] leading-[18px] font-normal">
@@ -359,8 +359,8 @@ const CreateAccountForm = () => {
                       <div className="w-[22%]">
                         <div
                           className={`h-[2px] rounded-full ${/[0-9]/.test(watchFields?.password)
-                              ? 'gold-gradient-bg'
-                              : 'bg-[#eee]'
+                            ? 'gold-gradient-bg'
+                            : 'bg-[#eee]'
                             }`}
                         ></div>
                         <div className="font-inter text-[#9EA6BC] text-[12px] leading-[18px] font-normal">
@@ -517,14 +517,14 @@ const CreateAccountForm = () => {
               {/* Fixed Bottom Area */}
               <div
                 className={`${isWeb
-                    ? 'relative border-t-0'
-                    : 'absolute bottom-0 left-[0] right-[0] px-[20px]'
+                  ? 'relative border-t-0'
+                  : 'absolute bottom-0 left-[0] right-[0] px-[20px]'
                   }`}
               >
                 <div
                   className={`absolute ${isWeb
-                      ? 'left-[-30px] top-0 bottom-[-30px] right-[-30px]'
-                      : 'left-[-20px] right-[-20px] px-[20px]'
+                    ? 'left-[-30px] top-0 bottom-[-30px] right-[-30px]'
+                    : 'left-[-20px] right-[-20px] px-[20px]'
                     }`}
                 ></div>
                 {/* Buy/Redeem Question */}

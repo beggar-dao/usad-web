@@ -46,7 +46,7 @@ export default function WithDrawSuccess() {
               setWithDrawSuccess(false);
               history.push('/user/history');
             }}
-            className="rounded-lg flex-1 cursor-pointer gold-gradient-bg text-white text-shadow leading-[48px] text-center"
+            className="rounded-lg flex-1 cursor-pointer gold-gradient-bg text-white text-shadow leading-[48px] text-center text-shadow"
           >
             View History
           </div>

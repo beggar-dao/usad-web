@@ -168,7 +168,7 @@ export default function AddressBatchModal() {
                   onClick={() => {
                     add();
                   }}
-                  className="max-w-[100px] px-4 h-8 leading-8 text-center cursor-pointer text-xs rounded-lg gold-gradient-bg text-white font-bold"
+                  className="max-w-[100px] px-4 h-8 leading-8 text-center cursor-pointer text-xs rounded-lg gold-gradient-bg text-white font-bold text-shadow"
                 >
                   + Add
                 </div>
@@ -195,7 +195,7 @@ export default function AddressBatchModal() {
         </Form.Item>
         <div
           onClick={onFinish}
-          className="max-w-[213px] text-base hover:opacity-80 text-white h-[48px] text-center mt-6 gold-gradient-bg leading-[48px] cursor-pointer rounded-[8px]"
+          className="max-w-[213px] text-base hover:opacity-80 text-white h-[48px] text-center mt-6 gold-gradient-bg leading-[48px] cursor-pointer rounded-[8px] text-shadow"
         >
           Confirm
         </div>

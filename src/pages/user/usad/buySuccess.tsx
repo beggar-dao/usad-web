@@ -35,7 +35,7 @@ export default function BuySuccess() {
             setBuySuccess(false);
             history.push('/user/wallet');
           }}
-          className="rounded-lg cursor-pointer gold-gradient-bg text-white text-shadow leading-[48px] text-center mt-10"
+          className="rounded-lg cursor-pointer gold-gradient-bg text-white text-shadow leading-[48px] text-center mt-10 text-shadow"
         >
           Check Status
         </div>

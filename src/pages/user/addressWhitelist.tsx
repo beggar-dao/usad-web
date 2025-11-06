@@ -192,7 +192,7 @@ export default function AddressWhitelist() {
                   setAddressObj({});
                   setAddressModal(true);
                 }}
-                className="px-4 h-8 leading-8 text-center cursor-pointer text-xs rounded-lg gold-gradient-bg text-white font-bold"
+                className="px-4 h-8 leading-8 text-center cursor-pointer text-xs rounded-lg gold-gradient-bg text-white font-bold text-shadow"
               >
                 +Add
               </div>

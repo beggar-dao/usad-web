@@ -187,7 +187,7 @@ export default function AddressModal() {
         </Form>
         <div
           onClick={() => onFinish()}
-          className="text-base hover:opacity-80 text-white h-[48px] text-center mt-12 gold-gradient-bg leading-[48px] cursor-pointer rounded-[8px]"
+          className="text-base hover:opacity-80 text-white h-[48px] text-center mt-12 gold-gradient-bg leading-[48px] cursor-pointer rounded-[8px] text-shadow"
         >
           Confirm
         </div>

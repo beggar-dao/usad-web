@@ -90,7 +90,7 @@ export default function VerificationStart() {
               ? history.push('/user/verification/individual')
               : history.push('/user/verification/corporate');
           }}
-          className="h-[48px] cursor-pointer leading-[48px] hover:opacity-[80] transition-all gold-gradient-bg rounded-lg px-[40px] text-white text-base"
+          className="h-[48px] cursor-pointer leading-[48px] hover:opacity-[80] transition-all gold-gradient-bg rounded-lg px-[40px] text-white text-base text-shadow"
         >
           Continue on this device
         </div>

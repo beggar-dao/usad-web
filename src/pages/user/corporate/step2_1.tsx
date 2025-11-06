@@ -145,7 +145,7 @@ export default function Step1_1() {
           <div
             onClick={() => (uboList.length ? handleSubmit() : null)}
             className={`w-[390px] ${!uboList.length ? ' opacity-60' : ''
-              }  cursor-pointer h-[48px] leading-[48px] text-center text-white font-[500] gold-gradient-bg rounded-lg`}
+              }  cursor-pointer h-[48px] leading-[48px] text-center text-white font-[500] gold-gradient-bg rounded-lg text-shadow`}
           >
             Continue
           </div>
