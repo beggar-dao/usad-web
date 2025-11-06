@@ -110,6 +110,7 @@ const HistoryTable: FunctionComponent<Props> = ({ filterParams }) => {
               borderColor: '#272831',
               headerColor: 'rgba(255, 255, 255, 0.85)',
               headerSplitColor: 'transparent',
+              colorPrimary: '#ADB1B8',
             },
           },
         }}

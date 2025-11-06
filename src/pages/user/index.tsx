@@ -1,3 +1,13 @@
+import {
+  AccountIcon,
+  AddressIcon,
+  LogoutIcon,
+  PaymentIcon,
+  TimeIcon,
+  UsadIcon,
+  VerificationIcon,
+  WalletIcon,
+} from '@/components/Icons';
 import { cn } from '@/utils/cn';
 import {
   history,
@@ -7,6 +17,14 @@ import {
   useSearchParams,
 } from '@umijs/max';
 import { useEffect } from 'react';
+
+interface MenuItem {
+  name: string;
+  url: string;
+  icon?: React.ReactNode;
+  checked: boolean;
+  onClick: () => void;
+}
 
 export default function UserIndex() {
   const { user } = useModel('auth');
@@ -27,10 +45,11 @@ export default function UserIndex() {
     return;
   }
 
-  const meunList = [
+  const meunList: MenuItem[] = [
     {
       name: 'Account',
       url: '/user/profile',
+      icon: <AccountIcon isActive={location.pathname === '/user/profile'} />,
       checked: location.pathname === '/user/profile',
       onClick: () => {
         history.push('/user/profile');
@@ -39,6 +58,7 @@ export default function UserIndex() {
     {
       name: 'Wallet',
       url: '/user/Wallet',
+      icon: <WalletIcon isActive={location.pathname === '/user/wallet'} />,
       checked: location.pathname === '/user/wallet',
       onClick: () => {
         history.push('/user/wallet');
@@ -47,6 +67,11 @@ export default function UserIndex() {
     {
       name: 'Verification',
       url: '/user/verification',
+      icon: (
+        <VerificationIcon
+          isActive={location.pathname === '/user/verification'}
+        />
+      ),
       checked: location.pathname.includes('/user/verification'),
       onClick: () => {
         history.push('/user/verification');
@@ -55,6 +80,7 @@ export default function UserIndex() {
     {
       name: 'Payment',
       url: '/user/payment',
+      icon: <PaymentIcon isActive={location.pathname === '/user/payment'} />,
       onClick: () => {
         history.push('/user/payment');
       },
@@ -63,6 +89,11 @@ export default function UserIndex() {
     {
       name: 'Address Whitelist',
       url: '/user/addressWhitelist',
+      icon: (
+        <AddressIcon
+          isActive={location.pathname === '/user/addressWhitelist'}
+        />
+      ),
       checked: location.pathname === '/user/addressWhitelist',
       onClick: () => {
         history.push('/user/addressWhitelist');
@@ -71,6 +102,7 @@ export default function UserIndex() {
     {
       name: 'USAD',
       url: '/user/usad',
+      icon: <UsadIcon isActive={location.pathname === '/user/usad'} />,
       checked: location.pathname.includes('/user/usad'),
       onClick: () => {
         history.push('/user/usad');
@@ -79,6 +111,7 @@ export default function UserIndex() {
     {
       name: 'History',
       url: '/user/history',
+      icon: <TimeIcon isActive={location.pathname === '/user/history'} />,
       onClick: () => {
         history.push('/user/history');
       },
@@ -87,6 +120,7 @@ export default function UserIndex() {
     {
       name: 'Logout',
       url: '/user/logout',
+      icon: <LogoutIcon isActive={location.pathname === '/user/logout'} />,
       checked: location.pathname === '/user/logout',
       onClick: () => {
         logout();
@@ -108,13 +142,16 @@ export default function UserIndex() {
                   key={index}
                   onClick={() => item?.onClick()}
                   className={cn(
-                    'cursor-pointer w-[205px] h-[50px] border-box rounded-[8px] text-[#666] flex items-center px-6 hover:border-[1px] hover:border-[#505050] hover:black-gradient-bg1',
+                    'cursor-pointer w-[205px] h-[50px] border-box rounded-[8px] my-1 text-[#666] flex items-center gap-3 px-5 border border-transparent hover:border hover:border-[#505050] hover:black-gradient-bg1',
                     item.checked
                       ? 'border-[1px] border-[#505050] black-gradient-bg1'
                       : '',
                   )}
                 >
-                  {item.name}
+                  {item.icon}
+                  <span className={item.checked ? 'gold-gradient-text' : ''}>
+                    {item.name}
+                  </span>
                 </div>
               );
             })}

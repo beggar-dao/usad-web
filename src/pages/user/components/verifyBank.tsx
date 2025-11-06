@@ -68,7 +68,7 @@ export default function VerifyBank() {
             Make a deposit with your bank account.
           </div>
           <div className="text-[#ADB1B8] flex items-center gap-[10px] text-[14px] leading-[32px]">
-            <TimeIcon />
+            <TimeIcon isActive />
             Allow 1-2 business days for processing
           </div>
           <div className="text-[#ADB1B8] flex items-center gap-[10px] text-[14px] leading-[32px]">
