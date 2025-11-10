@@ -276,6 +276,25 @@ body,
   background: linear-gradient(0deg, #040404, #040404), linear-gradient(0deg, #111315, #111315), linear-gradient(91.51deg, #212121 0%, #121314 100%);
 }
 
+.black-border-gradient {
+  border: 1px solid transparent;
+  position: relative;
+  background-clip: padding-box; /*important*/
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+    margin: -1px;
+    border-radius: inherit;
+    background: linear-gradient(0deg, #505050 0%, #FFFFFF 50%, #505050 100%);
+  }
+}
+
 .ant-modal {
   .ant-modal-content {
     border: 1px solid #505050;

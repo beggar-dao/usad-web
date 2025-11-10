@@ -27,7 +27,7 @@ export default function Profile() {
   }, []);
 
   return (
-    <div>
+    <>
       <div className=" pb-6 text-[24px] font-bold text-white">
         Account Setting
       </div>
@@ -40,6 +40,6 @@ export default function Profile() {
         className="gbpc-tabs"
         items={items}
       />
-    </div>
+    </>
   );
 }

@@ -129,38 +129,39 @@ export default function UserIndex() {
   ];
 
   return (
-    <div className="bg-section">
-      <div className="flex justify-between overflow-hidden">
-        <div className="w-[256px] h-[calc(100vh-88px)] absolute top-[88px] py-[34px] bg-[#05060F] border-r-[1px] border-[#272831]">
-          <div className="px-6 pb-6 text-xs font-bold text-[#969696]">
-            MAIN MENU
-          </div>
-          <div className="px-6">
-            {meunList.map((item: any, index) => {
-              return (
-                <div
-                  key={index}
-                  onClick={() => item?.onClick()}
-                  className={cn(
-                    'cursor-pointer w-[205px] h-[50px] border-box rounded-[8px] my-1 text-[#666] flex items-center gap-3 px-5 border border-transparent hover:border hover:border-[#505050] hover:black-gradient-bg1',
-                    item.checked
-                      ? 'border-[1px] border-[#505050] black-gradient-bg1'
-                      : '',
-                  )}
-                >
-                  {item.icon}
-                  <span className={item.checked ? 'gold-gradient-text' : ''}>
-                    {item.name}
-                  </span>
-                </div>
-              );
-            })}
-          </div>
+    <>
+      <div className="w-[256px] h-[calc(100vh-88px)] absolute top-[88px] py-[34px] bg-[#05060F] border-r-[1px] border-[#272831]">
+        <div className="px-6 pb-6 text-xs font-bold text-[#969696]">
+          MAIN MENU
         </div>
-        <div className="px-8 m-[34px] p-[32px] rounded border-[1px] border-[#505050] relative left-[256px] black-gradient-bg2 w-[calc(100%-320px)]">
+        <div className="px-6">
+          {meunList.map((item: any, index) => {
+            return (
+              <div
+                key={index}
+                onClick={() => item?.onClick()}
+                className={cn(
+                  'cursor-pointer w-[205px] h-[50px] border-box rounded-[8px] my-1 text-[#666] flex items-center gap-3 px-5 border border-transparent hover:border hover:border-[#505050] hover:black-gradient-bg1',
+                  item.checked
+                    ? 'border-[1px] border-[#505050] black-gradient-bg1'
+                    : '',
+                )}
+              >
+                {item.icon}
+                <span className={item.checked ? 'gold-gradient-text' : ''}>
+                  {item.name}
+                </span>
+              </div>
+            );
+          })}
+        </div>
+      </div>
+      <div className="m-[34px] relative rounded left-[256px] black-gradient-bg2 w-[calc(100%-320px)]">
+        <div className="absolute inset-0 rounded-lg p-[2px] bg-gradient-to-r from-pink-500 to-blue-500 -z-10" />
+        <div className="p-8 m-[2px]">
           <Outlet />
         </div>
       </div>
-    </div>
+    </>
   );
 }
