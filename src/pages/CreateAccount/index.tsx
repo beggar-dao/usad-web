@@ -152,7 +152,7 @@ const CreateAccountForm = () => {
         <GradientBorderBox className='max-w-[980px] m-auto my-10' gradientClassName='rounded-2xl'>
           <section
             className={`${isWeb
-              ? 'relative z-10 flex items-center justify-between p-10 black-gradient-bg2 rounded-2xl overflow-hidden'
+              ? 'relative z-10 flex items-center justify-between gap-4 p-10 black-gradient-bg2 rounded-2xl overflow-hidden'
               : ''
               }`}
           >
