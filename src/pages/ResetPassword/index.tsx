@@ -1,4 +1,5 @@
 import bgImg from '@/assets/images/login.png';
+import GradientBorderBox from '@/components/GradientBorderBox';
 import PageAnimate from '@/components/pageAnimate';
 import { resetPassword } from '@/services/user';
 import { EyeInvisibleOutlined, EyeTwoTone } from '@ant-design/icons';
@@ -188,14 +189,16 @@ const LoginForm = () => {
   };
   return (
     <PageAnimate>
-      <div className="max-w-[980px] m-auto flex items-center justify-between my-10 p-12 black-gradient-bg2 border rounded-2xl border-[#505050]">
-        <img
-          src={bgImg}
-          className="w-[346px]"
-          alt="Reset Password Illustration"
-        />
-        <Steps />
-      </div>
+      <GradientBorderBox className="max-w-[980px] m-auto my-10" gradientClassName="rounded-2xl">
+        <div className="flex items-center justify-between p-12 black-gradient-bg2 rounded-2xl relative z-10">
+          <img
+            src={bgImg}
+            className="w-[346px]"
+            alt="Reset Password Illustration"
+          />
+          <Steps />
+        </div>
+      </GradientBorderBox>
     </PageAnimate>
   );
 };
