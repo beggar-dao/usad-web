@@ -52,7 +52,7 @@ export default function Step1_1() {
                 },
                 Input: {},
                 Select: {
-                  selectorBg: '#F2F6FA',
+                  selectorBg: '#191919',
                 },
               },
             }}

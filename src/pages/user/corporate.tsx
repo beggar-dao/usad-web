@@ -1,4 +1,5 @@
 import { ReactComponent as CloseSvg } from '@/assets/images/close.svg';
+import GradientBorderBox from '@/components/GradientBorderBox';
 import TimeLine from '@/components/Timeline';
 import { businessRelness } from '@/services/user';
 import { history, useModel } from '@umijs/max';
@@ -43,18 +44,10 @@ export default function Step1_1() {
           }}
         />
       </div>
-      <div className="w-[588px] relative m-auto rounded-[16px] pt-[40px] border border-[#505050]">
-        <TimeLine active={1} progress={50} />
-        <div className="w-full h-[600px] overflow-y-auto px-8">
-          <ConfigProvider
-            theme={{
-              components: {
-                Form: {
-                  itemMarginBottom: 16,
-                },
-              },
-            }}
-          >
+      <GradientBorderBox className="w-[588px] m-auto" gradientClassName="rounded-[16px]">
+        <div className="relative z-10 rounded-[16px] pt-[40px] black-gradient-bg5">
+          <TimeLine active={1} progress={50} />
+          <div className="w-full h-[600px] overflow-y-auto px-8">
             <div className="text-[24px] text-white font-bold mb-3">
               Company information
             </div>
@@ -150,25 +143,25 @@ export default function Step1_1() {
                 <Input type="text" placeholder="Tax ID" />
               </Form.Item>
             </Form>
-          </ConfigProvider>
-        </div>
-        <div className="w-full rounded-bl-2xl rounded-br-2xl  h-[104px] px-[40px] gap-[23px] flex items-center justify-between">
-          <div
-            onClick={handleSubmit}
-            className="w-[390px] cursor-pointer h-[48px] leading-[48px] text-center text-white font-[500] gold-gradient-bg rounded-lg text-shadow"
-          >
-            Continue
           </div>
-          <div
-            onClick={() => {
-              history.back();
-            }}
-            className="flex-1 cursor-pointer h-[48px] leading-[48px] border border-[#25282C] rounded-lg font-[500] text-center text-[#C69F58]"
-          >
-            Back
+          <div className="w-full rounded-bl-2xl rounded-br-2xl  h-[104px] px-[40px] gap-[23px] flex items-center justify-between">
+            <div
+              onClick={handleSubmit}
+              className="w-[390px] cursor-pointer h-[48px] leading-[48px] text-center text-white font-[500] gold-gradient-bg rounded-lg text-shadow"
+            >
+              Continue
+            </div>
+            <div
+              onClick={() => {
+                history.back();
+              }}
+              className="flex-1 cursor-pointer h-[48px] leading-[48px] border border-[#25282C] rounded-lg font-[500] text-center text-[#C69F58]"
+            >
+              Back
+            </div>
           </div>
         </div>
-      </div>
+      </GradientBorderBox>
     </>
   );
 }

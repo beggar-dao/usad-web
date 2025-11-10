@@ -1,6 +1,8 @@
 import v1 from '@/assets/images/v1.png';
 import v2 from '@/assets/images/v2.png';
+import GradientBorderBox from '@/components/GradientBorderBox';
 import No2fa from '@/components/No2fa';
+import { cn } from '@/utils/cn';
 import { history, useModel } from '@umijs/max';
 import { useEffect } from 'react';
 
@@ -56,7 +58,7 @@ export default function Verification() {
             style={{ minHeight: `calc(100% - 96px)` }}
             className="grid grid-cols-2 items-center gap-8 max-w-[1084px] mx-auto"
           >
-            <div
+            <GradientBorderBox
               onClick={() => {
                 if (
                   verifi.status === 1 ||
@@ -68,36 +70,38 @@ export default function Verification() {
                 setBusinessData({});
                 history.push('/user/verification/start?type=individual');
               }}
-              className={`${verifi.status === 1 ||
+              className={cn("cursor-pointer h-full", verifi.status === 1 ||
                 verifi.status === 2 ||
                 corporate.status === 1
-                ? ' opacity-50'
-                : ''
-                } flex-1 px-2 black-gradient-bg1 relative cursor-pointer border border-[#505050] rounded-2xl pt-[52px]`}
+                ? 'opacity-50'
+                : '')}
+              gradientClassName="rounded-2xl"
             >
-              {(corporate.status !== 2 ||
-                (verifi.status !== 2 && corporate.status === 2)) &&
-                verifi.status !== 0 ? (
-                <div
-                  style={{
-                    backgroundColor: status[verifi.status]?.bgColor,
-                    color: status[verifi.status]?.color,
-                  }}
-                  className="inline-block absolute top-6 right-3 h-7 leading-7 rounded-[4px] !px-5 text-sm font-[700]"
-                >
-                  {status[verifi.status]?.name}
+              <div className={cn("flex-1 px-2 h-full rounded-2xl black-gradient-bg1 relative z-10 pt-[52px]")}>
+                {(corporate.status !== 2 ||
+                  (verifi.status !== 2 && corporate.status === 2)) &&
+                  verifi.status !== 0 ? (
+                  <div
+                    style={{
+                      backgroundColor: status[verifi.status]?.bgColor,
+                      color: status[verifi.status]?.color,
+                    }}
+                    className="inline-block absolute top-6 right-3 h-7 leading-7 rounded-[4px] !px-5 text-sm font-[700]"
+                  >
+                    {status[verifi.status]?.name}
+                  </div>
+                ) : null}
+                <img src={v1} className="block h-[125px] m-auto " />
+                <div className="text-[24px] font-[700] mt-6 text-center">
+                  Individual Verification
                 </div>
-              ) : null}
-              <img src={v1} className="block h-[125px] m-auto " />
-              <div className="text-[24px] font-[700] mt-6 text-center">
-                Individual Verification
+                <div className="text-sm mb-[40px] text-center text-[#ADB1B8] leading-[26px] px-[50px]">
+                  Available for individuals 18 years of age or older
+                </div>
               </div>
-              <div className="text-sm mb-[40px] text-center text-[#ADB1B8] leading-[26px] px-[50px]">
-                Available for individuals 18 years of age or older
-              </div>
-            </div>
+            </GradientBorderBox>
 
-            <div
+            <GradientBorderBox
               onClick={() => {
                 if (verifi.status === 1 || corporate.status === 2) {
                   return;
@@ -110,32 +114,35 @@ export default function Verification() {
                 }
                 history.push('/user/verification/start?type=corporate');
               }}
-              className={`${verifi.status === 1 || corporate.status === 2
+              className={cn("cursor-pointer h-full", verifi.status === 1 ||
+                corporate.status === 2
                 ? ' opacity-50'
-                : ''
-                } flex-1 px-2 black-gradient-bg1 relative cursor-pointer border border-[#505050] rounded-2xl pt-[52px]`}
+                : '')}
+              gradientClassName="rounded-2xl"
             >
-              {(verifi.status !== 2 ||
-                (verifi.status !== 2 && corporate.status === 2)) &&
-                corporate.status !== 0 ? (
-                <div
-                  style={{
-                    backgroundColor: status[corporate.status]?.bgColor,
-                    color: status[corporate.status]?.color,
-                  }}
-                  className="inline-block absolute top-6 right-3 h-7 leading-7 rounded-[4px] !px-5 text-sm font-[700]"
-                >
-                  {status[corporate.status]?.name}
+              <div className={cn("flex-1 px-2 h-full rounded-2xl black-gradient-bg1 relative z-10 pt-[52px]")}>
+                {(verifi.status !== 2 ||
+                  (verifi.status !== 2 && corporate.status === 2)) &&
+                  corporate.status !== 0 ? (
+                  <div
+                    style={{
+                      backgroundColor: status[corporate.status]?.bgColor,
+                      color: status[corporate.status]?.color,
+                    }}
+                    className="inline-block absolute top-6 right-3 h-7 leading-7 rounded-[4px] !px-5 text-sm font-[700]"
+                  >
+                    {status[corporate.status]?.name}
+                  </div>
+                ) : null}
+                <img src={v2} className="block h-[125px] m-auto" />
+                <div className="text-[24px] font-[700] mt-6 text-center">
+                  Corporate Verification
                 </div>
-              ) : null}
-              <img src={v2} className="block h-[125px] m-auto" />
-              <div className="text-[24px] font-[700] mt-6 text-center">
-                Corporate Verification
+                <div className="text-sm mb-[40px] text-center text-[#ADB1B8] leading-[26px] px-[50px]">
+                  An account in the name of a corporation/partnership/trust
+                </div>
               </div>
-              <div className="text-sm mb-[40px] text-center text-[#ADB1B8] leading-[26px] px-[50px]">
-                An account in the name of a corporation/partnership/trust
-              </div>
-            </div>
+            </GradientBorderBox>
           </div>
         </>
       ) : (

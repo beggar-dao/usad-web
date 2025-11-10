@@ -2,6 +2,7 @@ import { ReactComponent as CheckedSvg } from '@/assets/images/checked.svg';
 import { ReactComponent as CloseSvg } from '@/assets/images/close.svg';
 import { ReactComponent as ErrorSvg } from '@/assets/images/error.svg';
 import face from '@/assets/images/face.png';
+import GradientBorderBox from '@/components/GradientBorderBox';
 import TimeLine from '@/components/Timeline';
 import { businessRealness } from '@/services/user';
 import { history, useModel, useSearchParams } from '@umijs/max';
@@ -64,107 +65,109 @@ export default function Step3_1() {
           }}
         />
       </div>
-      <div className="w-[588px] relative m-auto rounded-[16px] pt-[40px] border border-[#505050]">
-        <TimeLine active={3} progress={100} />
-        <div className="w-full h-[600px] overflow-y-auto px-8">
-          <div className="text-[24px] text-white font-bold mb-4">
-            FaceMatch ID
-          </div>
-          <Form
-            form={form}
-            layout="vertical"
-            className="h-auto"
-            size="large"
-          >
-            <Form.Item
-              label=""
-              name="personalPhotoData"
-              rules={[
-                {
-                  required: true,
-                  message: 'Please Upload!',
-                },
-              ]}
+      <GradientBorderBox className="w-[588px] m-auto" gradientClassName="rounded-[16px]">
+        <div className="relative z-10 rounded-[16px] pt-[40px] black-gradient-bg5">
+          <TimeLine active={3} progress={100} />
+          <div className="w-full h-[600px] overflow-y-auto px-8">
+            <div className="text-[24px] text-white font-bold mb-4">
+              FaceMatch ID
+            </div>
+            <Form
+              form={form}
+              layout="vertical"
+              className="h-auto"
+              size="large"
             >
-              <Upload.Dragger
-                maxCount={1}
-                showUploadList={false}
-                fileList={individualData?.personalPhotoData_fileList || []}
-                accept=".jpg,.jpeg,.png,.gif,.webp,.helc"
-                beforeUpload={beforeUpload}
-                customRequest={uploadFile}
-                onChange={(data) =>
-                  handleUploadChange(data, 'personalPhotoData')
-                }
+              <Form.Item
+                label=""
+                name="personalPhotoData"
+                rules={[
+                  {
+                    required: true,
+                    message: 'Please Upload!',
+                  },
+                ]}
               >
-                <img
-                  src={
-                    individualData.personalPhotoData
-                      ? `data:image/png;base64,${individualData.personalPhotoData}`
-                      : face
+                <Upload.Dragger
+                  maxCount={1}
+                  showUploadList={false}
+                  fileList={individualData?.personalPhotoData_fileList || []}
+                  accept=".jpg,.jpeg,.png,.gif,.webp,.helc"
+                  beforeUpload={beforeUpload}
+                  customRequest={uploadFile}
+                  onChange={(data) =>
+                    handleUploadChange(data, 'personalPhotoData')
                   }
-                  className="block object-contain m-auto w-full"
-                />
-              </Upload.Dragger>
-            </Form.Item>
-          </Form>
+                >
+                  <img
+                    src={
+                      individualData.personalPhotoData
+                        ? `data:image/png;base64,${individualData.personalPhotoData}`
+                        : face
+                    }
+                    className="block object-contain m-auto w-full"
+                  />
+                </Upload.Dragger>
+              </Form.Item>
+            </Form>
 
-          <div className="mt-4 text-base text-[#000] font-[700]">Tips</div>
-          <div className="mt-3 flex items-center text-sm text-[#202b4b]">
-            <CheckedSvg className="mr-2" />
-            Find a well lit place
-          </div>
-          <div className="mt-3 flex items-center text-sm text-[#202b4b]">
-            <CheckedSvg className="mr-2" />
-            Ensure your face is within the frame
-          </div>
-          <div className="mt-3 flex items-center text-sm text-[#202b4b]">
-            <ErrorSvg className="mr-2" />
-            Don't wear hats, glasses and masks
-          </div>
-          {/* <div className="text-[#63bcff] mt-3 text-sm leading-[26px]">
+            <div className="mt-4 text-base text-[#000] font-[700]">Tips</div>
+            <div className="mt-3 flex items-center text-sm text-[#202b4b]">
+              <CheckedSvg className="mr-2" />
+              Find a well lit place
+            </div>
+            <div className="mt-3 flex items-center text-sm text-[#202b4b]">
+              <CheckedSvg className="mr-2" />
+              Ensure your face is within the frame
+            </div>
+            <div className="mt-3 flex items-center text-sm text-[#202b4b]">
+              <ErrorSvg className="mr-2" />
+              Don't wear hats, glasses and masks
+            </div>
+            {/* <div className="text-[#63bcff] mt-3 text-sm leading-[26px]">
             See our guidelines
           </div> */}
-        </div>
-        <div className="w-full rounded-bl-2xl rounded-br-2xl  h-[104px] px-[40px] gap-[23px] flex items-center justify-between">
-          {!individualData?.personalPhotoData ? (
-            <div className="w-[390px] relative cursor-pointer h-[48px] leading-[48px] text-center text-white font-[500] bg-[#202b4b] rounded-lg">
-              <Upload
-                maxCount={1}
-                showUploadList={false}
-                fileList={individualData?.personalPhotoData_fileList || []}
-                accept=".jpg,.jpeg,.png,.gif,.webp,.helc"
-                beforeUpload={beforeUpload}
-                customRequest={uploadFile}
-                onChange={(data) =>
-                  handleUploadChange(data, "personalPhotoData")
-                }
-                className=" z-10 absolute left-0 right-0 w-full h-full"
+          </div>
+          <div className="w-full rounded-bl-2xl rounded-br-2xl  h-[104px] px-[40px] gap-[23px] flex items-center justify-between">
+            {!individualData?.personalPhotoData ? (
+              <div className="w-[390px] relative cursor-pointer h-[48px] leading-[48px] text-center text-white font-[500] bg-[#202b4b] rounded-lg">
+                <Upload
+                  maxCount={1}
+                  showUploadList={false}
+                  fileList={individualData?.personalPhotoData_fileList || []}
+                  accept=".jpg,.jpeg,.png,.gif,.webp,.helc"
+                  beforeUpload={beforeUpload}
+                  customRequest={uploadFile}
+                  onChange={(data) =>
+                    handleUploadChange(data, "personalPhotoData")
+                  }
+                  className=" z-10 absolute left-0 right-0 w-full h-full"
+                >
+                  <div className="leading-[48px] text-center text-white z-10 absolute top-0 left-0 right-0 w-full h-full">
+                    Upload Selfie
+                  </div>
+                </Upload>
+              </div>
+            ) : (
+              <div
+                onClick={handleSubmit}
+                className="w-[390px] relative cursor-pointer h-[48px] leading-[48px] text-center text-white font-[500] bg-[#202b4b] rounded-lg"
               >
-                <div className="leading-[48px] text-center text-white z-10 absolute top-0 left-0 right-0 w-full h-full">
-                  Upload Selfie
-                </div>
-              </Upload>
-            </div>
-          ) : (
-            <div
-              onClick={handleSubmit}
-              className="w-[390px] relative cursor-pointer h-[48px] leading-[48px] text-center text-white font-[500] bg-[#202b4b] rounded-lg"
-            >
-              Submit
-            </div>
-          )}
+                Submit
+              </div>
+            )}
 
-          <div
-            onClick={() => {
-              history.back();
-            }}
-            className="flex-1 cursor-pointer h-[48px] leading-[48px] border border-[#202B4B14] rounded-lg font-[500] text-center"
-          >
-            Back
+            <div
+              onClick={() => {
+                history.back();
+              }}
+              className="flex-1 cursor-pointer h-[48px] leading-[48px] border border-[#202B4B14] rounded-lg font-[500] text-center"
+            >
+              Back
+            </div>
           </div>
         </div>
-      </div>
+      </GradientBorderBox>
     </>
   );
 }

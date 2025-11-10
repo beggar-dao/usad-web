@@ -92,7 +92,7 @@ export default function Step3() {
                 },
                 Input: {},
                 Select: {
-                  selectorBg: '#F2F6FA',
+                  selectorBg: '#191919',
                 },
               },
             }}

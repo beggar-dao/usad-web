@@ -1,6 +1,8 @@
 import { ReactComponent as CloseSvg } from '@/assets/images/close.svg';
 import { history } from '@umijs/max';
 import DepositContent from './deposit_content';
+import GradientBorderBox from '@/components/GradientBorderBox';
+
 export default function Buy() {
   return (
     <>
@@ -39,9 +41,11 @@ export default function Buy() {
         />
       </div>
 
-      <div className="w-[580px] p-8 m-auto !mt-[96px] border border-[#505050] rounded-2xl">
-        <DepositContent />
-      </div>
+      <GradientBorderBox className="w-[580px] m-auto !mt-[96px]" gradientClassName="rounded-2xl">
+        <div className="black-gradient-bg2 relative z-10 p-8 rounded-2xl">
+          <DepositContent />
+        </div>
+      </GradientBorderBox>
     </>
   );
 }

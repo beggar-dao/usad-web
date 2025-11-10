@@ -6,6 +6,7 @@ import { history, useModel } from '@umijs/max';
 import { Modal } from 'antd';
 import { useEffect, useState } from 'react';
 import DepositContent from './usad/deposit_content';
+import GradientBorderBox from '@/components/GradientBorderBox';
 
 export default function Wallet() {
   const [open, setOpen] = useState(false);
@@ -68,97 +69,99 @@ export default function Wallet() {
           <div className="grid grid-cols-2 mt-[18px] gap-[16px]">
             {data?.assets?.map((item, index) => {
               return (
-                <div
-                  key={index}
-                  className="px-8 py-9 rounded-2xl border border-[#505050] bg-[#1A1A1B]"
-                >
-                  <div className="flex mb-7">
-                    <div className="w-[80px] h-[80px] mr-4 relative">
-                      <img
-                        src={'/images/usad.png'}
-                        className="block w-full h-full"
-                      />
-                      <img
-                        src={`/images/${item.chainId == '60' ? 'eth' : ''}${item.chainId == '195' ? 'tron' : ''
-                          }.png`}
-                        className="absolute right-0 bottom-0 w-6 h-6"
-                      />
-                    </div>
-                    <div className="flex-1 overflow-auto">
-                      <div className="text-[32px] leading-8 mr-3 font-bold text-white">
-                        £ {item.balance || 0}
-                      </div>
-                      <div className="text-sm text-[#ADB1B8] leading-8">
-                        <span className="text-white font-bold">Pound</span>{' '}
-                        GBPC on {item.chainId == '60' ? 'Ethereum' : ''}
-                        {item.chainId == '195' ? 'TRON' : ''} (
-                        {item.chainId == '60' ? 'ETH' : ''}
-                        {item.chainId == '195' ? 'TRX' : ''})
-                      </div>
-                      <div className="flex  break-all items-center gap-2 text-sm text-[#8f93a1]">
-                        {item.address}
-                        <CopyOutlined
-                          className="cursor-pointer"
-                          onClick={() => {
-                            copyTextToClipboard(item.address);
-                          }}
+                <GradientBorderBox gradientClassName="rounded-2xl">
+                  <div
+                    key={index}
+                    className="px-8 py-9 rounded-2xl relative z-10 bg-[#1A1A1B]"
+                  >
+                    <div className="flex mb-7">
+                      <div className="w-[80px] h-[80px] mr-4 relative">
+                        <img
+                          src={'/images/usad.png'}
+                          className="block w-full h-full"
+                        />
+                        <img
+                          src={`/images/${item.chainId == '60' ? 'eth' : ''}${item.chainId == '195' ? 'tron' : ''
+                            }.png`}
+                          className="absolute right-0 bottom-0 w-6 h-6"
                         />
                       </div>
+                      <div className="flex-1 overflow-auto">
+                        <div className="text-[32px] leading-8 mr-3 font-bold text-white">
+                          £ {item.balance || 0}
+                        </div>
+                        <div className="text-sm text-[#ADB1B8] leading-8">
+                          <span className="text-white font-bold">Pound</span>{' '}
+                          GBPC on {item.chainId == '60' ? 'Ethereum' : ''}
+                          {item.chainId == '195' ? 'TRON' : ''} (
+                          {item.chainId == '60' ? 'ETH' : ''}
+                          {item.chainId == '195' ? 'TRX' : ''})
+                        </div>
+                        <div className="flex  break-all items-center gap-2 text-sm text-[#8f93a1]">
+                          {item.address}
+                          <CopyOutlined
+                            className="cursor-pointer"
+                            onClick={() => {
+                              copyTextToClipboard(item.address);
+                            }}
+                          />
+                        </div>
+                      </div>
+                    </div>
+                    <div className="grid grid-cols-2">
+                      <div>
+                        <div className="text-[18px] text-white">
+                          {item.pendingBalance || '0.00'}
+                        </div>
+                        <div className="text-sm text-[#ADB1B8] mt-2">
+                          Pending Transfers
+                        </div>
+                      </div>
+                      <div>
+                        <div className="text-[18px] text-white">
+                          {item.freezeBalance || '0.00'}
+                        </div>
+                        <div className="text-sm text-[#ADB1B8] mt-2">
+                          Frozen Tokens
+                        </div>
+                      </div>
+                    </div>
+                    <div className="flex mt-[56px] items-center justify-between gap-3">
+                      <div
+                        onClick={() => {
+                          history.push('/user/usad/buy');
+                        }}
+                        className="gold-gradient-bg flex-1 cursor-pointer rounded-lg leading-10 text-center text-white text-xs font-bold text-shadow"
+                      >
+                        Buy GBPC
+                      </div>
+                      <div
+                        onClick={() => {
+                          setOpen(true);
+                        }}
+                        className="gold-gradient-bg cursor-pointer flex-1 rounded-lg leading-10 text-center text-white text-xs font-bold text-shadow"
+                      >
+                        Deposit
+                      </div>
+                      <div
+                        onClick={() => {
+                          history.push('/user/usad/transfer');
+                        }}
+                        className="border border-[#25282C] cursor-pointer flex-1 rounded-lg leading-10 text-center text-white text-xs font-bold bg-[#1E2023]"
+                      >
+                        Transfer
+                      </div>
+                      <div
+                        onClick={() => {
+                          history.push('/user/usad/withdraw');
+                        }}
+                        className="border border-[#25282C] cursor-pointer flex-1 rounded-lg leading-10 text-center text-white text-xs font-bold bg-[#1E2023]"
+                      >
+                        Withdraw
+                      </div>
                     </div>
                   </div>
-                  <div className="grid grid-cols-2">
-                    <div>
-                      <div className="text-[18px] text-white">
-                        {item.pendingBalance || '0.00'}
-                      </div>
-                      <div className="text-sm text-[#ADB1B8] mt-2">
-                        Pending Transfers
-                      </div>
-                    </div>
-                    <div>
-                      <div className="text-[18px] text-white">
-                        {item.freezeBalance || '0.00'}
-                      </div>
-                      <div className="text-sm text-[#ADB1B8] mt-2">
-                        Frozen Tokens
-                      </div>
-                    </div>
-                  </div>
-                  <div className="flex mt-[56px] items-center justify-between gap-3">
-                    <div
-                      onClick={() => {
-                        history.push('/user/usad/buy');
-                      }}
-                      className="gold-gradient-bg flex-1 cursor-pointer rounded-lg leading-10 text-center text-white text-xs font-bold text-shadow"
-                    >
-                      Buy GBPC
-                    </div>
-                    <div
-                      onClick={() => {
-                        setOpen(true);
-                      }}
-                      className="gold-gradient-bg cursor-pointer flex-1 rounded-lg leading-10 text-center text-white text-xs font-bold text-shadow"
-                    >
-                      Deposit
-                    </div>
-                    <div
-                      onClick={() => {
-                        history.push('/user/usad/transfer');
-                      }}
-                      className="border border-[#25282C] cursor-pointer flex-1 rounded-lg leading-10 text-center text-white text-xs font-bold bg-[#1E2023]"
-                    >
-                      Transfer
-                    </div>
-                    <div
-                      onClick={() => {
-                        history.push('/user/usad/withdraw');
-                      }}
-                      className="border border-[#25282C] cursor-pointer flex-1 rounded-lg leading-10 text-center text-white text-xs font-bold bg-[#1E2023]"
-                    >
-                      Withdraw
-                    </div>
-                  </div>
-                </div>
+                </GradientBorderBox>
               );
             })}
           </div>

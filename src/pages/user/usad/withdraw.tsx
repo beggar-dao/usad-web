@@ -5,6 +5,7 @@ import { Form, Input, Select } from 'antd';
 import { useEffect, useState } from 'react';
 import WithDrawSuccess from './withDrawSuccess';
 import usadCoin from '@/assets/images/usad_coin.png';
+import GradientBorderBox from '@/components/GradientBorderBox';
 
 export default function Withdraw() {
   const [form] = Form.useForm();
@@ -367,32 +368,34 @@ export default function Withdraw() {
             </div>
           </Form>
         </div>
-        <div className="w-[424px] pb-[230px] rounded-lg black-gradient-bg2 p-8 border border-[#505050]">
-          <div className="text-sm text-[#ADB1B8] leading-[26px]">
-            Daily Remaining Limit
-          </div>
-          <div className="mt-1 text-white font-bold">
-            {setting.usedFiatWithdrawalDailyLimit || 0} /
-            {setting.fiatWithdrawalDailyLimit} USAD
-          </div>
+        <GradientBorderBox className="w-[424px]" gradientClassName="rounded-lg">
+          <div className="h-full black-gradient-bg2 p-8 relative z-10 rounded-lg">
+            <div className="text-sm text-[#ADB1B8] leading-[26px]">
+              Daily Remaining Limit
+            </div>
+            <div className="mt-1 text-white font-bold">
+              {setting.usedFiatWithdrawalDailyLimit || 0} /
+              {setting.fiatWithdrawalDailyLimit} USAD
+            </div>
 
-          <div className="mt-4 text-sm text-[#ADB1B8] leading-[26px]">
-            Monthly Remaining Limit
+            <div className="mt-4 text-sm text-[#ADB1B8] leading-[26px]">
+              Monthly Remaining Limit
+            </div>
+            <div className="mt-1 text-white font-bold">
+              {setting.usedFiatWithdrawalMonthlyLimit || 0} /
+              {setting.fiatWithdrawalMonthlyLimit} USAD
+            </div>
+            <div
+              onClick={handlerLimit}
+              className="mt-[50px] cursor-pointer text-sm leading-[26px] gold-gradient-text"
+            >
+              Increase Limit Manage Limit
+            </div>
+            <div className="text-sm text-white mt-[10px]">
+              · The minimum withdrawal amount is: 100,000 USAD
+            </div>
           </div>
-          <div className="mt-1 text-white font-bold">
-            {setting.usedFiatWithdrawalMonthlyLimit || 0} /
-            {setting.fiatWithdrawalMonthlyLimit} USAD
-          </div>
-          <div
-            onClick={handlerLimit}
-            className="mt-[50px] cursor-pointer text-sm leading-[26px] gold-gradient-text"
-          >
-            Increase Limit Manage Limit
-          </div>
-          <div className="text-sm text-white mt-[10px]">
-            · The minimum withdrawal amount is: 100,000 USAD
-          </div>
-        </div>
+        </GradientBorderBox>
       </div>
     </>
   );

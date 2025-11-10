@@ -1,11 +1,13 @@
 import { ReactComponent as CloseSvg } from '@/assets/images/close.svg';
+import GradientBorderBox from '@/components/GradientBorderBox';
 import TimeLine from '@/components/Timeline';
 import { realnessVerify } from '@/services/user';
 import { CloudUploadOutlined } from '@ant-design/icons';
 import { history, useModel } from '@umijs/max';
-import { ConfigProvider, Form, Image, Input, Select, Upload } from 'antd';
+import { Form, Image, Input, Select, Upload } from 'antd';
 import { Country, State } from 'country-state-city';
 import { useEffect, useState } from 'react';
+
 export default function Step1_1() {
   const [form] = Form.useForm();
   const [imageError, setImageError] = useState(false);
@@ -74,22 +76,10 @@ export default function Step1_1() {
           }}
         />
       </div>
-      <div className="w-[588px] relative m-auto rounded-[16px] pt-[40px] border border-[#505050]">
-        <TimeLine active={1} progress={50} />
-        <div className="w-full h-[600px] overflow-y-auto px-8">
-          <ConfigProvider
-            theme={{
-              components: {
-                Form: {
-                  itemMarginBottom: 16,
-                },
-                Input: {},
-                Select: {
-                  selectorBg: '#F2F6FA',
-                },
-              },
-            }}
-          >
+      <GradientBorderBox className="w-[588px] m-auto" gradientClassName="rounded-[16px]">
+        <div className="relative z-10 rounded-[16px] pt-[40px] black-gradient-bg5">
+          <TimeLine active={1} progress={50} />
+          <div className="w-full h-[600px] overflow-y-auto px-8">
             <div className="text-[24px] text-black font-bold mb-4">Address</div>
             <Form
               form={form}
@@ -249,25 +239,25 @@ export default function Step1_1() {
                 </div>
               </Form.Item>
             </Form>
-          </ConfigProvider>
-        </div>
-        <div className="w-full rounded-bl-2xl rounded-br-2xl  h-[104px] px-[40px] gap-[23px] flex items-center justify-between">
-          <div
-            onClick={handleSubmit}
-            className="w-[390px] cursor-pointer h-[48px] leading-[48px] text-center text-white font-[500] bg-[#202b4b] rounded-lg"
-          >
-            Continue
           </div>
-          <div
-            onClick={() => {
-              history.back();
-            }}
-            className="flex-1 cursor-pointer h-[48px] leading-[48px] border border-[#202B4B14] rounded-lg font-[500] text-center"
-          >
-            Back
+          <div className="w-full rounded-bl-2xl rounded-br-2xl  h-[104px] px-[40px] gap-[23px] flex items-center justify-between">
+            <div
+              onClick={handleSubmit}
+              className="w-[390px] cursor-pointer h-[48px] leading-[48px] text-center text-white font-[500] bg-[#202b4b] rounded-lg"
+            >
+              Continue
+            </div>
+            <div
+              onClick={() => {
+                history.back();
+              }}
+              className="flex-1 cursor-pointer h-[48px] leading-[48px] border border-[#202B4B14] rounded-lg font-[500] text-center"
+            >
+              Back
+            </div>
           </div>
         </div>
-      </div>
+      </GradientBorderBox>
     </>
   );
 }

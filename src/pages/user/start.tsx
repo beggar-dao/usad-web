@@ -6,6 +6,7 @@ import { ReactComponent as Step2 } from '@/assets/images/step2.svg';
 import { ReactComponent as Step2_1 } from '@/assets/images/step2_1.svg';
 import { ReactComponent as Step3 } from '@/assets/images/step3.svg';
 import { ReactComponent as Step3_1 } from '@/assets/images/step3_1.svg';
+import GradientBorderBox from '@/components/GradientBorderBox';
 import { history, useSearchParams } from '@umijs/max';
 
 export default function VerificationStart() {
@@ -65,21 +66,23 @@ export default function VerificationStart() {
       <div className="mt-[40px] flex gap-[62px] items-center">
         {(params.get('type') === 'individual' ? individual : corporate).map(
           (item, index) => (
-            <div
-              key={index}
-              className="border relative flex-1 px-6 py-[30px] border-[#505050] black-gradient-bg1 rounded-[16px] "
-            >
-              <div className="flex justify-end">{item.icon}</div>
-              <div className="text-[#666] mt-[10px] text-[20px] font-[400]">
-                {item.name}
+            <GradientBorderBox gradientClassName="rounded-[16px]">
+              <div
+                key={index}
+                className="relative z-10 flex-1 px-6 py-[30px] black-gradient-bg1 rounded-[16px] "
+              >
+                <div className="flex justify-end">{item.icon}</div>
+                <div className="text-[#666] mt-[10px] text-[20px] font-[400]">
+                  {item.name}
+                </div>
+                <div className="text-white mt-[10px] text-[18px] font-bold h-[42px]">
+                  {item.content}
+                </div>
+                {index !== 2 ? (
+                  <Jt className="absolute top-[50%] mt-[-16px] right-[-50px]" />
+                ) : null}
               </div>
-              <div className="text-white mt-[10px] text-[18px] font-bold h-[42px]">
-                {item.content}
-              </div>
-              {index !== 2 ? (
-                <Jt className="absolute top-[50%] mt-[-16px] right-[-50px]" />
-              ) : null}
-            </div>
+            </GradientBorderBox>
           ),
         )}
       </div>
