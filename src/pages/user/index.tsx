@@ -1,3 +1,4 @@
+import GradientBorderBox from '@/components/GradientBorderBox';
 import {
   AccountIcon,
   AddressIcon,
@@ -137,31 +138,35 @@ export default function UserIndex() {
         <div className="px-6">
           {meunList.map((item: any, index) => {
             return (
-              <div
+              <GradientBorderBox
                 key={index}
                 onClick={() => item?.onClick()}
-                className={cn(
-                  'cursor-pointer w-[205px] h-[50px] border-box rounded-[8px] my-1 text-[#666] flex items-center gap-3 px-5 border border-transparent hover:border hover:border-[#505050] hover:black-gradient-bg1',
-                  item.checked
-                    ? 'border-[1px] border-[#505050] black-gradient-bg1'
-                    : '',
-                )}
+                className="my-1 cursor-pointer rounded-[8px] border border-transparent hover:border hover:border-[#505050] hover:black-gradient-bg1"
+                gradientClassName={cn("rounded-[8px]", item.checked ? 'opacity-100' : 'opacity-0')}
               >
-                {item.icon}
-                <span className={item.checked ? 'gold-gradient-text' : ''}>
-                  {item.name}
-                </span>
-              </div>
+                <div
+                  className={cn(
+                    'w-[205px] h-[50px] text-[#666] rounded-[8px] relative z-10 flex items-center gap-3 px-5',
+                    item.checked
+                      ? 'black-gradient-bg1'
+                      : '',
+                  )}
+                >
+                  {item.icon}
+                  <span className={item.checked ? 'gold-gradient-text' : ''}>
+                    {item.name}
+                  </span>
+                </div>
+              </GradientBorderBox>
             );
           })}
         </div>
       </div>
-      <div className="m-[34px] relative rounded left-[256px] black-gradient-bg2 w-[calc(100%-320px)]">
-        <div className="absolute inset-0 rounded-lg p-[2px] bg-gradient-to-r from-pink-500 to-blue-500 -z-10" />
-        <div className="p-8 m-[2px]">
+      <GradientBorderBox className="m-[34px] left-[256px] w-[calc(100%-320px)]">
+        <div className="p-8 rounded black-gradient-bg2 relative z-10">
           <Outlet />
         </div>
-      </div>
+      </GradientBorderBox>
     </>
   );
 }
