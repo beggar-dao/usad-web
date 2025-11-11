@@ -2,7 +2,55 @@ import { defineConfig } from '@umijs/max';
 
 export default defineConfig({
   helmet: true,
-  antd: {},
+  antd: {
+    dark: true,
+    configProvider: {
+      theme: {
+        token: {
+          borderRadius: 4,
+          colorPrimary: '#FFD58E',
+          colorBorder: '#272831',
+        },
+        components: {
+          Tabs: {
+            colorText: '#ADB1B8',
+            colorTextActive: '#fff',
+            titleFontSize: 16,
+          },
+          Form: {
+            labelColor: '#ADB1B8',
+          },
+          Input: {
+            colorBorder: '#1E2023',
+            colorBgContainer: '#1E2023',
+            colorTextPlaceholder: '#666',
+            paddingInlineLG: 16,
+            paddingBlockLG: 13,
+            inputFontSizeLG: 14,
+          },
+          Select: {
+            colorBorder: '#1E2023',
+            colorBgContainer: '#1E2023',
+            colorTextPlaceholder: '#666',
+            controlHeightLG: 48,
+            fontSizeLG: 14,
+          },
+          Button: {
+            primaryShadow: 'none',
+          },
+          Radio: {
+            colorBorder: '#5B6276',
+            radioSize: 20,
+            dotSize: 6,
+            colorPrimary: '#5B6276',
+          },
+          Checkbox: {
+            colorBorder: '#ADB1B8'
+          }
+        }
+      },
+    },
+  },
   access: {},
   model: {},
   initialState: {},
@@ -154,6 +202,139 @@ export default defineConfig({
     {
       path: '/mint',
       component: './mint',
+    },
+    {
+      path: '/Auth/Login',
+      component: './Login',
+    },
+    {
+      path: '/Auth/CreateAccount',
+      component: './CreateAccount',
+    },
+    {
+      path: '/Auth/ResetPassword',
+      component: './ResetPassword',
+    },
+    {
+      path: '/Auth/Setup2FA',
+      component: './Setup2FA',
+    },
+    {
+      path: '/user',
+      component: './user/index',
+      footer: false,
+      routes: [
+        { path: '/user/profile', component: './user/profile' },
+        { path: '/user/verification', component: './user/verification' },
+        {
+          path: '/user/addressWhitelist',
+          component: './user/addressWhitelist',
+        },
+        {
+          path: '/user/history',
+          component: './user/history',
+        },
+        {
+          path: '/user/payment',
+          component: './user/payment',
+        },
+        {
+          path: '/user/wallet',
+          component: './user/wallet',
+        },
+        {
+          path: '/user/usad',
+          component: './user/usad',
+        },
+        {
+          path: '/user/usad/transfer',
+          component: './user/usad/transfer',
+        },
+        {
+          path: '/user/usad/deposit',
+          component: './user/usad/deposit',
+        },
+        {
+          path: '/user/usad/withdraw',
+          component: './user/usad/withdraw',
+        },
+        {
+          path: '/user/usad/buy',
+          component: './user/usad/buy',
+        },
+        {
+          path: '/user/usad/buy',
+          component: './user/usad/buy',
+        },
+        {
+          path: '/user/usad/buy',
+          component: './user/usad/buy',
+        },
+        {
+          path: '/user/usad/buy',
+          component: './user/usad/buy',
+        },
+        {
+          path: '/user/payment/addBank',
+          component: './user/addBank',
+        },
+        {
+          path: '/user/verification/start',
+          component: './user/start',
+        },
+        {
+          path: '/user/verification/individual',
+          component: './user/individual',
+        },
+        {
+          path: '/user/verification/corporate',
+          component: './user/corporate',
+        },
+        {
+          path: '/user/verification/individual/step1_1',
+          component: './user/individual/step1_1',
+        },
+        {
+          path: '/user/verification/individual/step1_2',
+          component: './user/individual/step1_2',
+        },
+        {
+          path: '/user/verification/individual/step1_3',
+          component: './user/individual/step1_3',
+        },
+        {
+          path: '/user/verification/individual/step2',
+          component: './user/individual/step2',
+        },
+        {
+          path: '/user/verification/individual/step3',
+          component: './user/individual/step3',
+        },
+        {
+          path: '/user/verification/complete',
+          component: './user/complete',
+        },
+        {
+          path: '/user/verification/corporate/step1',
+          component: './user/corporate/step1',
+        },
+        {
+          path: '/user/verification/corporate/step2_1',
+          component: './user/corporate/step2_1',
+        },
+        {
+          path: '/user/verification/corporate/step2_2',
+          component: './user/corporate/step2_2',
+        },
+        {
+          path: '/user/verification/corporate/step3',
+          component: './user/corporate/step3',
+        },
+        {
+          path: '/user/verification/corporate/step3_1',
+          component: './user/corporate/step3_1',
+        },
+      ],
     },
   ],
 
