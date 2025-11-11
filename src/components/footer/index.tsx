@@ -1,6 +1,7 @@
 import logo from '@/assets/images/logo.png';
 import { history } from '@umijs/max';
 import { FaXTwitter } from 'react-icons/fa6';
+
 export default function Footer() {
   return (
     <footer className="bg-primary text-white pt-8 md:pt-16 pb-8">
@@ -21,24 +22,6 @@ export default function Footer() {
               >
                 <FaXTwitter className="w-5 h-5" />
               </a>
-              {/* <a
-                href="#"
-                className="text-white hover:text-[#DAC89F] transition-colors"
-              >
-                <FaTelegram className="w-5 h-5" />
-              </a>
-              <a
-                href="#"
-                className="text-white hover:text-[#DAC89F] transition-colors"
-              >
-                <FaDiscord className="w-5 h-5" />
-              </a>
-              <a
-                href="#"
-                className="text-white hover:text-[#DAC89F] transition-colors"
-              >
-                <FaGithub className="w-5 h-5" />
-              </a> */}
             </div>
           </div>
 

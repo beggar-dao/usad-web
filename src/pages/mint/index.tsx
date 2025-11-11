@@ -15,7 +15,7 @@ export default function Mint() {
   const [bl, setBl] = useState<string>('');
   const [selectedCurrency, setSelectedCurrency] = useState<string>('GBPC');
   const [selectedCurrency1, setSelectedCurrency1] = useState<string>('USAD');
-  const [selectedCurrency2, setSelectedCurrency2] = useState<string>('GBPC');
+  const [_, setSelectedCurrency2] = useState<string>('GBPC');
   const coinArr = [
     { value: 'GBPC', img: gbpc_coin },
     { value: 'BTC', img: btc_coin },
@@ -165,9 +165,8 @@ export default function Mint() {
                     setSelectedCurrency('GBPC');
                     setSelectedCurrency1('USAD');
                   }}
-                  className={`p-7 text-center flex-1 text-[24px] font-[700] ${
-                    active === 'buy' ? 'text-[#DAC89F]' : 'text-[#FFFFFF66]'
-                  } cursor-pointer leading-[26px]`}
+                  className={`p-7 text-center flex-1 text-[24px] font-[700] ${active === 'buy' ? 'text-[#DAC89F]' : 'text-[#FFFFFF66]'
+                    } cursor-pointer leading-[26px]`}
                 >
                   Buy
                 </div>
@@ -177,9 +176,8 @@ export default function Mint() {
                     setSelectedCurrency('USAD');
                     setSelectedCurrency1('GBPC');
                   }}
-                  className={`p-7 text-center flex-1 text-[24px] font-[700] ${
-                    active === 'sell' ? 'text-[#DAC89F]' : 'text-[#FFFFFF66]'
-                  } cursor-pointer leading-[26px]`}
+                  className={`p-7 text-center flex-1 text-[24px] font-[700] ${active === 'sell' ? 'text-[#DAC89F]' : 'text-[#FFFFFF66]'
+                    } cursor-pointer leading-[26px]`}
                 >
                   Sell
                 </div>
@@ -233,11 +231,11 @@ export default function Mint() {
                     }}
                     options={(active === 'buy'
                       ? [
-                          { value: 'GBPC', label: 'GBPC', img: gbpc_coin },
-                          { value: 'BTC', label: 'BTC', img: btc_coin },
-                          { value: 'ETH', label: 'ETH', img: eth_coin },
-                          { value: 'USDT', label: 'USDT', img: usdt_coin },
-                        ]
+                        { value: 'GBPC', label: 'GBPC', img: gbpc_coin },
+                        { value: 'BTC', label: 'BTC', img: btc_coin },
+                        { value: 'ETH', label: 'ETH', img: eth_coin },
+                        { value: 'USDT', label: 'USDT', img: usdt_coin },
+                      ]
                       : [{ value: 'USAD', label: 'USAD', img: usad_coin }]
                     ).map((item) => {
                       return {
@@ -306,9 +304,9 @@ export default function Mint() {
                     options={(active === 'buy'
                       ? [{ value: 'USAD', label: 'USAD', img: usad_coin }]
                       : [
-                          { value: 'GBPC', label: 'GBPC', img: gbpc_coin },
-                          { value: 'USDT', label: 'USDT', img: usdt_coin },
-                        ]
+                        { value: 'GBPC', label: 'GBPC', img: gbpc_coin },
+                        { value: 'USDT', label: 'USDT', img: usdt_coin },
+                      ]
                     ).map((item) => ({
                       label: (
                         <div className="flex items-center">

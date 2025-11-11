@@ -228,3 +228,99 @@ body,
     border: 1px solid #dac89f1f;
   }
 }
+
+.gbpc-tabs.ant-tabs .ant-tabs-tab.ant-tabs-tab-active .ant-tabs-tab-btn {
+  color: #fff !important;
+  font-weight: bold;
+}
+
+.gradient-button {
+  width: 244px;
+  height: 48px;
+  background: linear-gradient(90deg, #C69F58 0.11%, #FFEECF 16.21%, #A56F2A 51.22%, #C69F58 99.79%);
+  border-radius: 48px;
+}
+
+.gray-gradient-button {
+  width: 244px;
+  height: 48px;
+  background: linear-gradient(90deg, #DDDDDD 0.11%, #FDFDFD 23.77%, #868686 56.53%, #DDDDDD 99.79%);
+  border-radius: 48px;
+}
+
+.gold-gradient-bg {
+  background: linear-gradient(90deg, #C69F58 0.11%, #FFEECF 16.21%, #A56F2A 51.22%, #C69F58 99.79%);
+}
+
+.gray-gradient-bg1 {
+  background: linear-gradient(90deg, #DDDDDD 0.11%, #FDFDFD 23.77%, #868686 56.53%, #DDDDDD 99.79%);
+}
+
+.gray-gradient-bg2 {
+  background: linear-gradient(74.66deg, #DDDDDD 4.13%, #FDFDFD 20.85%, #868686 64.68%, #DDDDDD 101%);
+}
+
+.black-gradient-bg1 {
+  background: linear-gradient(91.51deg, #212121 0%, #121314 100%);
+}
+
+.black-gradient-bg2 {
+  background: linear-gradient(182.38deg, #212121 2.38%, #000000 14.39%);
+}
+
+.black-gradient-bg3 {
+  background: linear-gradient(270deg, rgba(255, 255, 255, 0) 0%, rgba(248, 250, 251, 0.1) 100%);
+}
+
+.black-gradient-bg4 {
+  background: linear-gradient(0deg, #040404, #040404), linear-gradient(0deg, #111315, #111315), linear-gradient(91.51deg, #212121 0%, #121314 100%);
+}
+
+.black-gradient-bg5 {
+  background: linear-gradient(169.04deg, #212121 6.58%, #000000 23.83%);
+}
+
+.black-gradient-border {
+  background: linear-gradient(0deg, #505050 0%, #FFFFFF 50%, #505050 100%);
+}
+
+.ant-modal {
+  .ant-modal-content {
+    border: 1px solid transparent;
+    border-radius: 16px;
+    background-clip: padding-box; /*important*/
+    @extend .black-gradient-bg2;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      right: 0;
+      left: 0;
+      bottom: 0;
+      z-index: -1;
+      margin: -1px;
+      border-radius: inherit; /*important*/
+      @extend .black-gradient-border;
+    }
+  }
+}
+
+.alert-warning-box {
+  background-color: rgba(255, 166, 0, 0.04);
+  border: 1px solid rgba(255, 166, 0, 0.12);
+  border-radius: 8px;
+  color: #e67300;
+  font-size: 14px;
+  padding: 12px;
+  margin-bottom: 24px;
+  font-family: Inter, sans-serif;
+}
+
+.gold-gradient-text {
+  background: linear-gradient(90deg, #C69F58 0.11%, #FFEECF 16.21%, #A56F2A 51.22%, #C69F58 99.79%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+}
