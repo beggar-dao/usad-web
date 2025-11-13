@@ -15,7 +15,7 @@ export default function Home() {
         <meta name="keywords" content="USAD, USAD by Pathenom" />
         <meta
           name="description"
-          content="Pathenom is the home of USAD. Learn how to mint USAD, redeem GBPC, and view verified history. Start fast with clear steps, fees, and safety notes for new users."
+          content="Pathenom is the home of USAD. Learn how to mint USAD, redeem USAD, and view verified history. Start fast with clear steps, fees, and safety notes for new users."
         />
         <script type="application/ld+json">
           {`{
@@ -38,7 +38,7 @@ export default function Home() {
                 "@type": "WebPage",
                 "@id": "https://pathenom.com/#webpage",
                 "url": "https://pathenom.com/",
-                "name": "USAD on Pathenom | Get USAD, Redeem GBPC, History",
+                "name": "USAD on Pathenom | Get USAD, Redeem USAD, History",
                 "description": "The new global currency for the Web4 era. USAD is a decentralized, asset backed stablecoin on TOK Chain with transparent governance.",
                 "isPartOf": { "@id": "https://pathenom.com/#website" },
                 "inLanguage": "en"

@@ -14,7 +14,7 @@ export enum TradeType { // 交易类型（1：链上入金 Deposit，2：链上�
 }
 
 export enum CurrencyType { // 币种类型（GBPC，Fiat）
-  GBPC = 'GBPC',
+  USAD = 'USAD',
   Fiat = 'Fiat',
 }
 
@@ -37,6 +37,6 @@ export const TradeTypeOptions = [
 
 export const CurrencyTypeOptions = [
   { label: 'All', value: '' },
-  { label: 'GBPC', value: CurrencyType.GBPC },
+  { label: 'USAD', value: CurrencyType.USAD },
   { label: 'Fiat', value: CurrencyType.Fiat },
 ];

@@ -28,7 +28,7 @@ export default function BuyDraw({ currency }: { currency: string }) {
 
   return (
     <Drawer
-      title="Buy GBPC with Fiat"
+      title="Buy USAD with Fiat"
       width={'57%'}
       open={buyDrawer}
       onClose={() => {
@@ -155,7 +155,7 @@ export default function BuyDraw({ currency }: { currency: string }) {
                 Transfer Funds
               </div>
               <div className="mt-2  pl-[18px] text-[#5B6276] text-sm leading-[22px]">
-                Transfer fiat currency to the GBPC reserve account
+                Transfer fiat currency to the USAD reserve account
               </div>
             </div>
             <div className="mt-3">
@@ -168,20 +168,20 @@ export default function BuyDraw({ currency }: { currency: string }) {
             </div>
             <div className="mt-3">
               <div className="font-bold before:content-[''] relative before:absolute before:left-0 before:w-1 before:h-1 before:rounded-full before:bg-[#202B4B] before:top-[50%] before:mt-[-2px]  pl-[18px] text-[#202B4B] text-base">
-                Mint GBPC
+                Mint USAD
               </div>
               <div className="mt-2  pl-[18px] text-[#5B6276] text-sm leading-[22px]">
-                Once fiat are received, an equivalent amount of GBPC tokens
+                Once fiat are received, an equivalent amount of USAD tokens
                 (minus fee) will be minted 1:1
               </div>
             </div>
           </div>
           <div className="mt-3">
             <div className="font-bold before:content-[''] relative before:absolute before:left-0 before:w-1 before:h-1 before:rounded-full before:bg-[#202B4B] before:top-[50%] before:mt-[-2px]  pl-[18px] text-[#202B4B] text-base">
-              GBPC Credited
+              USAD Credited
             </div>
             <div className="mt-2  pl-[18px] text-[#5B6276] text-sm leading-[22px]">
-              Your GBPC tokens are immediately credited to your GBPC account,
+              Your USAD tokens are immediately credited to your USAD account,
               ready to transfer, hold or withdraw
             </div>
           </div>

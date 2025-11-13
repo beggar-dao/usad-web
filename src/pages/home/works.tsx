@@ -68,7 +68,7 @@ export default function Works() {
               className="text-xs md:text-[14px]  text-white leading-5 font-[200]"
             >
               Comprised of tokenized real-world assets including treasuries,
-              GBPC, and other fiat-backed instruments.
+              USAD, and other fiat-backed instruments.
             </AnimatedContent>
           </div>
         </div>
@@ -152,7 +152,7 @@ export default function Works() {
         </div>
         <div className="p-4 md:p-[33px] bg-[#0000001F] rounded-[16px] flex items-center justify-between">
           <div>
-            <div className="text-white  text-[10px] md:text-base">GBPC</div>
+            <div className="text-white  text-[10px] md:text-base">USAD</div>
             <div className="text-[#DAC89F] text-[14px] md:text-[28px] font-bold">
               <AnimatedNumber value={30} duration={1000} />%
             </div>

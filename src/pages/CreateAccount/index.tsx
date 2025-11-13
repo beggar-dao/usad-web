@@ -554,7 +554,7 @@ const CreateAccountForm = () => {
                         style={{ gap: '8px' }}
                       >
                         <span>
-                          Looking to buy or redeem GBP-pegged GBPC tokens?
+                          Looking to buy or redeem USA-pegged USAD tokens?
                         </span>
                         <Radio.Group>
                           <div className="d-flex align-items-center">

@@ -1,6 +1,6 @@
 /**
  * Authentication API Types and Interfaces
- * Based on GBPC backend API documentation
+ * Based on USAD backend API documentation
  */
 
 import type { ApiResponse } from './common';
