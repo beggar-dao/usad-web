@@ -181,7 +181,7 @@ export default function Step1_1() {
                     If you are a citizen of the Russian Federation,pleaseupload
                     your residence permit and a proof of address now or sentthem
                     to{' '}
-                    <span className="text-[#6ECE82]">support@thegbpc.com</span>
+                    <span className="text-[#6ECE82]">sup.usad@gmail.com</span>
                   </div>
                   <Upload.Dragger
                     maxCount={1}

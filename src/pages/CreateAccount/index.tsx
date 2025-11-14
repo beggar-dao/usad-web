@@ -511,7 +511,7 @@ const CreateAccountForm = () => {
                     >
                       <Select.Option value={100}>Under 100.000</Select.Option>
                       <Select.Option value={500}>100.000–500.000</Select.Option>
-                      <Select.Option value={1000}>1.000.000+</Select.Option>
+                      <Select.Option value={1000}>1,000.000+</Select.Option>
                     </Select>
                   </Form.Item>
                 </div>
