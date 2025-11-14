@@ -69,7 +69,7 @@ export function onRouteChange({ clientRoutes, location }) {
   const metas = [
     {
       path: '/',
-      title: 'USAD: Trusted GBP-Pegged Stablecoin',
+      title: 'USAD: Trusted USA-Pegged Stablecoin',
       description:
         'USAD is a fully-backed digital British Pound designed for institutions, fintechs, and individuals—fast, secure, and transparent.',
     },
@@ -83,7 +83,7 @@ export function onRouteChange({ clientRoutes, location }) {
       path: '/CreateAccount',
       title: 'Create Your USAD Account',
       description:
-        'Sign up for a USAD account to buy, redeem, and manage GBP-backed digital tokens securely and easily.',
+        'Sign up for a USAD account to buy, redeem, and manage USA-backed digital tokens securely and easily.',
     },
     {
       path: '/ResetPassword',

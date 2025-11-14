@@ -61,7 +61,7 @@ export default function Step1_1() {
               <Form.Item
                 label={
                   <div className="relative mb-[20px] w-full">
-                    <div>Planned Investment per Year(in GBP)</div>
+                    <div>Planned Investment per Year(in USA)</div>
                     <div className="text-xs whitespace-nowrap absolute text-[#9EA6BC] mb-3">
                       Please choose the expected annual volume of transactions
                     </div>
@@ -72,7 +72,7 @@ export default function Step1_1() {
                   {
                     required: true,
                     message:
-                      'Please select your Planned Investment per Year(in GBP)!',
+                      'Please select your Planned Investment per Year(in USA)!',
                   },
                 ]}
               >
@@ -100,10 +100,10 @@ export default function Step1_1() {
               <Form.Item
                 label={
                   <div className="relative mb-[20px] w-full">
-                    <div>Annual Personal Income/Earnings(in GBP)</div>
+                    <div>Annual Personal Income/Earnings(in USA)</div>
                     <div className="text-xs whitespace-nowrap absolute text-[#9EA6BC] mb-3">
                       Please indicate your approximate annual income/earnirgs in
-                      GBP
+                      USA
                     </div>
                   </div>
                 }
@@ -112,7 +112,7 @@ export default function Step1_1() {
                   {
                     required: true,
                     message:
-                      'Please select your Planned Investment per Year(in GBP)!',
+                      'Please select your Planned Investment per Year(in USA)!',
                   },
                 ]}
               >
@@ -152,7 +152,7 @@ export default function Step1_1() {
                   {
                     required: true,
                     message:
-                      'Please select your Planned Investment per Year(in GBP)!',
+                      'Please select your Planned Investment per Year(in USA)!',
                   },
                 ]}
               >
@@ -186,10 +186,10 @@ export default function Step1_1() {
               <Form.Item
                 label={
                   <div className="relative mb-[20px] w-full">
-                    <div>Estimated Total Wealth(in GBP)</div>
+                    <div>Estimated Total Wealth(in USA)</div>
                     <div className="text-xs whitespace-nowrap absolute text-[#9EA6BC] mb-3">
                       Please indicate your approximate annual income/earnirgs in
-                      GBP
+                      USA
                     </div>
                   </div>
                 }
@@ -198,7 +198,7 @@ export default function Step1_1() {
                   {
                     required: true,
                     message:
-                      'Please select your Planned Investment per Year(in GBP)!',
+                      'Please select your Planned Investment per Year(in USA)!',
                   },
                 ]}
               >

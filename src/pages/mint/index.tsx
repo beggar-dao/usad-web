@@ -9,6 +9,7 @@ import PageAnimate from '@/components/pageAnimate';
 import { Helmet, request } from '@umijs/max';
 import { ConfigProvider, Select } from 'antd';
 import { useEffect, useState } from 'react';
+
 export default function Mint() {
   const [active, setActive] = useState<'buy' | 'sell'>('buy');
   const [receiveValue, setReceiveValue] = useState<string>('');
@@ -16,6 +17,7 @@ export default function Mint() {
   const [selectedCurrency, setSelectedCurrency] = useState<string>('GBPC');
   const [selectedCurrency1, setSelectedCurrency1] = useState<string>('USAD');
   const [_, setSelectedCurrency2] = useState<string>('GBPC');
+
   const coinArr = [
     { value: 'GBPC', img: gbpc_coin },
     { value: 'BTC', img: btc_coin },
@@ -23,6 +25,7 @@ export default function Mint() {
     { value: 'USDT', img: usdt_coin },
     { value: 'USAD', img: usad_coin },
   ];
+
   const getBl = async (value: any) => {
     if (selectedCurrency === 'BTC' || selectedCurrency === 'ETH') {
       let res = await request(

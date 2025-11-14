@@ -10,6 +10,7 @@ export default function Verification() {
   const { user } = useModel('auth');
   const { verifi, setIndividualData, setBusinessData, corporate, init } =
     useModel('verify');
+
   const status = {
     2: {
       name: 'Accepted',
@@ -23,15 +24,16 @@ export default function Verification() {
     },
     1: {
       name: 'Awating for approval',
-      color: '#202B4B',
-      bgColor: '#202B4B33',
+      color: '#f1a840ff',
+      bgColor: '#f1a84033',
     },
     0: {
       name: 'Awating for approval',
-      color: '#202B4B',
-      bgColor: '#202B4B33',
+      color: '#f1a840ff',
+      bgColor: '#f1a84033',
     },
   };
+
   useEffect(() => {
     init();
   }, []);

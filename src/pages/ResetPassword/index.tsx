@@ -11,6 +11,7 @@ const LoginForm = () => {
   const { setLoginModel, resetStep, setAlertInfo } = useModel('dialogState');
   const { user, setUser } = useModel('auth');
   const [form] = Form.useForm();
+  const [isLoading, setIsLoading] = useState(false);
   const [showPassword, setShowPassword] = useState(false);
   const [showRepeatPassword, setShowRepeatPassword] = useState(false);
   const { clearError } = useModel('auth');
@@ -50,7 +51,7 @@ const LoginForm = () => {
   };
 
   const Steps = () => {
-    const handleSubmit = (values: any) => {
+    const handleSubmit = async (values: any) => {
       if (!values.email) {
         setAlertInfo({
           type: 'error',
@@ -59,9 +60,25 @@ const LoginForm = () => {
         });
         return;
       }
-      setUser({ ...user, email: values.email });
-      setLoginModel(true);
-      setStep(2);
+
+      const params = {
+        email: values.email,
+        captcha: localStorage.getItem('captcha'),
+        totp: '',
+      };
+
+      setIsLoading(true);
+
+      try {
+        await resetPassword(params);
+        setIsLoading(false);
+
+        setUser({ ...user, email: values.email });
+        setLoginModel(true);
+        setStep(2);
+      } catch (error) {
+        setIsLoading(false);
+      }
     };
 
     if (step <= 2) {
@@ -100,6 +117,7 @@ const LoginForm = () => {
               type="primary"
               htmlType="submit"
               className="gold-gradient-bg h-[48px] rounded-[12px] mt-32 text-shadow"
+              loading={isLoading}
             >
               Next
             </Button>
@@ -187,6 +205,7 @@ const LoginForm = () => {
       );
     }
   };
+
   return (
     <PageAnimate>
       <GradientBorderBox className="max-w-[980px] m-auto my-10" gradientClassName="rounded-2xl">

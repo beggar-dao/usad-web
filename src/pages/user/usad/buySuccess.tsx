@@ -27,7 +27,7 @@ export default function BuySuccess() {
           Your money is on the way
         </div>
         <div className="text-center leading-5 text-[#ADB1B8] mt-2">
-          Your GBPC tokens will be minted and credited soon. This may take a few
+          Your USAD tokens will be minted and credited soon. This may take a few
           minutes or up to one business day. We’ll email you once it’s done.
         </div>
         <div

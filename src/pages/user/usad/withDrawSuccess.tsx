@@ -26,8 +26,8 @@ export default function WithDrawSuccess() {
           Withdrawal Submitted
         </div>
         <div className="text-center leading-5 text-[#ADB1B8] mt-2">
-          Your GBPC tokens have been successfully burned. <br />
-          The equivalent amount in GBP will be deposited into your bank account
+          Your USAD tokens have been successfully burned. <br />
+          The equivalent amount in USA will be deposited into your bank account
           shortly. <br />
           Processing typically takes up to one business day
         </div>
