@@ -71,7 +71,7 @@ const DetailInfo: React.FC<DetailInfoProps> = ({ record }) => {
         <>
           <InfoRow
             label="Price"
-            value={`${record.price} ${record.fiatCurrency}/GBPC`}
+            value={`${record.price} ${record.fiatCurrency}/USAD`}
           />
           <InfoRow
             label={isFiatWithdrawal ? 'Amount Sent' : 'Spend Amount'}
@@ -97,7 +97,7 @@ const DetailInfo: React.FC<DetailInfoProps> = ({ record }) => {
         <>
           <InfoRow label="Network" value={record.chainName} />
           <InfoRow label="Type" value={getTradeType(record.tradeType)} />
-          <InfoRow label="Amount" value={`${record.amount} GBPC`} />
+          <InfoRow label="Amount" value={`${record.amount} USAD`} />
           <InfoRow label="Network fee" value={record.fee} />
           {!isDeposit && (
             <InfoRow

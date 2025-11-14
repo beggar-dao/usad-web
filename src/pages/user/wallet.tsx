@@ -92,7 +92,7 @@ export default function Wallet() {
                         </div>
                         <div className="text-sm text-[#ADB1B8] leading-8">
                           <span className="text-white font-bold">Pound</span>{' '}
-                          GBPC on {item.chainId == '60' ? 'Ethereum' : ''}
+                          USAD on {item.chainId == '60' ? 'Ethereum' : ''}
                           {item.chainId == '195' ? 'TRON' : ''} (
                           {item.chainId == '60' ? 'ETH' : ''}
                           {item.chainId == '195' ? 'TRX' : ''})
@@ -133,7 +133,7 @@ export default function Wallet() {
                         }}
                         className="gold-gradient-bg flex-1 cursor-pointer rounded-lg leading-10 text-center text-white text-xs font-bold text-shadow"
                       >
-                        Buy GBPC
+                        Buy USAD
                       </div>
                       <div
                         onClick={() => {

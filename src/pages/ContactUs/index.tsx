@@ -93,8 +93,8 @@ export default () => {
                 <Alert
                   message="Message Sent Successfully!"
                   description={`Your message has been submitted. ${lastSubmission.id
-                      ? `Reference ID: ${lastSubmission.id}`
-                      : ''
+                    ? `Reference ID: ${lastSubmission.id}`
+                    : ''
                     } We will get back to you soon.`}
                   type="success"
                   showIcon
@@ -148,13 +148,13 @@ export default () => {
                       Account & Verification – KYC/KYB, login, or account setup
                       issues
                     </Select.Option>
-                    <Select.Option value="Buying GBPC – Questions about purchasing GBPC or payment instructions">
-                      Buying GBPC – Questions about purchasing GBPC or payment
+                    <Select.Option value="Buying USAD – Questions about purchasing USAD or payment instructions">
+                      Buying USAD – Questions about purchasing USAD or payment
                       instructions
                     </Select.Option>
-                    <Select.Option value="Deposits & Withdrawals – Fiat or on-chain deposits, burns for GBP withdrawals">
+                    <Select.Option value="Deposits & Withdrawals – Fiat or on-chain deposits, burns for USA withdrawals">
                       Deposits & Withdrawals – Fiat or on-chain deposits, burns
-                      for GBP withdrawals
+                      for USA withdrawals
                     </Select.Option>
                     <Select.Option value="Transfers & Wallets – On-chain transfers, whitelisted addresses, or private key exports">
                       Transfers & Wallets – On-chain transfers, whitelisted
@@ -176,9 +176,9 @@ export default () => {
                       Partnerships & Business Inquiries – For businesses,
                       payment providers, or exchanges
                     </Select.Option>
-                    <Select.Option value="Feedback & Suggestions – Share your thoughts to improve GBPC">
+                    <Select.Option value="Feedback & Suggestions – Share your thoughts to improve USAD">
                       Feedback & Suggestions – Share your thoughts to improve
-                      GBPC
+                      USAD
                     </Select.Option>
                     <Select.Option value="Other – Anything else not listed">
                       Other – Anything else not listed
@@ -346,13 +346,13 @@ export default () => {
                     Account & Verification – KYC/KYB, login, or account setup
                     issues
                   </Select.Option>
-                  <Select.Option value="Buying GBPC – Questions about purchasing GBPC or payment instructions">
-                    Buying GBPC – Questions about purchasing GBPC or payment
+                  <Select.Option value="Buying USAD – Questions about purchasing USAD or payment instructions">
+                    Buying USAD – Questions about purchasing USAD or payment
                     instructions
                   </Select.Option>
-                  <Select.Option value="Deposits & Withdrawals – Fiat or on-chain deposits, burns for GBP withdrawals">
+                  <Select.Option value="Deposits & Withdrawals – Fiat or on-chain deposits, burns for USA withdrawals">
                     Deposits & Withdrawals – Fiat or on-chain deposits, burns
-                    for GBP withdrawals
+                    for USA withdrawals
                   </Select.Option>
                   <Select.Option value="Transfers & Wallets – On-chain transfers, whitelisted addresses, or private key exports">
                     Transfers & Wallets – On-chain transfers, whitelisted
@@ -374,8 +374,8 @@ export default () => {
                     Partnerships & Business Inquiries – For businesses, payment
                     providers, or exchanges
                   </Select.Option>
-                  <Select.Option value="Feedback & Suggestions – Share your thoughts to improve GBPC">
-                    Feedback & Suggestions – Share your thoughts to improve GBPC
+                  <Select.Option value="Feedback & Suggestions – Share your thoughts to improve USAD">
+                    Feedback & Suggestions – Share your thoughts to improve USAD
                   </Select.Option>
                   <Select.Option value="Other – Anything else not listed">
                     Other – Anything else not listed
