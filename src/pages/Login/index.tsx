@@ -51,7 +51,7 @@ const LoginForm = () => {
 
   return (
     <PageAnimate>
-      <div className={`${isWeb ? 'flex items-center' : ''}`}>
+      <div className="flex items-center h-screen">
         <GradientBorderBox className='max-w-[980px] m-auto my-10' gradientClassName='rounded-2xl'>
           <div
             className={`${isWeb
