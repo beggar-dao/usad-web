@@ -228,7 +228,7 @@ export default function Step1_1() {
           <div className="w-full rounded-bl-2xl rounded-br-2xl  h-[104px] px-[40px] gap-[23px] flex items-center justify-between">
             <div
               onClick={handleSubmit}
-              className="w-[390px] cursor-pointer h-[48px] leading-[48px] text-center text-white font-[500] bg-[#202b4b] rounded-lg"
+              className="w-[390px] cursor-pointer h-[48px] leading-[48px] text-center text-white font-[500] text-shadow gold-gradient-bg rounded-lg"
             >
               Continue
             </div>
@@ -236,7 +236,7 @@ export default function Step1_1() {
               onClick={() => {
                 history.back();
               }}
-              className="flex-1 cursor-pointer h-[48px] leading-[48px] border border-[#202B4B14] rounded-lg font-[500] text-center"
+              className="flex-1 cursor-pointer h-[48px] leading-[48px] border border-[#25282C] rounded-lg font-[500] text-center"
             >
               Back
             </div>
