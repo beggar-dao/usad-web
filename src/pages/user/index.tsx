@@ -131,7 +131,7 @@ export default function UserIndex() {
 
   return (
     <>
-      <div className="w-[256px] h-[calc(100vh-88px)] absolute top-[88px] py-[34px] bg-[#05060F] border-r-[1px] border-[#272831]">
+      <div className="w-[256px] h-screen absolute py-[34px] bg-[#05060F] border-r-[1px] border-[#272831]">
         <div className="px-6 pb-6 text-xs font-bold text-[#969696]">
           MAIN MENU
         </div>

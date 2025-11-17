@@ -611,7 +611,7 @@ const CreateAccountForm = () => {
                       <Button
                         type="primary"
                         htmlType="submit"
-                        className="gray-gradient-bg1 h-[48px] rounded-[12px]"
+                        className="h-[48px] rounded-[12px] register-button"
                         loading={registerLoading}
                         disabled={registerLoading || !submittable}
                         block

@@ -58,14 +58,6 @@ export function rootContainer(container: React.ReactNode) {
 }
 
 export function onRouteChange({ clientRoutes, location }) {
-  const ele = document.getElementById('gbpc-scroll');
-
-  setTimeout(() => {
-    if (ele) {
-      ele.scrollTop = 0;
-    }
-  }, 0);
-
   const metas = [
     {
       path: '/',

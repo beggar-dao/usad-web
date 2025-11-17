@@ -260,6 +260,10 @@ body,
   background: linear-gradient(74.66deg, #DDDDDD 4.13%, #FDFDFD 20.85%, #868686 64.68%, #DDDDDD 101%);
 }
 
+.gray-gradient-bg3 {
+  background: linear-gradient(90deg, rgba(221, 221, 221, 0.3) 0.11%, rgba(253, 253, 253, 0.3) 14.42%, rgba(134, 134, 134, 0.3) 53.85%, rgba(221, 221, 221, 0.3) 91.09%);
+}
+
 .black-gradient-bg1 {
   background: linear-gradient(91.51deg, #212121 0%, #121314 100%);
 }
@@ -323,4 +327,12 @@ body,
   -webkit-text-fill-color: transparent;
   background-clip: text;
   text-fill-color: transparent;
+}
+
+.register-button {
+  @extend .gold-gradient-bg;
+
+  &:disabled {
+    @extend .gray-gradient-bg3;
+  }
 }
