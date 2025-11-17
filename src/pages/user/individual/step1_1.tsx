@@ -33,6 +33,7 @@ export default function Step1_1() {
       setAvailableStates([]);
     }
   };
+
   const handleSubmit = async () => {
     form.validateFields().then(async (values) => {
       console.log(values);
@@ -51,13 +52,13 @@ export default function Step1_1() {
   };
 
   const watch = Form.useWatch(null, form);
+
   useEffect(() => {
-    console.log(watch);
     setIndividualData({
       ...individualData,
       ...watch,
     });
-  }, [watch]);
+  }, []);
 
   useEffect(() => {
     form.setFieldsValue({
@@ -80,7 +81,7 @@ export default function Step1_1() {
         <div className="relative z-10 rounded-[16px] pt-[40px] black-gradient-bg5">
           <TimeLine active={1} progress={50} />
           <div className="w-full h-[600px] overflow-y-auto px-8">
-            <div className="text-[24px] text-black font-bold mb-4">Address</div>
+            <div className="text-[24px] text-white font-bold mb-4">Address</div>
             <Form
               form={form}
               layout="vertical"
@@ -177,7 +178,7 @@ export default function Step1_1() {
                 name="addressProof"
               >
                 <div>
-                  <div className="text-sm mb-3 font-[200] text-[#5b6276] leading-[22px]">
+                  <div className="text-sm mb-3 font-[200] text-[#A1A8C0] leading-[22px]">
                     If you are a citizen of the Russian Federation,pleaseupload
                     your residence permit and a proof of address now or sentthem
                     to{' '}
@@ -243,7 +244,7 @@ export default function Step1_1() {
           <div className="w-full rounded-bl-2xl rounded-br-2xl  h-[104px] px-[40px] gap-[23px] flex items-center justify-between">
             <div
               onClick={handleSubmit}
-              className="w-[390px] cursor-pointer h-[48px] leading-[48px] text-center text-white font-[500] bg-[#202b4b] rounded-lg"
+              className="w-[390px] cursor-pointer h-[48px] leading-[48px] text-center text-white font-[500] text-shadow gold-gradient-bg rounded-lg"
             >
               Continue
             </div>
@@ -251,7 +252,7 @@ export default function Step1_1() {
               onClick={() => {
                 history.back();
               }}
-              className="flex-1 cursor-pointer h-[48px] leading-[48px] border border-[#202B4B14] rounded-lg font-[500] text-center"
+              className="flex-1 cursor-pointer h-[48px] leading-[48px] border border-[#25282C] rounded-lg font-[500] text-center"
             >
               Back
             </div>

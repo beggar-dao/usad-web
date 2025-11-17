@@ -13,7 +13,9 @@ export default function WithDraw() {
   } = useModel('addressWhiteList');
   const { setAlertInfo } = useModel('dialogState');
   const { getFieldsValue } = form;
-  const type = getFieldsValue(['type']);
+  const formData = getFieldsValue();
+
+  Form.useWatch((values) => values.type, form);
 
   const onFinish = async () => {
     let values = await form.validateFields();
@@ -72,7 +74,7 @@ export default function WithDraw() {
               ]}
             />
           </Form.Item>
-          {type === 0 ? (
+          {formData.type === 0 ? (
             <>
               <Form.Item
                 name="fiatWithdrawalDailyLimit"
@@ -137,7 +139,7 @@ export default function WithDraw() {
               </Form.Item>
             </>
           ) : null}
-          {type === 1 ? (
+          {formData.type === 1 ? (
             <>
               <Form.Item
                 name="transferDailyLimit"
