@@ -64,12 +64,21 @@ const LoginForm = () => {
       setIsLoading(true);
 
       try {
-        await checkUser({ email: values.email });
+        const res = await checkUser({ email: values.email });
 
-        setIsLoading(false);
-        setUser({ ...user, email: values.email });
-        setLoginModel(true);
-        setStep(2);
+        if (res.data) {
+          setIsLoading(false);
+          setUser({ ...user, email: values.email });
+          setLoginModel(true);
+          setStep(2);
+        } else {
+          setIsLoading(false);
+          setAlertInfo({
+            type: 'error',
+            message: 'User not found',
+            show: true,
+          });
+        }
       } catch (error) {
         setIsLoading(false);
       }
