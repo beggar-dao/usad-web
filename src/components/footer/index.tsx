@@ -1,212 +1,175 @@
-import logo from '@/assets/images/logo.png';
-import { history } from '@umijs/max';
-import { FaXTwitter } from 'react-icons/fa6';
+const primarySections = [
+  {
+    title: 'Platform',
+    links: [
+      'USAD',
+      'EURC',
+      'USYC',
+      'Circle Payments Network',
+      'Arc',
+      'Mint',
+      'Circle StableFX',
+      'Wallets',
+      'Contracts',
+      'Paymaster',
+      'CCTP',
+    ],
+  },
+  {
+    title: 'Use Cases',
+    links: ['Payments', 'Dollar Access', 'Trading Services', 'Case Studies'],
+  },
+  {
+    title: 'Developer',
+    links: [
+      'Developer Hub',
+      'Documentation',
+      'API Reference',
+      'Sample Projects',
+      'Testnet Faucet',
+      'Developer Blog',
+      'Circle Research',
+      'Uptime Status',
+    ],
+  },
+  {
+    title: 'Company',
+    links: [
+      'About Circle',
+      'Careers',
+      'Alliance Program',
+      'Circle Partner',
+      'Stablecoins',
+      'Circle Impact',
+      'Circle Ventures',
+      'Investor Relations',
+      'Brand Kit',
+    ],
+  },
+];
+
+const secondarySections = [
+  {
+    title: 'USAD',
+    links: [
+      'Transparency',
+      'Supported Blockchains',
+      'Bridged USD Standard',
+      'USAD.com',
+    ],
+  },
+  {
+    title: 'Insights',
+    links: ['Executive Insights', 'Policy Hub', 'Pressroom', 'Blog'],
+  },
+  {
+    title: 'Support',
+    links: ['Help Center', 'Contact Us', 'Legal & Privacy'],
+  },
+];
 
 export default function Footer() {
+  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+  };
+
   return (
-    <footer className="bg-primary text-white pt-8 md:pt-16 pb-8">
-      <div className="px-4 md:max-w-[1440px] mx-auto ">
-        <div className="grid grid-cols-1 md:grid-cols-3  gap-8 mb-12">
-          <div>
-            <div className="text-2xl font-bold mb-6">
-              <img src={logo} className="h-[28px] md:h-[40px]" alt="" />
+    <footer className="bg-[#1B1432] text-white">
+      <div className="mx-auto max-w-[1280px] px-4 py-14 sm:px-6 md:py-20 lg:px-8">
+        <div className="grid gap-12 lg:grid-cols-[repeat(4,minmax(0,1fr))_1.15fr]">
+          {primarySections.map((section) => (
+            <div key={section.title}>
+              <p className="text-xs text-white/60">
+                {section.title}
+              </p>
+              <ul className="mt-4 space-y-2 text-sm text-white/80">
+                {section.links.map((link) => (
+                  <li
+                    key={link}
+                    className="flex items-center justify-between text-white/70 transition-colors hover:text-white"
+                  >
+                    <a href="#">{link}</a>
+                    {link === 'Careers' && (
+                      <span className="rounded-full bg-[#2663FF]/10 px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wide text-[#8CF2FF]">
+                        We're hiring
+                      </span>
+                    )}
+                  </li>
+                ))}
+              </ul>
             </div>
-            <p className="text-white/70 mb-6">
-              The next generation of decentralized, asset-backed stablecoins.
+          ))}
+
+          <div>
+            <p className="text-xs text-white/60">
+              Subscribe to the Circle Newsletter
             </p>
-            <div className="flex space-x-4">
-              <a
-                href="https://x.com/usadfinance"
-                target="_blank"
-                className="text-white hover:text-[#DAC89F] transition-colors"
-              >
-                <FaXTwitter className="w-5 h-5" />
-              </a>
-            </div>
-          </div>
-
-          <div>
-            <h4 className="text-lg font-semibold mb-6">Quick Links</h4>
-            <ul className="space-y-3">
-              <li
-                onClick={() => {
-                  history.push('/');
-                }}
-                className="cursor-pointer"
-              >
-                <a className="text-white/70 hover:text-[#DAC89F] transition-colors">
-                  Home
-                </a>
-              </li>
-
-              <li
-                onClick={() => {
-                  history.push('/');
-                  setTimeout(() => {
-                    let faq = document.getElementById('features');
-                    if (faq) {
-                      faq.scrollIntoView({ behavior: 'smooth' });
-                    }
-                  }, 500);
-                }}
-                className="cursor-pointer"
-              >
-                <a
-                  href="#features"
-                  className="text-white/70 hover:text-[#DAC89F] transition-colors"
+            <p className="mt-3 text-sm text-white/70">
+              Stay up to date with the latest Circle product releases and
+              announcements.
+            </p>
+            <form onSubmit={handleSubmit} className="mt-4 space-y-4">
+              <div className="flex rounded-full border border-white/15 bg-white/5 p-1">
+                <input
+                  type="email"
+                  placeholder="Enter your email address"
+                  className="flex-1 rounded-full bg-transparent px-4 py-2.5 text-sm text-white placeholder:text-white/50 focus:outline-none"
+                />
+                <button
+                  type="submit"
+                  className="rounded-full bg-gradient-to-r from-[#7E5BFF] to-[#C254FF] px-5 py-2 text-sm font-semibold"
                 >
-                  Features
+                  Subscribe
+                </button>
+              </div>
+              <p className="text-[11px] leading-5 text-white/50">
+                By submitting this form, you agree to receive marketing and other
+                communications from Circle. You can unsubscribe at any time. See
+                our{' '}
+                <a href="#" className="text-white underline">
+                  Privacy Policy
                 </a>
-              </li>
-              <li
-                onClick={() => {
-                  history.push('/');
-                  setTimeout(() => {
-                    let faq = document.getElementById('technology');
-                    if (faq) {
-                      faq.scrollIntoView({ behavior: 'smooth' });
-                    }
-                  }, 500);
-                }}
-                className="cursor-pointer"
-              >
-                <a
-                  href="#tech"
-                  className="text-white/70 hover:text-[#DAC89F] transition-colors"
-                >
-                  Technology
-                </a>
-              </li>
-              <li
-                onClick={() => {
-                  history.push('/');
-                  setTimeout(() => {
-                    let faq = document.getElementById('faq');
-                    if (faq) {
-                      faq.scrollIntoView({ behavior: 'smooth' });
-                    }
-                  }, 500);
-                }}
-                className="cursor-pointer"
-              >
-                <a className="text-white/70 hover:text-[#DAC89F] transition-colors">
-                  FAQ
-                </a>
-              </li>
-              <li
-                onClick={() => {
-                  history.push('/');
-                  setTimeout(() => {
-                    let faq = document.getElementById('news');
-                    if (faq) {
-                      faq.scrollIntoView({ behavior: 'smooth' });
-                    }
-                  }, 500);
-                }}
-                className="cursor-pointer"
-              >
-                <a className="text-white/70 hover:text-[#DAC89F] transition-colors">
-                  News
-                </a>
-              </li>
-            </ul>
-          </div>
-
-          {/* <div>
-            <h4 className="text-lg font-semibold mb-6">Resources</h4>
-            <ul className="space-y-3">
-              <li>
-                <a
-                  href="#"
-                  className="text-white/70 hover:text-[#DAC89F] transition-colors"
-                >
-                  Whitepaper
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#"
-                  className="text-white/70 hover:text-[#DAC89F] transition-colors"
-                >
-                  Documentation
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#"
-                  className="text-white/70 hover:text-[#DAC89F] transition-colors"
-                >
-                  Developers
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#"
-                  className="text-white/70 hover:text-[#DAC89F] transition-colors"
-                >
-                  Audits
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#"
-                  className="text-white/70 hover:text-[#DAC89F] transition-colors"
-                >
-                  Reserve Reports
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#"
-                  className="text-white/70 hover:text-[#DAC89F] transition-colors"
-                >
-                  Community
-                </a>
-              </li>
-            </ul>
-          </div> */}
-
-          <div>
-            <h4 className="text-lg font-semibold mb-6">Contact</h4>
-            <ul className="space-y-3">
-              <li className="flex items-start">
-                <i className="fa fa-envelope text-[#DAC89F] mt-1 mr-3"></i>
-                <span className="text-white/70">pathenom@vn.com</span>
-              </li>
-              {/* <li className="flex items-start">
-                <i className="fa fa-map-marker text-[#DAC89F] mt-1 mr-3"></i>
-                <span className="text-white/70">
-                  123 Blockchain Avenue, Crypto City
-                </span>
-              </li> */}
-            </ul>
+                .
+              </p>
+            </form>
           </div>
         </div>
 
-        <div className="border-t border-white/10 pt-8">
-          <div className="flex flex-col md:flex-row justify-between items-center">
-            <p className="text-white/50 text-sm mb-4 md:mb-0">
-              © 2025 USAD. All rights reserved.
-            </p>
-            <div className="flex space-x-6">
-              <a
-                href="#"
-                className="text-white/50 hover:text-[#DAC89F] text-sm transition-colors"
-              >
-                Privacy Policy
-              </a>
-              <a
-                href="#"
-                className="text-white/50 hover:text-[#DAC89F] text-sm transition-colors"
-              >
-                Terms of Service
-              </a>
-              <a
-                href="#"
-                className="text-white/50 hover:text-[#DAC89F] text-sm transition-colors"
-              >
-                Cookie Policy
-              </a>
+        <div className="mt-14 border-t border-white/10 pt-10">
+          <div className="grid gap-8 md:grid-cols-3">
+            {secondarySections.map((section) => (
+              <div key={section.title}>
+                <p className="text-xs text-white/60">
+                  {section.title}
+                </p>
+                <ul className="mt-4 space-y-2 text-sm text-white/70">
+                  {section.links.map((link) => (
+                    <li key={link}>
+                      <a href="#" className="transition-colors hover:text-white">
+                        {link}
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+            <div className="self-start">
+              <button className="rounded-full border border-white/20 px-4 py-2 text-xs font-semibold tracking-wide text-white/80">
+                Your Privacy Choices
+              </button>
+            </div>
+          </div>
+
+          <div className="mt-10 flex flex-col gap-4 text-xs text-white/50 sm:flex-row sm:items-center sm:justify-between">
+            <p>© {new Date().getFullYear()} USAD. All rights reserved.</p>
+            <div className="flex flex-wrap gap-4">
+              {['Privacy Policy', 'Terms of Service', 'Cookie Policy'].map(
+                (item) => (
+                  <a key={item} href="#" className="transition-colors hover:text-white">
+                    {item}
+                  </a>
+                ),
+              )}
             </div>
           </div>
         </div>

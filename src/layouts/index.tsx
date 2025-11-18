@@ -45,8 +45,10 @@ export default () => {
       />
       <Spin spinning={loading} fullscreen />
       {isAuth ? null : <Header />}
-      <Outlet />
-      {isAuth ? null : <Footer />}
+      <div id="gbpc-scroll" className="flex-1 overflow-auto">
+        <Outlet />
+        {isAuth ? null : <Footer />}
+      </div>
       <Modal
         open={sessionModal}
         footer={null}
