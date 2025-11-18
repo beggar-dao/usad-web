@@ -211,16 +211,18 @@ const LoginForm = () => {
 
   return (
     <PageAnimate>
-      <GradientBorderBox className="max-w-[980px] m-auto my-10" gradientClassName="rounded-2xl">
-        <div className="flex items-center justify-between p-12 black-gradient-bg2 rounded-2xl relative z-10">
-          <img
-            src={bgImg}
-            className="w-[346px]"
-            alt="Reset Password Illustration"
-          />
-          <Steps />
-        </div>
-      </GradientBorderBox>
+      <div className="flex items-center h-screen">
+        <GradientBorderBox className="max-w-[980px] m-auto my-10" gradientClassName="rounded-2xl">
+          <div className="flex items-center justify-between p-12 black-gradient-bg2 rounded-2xl relative z-10 gap-4">
+            <img
+              src={bgImg}
+              className="w-[346px]"
+              alt="Reset Password Illustration"
+            />
+            <Steps />
+          </div>
+        </GradientBorderBox>
+      </div>
     </PageAnimate>
   );
 };
