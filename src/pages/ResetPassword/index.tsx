@@ -1,7 +1,7 @@
 import bgImg from '@/assets/images/login.png';
 import GradientBorderBox from '@/components/GradientBorderBox';
 import PageAnimate from '@/components/pageAnimate';
-import { resetPassword } from '@/services/user';
+import { checkUser, resetPassword } from '@/services/user';
 import { EyeInvisibleOutlined, EyeTwoTone } from '@ant-design/icons';
 import { history, useModel } from '@umijs/max';
 import { Button, Form, Input } from 'antd';
@@ -61,21 +61,24 @@ const LoginForm = () => {
         return;
       }
 
-      const params = {
-        email: values.email,
-        captcha: localStorage.getItem('captcha'),
-        totp: '',
-      };
-
       setIsLoading(true);
 
       try {
-        await resetPassword(params);
-        setIsLoading(false);
+        const res = await checkUser({ email: values.email });
 
-        setUser({ ...user, email: values.email });
-        setLoginModel(true);
-        setStep(2);
+        if (res.data) {
+          setIsLoading(false);
+          setUser({ ...user, email: values.email });
+          setLoginModel(true);
+          setStep(2);
+        } else {
+          setIsLoading(false);
+          setAlertInfo({
+            type: 'error',
+            message: 'User not found',
+            show: true,
+          });
+        }
       } catch (error) {
         setIsLoading(false);
       }
@@ -208,16 +211,18 @@ const LoginForm = () => {
 
   return (
     <PageAnimate>
-      <GradientBorderBox className="max-w-[980px] m-auto my-10" gradientClassName="rounded-2xl">
-        <div className="flex items-center justify-between p-12 black-gradient-bg2 rounded-2xl relative z-10">
-          <img
-            src={bgImg}
-            className="w-[346px]"
-            alt="Reset Password Illustration"
-          />
-          <Steps />
-        </div>
-      </GradientBorderBox>
+      <div className="flex items-center h-screen">
+        <GradientBorderBox className="max-w-[980px] m-auto my-10" gradientClassName="rounded-2xl">
+          <div className="flex items-center justify-between p-12 black-gradient-bg2 rounded-2xl relative z-10 gap-4">
+            <img
+              src={bgImg}
+              className="w-[346px]"
+              alt="Reset Password Illustration"
+            />
+            <Steps />
+          </div>
+        </GradientBorderBox>
+      </div>
     </PageAnimate>
   );
 };
