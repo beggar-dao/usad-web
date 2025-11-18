@@ -68,6 +68,13 @@ export const updateEmail = async (data: any) => {
   });
 };
 
+export const checkUser = async (data: { email: string }) => {
+  return request('/user/exists', {
+    method: 'get',
+    params: data,
+  });
+};
+
 export const upload = async (data: any, config?: any) => {
   return request('/third-party/file-store', {
     method: 'post',

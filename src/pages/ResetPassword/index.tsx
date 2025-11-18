@@ -1,7 +1,7 @@
 import bgImg from '@/assets/images/login.png';
 import GradientBorderBox from '@/components/GradientBorderBox';
 import PageAnimate from '@/components/pageAnimate';
-import { resetPassword } from '@/services/user';
+import { checkUser, resetPassword } from '@/services/user';
 import { EyeInvisibleOutlined, EyeTwoTone } from '@ant-design/icons';
 import { history, useModel } from '@umijs/max';
 import { Button, Form, Input } from 'antd';
@@ -61,18 +61,12 @@ const LoginForm = () => {
         return;
       }
 
-      const params = {
-        email: values.email,
-        captcha: localStorage.getItem('captcha'),
-        totp: '',
-      };
-
       setIsLoading(true);
 
       try {
-        await resetPassword(params);
-        setIsLoading(false);
+        await checkUser({ email: values.email });
 
+        setIsLoading(false);
         setUser({ ...user, email: values.email });
         setLoginModel(true);
         setStep(2);
