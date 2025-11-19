@@ -1,5 +1,5 @@
 import logo from '@/assets/images/logo.png';
-import { history, NavLink, useLocation } from '@umijs/max';
+import { history, useLocation } from '@umijs/max';
 
 export default function Header() {
   const location = useLocation();
@@ -44,13 +44,13 @@ export default function Header() {
           </div>
         </div>
         <div className="flex justify-content-end">
-          <NavLink
-            to="https://app.pathenom.com/"
+          <a
+            href="https://app.pathenom.com/"
             target="_blank"
             className="h-10 px-5 mx-4 gold-gradient-bg rounded-lg leading-10"
           >
             <span className="font-[500] text-shadow">Launch App</span>
-          </NavLink>
+          </a>
         </div>
       </div>
     </div>
