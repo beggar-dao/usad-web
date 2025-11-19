@@ -3,12 +3,10 @@ const primarySections = [
     title: 'Platform',
     links: [
       'USAD',
-      'EURC',
-      'USYC',
-      'Circle Payments Network',
+      'Pathenom Payments Network',
       'Arc',
       'Mint',
-      'Circle StableFX',
+      'Pathenom StableFX',
       'Wallets',
       'Contracts',
       'Paymaster',
@@ -28,20 +26,20 @@ const primarySections = [
       'Sample Projects',
       'Testnet Faucet',
       'Developer Blog',
-      'Circle Research',
+      'Pathenom Research',
       'Uptime Status',
     ],
   },
   {
     title: 'Company',
     links: [
-      'About Circle',
+      'About Pathenom',
       'Careers',
       'Alliance Program',
-      'Circle Partner',
+      'Pathenom Partner',
       'Stablecoins',
-      'Circle Impact',
-      'Circle Ventures',
+      'Pathenom Impact',
+      'Pathenom Ventures',
       'Investor Relations',
       'Brand Kit',
     ],
@@ -74,7 +72,7 @@ export default function Footer() {
   };
 
   return (
-    <footer className="bg-[#1B1432] text-white">
+    <footer className="bg-[#101010] text-white">
       <div className="mx-auto max-w-[1280px] px-4 py-14 sm:px-6 md:py-20 lg:px-8">
         <div className="grid gap-12 lg:grid-cols-[repeat(4,minmax(0,1fr))_1.15fr]">
           {primarySections.map((section) => (
@@ -102,10 +100,10 @@ export default function Footer() {
 
           <div>
             <p className="text-xs text-white/60">
-              Subscribe to the Circle Newsletter
+              Subscribe to the Pathenom Newsletter
             </p>
             <p className="mt-3 text-sm text-white/70">
-              Stay up to date with the latest Circle product releases and
+              Stay up to date with the latest Pathenom product releases and
               announcements.
             </p>
             <form onSubmit={handleSubmit} className="mt-4 space-y-4">
@@ -117,14 +115,14 @@ export default function Footer() {
                 />
                 <button
                   type="submit"
-                  className="rounded-full bg-gradient-to-r from-[#7E5BFF] to-[#C254FF] px-5 py-2 text-sm font-semibold"
+                  className="rounded-full gold-gradient-bg px-5 py-2 text-sm font-semibold"
                 >
                   Subscribe
                 </button>
               </div>
               <p className="text-[11px] leading-5 text-white/50">
                 By submitting this form, you agree to receive marketing and other
-                communications from Circle. You can unsubscribe at any time. See
+                communications from Pathenom. You can unsubscribe at any time. See
                 our{' '}
                 <a href="#" className="text-white underline">
                   Privacy Policy
