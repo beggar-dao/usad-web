@@ -31,11 +31,13 @@ export default function Header() {
                 <div
                   key={index}
                   onClick={() => history.push(item.path)}
-                  className={`${index === nav.length - 1 ? '' : 'mr-6'
-                    } md:mr-[66px] cursor-pointer transition-all font-[500] ${location.pathname === item.path
+                  className={`${
+                    index === nav.length - 1 ? '' : 'mr-6'
+                  } md:mr-[66px] cursor-pointer transition-all font-[500] ${
+                    location.pathname === item.path
                       ? 'text-[#DAC89F]'
                       : 'text-white'
-                    }`}
+                  }`}
                 >
                   {item.name}
                 </div>
@@ -45,9 +47,10 @@ export default function Header() {
         </div>
         <div className="flex justify-content-end">
           <a
-            href="https://app.pathenom.com/"
+            href="https://app.vn.com/"
             target="_blank"
             className="h-10 px-5 mx-4 gold-gradient-bg rounded-lg leading-10"
+            rel="noreferrer"
           >
             <span className="font-[500] text-shadow">Launch App</span>
           </a>
