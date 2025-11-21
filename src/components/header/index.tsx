@@ -1,10 +1,8 @@
 import logo from '@/assets/images/logo.png';
-import { LogoutOutlined, UserOutlined } from '@ant-design/icons';
-import { history, NavLink, useLocation, useModel } from '@umijs/max';
+import { history, useLocation } from '@umijs/max';
 
 export default function Header() {
   const location = useLocation();
-  const { logout, user } = useModel('auth');
 
   const nav = [
     {
@@ -16,66 +14,6 @@ export default function Header() {
       path: '/mint',
     },
   ];
-
-  /**
-   * Handle user logout
-   */
-  const handleLogout = async () => {
-    try {
-      await logout();
-      // Redirect will be handled by the auth model
-    } catch (error) {
-      console.error('Logout error:', error);
-    }
-  };
-
-  const handleProfile = () => {
-    // Handle profile click
-    history.push('/user/profile');
-  };
-
-  /**
-   * User dropdown menu items
-   */
-  const userMenuItems = [
-    {
-      key: 'profile',
-      icon: <UserOutlined />,
-      label: 'Profile',
-      onClick: handleProfile,
-    },
-    {
-      type: 'divider',
-    },
-    {
-      key: 'logout',
-      icon: <LogoutOutlined />,
-      label: 'Logout',
-      onClick: handleLogout,
-    },
-  ];
-
-  const MobileHeaderRight = () => {
-    if (user.tokenInfo?.tokenValue) {
-      return (
-        <NavLink
-          to="/user/profile"
-          className="h-10 px-5 mx-4 gold-gradient-bg rounded-lg leading-10"
-        >
-          <span className="font-[500] text-shadow">Launch App</span>
-        </NavLink>
-      );
-    } else {
-      return (
-        <NavLink
-          to="/Auth/Login"
-          className="h-10 px-5 mx-4 gold-gradient-bg rounded-lg leading-10"
-        >
-          <span className="font-[500] text-shadow">Launch App</span>
-        </NavLink>
-      );
-    }
-  };
 
   return (
     <div className="border-b border-b-[#FFFFFF24]">
@@ -106,7 +44,13 @@ export default function Header() {
           </div>
         </div>
         <div className="flex justify-content-end">
-          <MobileHeaderRight />
+          <a
+            href="https://app.pathenom.com/"
+            target="_blank"
+            className="h-10 px-5 mx-4 gold-gradient-bg rounded-lg leading-10"
+          >
+            <span className="font-[500] text-shadow">Launch App</span>
+          </a>
         </div>
       </div>
     </div>
